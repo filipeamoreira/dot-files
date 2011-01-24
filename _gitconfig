@@ -1,0 +1,13 @@
+[user]
+        name = Filipe A Moreira
+        email = famoreira@gmail.com
+
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+
+[github]
+        user = filipeamoreira
+[core]
+        editor = emacsclient -nw
