@@ -30,6 +30,7 @@
 	autosetupmerge = true
 [core]
         editor = emacsclient -nw
+	quotepath = false
 [alias]
        # I like using the interactive mode to make complex commits
        ai = add --interactive
