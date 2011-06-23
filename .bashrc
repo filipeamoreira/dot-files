@@ -5,6 +5,8 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+
+
 ## Includes
 if [ -f $HOME/.bash_aliases ]; then
   source $HOME/.bash_aliases
@@ -98,4 +100,5 @@ export PYTHONPATH=$HOME/.local/:$PYTHONPATH
 #Autocomplete
 
 complete -o default -o nospace -F _git g
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
