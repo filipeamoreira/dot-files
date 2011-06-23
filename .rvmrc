@@ -1,0 +1,2 @@
+rvm_pretty_print_flag=1
+export rvm_path="/home/guto/.rvm"
