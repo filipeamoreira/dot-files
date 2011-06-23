@@ -5,18 +5,9 @@
 
 # enable color support of ls and also add handy aliases
 if [[ "$TERM" != "dumb" ]]; then
-    alias ls='gls --color=auto'
     alias dir='ls --format=vertical'
     alias vdir='ls --format=long'
 fi
-
-# some more ls aliases
-alias l='ls -lh'
-alias la='ls -A'
-alias lf='ls -CF'
-alias l.='ls -d .[^.]*'
-alias l.f='l. -F'
-alias ll.='l. -l'
 
 # aliases for safety
 alias rmi='rm -i'
@@ -27,16 +18,6 @@ alias mvi='mv -i'
 alias cpv='gcp -v'
 alias rmv='grm -v'
 alias mvv='gmv -v'
-
-# two cd aliases
-alias ..='cd ..'
-alias ...='cd ../../'
-
-# alias to add or edit aliases
-alias realias='emacsclient ~/.bash_aliases;source ~/.bash_aliases'
-
-# alias to add or edit functions
-alias refunction='emacsclient ~/.bash_functions;source ~/.bash_functions'
 
 # a few git aliases
 alias gs='git status'
@@ -50,10 +31,8 @@ alias gb='git branch -a -v'
 alias e='emacsclient -c -n'
 alias ec='emacsclient -nw'
 
-alias n='nautilus --browser .'
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -61,16 +40,3 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-alias server="ruby -rubygems -e \"['thin', 'rack', 'socket'].each {|file| require file };"\
-" Thin::Server.start(IPSocket.getaddress(Socket.gethostname), 7777) {"\
-" use Rack::CommonLogger; run Rack::Directory.new(Dir.pwd) }\""
