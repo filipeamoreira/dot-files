@@ -68,7 +68,7 @@ function set_titlebar {
 function set_prompt {
     git="$(parse_git)"
 
-    PS1="${txtred}\u${end} ${txtred}\W${end}"
+    PS1="${txtred}\u@\h${end}: ${txtred}\W${end}"
     if [[ -n "$git" ]]; then
         PS1="$PS1 $git ${bldcyn}❯❯${end} "
     else
