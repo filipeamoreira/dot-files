@@ -9,6 +9,8 @@ if [[ "$TERM" != "dumb" ]]; then
     alias vdir='ls --format=long'
 fi
 
+alias ls='ls -l --color'
+
 # aliases for safety
 alias rmi='rm -i'
 alias cpi='cp -i'
