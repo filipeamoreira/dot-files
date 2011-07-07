@@ -7,7 +7,10 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 # export ZSH_THEME="robbyrussell"
 #export ZSH_THEME="bira"
-export ZSH_THEME="jreese"
+# export ZSH_THEME="jreese"
+
+export ZSH_THEME="kennethreitz"
+
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
 
@@ -22,11 +25,12 @@ export ZSH_THEME="jreese"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rails3 ruby brew cap gem github node npm osx pip redis-cli rvm ssh-agent bundler compleat)
+plugins=(git rails3 ruby brew cap github node npm osx pip redis-cli rvm ssh-agent)
+# plugins=(git rails3)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export TERM=xterm-256color
-export PATH=/Users/guto/bin:/Users/guto/.rvm/gems/ruby-1.9.2-p180/bin:/Users/guto/.rvm/gems/ruby-1.9.2-p180@global/bin:
-export PATH=$PATH:/Users/guto/.rvm/rubies/ruby-1.9.2-p180/bin:/Users/guto/.rvm/bin:/Users/guto/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+source ~/.rvm/scripts/rvm
+export PATH=/Users/guto/bin:/Users/guto/.rvm/gems/ruby-1.9.2-p180/bin:/Users/guto/.rvm/gems/ruby-1.9.2-p180@global/bin:/Users/guto/.rvm/rubies/ruby-1.9.2-p180/bin:/Users/guto/.rvm/bin:/Users/guto/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
