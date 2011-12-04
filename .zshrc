@@ -9,7 +9,8 @@ export ZSH=$HOME/.oh-my-zsh
 #export ZSH_THEME="bira"
 # export ZSH_THEME="jreese"
 
-export ZSH_THEME="filipeamoreira"
+# export ZSH_THEME="filipeamoreira"
+export ZSH_THEME="kennethreitz"
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
@@ -26,24 +27,18 @@ export ZSH_THEME="filipeamoreira"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git rails3 ruby brew cap github node npm osx pip redis-cli rvm ssh-agent)
-plugins=(git compleat)
+plugins=(git compleat rails3 ruby brew github node npm osx pip redis-cli rvm ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 if [ "$TMUX" != "true" ]
+    export TERM=screen-256color-bce
 then
     export TERM=xterm-256color
 fi
-#export TERM=xterm-256color
-export TERM=screen-256color
 
-source ~/.rvm/scripts/rvm
+[[ -s "/Users/guto/.rvm/scripts/rvm" ]] && source "/Users/guto/.rvm/scripts/rvm"
+
 export NODE_PATH=/usr/local/lib/node_modules
-. ~/.nvm/nvm.sh
-# rvm use default
-
-export PATH=$HOME/bin:/usr/local/sbin:$HOME/.rvm/gems/ruby-1.9.2-p180/bin:$HOME/.rvm/gems/ruby-1.9.2-p180@global/bin:$HOME/.rvm/rubies/ruby-1.9.2-p180/bin:$HOME/.rvm/bin:$HOME/.local/bin:/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-
-
-# [[ $TERM != "screen" ]] && tmux && exit
+export PATH="$HOME/bin:/usr/local/bin:$HOME/scm/svn/depot_tools/:$PATH"
