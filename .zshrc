@@ -39,6 +39,6 @@ then
 fi
 
 [[ -s "/Users/guto/.rvm/scripts/rvm" ]] && source "/Users/guto/.rvm/scripts/rvm"
-
+[[ $TERM == eterm-color ]] && export TERM=xterm
 export NODE_PATH=/usr/local/lib/node_modules
 export PATH="$HOME/bin:/usr/local/bin:$HOME/scm/svn/depot_tools/:$PATH"
