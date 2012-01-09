@@ -2,7 +2,7 @@
 
 # Nicked from https://github.com/isaacs/dotfiles/blob/master/install.sh
 ! [ -d ~/.dotfile_backup ] && mkdir ~/.dotfile_backup
-for i in .*; do
+for i in _*; do
     if ! [ "$i" == "." ] && ! [ "$i" == ".." ] && ! [ "$i" == ".git" ]; then
         if [ -e ~/$i ]; then
             if ! ( cp ~/$i ~/.dotfile_backup/$i ) || ! ( rm ~/$i || unlink ~/$i ); then
