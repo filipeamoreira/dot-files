@@ -1,1 +1,0 @@
-/Users/guto/scm/git/dot-files/_zshrc

@@ -1,4 +1,5 @@
-.smex-items
-auto-save-list/
-backups/
-elpa/
+emacs.d/.smex-items
+emacs.d/auto-save-list/
+emacs.d/backups/
+emacs.d/elpa/
+emacs.d/places

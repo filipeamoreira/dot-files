@@ -3,7 +3,12 @@
   (package-refresh-contents))
 
 ;; Add in your own as you wish:
-(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-js starter-kit-lisp starter-kit-eshell starter-kit-ruby windsize yasnippet)
+(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-js starter-kit-lisp
+                                  starter-kit-eshell starter-kit-ruby rinari windsize yasnippet
+                                  ruby-block ruby-electric ruby-end rvm rspec-mode javascript 
+                                  js2-mode sass-mode mode-compile flymake flymake-coffee flymake-css
+                                  flymake-cursor flymake-jshint flymake-jslint flymake-php flymake-ruby
+                                  flymake-sass flymake-shell)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
@@ -111,3 +116,13 @@
 (require 'server)
 (unless (server-running-p)
   (server-start))
+
+;; Loading Rinari
+(add-hook 'ruby-mode-hook
+          (lambda () (rinari-launch)))
+
+;; SCSS mode
+(setq scss-sass-command "/Users/guto/.rvm/gems/ruby-1.9.2-p290/bin/sass")
+(setq scss-compile-at-save nil)
+(autoload 'scss-mode "scss-mode")
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
