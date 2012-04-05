@@ -1,6 +1,6 @@
 [user]
 	name = Filipe A Moreira
-        email = famoreira@gmail.com
+	email = famoreira@gmail.com
 
 [color]
         diff = auto
@@ -32,6 +32,7 @@
 	quotepath = false
 	filemode = false
         editor =  /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw
+	excludesfile = /Users/guto/.gitignore_global
 [alias]
        # I like using the interactive mode to make complex commits
        ai = add --interactive
@@ -67,6 +68,12 @@
        r = reset
        p = push
 [push]
-	default = tracking
+	default = upstream
 [merge]
 	stat = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

@@ -3,3 +3,5 @@ emacs.d/auto-save-list/
 emacs.d/backups/
 emacs.d/elpa/
 emacs.d/places
+emacs.d/abbrev_defs
+emacs.d/eshell

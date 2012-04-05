@@ -25,10 +25,13 @@ then
 fi
 
 [[ $TERM == eterm-color ]] && export TERM=xterm
+[[ $EMACS = t ]] && unsetopt zle 
 
-export NODE_PATH=/usr/local/lib/node_modules
-export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/scm/svn/depot_tools/:/usr/local/n/current/bin:$PATH
-eval "$(rbenv init -)"
+export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/bin:$PATH
 
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
+
+source /usr/local/Cellar/funcoeszz/10.12/funcoeszz-10.12.sh
+
+. ~/.nvm/nvm.sh
