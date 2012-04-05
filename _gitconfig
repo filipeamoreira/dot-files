@@ -33,6 +33,8 @@
 	filemode = false
         editor =  /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw
 	excludesfile = /Users/guto/.gitignore_global
+	autocrlf = input
+	safecrlf = true
 [alias]
        # I like using the interactive mode to make complex commits
        ai = add --interactive
