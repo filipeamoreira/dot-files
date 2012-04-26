@@ -25,9 +25,9 @@
 (load custom-file 'noerror)
 
 ;; Load my own settings
-;;(require 'guto/bindings)
-;; (load "guto/helper")
-;; (require 'guto/misc)
+(require 'guto/bindings)
+(require 'guto/helper)
+(require 'guto/misc)
 
 (require 'simplenote)
 (setq simplenote-email "famoreira@gmail.com")

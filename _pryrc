@@ -12,8 +12,9 @@ Pry.config.exception_handler = proc do |output, exception, _|
   output.puts "from #{exception.backtrace.first}\e[0m"
 end
 
-if defined?(Rails)
+if defined?(Rails) && Rails.env
   begin
+    extend Rails::ConsoleMethods if Rails::ConsoleMethods
     require "rails/console/app"
     require "rails/console/helpers"
   rescue LoadError => e
