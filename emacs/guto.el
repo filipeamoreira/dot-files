@@ -5,12 +5,12 @@
 (global-linum-mode)
 
 ;; Adding textmate mode
-(add-to-list 'load-path "~/.emacs.d/personal/vendor/textmate.el")
+(add-to-list 'load-path "~/.emacs.d/personal/vendor/textmate")
 (require 'textmate)
 (textmate-mode)
 
 ;; Adding cucumber/feature mode
-(add-to-list 'load-path "~/.emacs.d/personal/vendor/cucumber.el")
+(add-to-list 'load-path "~/.emacs.d/personal/vendor/cucumber")
 (require 'feature-mode)
 
 ;; Disabling annoying auto compile for scss mode
