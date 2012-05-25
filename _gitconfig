@@ -1,6 +1,6 @@
 [user]
-	name = Filipe A Moreira
-	email = famoreira@gmail.com
+	name = Filipe Moreira
+	email = code@filipemoreira.com
 
 [color]
         diff = auto
@@ -33,7 +33,7 @@
 	filemode = false
         # editor =  /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw
         editor = vim
-	excludesfile = /Users/guto/.gitignore_global
+	excludesfile = /Users/guto/.gitignore
 	autocrlf = input
 [alias]
        # I like using the interactive mode to make complex commits
@@ -87,3 +87,5 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[help]
+	autocorrect = 1

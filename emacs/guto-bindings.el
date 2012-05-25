@@ -73,4 +73,43 @@
 ;; (global-set-key "\C-x\C-m" 'execute-extended-command)
 ;; (global-set-key "\C-c\C-m" 'execute-extended-command)
 
+;; Map Mac cmd as meta
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier nil)
+;;(setq mac-option-key-is-meta t)
+;;(setq mac-command-key-is-meta t)
+;;(setq mac-option-modifier 'meta)
+;; (setq mac-command-modifier 'super)
+;; (setq mac-option-modifier 'meta)
+
+
+;; org-mode bindings
+
+(global-set-key (kbd "C-c o a") 'org-agenda-list)
+(global-set-key (kbd "C-c o t") 'org-todo-list)
+(global-set-key (kbd "C-c o p") 'org-insert-property-drawer)
+(global-set-key (kbd "C-c o d") 'org-date)
+(global-set-key (kbd "C-c o j") 'org-journal-entry)
+(global-set-key (kbd "C-c r") 'org-remember)
+(global-set-key (kbd "C-c a") 'org-agenda)
+
+
+;; Defining some aliases
+(defalias 'afm 'auto-fill-mode)
+(defalias 'mm 'markdown-mode)
+(defalias 'wc 'word-count)
+(defalias 'wcr 'word-count-region)
+(defalias 'qrr 'query-replace-regexp)
+(defalias 'fs 'flyspell-mode)
+(defalias 'oa 'org-agenda)
+(defalias 'uf 'unfill-region)
+(defalias 'eb 'eval-buffer)
+
+;; Extra bindings for dired
+
+(global-set-key (kbd "C-x C-d") 'ido-dired)
+
+;; Overrides the proced command
+(global-set-key (kbd "C-x p")  'previous-multiframe-window)
+
 (provide 'guto-bindings)
