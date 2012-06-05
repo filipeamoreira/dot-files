@@ -66,9 +66,10 @@
 (global-set-key (kbd "<M-S-up>") 'enlarge-window)
 
 ;; ;; ace jump mode
-;; ;; C-u C-c SPC => ace-jump-char-mode
-;; ;; C-u C-u C-c SPC => ace-jump-line-mode
-;; (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+;; C-x SPC => ace-jump
+;; C-u C-x SPC => ace-jump-char-mode
+;; C-u C-u C-x SPC => ace-jump-line-mode
+(define-key global-map (kbd "C-x SPC") 'ace-jump-mode)
 
 ;; (global-set-key "\C-x\C-m" 'execute-extended-command)
 ;; (global-set-key "\C-c\C-m" 'execute-extended-command)
@@ -90,8 +91,8 @@
 (global-set-key (kbd "C-c o p") 'org-insert-property-drawer)
 (global-set-key (kbd "C-c o d") 'org-date)
 (global-set-key (kbd "C-c o j") 'org-journal-entry)
-(global-set-key (kbd "C-c r") 'org-remember)
-(global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c o r") 'org-remember)
+(global-set-key (kbd "C-c o a") 'org-agenda)
 
 
 ;; Defining some aliases

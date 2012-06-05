@@ -22,7 +22,8 @@
 ;; org mode settings
 
 ;; Adding org files to Agenda files
-;;(setq org-agenda-files "~/Dropbox/sync/org/")
+(setq org-agenda-files (list "~/Dropbox/sync/org/"
+                             "~/Dropbox/sync/org/freelance/"))
 
 ;; Tracks when a certain TODO was finished
 (setq org-log-done 'time)
@@ -72,8 +73,57 @@
 ;; (require 'pbcopy)
 ;; (turn-on-pbcopy)
 
+
+(setq deactivate-mark nil)
+
+;; Load auto-revert-tail-mode after opening .log file
+(add-to-list 'auto-mode-alist
+             '("\\.log\\'" . (lambda ()
+                               (auto-revert-tail-mode))))
+
+;; Call whitespace-cleanup
+
+;; make whitespace-mode use “¶” for newline and “▷” for tab.
+;; together with the rest of its defaults
+(setq whitespace-display-mappings
+      '(
+        (space-mark 32 [183] [46]) ; normal space, ·
+        (space-mark 160 [164] [95])
+        (space-mark 2208 [2212] [95])
+        (space-mark 2336 [2340] [95])
+        (space-mark 3616 [3620] [95])
+        (space-mark 3872 [3876] [95])
+        (newline-mark 10 [182 10]) ; newlne, ¶
+        (tab-mark 9 [9655 9] [92 9]) ; tab, ▷
+        ))
+
 ;; Starts emacs server
 (server-start)
 
 ;; Confirm emacs closing
 (setq confirm-kill-emacs 'y-or-n-p)
+
+;; Defines default date format
+'(calendar-date-style (quote european))
+
+;; Enable tip of the day
+(require 'cl)
+(defun totd ()
+  (interactive)
+  (with-output-to-temp-buffer "*Tip of the day*"
+    (let* ((commands (loop for s being the symbols
+                           when (commandp s) collect s))
+           (command (nth (random (length commands)) commands)))
+      (princ
+       (concat "Your tip for the day is:\n========================\n\n"
+               (describe-function command)
+               "\n\nInvoke with:\n\n"
+               (with-temp-buffer
+                 (where-is command t)
+                 (buffer-string)))))))
+
+;; Disable system bell
+(setq visible-bell 1)
+
+;; Full screen mode
+(ns-toggle-fullscreen)
