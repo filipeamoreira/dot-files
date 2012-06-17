@@ -20,15 +20,14 @@ plugins=(git compleat rails3 ruby brew github node npm osx pip redis-cli rvm ssh
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-if [ "$TMUX" != "true" ]
-    export TERM=screen-256color-bce
-then
-    export TERM=xterm-256color
-fi
+[ -n "$TMUX" ] && export TERM=screen-256color
 
 [[ $TERM == eterm-color ]] && export TERM=xterm
 [[ $EMACS = t ]] && unsetopt zle 
+
+# Cannot use the current Emacs server because the buffer is loaded as read only
+# GIT_EDITOR="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"; export GIT_EDITOR
+GIT_EDITOR="/Applications/Emacs.app/Contents/MacOS/Emacs -Q -t $(tty)"; export GIT_EDITOR
 
 export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/bin:/usr/X11/bin:/usr/local/bin:$PATH
 

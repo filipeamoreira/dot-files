@@ -113,4 +113,6 @@
 ;; Overrides the proced command
 (global-set-key (kbd "C-x p")  'previous-multiframe-window)
 
+(global-set-key (kbd "RET") 'newline-and-indent)
+
 (provide 'guto-bindings)

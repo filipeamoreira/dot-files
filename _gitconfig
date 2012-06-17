@@ -1,7 +1,6 @@
 [user]
 	name = Filipe Moreira
 	email = code@filipemoreira.com
-
 [color]
         diff = auto
         status = auto
@@ -31,8 +30,6 @@
 [core]
 	quotepath = false
 	filemode = false
-        # editor =  /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw
-        editor = vim
 	excludesfile = /Users/guto/.gitignore
 	autocrlf = input
 [alias]
