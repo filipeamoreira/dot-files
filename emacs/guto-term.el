@@ -23,7 +23,7 @@
 
 (defun my-term-hook ()
   (goto-address-mode)
-  (define-key term-raw-map "\C-y" 'my-term-paste)
+  ;; (define-key term-raw-map "\C-y" 'my-term-paste)
   (let ((base03  "#002b36")
         (base02  "#073642")
         (base01  "#586e75")

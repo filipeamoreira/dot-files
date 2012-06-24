@@ -163,3 +163,17 @@
 
 ;; Better undo
 (global-undo-tree-mode)
+
+;; Replace region with yank
+(delete-selection-mode 1)
+
+;; setting for auto-close brackets for electric-pair-mode regardless of current major mode syntax table
+(setq electric-pair-pairs '(
+                            (?\" . ?\")
+                            (?\{ . ?\})
+                            (?\' . ?\')
+                            (?\[ . ?\])
+                            ) )
+;; Enabling eletric-pair-mode globally
+(add-hook 'text-mode-hook
+          (lambda () (set (make-local-variable 'electric-pair-mode) t)))
