@@ -1,6 +1,5 @@
-# Pry.config.editor = "mate -w"
-
-Pry.config.editor = "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
+# Pry.config.editor = "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
+Pry.config.editor = proc { |file, line| "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw +#{line} #{file}" }
 Pry.config.prompt = proc do |obj, level, _|
   prompt = ""
   prompt << "#{Rails.version}@" if defined?(Rails)
@@ -30,3 +29,8 @@ begin
 rescue LoadError => err
    warn "=> Unable to load awesome_print"
 end
+
+Pry.commands.alias_command 'c', 'continue'
+Pry.commands.alias_command 's', 'step'
+Pry.commands.alias_command 'n', 'next'
+Pry.commands.alias_command 'f', 'finish'
