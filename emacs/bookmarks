@@ -1,0 +1,30 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("chimpchamp"
+ (filename . "~/work/freelance/chimpchamp/")
+ (front-context-string . "chimpactions\n  d")
+ (rear-context-string . "78 Apr 20 12:38 ")
+ (position . 236))
+("miningpulse"
+ (filename . "~/work/freelance/miningpulse/")
+ (front-context-string . ".DS_Store\n  -rw-")
+ (rear-context-string . "48 May 18 11:15 ")
+ (position . 249))
+("k3"
+ (filename . "~/work/freelance/k3/")
+ (front-context-string . ".DS_Store\n  drwx")
+ (rear-context-string . "48 May 29 16:06 ")
+ (position . 232))
+("org"
+ (filename . "~/Dropbox/sync/org/")
+ (front-context-string . "company.org\n  -r")
+ (rear-context-string . "97 May 30 13:53 ")
+ (position . 231))
+("emacs"
+ (filename . "~/data/scm/git/dot-files/emacs/")
+ (front-context-string . "custom.el\n  -rw-")
+ (rear-context-string . "73 Jun 13 23:31 ")
+ (position . 243))
+)

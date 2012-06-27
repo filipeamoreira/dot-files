@@ -192,3 +192,6 @@
 ;; Enabling eletric-pair-mode globally
 (add-hook 'text-mode-hook
           (lambda () (set (make-local-variable 'electric-pair-mode) t)))
+
+;; set default bookmark location
+(setq bookmark-default-file ( concat user-emacs-directory "personal/bookmarks"))
