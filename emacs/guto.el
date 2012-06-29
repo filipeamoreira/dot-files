@@ -129,7 +129,8 @@
 (require 'switch-window)
 
 ;; Starts emacs server
-(server-start)
+(if (not (server-running-p))
+    (server-start))
 
 (setq saved-server-window server-window)
 (setq server-window
@@ -193,5 +194,19 @@
 (add-hook 'text-mode-hook
           (lambda () (set (make-local-variable 'electric-pair-mode) t)))
 
+;; FIXME: This is currently not working
+;; Disable eletric-pair-mode on list mode
+(add-hook 'lisp-mode-hook
+          (lambda () (set (make-local-variable 'eletric-pair-mode) f)))
+(add-hook 'emacs-list-hook
+          (lambda () (set (make-local-variable 'eletric-pair-mode) f)))
+
 ;; set default bookmark location
 (setq bookmark-default-file ( concat user-emacs-directory "personal/bookmarks"))
+
+;; Cleaning up white-space before saving the buffer
+(add-hook 'before-save-hook 'whitespace-cleanup)
+
+;; Enable C-j
+(eval-after-load "paredit"
+  #'(define-key paredit-mode-map (kbd "C-j") 'eval-last-sexp))
