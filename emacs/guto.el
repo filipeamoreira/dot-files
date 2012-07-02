@@ -1,4 +1,4 @@
-;; Disabling aut0-fill-mode
+;; Disabling auto-fill-mode
 (auto-fill-mode -1)
 
 ;; Enables line numbering in all modes
@@ -129,8 +129,9 @@
 (require 'switch-window)
 
 ;; Starts emacs server
-(if (not (server-running-p))
-    (server-start))
+(require 'server)
+(when (and (functionp 'server-running-p) (not (server-running-p)))
+  (server-start))
 
 (setq saved-server-window server-window)
 (setq server-window
@@ -210,3 +211,17 @@
 ;; Enable C-j
 (eval-after-load "paredit"
   #'(define-key paredit-mode-map (kbd "C-j") 'eval-last-sexp))
+
+(setq search-highlight t            ;; highlight when searching...
+      query-replace-highlight t)    ;; ...and replacing
+
+;; Disable transient mark mode
+;; Use C-<SPC> C-<SPC> to temporally activate it.
+(setq transient-mark-mode nil)
+
+
+(add-to-list 'hippie-expand-try-functions-list
+             'yas/hippie-try-expand) ;put yasnippet in hippie-expansion list
+
+(setq smart-tab-using-hippie-expand t)
+(global-smart-tab-mode t)
