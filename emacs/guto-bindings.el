@@ -115,4 +115,6 @@
 
 (global-set-key (kbd "RET") 'newline-and-indent)
 
+(setq mac-option-modifier 'meta)
+
 (provide 'guto-bindings)
