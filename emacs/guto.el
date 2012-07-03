@@ -224,4 +224,5 @@
              'yas/hippie-try-expand) ;put yasnippet in hippie-expansion list
 
 (setq smart-tab-using-hippie-expand t)
-(global-smart-tab-mode t)
+(require 'smart-tab)
+(global-smart-tab-mode 1)
