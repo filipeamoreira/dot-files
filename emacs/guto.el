@@ -226,3 +226,5 @@
 (setq smart-tab-using-hippie-expand t)
 (require 'smart-tab)
 (global-smart-tab-mode 1)
+
+(set-default 'indicate-empty-lines t)
