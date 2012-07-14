@@ -1,3 +1,14 @@
+;; Add vendor to load-path
+;; FIXME: Refactor this
+(let ((base "~/.emacs.d/personal/vendor"))
+  (add-to-list 'load-path base)
+  (dolist (f (directory-files base))
+    (let ((name (concat base "/" f)))
+      (when (and (file-directory-p name)
+                 (not (equal f ".."))
+                 (not (equal f ".")))
+        (add-to-list 'load-path name)))))
+
 ;; Disabling auto-fill-mode
 (auto-fill-mode -1)
 
@@ -5,12 +16,12 @@
 (global-linum-mode)
 
 ;; Adding textmate mode
-(add-to-list 'load-path "~/.emacs.d/personal/vendor/textmate")
+;; (add-to-list 'load-path "~/.emacs.d/personal/vendor/textmate")
 (require 'textmate)
 (textmate-mode)
 
 ;; Adding cucumber/feature mode
-(add-to-list 'load-path "~/.emacs.d/personal/vendor/cucumber")
+;; (add-to-list 'load-path "~/.emacs.d/personal/vendor/cucumber")
 (require 'feature-mode)
 
 ;; Disabling annoying auto compile for scss mode
@@ -228,3 +239,15 @@
 (global-smart-tab-mode 1)
 
 (set-default 'indicate-empty-lines t)
+
+;; FIXME: Configure a permanent log
+;; (add-to-list 'load-path "~/.emacs.d/personal/vendor/command-log-mode")
+;; (require 'command-log-mode)
+
+;; FIXME: Disable ruby-tools # binding
+
+
+(require 'simplenote)
+(setq simplenote-email "famoreira@gmail.com")
+;; (setq simplenote-password "yourpassword")
+(simplenote-setup)

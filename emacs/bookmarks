@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("scm"
+(("work.org"
+ (filename . "~/Dropbox/sync/org/work.org")
+ (front-context-string . "*** TODO [Supert")
+ (rear-context-string . " of the website\n")
+ (position . 1868))
+("scm"
  (filename . "~/scm/git/")
  (front-context-string . "314464\n  drwxr-x")
  (rear-context-string . "70 Jun 13 16:50 ")

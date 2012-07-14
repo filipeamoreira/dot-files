@@ -117,4 +117,6 @@
 
 (setq mac-option-modifier 'meta)
 
+(global-set-key (kbd "C-x f") 'ido-find-file)
+
 (provide 'guto-bindings)
