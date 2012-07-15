@@ -206,12 +206,21 @@
 (add-hook 'text-mode-hook
           (lambda () (set (make-local-variable 'electric-pair-mode) t)))
 
-;; FIXME: This is currently not working
-;; Disable eletric-pair-mode on list mode
+;; Adjust electric-pair-pairs on lisp modes
 (add-hook 'lisp-mode-hook
-          (lambda () (set (make-local-variable 'eletric-pair-mode) f)))
-(add-hook 'emacs-list-hook
-          (lambda () (set (make-local-variable 'eletric-pair-mode) f)))
+          (lambda ()
+            (setq electric-pair-pairs '(
+                                        (?\" . ?\")
+                                        (?\{ . ?\})
+                                        (?\[ . ?\])
+                                        ))))
+(add-hook 'emacs-lisp-mode-hook
+          (lambda ()
+            (setq electric-pair-pairs '(
+                                        (?\" . ?\")
+                                        (?\{ . ?\})
+                                        (?\[ . ?\])
+                                        ))))
 
 ;; set default bookmark location
 (setq bookmark-default-file ( concat user-emacs-directory "personal/bookmarks"))
@@ -251,3 +260,8 @@
 (setq simplenote-email "famoreira@gmail.com")
 ;; (setq simplenote-password "yourpassword")
 (simplenote-setup)
+
+;; eldoc mode
+(add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
