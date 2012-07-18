@@ -1,3 +1,9 @@
+;; Using marmalade to install old slime version
+;; (add-to-list 'package-archives
+;;              '("marmalade" .
+;;                "http://marmalade-repo.org/packages/"))
+;; (package-initialize)
+
 ;; Default packages
 (defvar guto-default-packages
   '(switch-window ace-jump-mode auto-complete autopair clojure-mode coffee-mode

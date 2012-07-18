@@ -9,6 +9,33 @@
                  (not (equal f ".")))
         (add-to-list 'load-path name)))))
 
+;; js2-mode fork from https://github.com/mooz/js2-mode
+(add-to-list 'load-path "~/.emacs.d/personal/js2-mode/")
+(autoload 'js2-mode "js2-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
+(add-to-list 'load-path "~/scm/git/js2-refactor.el/")
+
+
+(add-to-list 'load-path "~/.emacs.d/personal/vendor/mark-multiple/")
+
+(require 'inline-string-rectangle)
+(global-set-key (kbd "C-x r t") 'inline-string-rectangle)
+
+(require 'mark-more-like-this)
+(global-set-key (kbd "C-<") 'mark-previous-like-this)
+(global-set-key (kbd "C->") 'mark-next-like-this)
+(global-set-key (kbd "C-M-m") 'mark-more-like-this) ; like the other two, but takes an argument (negative is previous)
+(global-set-key (kbd "C-*") 'mark-all-like-this)
+
+;; (require 'rename-sgml-tag)
+;; (define-key sgml-mode-map (kbd "C-c C-r") 'rename-sgml-tag)
+
+;; (require 'js2-rename-var)
+(require 'js2-refactor)
+(define-key js2-mode-map (kbd "C-c C-r") 'js2-refactor)
+
+
 ;; Disabling auto-fill-mode
 (auto-fill-mode -1)
 
@@ -265,3 +292,28 @@
 (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
+
+;; (add-hook 'after-init-hook
+;;           #'(lambda ()
+;;               (when (locate-library "slime-js")
+;;                 (require 'setup-slime-js))))
+
+
+(require 'js2-refactor)
+
+;; js2-mode fork from https://github.com/mooz/js2-mode
+(autoload 'js2-mode "js2-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
+(require 'guto-slime-js)
+(require 'guto-bindings)
+
+;; File registers
+;; C-x r j [register letter] - jump-to-register
+;; Client projects
+(set-register ?m '(file . "~/work/freelance/miningpulse/client_app/"))
+(set-register ?c '(file . "~/work/freelance/chimpchamp/system/"))
+(set-register ?u '(file . "~/work/freelance/k3/nad_user_manager/"))
+;; Regular files
+(set-register ?e '(file . "~/.emacs.d/personal/guto.el"))
+(set-register ?w '(file . "~/org/work.org"))

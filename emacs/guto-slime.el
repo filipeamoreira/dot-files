@@ -1,7 +1,8 @@
+;; (add-to-list 'load-path "~/scm/git/slime/")  ; your SLIME directory
 ;; (load (expand-file-name "~/quicklisp/slime-helper.el"))
-;; (setq inferior-lisp-program "/usr/local/bin/sbcl")
-;; (require 'slime)
-;; (slime-setup)
+(setq inferior-lisp-program "/usr/local/bin/sbcl") ; your Lisp system
+(require 'slime)
+(slime-setup)
 
 ;; syntax highlighting on slime repl
 (add-hook 'slime-repl-mode-hook
