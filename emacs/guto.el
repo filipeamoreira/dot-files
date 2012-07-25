@@ -317,3 +317,5 @@
 ;; Regular files
 (set-register ?e '(file . "~/.emacs.d/personal/guto.el"))
 (set-register ?w '(file . "~/org/work.org"))
+
+(setq auto-mode-alist (cons '("\\.hbs$" . html-mode) auto-mode-alist))
