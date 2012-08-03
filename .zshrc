@@ -29,7 +29,7 @@ source $ZSH/oh-my-zsh.sh
 # GIT_EDITOR="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"; export GIT_EDITOR
 GIT_EDITOR="/Applications/Emacs.app/Contents/MacOS/Emacs -Q -t $(tty)"; export GIT_EDITOR
 
-export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/bin:/usr/X11/bin:/usr/local/bin:/usr/local/sbin/:/Applications/Racket\ v5.2/bin:$PATH
+export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/bin:/usr/X11/bin:/usr/local/bin:/usr/local/sbin:/Applications/Racket\ v5.2/bin:$PATH
 
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
