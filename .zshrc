@@ -37,3 +37,4 @@ bindkey "^S" history-incremental-pattern-search-forward
 . ~/.nvm/nvm.sh
 source "`brew --prefix grc`/etc/grc.bashrc"
 eval "$(hub alias -s)"
+eval "$(rbenv init -)"
