@@ -5,7 +5,7 @@
 (setq slime-js-target-url "http://localhost:5000")
 (setq slime-js-connect-url "http://localhost:8009")
 (setq slime-js-starting-url "/swank-js/test.html")
-(setq slime-js-swank-command "~/.nvm/v0.8.0/bin/swank-js")
+(setq slime-js-swank-command "/usr/local/bin/swank-js")
 (setq slime-js-swank-args '())
 (setq slime-js-browser-command "~/bin/webkit&")
 (setq slime-js-browser-jacked-in nil)
