@@ -319,3 +319,19 @@
 (set-register ?w '(file . "~/org/work.org"))
 
 (setq auto-mode-alist (cons '("\\.hbs$" . html-mode) auto-mode-alist))
+
+;; Rspec mode
+;; (defadvice rspec-compile (around rspec-compile-around)
+;;   "Use BASH shell for running the specs because of ZSH issues."
+;;   (let ((shell-file-name "/bin/bash"))
+;;     ad-do-it))
+;; (ad-activate 'rspec-compile)
+
+(setq rspec-use-rake-flag nil)
+
+(let ((path (shell-command-to-string ". ~/.zshrc; echo -n $PATH")))
+  (setenv "PATH" path)
+  (setq exec-path
+        (append
+         (split-string-and-unquote path ":")
+         exec-path)))
