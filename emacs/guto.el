@@ -320,13 +320,6 @@
 
 (setq auto-mode-alist (cons '("\\.hbs$" . html-mode) auto-mode-alist))
 
-;; Rspec mode
-;; (defadvice rspec-compile (around rspec-compile-around)
-;;   "Use BASH shell for running the specs because of ZSH issues."
-;;   (let ((shell-file-name "/bin/bash"))
-;;     ad-do-it))
-;; (ad-activate 'rspec-compile)
-
 (setq rspec-use-rake-flag nil)
 
 (let ((path (shell-command-to-string ". ~/.zshrc; echo -n $PATH")))
@@ -335,3 +328,9 @@
         (append
          (split-string-and-unquote path ":")
          exec-path)))
+;; colored repl
+(add-hook 'slime-repl-mode-hook 'clojure-mode-font-lock-setup)
+
+(setq dired-use-ls-dired nil)
+
+(require 'rspec-mode)
