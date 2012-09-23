@@ -36,7 +36,6 @@
 (setq org-mobile-inbox-for-pull "~/org/flagged.org")
 ;; Set to <your Dropbox root directory>/MobileOrg.
 (setq org-mobile-directory "~/Dropbox/MobileOrg")
-
 ;; org-mode variables
 ;; Hide the (nth - 1) star
 (setq org-hide-leading-stars t)
@@ -62,3 +61,6 @@
 
 ;; Pomodoro/countdown timer
 ;; C-c C-x ; (org-timer-set-timer)
+;; C-x n s org-narrow-to-subtree
+;; C-x n b org-narrow-to-block
+;; C-x n w widen
