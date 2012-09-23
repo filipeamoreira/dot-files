@@ -427,8 +427,8 @@ are loaded on startup.  If nil, don't load snippets.")
                        feature-default-directory)))
     (ansi-color-for-comint-mode-on)
     (let ((default-directory (feature-project-root)))
-      (compile (concat (replace-regexp-in-string "\{options\}" opts-str
-                        (replace-regexp-in-string "\{feature\}" feature-arg feature-cucumber-command))) t)))
+      (compile (concat (feature-environment-variables) (replace-regexp-in-string "\{options\}" opts-str
+                           (replace-regexp-in-string "\{feature\}" feature-arg feature-cucumber-command))) t)))
   (end-of-buffer-other-window 0))
 
 (defun feature-escape-scenario-name (scenario-name)
@@ -468,6 +468,13 @@ are loaded on startup.  If nil, don't load snippets.")
       (if (equal "" result)
           (message "No matching steps found for:\n%s" input)
         (message "An error occurred:\n%s" result)))))
+
+(defun feature-environment-variables ()
+  "Injects environment variables before the command"
+  (concat
+   "export NADE_AUTH_SERVER=http://nad-dashboard.dev/;"
+   "export nad_data_rollup_url=http://nad-data-rollup.dev/;"
+   "export nad_student_ids_url=http://nad-student-ids.dev/;"))
 
 (provide 'cucumber-mode)
 (provide 'feature-mode)

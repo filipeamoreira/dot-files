@@ -14,9 +14,11 @@ end
 
 if defined?(Rails) && Rails.env
   begin
-    extend Rails::ConsoleMethods if Rails::ConsoleMethods
-    require "rails/console/app"
-    require "rails/console/helpers"
+    if defined? Rails::ConsoleMethods
+      TOPLEVEL_BINDING.eval('self').extend Rails::ConsoleMethods
+      require "rails/console/app"
+      require "rails/console/helpers"
+    end
   rescue LoadError => e
     require "console_app"
     require "console_with_helpers"
@@ -29,6 +31,10 @@ begin
 rescue LoadError => err
    warn "=> Unable to load awesome_print"
 end
+
+# Pry.config.hooks.add_hook(:before_session, :add_rails_console_methods) do
+#   self.extend Rails::ConsoleMethods if defined?(Rails::ConsoleMethods)
+# end
 
 Pry.commands.alias_command "c", "continue"
 Pry.commands.alias_command "s", "step"

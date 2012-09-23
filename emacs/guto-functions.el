@@ -73,3 +73,8 @@
 ;; If you want to create a file, visit that file with C-x C-f,
 ;; then enter the text in that file's own buffer.\n\n")
     (emacs-lisp-mode)))
+
+(defun org-find-dangling-clock ()
+  "Find a dangling clock entry in an org-mode buffer"
+  (interactive)
+  (re-search-forward "CLOCK: \\[[^]]*\\] *$"))

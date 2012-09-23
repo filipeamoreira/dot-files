@@ -57,8 +57,8 @@
 (global-set-key (kbd "M-RET") 'ns-toggle-fullscreen)
 
 ;; Resize window
-(global-set-key (kbd "<M-S-left>") 'shrink-window-horizontally)
-(global-set-key (kbd "<M-S-right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "<M-S-right>") 'shrink-window-horizontally)
+(global-set-key (kbd "<M-S-left>") 'enlarge-window-horizontally)
 (global-set-key (kbd "<M-S-down>") 'shrink-window)
 (global-set-key (kbd "<M-S-up>") 'enlarge-window)
 
@@ -124,5 +124,6 @@
                   (cond ((region-active-p) (kill-region (region-beginning) (region-end)))
                         (t (backward-kill-word arg)))))
 
-
+;;(global-set-key (kbd "#" (lambda () (self-insert-command "#"))))
+;; (global-set-key (kbd "#") (self-insert-command "#"))
 (provide 'guto-bindings)

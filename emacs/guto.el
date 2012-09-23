@@ -314,6 +314,7 @@
 (set-register ?m '(file . "~/work/freelance/miningpulse/client_app/"))
 (set-register ?c '(file . "~/work/freelance/chimpchamp/system/"))
 (set-register ?u '(file . "~/work/freelance/k3/nad_user_manager/"))
+(set-register ?f '(file . "~/work/freelance/"))
 ;; Regular files
 (set-register ?e '(file . "~/.emacs.d/personal/guto.el"))
 (set-register ?w '(file . "~/org/work.org"))
@@ -334,3 +335,15 @@
 (setq dired-use-ls-dired nil)
 
 (require 'rspec-mode)
+
+;; Only if using leiningen for all projects
+(add-hook 'clojure-mode-hook
+          (lambda ()
+            (setq inferior-lisp-program "lein repl")))
+
+(setq source-directory "~/scm/git/emacs")
+
+(scroll-bar-mode -1)
+
+;; Right to left input support
+(setq-default bidi-display-reordering t)

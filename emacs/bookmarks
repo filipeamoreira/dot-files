@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("practicing-ruby-manuscripts"
+(("org-capture-last-stored"
+ (filename . "~/org/notes.org")
+ (front-context-string . "** TODO Call Win")
+ (rear-context-string . "16:57] =>  0:01\n")
+ (position . 216))
+("practicing-ruby-manuscripts"
  (filename . "~/scm/git/practicing-ruby-manuscripts/")
  (front-context-string)
  (rear-context-string . "36 Jul 16 14:41 ")

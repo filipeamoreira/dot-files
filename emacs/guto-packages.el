@@ -4,7 +4,7 @@
        "elpa"))
 (setq package-archives
       '(("gnu" . "http://elpa.gnu.org/packages/")
-        ("marmalade" . "http://marmalade-repo.org/packages/")
+        ;; ("marmalade" . "http://marmalade-repo.org/packages/")
         ("melpa" . "http://melpa.milkbox.net/packages/")))
 (package-initialize)
 
@@ -18,10 +18,9 @@
 ;; Default packages
 (defvar guto-default-packages
   '(switch-window ace-jump-mode auto-complete autopair paredit clojure-mode coffee-mode
-                  full-ack go-mode haml-mode org prelude-c prelude-clojure
-                  prelude-coffee prelude-css prelude-js prelude-ruby prelude-python
-                  prelude-scheme prelude-scss rinari ruby-end ruby-interpolation
-                  sass-mode smart-tab undo-tree))
+                  full-ack go-mode haml-mode org rinari sass-mode smart-tab undo-tree
+                  nrepl ruby-tools prelude-coffee prelude-css prelude-js prelude-ruby
+                  prelude-python prelude-c prelude-clojure prelude-scheme prelude-scss))
 
 (defun guto-install-packages ()
   (message "%s" "Installing default packages")
