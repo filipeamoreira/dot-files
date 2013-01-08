@@ -49,7 +49,7 @@
 
 ;; Adding cucumber/feature mode
 ;; (add-to-list 'load-path "~/.emacs.d/personal/vendor/cucumber")
-(require 'feature-mode)
+;;(require 'feature-mode)
 
 ;; Disabling annoying auto compile for scss mode
 (setq scss-compile-at-save nil)
@@ -161,7 +161,7 @@
 (setq visible-bell 1)
 
 ;; Full screen mode
-(ns-toggle-fullscreen)
+;;(toggle-frame-fullscreen)
 
 ;; Visual window switching
 (require 'switch-window)
@@ -305,7 +305,7 @@
 (autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
-(require 'guto-slime-js)
+;;(require 'guto-slime-js)
 (require 'guto-bindings)
 
 ;; File registers
@@ -347,3 +347,52 @@
 
 ;; Right to left input support
 (setq-default bidi-display-reordering t)
+
+(add-to-list 'auto-mode-alist '("\\.[Cc][Ss][Vv]\\'" . csv-mode))
+(autoload 'csv-mode "csv-mode"
+  "Major mode for editing comma-separated value files." t)
+
+;; (require 'php+-mode)
+;; (php+-mode)
+
+
+(add-hook 'php-mode-hook
+          (function (lambda ()
+                      ;; GNU style
+                      (setq php-indent-level 4
+                            php-continued-statement-offset 4
+                            php-continued-brace-offset 0
+                            php-brace-offset 0
+                            php-brace-imaginary-offset 0
+                            php-label-offset -4
+                            c-default-style "bsd"
+                            c-basic-offset 4))))
+
+(setq c-default-style "linux" c-basic-offset 4)
+
+
+;; Keybonds
+(global-set-key [(hyper a)] 'mark-whole-buffer)
+(global-set-key [(hyper v)] 'yank)
+(global-set-key [(hyper c)] 'kill-ring-save)
+(global-set-key [(hyper s)] 'save-buffer)
+(global-set-key [(hyper l)] 'goto-line)
+(global-set-key [(hyper w)]
+                (lambda () (interactive) (delete-window)))
+(global-set-key [(hyper z)] 'undo)
+
+;; mac switch meta key
+(defun mac-switch-meta nil
+  "switch meta between Option and Command"
+  (interactive)
+  (if (eq mac-option-modifier nil)
+      (progn
+        (setq mac-option-modifier 'meta)
+        (setq mac-command-modifier 'hyper)
+        )
+    (progn
+      (setq mac-option-modifier nil)
+      (setq mac-command-modifier 'meta)
+      )
+    )
+  )

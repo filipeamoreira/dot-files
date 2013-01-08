@@ -111,6 +111,7 @@
 (global-set-key (kbd "C-x p")  'previous-multiframe-window)
 
 (global-set-key (kbd "RET") 'newline-and-indent)
+(global-set-key (kbd "M-RET") 'ns-toggle-fullscreen)
 
 (setq mac-option-modifier 'meta)
 
