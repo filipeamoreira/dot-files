@@ -4,9 +4,9 @@
 # brainstormr=/Users/robbyrussell/Projects/development/planetargon/brainstormr
 #
 
-alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
+# alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 # alias ec="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -t"
-alias emacsd="/Applications/Emacs.app/Contents/MacOS/Emacs --daemon"
+# alias emacsd="/Applications/Emacs.app/Contents/MacOS/Emacs --daemon"
 # alias e="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c"
 
 # a few git aliases
