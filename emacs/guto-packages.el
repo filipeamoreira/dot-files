@@ -19,7 +19,7 @@
 (defvar guto-default-packages
   '(switch-window ace-jump-mode auto-complete autopair paredit clojure-mode coffee-mode
                   full-ack go-mode haml-mode org rinari sass-mode smart-tab undo-tree
-                  nrepl ruby-tools prelude-coffee prelude-css prelude-js prelude-ruby
+                  nrepl prelude-coffee prelude-css prelude-js prelude-ruby
                   prelude-python prelude-c prelude-clojure prelude-scheme prelude-scss))
 
 (defun guto-install-packages ()

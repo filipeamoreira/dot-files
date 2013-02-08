@@ -38,4 +38,4 @@ bindkey "^S" history-incremental-pattern-search-forward
 source "$HOME/bin/rb.sh"
 source "`brew --prefix grc`/etc/grc.bashrc"
 eval "$(hub alias -s)"
-eval "$(rbenv init -)"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
