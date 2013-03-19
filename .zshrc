@@ -34,7 +34,7 @@ export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/bin:/usr/X11/bin:/usr/loca
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
 
-. ~/.nvm/nvm.sh
+#. ~/.nvm/nvm.sh
 source "$HOME/bin/rb.sh"
 source "`brew --prefix grc`/etc/grc.bashrc"
 eval "$(hub alias -s)"
