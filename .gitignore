@@ -1,3 +1,5 @@
 emacs-starter-kit
 .DS_Store
 .zeus.sock
+.bundle
+bin/
