@@ -22,4 +22,7 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 export RUBYLIB="/usr/local/lib:$RUBYLIB"
+. ~/.nvm/nvm.sh
+
+export PATH=/Applications/B1FreeArchiver.app/Contents/MacOS:$PATH
 

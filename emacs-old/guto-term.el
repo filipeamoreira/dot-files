@@ -45,4 +45,4 @@
                                  ,magenta ,cyan ,base2)))))
 
 
-(add-hook 'term-mode-hook 'my-term-hook)
+;;(add-hook 'term-mode-hook 'my-term-hook)
