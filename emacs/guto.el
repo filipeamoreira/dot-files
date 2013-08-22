@@ -1,4 +1,10 @@
+;; (load-theme 'soothe nil)
+
 (set-face-attribute 'default nil :font "Source Code Pro-14")
+
+(toggle-fullscreen)
+
+(server-mode)
 
 ;; Confirm emacs closing
 (setq confirm-kill-emacs 'y-or-n-p)
@@ -95,17 +101,17 @@
 
 
 ;; (global-set-key (kbd "C-x r C-SPC") 'rm-set-mark)
-;; (global-set-key (kbd "C-w")  
-;;                 '(lambda(b e) (interactive "r") 
-;;                    (if rm-mark-active 
+;; (global-set-key (kbd "C-w")
+;;                 '(lambda(b e) (interactive "r")
+;;                    (if rm-mark-active
 ;;                        (rm-kill-region b e) (kill-region b e))))
-;; (global-set-key (kbd "M-w")  
-;;                 '(lambda(b e) (interactive "r") 
-;;                    (if rm-mark-active 
+;; (global-set-key (kbd "M-w")
+;;                 '(lambda(b e) (interactive "r")
+;;                    (if rm-mark-active
 ;;                        (rm-kill-ring-save b e) (kill-ring-save b e))))
-;; (global-set-key (kbd "C-x C-x")  
-;;                 '(lambda(&optional p) (interactive "p") 
-;;                    (if rm-mark-active 
+;; (global-set-key (kbd "C-x C-x")
+;;                 '(lambda(&optional p) (interactive "p")
+;;                    (if rm-mark-active
 ;;                        (rm-exchange-point-and-mark p) (exchange-point-and-mark p))))
 
 
@@ -139,5 +145,7 @@
 ;;       display-time-24hr-format t)
 ;; (display-time)
 
-(server-mode)
+;; nuke whitespaces when writing to a file
+(add-hook 'before-save-hook 'whitespace-cleanup)
 
+(global-rbenv-mode)

@@ -128,4 +128,7 @@
 
 ;;(global-set-key (kbd "#" (lambda () (self-insert-command "#"))))
 ;; (global-set-key (kbd "#") (self-insert-command "#"))
+
+(global-set-key (kbd "C-x F") 'guto-find-file-as-root)
+
 (provide 'guto-bindings)

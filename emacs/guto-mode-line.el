@@ -40,7 +40,11 @@
                 face mode-line-process-face)
    (global-mode-string global-mode-string)
    "    "
-   "  "
+   ;; add the time, with the date and the emacs uptime in the tooltip
+   (:eval (propertize (format-time-string "%H:%M")
+                       'help-echo
+                       (concat (format-time-string "%c; ")
+                               (emacs-uptime "Uptime:%hh"))))
    ; nyan-mode uses nyan cat as an alternative to %p
    (:eval (when nyan-mode (list (nyan-create))))
    ))
