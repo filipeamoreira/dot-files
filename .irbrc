@@ -1,5 +1,5 @@
 begin
-  require 'pry'
+  require "pry"
   Pry.start
   exit
 rescue LoadError => e

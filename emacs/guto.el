@@ -15,9 +15,6 @@
 ;; Disable system bell
 (setq visible-bell 1)
 
-;; Visual window switching
-(require 'switch-window)
-
 ;; Replace region with yank
 (delete-selection-mode 1)
 
@@ -148,4 +145,8 @@
 ;; nuke whitespaces when writing to a file
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
-(global-rbenv-mode)
+;;(global-rbenv-mode)
+
+;; Visual window switching
+(global-set-key (kbd "C-x o") 'switch-window)
+(require 'switch-window)
