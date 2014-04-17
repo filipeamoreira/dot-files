@@ -40,8 +40,8 @@ export RUBY_FREE_MIN=200000
 #. ~/.nvm/nvm.sh
 
 export RBENV_ROOT=/usr/local/var/rbenv
-source "$HOME/bin/rb.sh"
-source "`brew --prefix grc`/etc/grc.bashrc"
+#source "$HOME/bin/rb.sh"
+#source "`brew --prefix grc`/etc/grc.bashrc"
 eval "$(hub alias -s)"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 . ~/.profile
