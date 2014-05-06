@@ -1,6 +1,6 @@
 ;; (load-theme 'soothe nil)
 
-(set-face-attribute 'default nil :font "Source Code Pro-16")
+(set-face-attribute 'default nil :font "Source Code Pro-15")
 
 (toggle-fullscreen)
 
@@ -114,7 +114,6 @@
 
 (setq dired-use-ls-dired nil)
 
-(require 'ruby-end)
 (require 'enclose)
 (enclose-mode t)
 
@@ -150,3 +149,10 @@
 ;; Visual window switching
 (global-set-key (kbd "C-x o") 'switch-window)
 (require 'switch-window)
+
+(add-hook 'after-init-hook
+          (lambda () (setq debug-on-error t)))
+
+(yas-global-mode 1)
+
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
