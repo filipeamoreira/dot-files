@@ -1,3 +1,6 @@
 [submodule "emacs/vendor/mark-multiple"]
 	path = emacs/vendor/mark-multiple
 	url = https://github.com/magnars/mark-multiple.el.git
+[submodule "emacs/vendor/emacs-pry"]
+	path = emacs/vendor/emacs-pry
+	url = git@github.com:jacott/emacs-pry

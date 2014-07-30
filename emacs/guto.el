@@ -118,13 +118,6 @@
 (enclose-mode t)
 
 
-(defun coffee-custom ()
-  "coffee-mode-hook"
-  (set (make-local-variable 'tab-width) 2))
-
-(add-hook 'coffee-mode-hook
-          '(lambda() (coffee-custom)))
-
 ;; Adds vendor to loadpath
 (add-to-list 'load-path "~/.emacs.d/personal/vendor/")
 (require 'rcodetools)
@@ -155,4 +148,10 @@
 
 (yas-global-mode 1)
 
-(add-hook 'text-mode-hook 'turn-on-auto-fill)
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
+
+;; FIXME Should move this out of source control
+(setq paradox-github-token "b8d4d69f51510df60a13635b9f4161ac13c7394c")
+
+;; Sidebar list of frames
+(global-set-key (kbd "s-s") 'sr-speedbar-toggle)

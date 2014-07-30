@@ -75,3 +75,6 @@
         ("MAYBE"  . (:foreground "dimgrey" :weight bold))
         ("CANCELED"  . shadow)
         ))
+
+;; FIXME Only load on org-mode
+;;(setq ispell-dictionary "es")

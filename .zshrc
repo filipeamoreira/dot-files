@@ -35,7 +35,7 @@ bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
 
 export RUBY_GC_MALLOC_LIMIT=60000000
-export RUBY_FREE_MIN=200000
+export RUBY_GC_HEAP_FREE_SLOTS=200000
 
 #. ~/.nvm/nvm.sh
 
