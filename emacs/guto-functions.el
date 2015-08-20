@@ -129,3 +129,36 @@ BEG and END (region to sort)."
   (let ((face (or (get-char-property (point) 'read-face-name)
                   (get-char-property (point) 'face))))
     (if face (message "Face: %s" face) (message "No face at %d" pos))))
+
+(defun remove-dos-eol ()
+  "Do not show ^M in files containing mixed UNIX and DOS line endings."
+  (interactive)
+  (setq buffer-display-table (make-display-table))
+  (aset buffer-display-table ?\^M []))
+
+(defun markdown-preview-file ()
+  "use Marked 2 to preview the current file"
+  (interactive)
+  (shell-command
+   (format "open -a 'Marked 2.app' %s"
+           (shell-quote-argument (buffer-file-name))))
+  )
+(global-set-key "\C-cm" 'markdown-preview-file)
+
+(defun describe-eol ()
+  (interactive)
+  (let ((eol-type (coding-system-eol-type buffer-file-coding-system)))
+    (when (vectorp eol-type)
+      (setq eol-type (coding-system-eol-type (aref eol-type 0))))
+    (message "Line endings are of type: %s"
+             (case eol-type
+               (0 "Unix") (1 "DOS") (2 "Mac") (t "Unknown")))))
+
+;; Fix line endings
+(defun dos2unix (buffer)
+  "Automate M-% C-q C-m RET C-q C-j RET"
+  (interactive "*b")
+  (save-excursion
+    (goto-char (point-min))
+    (while (search-forward (string ?\C-m) nil t)
+      (replace-match (string ?\C-j) nil t))))

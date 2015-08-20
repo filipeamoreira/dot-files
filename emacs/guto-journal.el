@@ -1,7 +1,11 @@
-(defvar org-journal-file "~/data/org/journal.org"
+(defvar org-journal-dir "~/Dropbox/sync/org")
+(defvar org-journal-file "~/Dropbox/sync/org/journal.org"
   "Path to OrgMode journal file.")
 
-(defvar org-journal-date-format "%d/%m/%Y"
+(defvar org-journal-date-format "%Y%m%d - %A"
+  "Date format string for journal headings.")
+
+(defvar org-journal-time-format "%H:%M"
   "Date format string for journal headings.")
 
 (defun journal ()
@@ -10,18 +14,21 @@
   (switch-to-buffer (find-file org-journal-file))
   (widen)
   ;;(let ((today (format-time-string org-journal-date-format)))
-  (let ((isearch-forward t) (today (format-time-string org-journal-date-format)))
+  (let ((isearch-forward t) (today (format-time-string org-journal-date-format))
+        (now (format-time-string org-journal-time-format)))
+
     (beginning-of-buffer)
     (unless (org-goto-local-search-headings today nil t)
       ((lambda ()
          (insert "\n")
          (org-insert-heading)
          (insert today)
-         (insert "\n\n"))))
+         (insert "\n"))))
     (org-show-entry)
     (org-narrow-to-subtree)
     (end-of-buffer)
-    (insert "\n  ")
+    (org-insert-subheading t)
+    ;; (insert "\n  - " )
     (auto-fill-mode 1)
     (set-fill-column 100)))
 

@@ -29,9 +29,8 @@
 ;; (define-key org-mode-map (kbd "C-c C-r") 'org-refile)
 ;; (define-key org-mode-map (kbd "C-c R") 'org-reveal)
 
-(setq org-directory "~/org")
+(setq org-directory "~/Dropbox/sync/org")
 (setq org-default-notes-file (concat org-directory "/notes.org"))
-(setq org-default-notes-file "~/org/notes.org")
 ;; Set to the name of the file where new notes will be stored
 (setq org-mobile-inbox-for-pull "~/org/flagged.org")
 ;; Set to <your Dropbox root directory>/MobileOrg.
@@ -78,3 +77,9 @@
 
 ;; FIXME Only load on org-mode
 ;;(setq ispell-dictionary "es")
+
+;; fontify code in code blocks
+(setq org-src-fontify-natively t)
+
+;; Shows everything pretty on-screen
+(setq org-startup-indented t)

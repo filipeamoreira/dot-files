@@ -4,8 +4,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(Linum-format "%7i ")
+ '(bmkp-last-as-first-bookmark-file "~/.emacs.d/savefile/bookmarks")
  '(coffee-tab-width 2)
- '(custom-safe-themes (quote ("f89e21c3aef10d2825f2f079962c2237cd9a45f4dc1958091be8a6f5b69bb70c" default)))
+ '(custom-safe-themes
+   (quote
+    ("f89e21c3aef10d2825f2f079962c2237cd9a45f4dc1958091be8a6f5b69bb70c" default)))
  '(fci-rule-character-color "#202020")
  '(main-line-color1 "#1E1E1E")
  '(main-line-color2 "#111111")

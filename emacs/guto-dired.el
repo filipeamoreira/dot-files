@@ -19,3 +19,11 @@
 ;;     (my-dired-init)
 ;;   ;; it's not loaded yet, so add our bindings to the load-hook
 ;;   (add-hook 'dired-load-hook 'my-dired-init))
+
+;; Open files in dired mode using 'open'
+(eval-after-load "dired"
+  '(progn
+     (define-key dired-mode-map (kbd "z")
+       (lambda () (interactive)
+         (let ((fn (dired-get-file-for-visit)))
+           (start-process "default-app" nil "open" fn))))))

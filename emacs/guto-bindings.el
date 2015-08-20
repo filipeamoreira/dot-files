@@ -72,13 +72,14 @@
 ;; (global-set-key "\C-c\C-m" 'execute-extended-command)
 
 ;; Map Mac cmd as meta
+(setq mac-option-modifier 'super)
 (setq mac-command-modifier 'meta)
-(setq mac-option-modifier nil)
-;;(setq mac-option-key-is-meta t)
-;;(setq mac-command-key-is-meta t)
-;;(setq mac-option-modifier 'meta)
-;; (setq mac-command-modifier 'super)
+;; (setq mac-option-key-is-meta nil)
+;; (setq mac-command-key-is-meta t)
 ;; (setq mac-option-modifier 'meta)
+;; (setq mac-command-modifier 'none)
+;; (setq mac-option-modifier 'meta)
+(set-keyboard-coding-system nil)
 
 
 ;; org-mode bindings

@@ -1,6 +1,17 @@
 ;; (load-theme 'soothe nil)
 
-(set-face-attribute 'default nil :font "Source Code Pro-15")
+;; Fonts
+
+(set-face-attribute 'default nil :font "Source Code Pro-17")
+;;(set-face-attribute 'variable-pitch nil :font "Source Sans Pro-21")
+
+;; Set sans-serif font for these modes
+;; (dolist (hook '(erc-mode-hook
+;;                 LaTeX-mode-hook
+;;                 org-mode-hook
+;;                 edit-server-start-hook
+;;                 markdown-mode-hook))
+;;   (add-hook hook (lambda () (variable-pitch-mode t))))
 
 (toggle-fullscreen)
 
@@ -16,7 +27,7 @@
 (setq visible-bell 1)
 
 ;; Replace region with yank
-(delete-selection-mode 1)
+(delete-selection-mode t)
 
 ;; Disable transient mark mode
 ;; Use C-<SPC> C-<SPC> to temporally activate it.
@@ -155,3 +166,23 @@
 
 ;; Sidebar list of frames
 (global-set-key (kbd "s-s") 'sr-speedbar-toggle)
+
+;; Speeds up saves
+;; http://www.method-combination.net/blog/archives/2011/03/11/speeding-up-emacs-saves.html
+(setq vc-handled-backends nil)
+
+;; Error with emacs 24.4
+(fset 'package-desc-vers 'package--ac-desc-version)
+
+(setq buffer-file-coding-system 'utf-8-unix)
+(setq default-file-name-coding-system 'utf-8-unix)
+(setq default-keyboard-coding-system 'utf-8-unix)
+(setq default-process-coding-system '(utf-8-unix . utf-8-unix))
+(setq default-sendmail-coding-system 'utf-8-unix)
+(setq default-terminal-coding-system 'utf-8-unix)
+
+;; File bookmarks
+;; C-x r m – set a bookmark at the current location (e.g. in a file)
+;; C-x r b – jump to a bookmark
+;; C-x r l – list your bookmarks
+;; M-x bookmark-delete – delete a bookmark by name
