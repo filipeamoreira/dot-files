@@ -43,3 +43,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 alias sizes="du -sh * | sort -n"
+alias b='bundle exec'
+alias ls='ls -G'
+alias ll='ls -lh'

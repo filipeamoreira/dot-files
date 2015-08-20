@@ -10,8 +10,21 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
     source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
+# Nice themes: bira, cloud
+# Nice themes to study: smt
+export ZSH_THEME="kennethreitz"
 
+# Set to this to use case-sensitive completion
+# export CASE_SENSITIVE="true"
+
+DISABLE_AUTO_UPDATE="true"
+
+DISABLE_AUTO_TITLE="true"
+
+plugins=(git compleat rails ruby brew github node npm osx pip redis-cli rvm ssh-agent)
+
+source $ZSH/oh-my-zsh.sh
+ulimit -S -n 2048 # open file limit
 [ -n "$TMUX" ] && export TERM=screen-256color
 
 [[ $TERM == eterm-color ]] && export TERM=xterm
@@ -32,6 +45,10 @@ source $(brew --prefix nvm)/nvm.sh
 
 export RBENV_ROOT=/usr/local/var/rbenv
 export PYENV_ROOT=/usr/local/opt/pyenv
+#source "$HOME/bin/rb.sh"
+#source "`brew --prefix grc`/etc/grc.bashrc"
+#eval "$(hub alias -s)"
+
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi

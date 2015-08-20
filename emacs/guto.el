@@ -12,7 +12,6 @@
 ;;                 edit-server-start-hook
 ;;                 markdown-mode-hook))
 ;;   (add-hook hook (lambda () (variable-pitch-mode t))))
-
 (toggle-fullscreen)
 
 (server-mode)

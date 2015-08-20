@@ -22,3 +22,6 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 export RUBYLIB="/usr/local/lib:$RUBYLIB"
+export PATH=/Applications/B1FreeArchiver.app/Contents/MacOS:/Applications/context/tex/texmf-osx-64/bin:$PATH
+export HOMEBREW_GITHUB_API_TOKEN="b5874ca9fdb2f1c1ecc03f2de7488999c7a22da0"
+source ~/.bash_aliases
