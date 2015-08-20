@@ -95,7 +95,7 @@ export TERM=xterm-256color
 export PROMPT_COMMAND=set_prompt
 
 export PATH=$HOME/.local/bin:/usr/local/bin:/$HOME/.cabal/bin:$PATH
-export PYTHONPATH=$HOME/.local/:$PYTHONPATH
+#export PYTHONPATH=$HOME/.local/:$PYTHONPATH
 
 #Autocomplete
 

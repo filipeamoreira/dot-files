@@ -76,15 +76,21 @@
        dump = cat-file -p
        lol = log --graph --decorate --oneline
        lola = log --graph --decorate --oneline --all
+
+
 [push]
 	default = upstream
 [merge]
 	stat = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [help]
 	autocorrect = 1
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
