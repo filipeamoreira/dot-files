@@ -1,24 +1,16 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
 
-# Nice themes: bira, cloud
-# Nice themes to study: smt
-export ZSH_THEME="kennethreitz"
-
-# Set to this to use case-sensitive completion
-# export CASE_SENSITIVE="true"
-
-DISABLE_AUTO_UPDATE="true"
-
-DISABLE_AUTO_TITLE="true"
-
-plugins=(git compleat rails ruby brew github node npm osx pip redis-cli rvm ssh-agent)
-
-source $ZSH/oh-my-zsh.sh
+# Customize to your needs...
 
 [ -n "$TMUX" ] && export TERM=screen-256color
 
@@ -27,9 +19,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Cannot use the current Emacs server because the buffer is loaded as read only
 # GIT_EDITOR="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"; export GIT_EDITOR
-GIT_EDITOR="/Applications/Emacs.app/Contents/MacOS/Emacs -Q -t $(tty)"; export GIT_EDITOR
-
-export PATH="/Applications/B1FreeArchiver.app/Contents/MacOS:/Users/guto/.nvm/v0.10.5/bin:/Users/guto/bin:/usr/local/var/rbenv/shims:/Users/guto/bin:/usr/X11/bin:/usr/local/bin:/usr/local/sbin:/Applications/Racket v5.2/bin:/Users/guto/.rbenv/shims:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Applications/git-annex.app/Contents/MacOS"
+GIT_EDITOR="emacs -Q -t $(tty)"; export GIT_EDITOR
 
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
@@ -37,11 +27,29 @@ bindkey "^S" history-incremental-pattern-search-forward
 export RUBY_GC_MALLOC_LIMIT=60000000
 export RUBY_GC_HEAP_FREE_SLOTS=200000
 
-#. ~/.nvm/nvm.sh
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 export RBENV_ROOT=/usr/local/var/rbenv
-#source "$HOME/bin/rb.sh"
-#source "`brew --prefix grc`/etc/grc.bashrc"
-eval "$(hub alias -s)"
+export PYENV_ROOT=/usr/local/opt/pyenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+source /usr/local/opt/pyenv/completions/pyenv.zsh
 . ~/.profile
+eval "$(hub alias -s)"
+
+export PATH="/Applications/calibre.app/Contents/console.app/Contents/MacOS:$PATH"
+
+# Aliases
+# Git
+alias g='git'
+alias gs='git status'
+alias gd='git diff'
+alias gdh='git diff HEAD'
+alias gl='git pull'
+alias gp='git push'
+alias gb='git branch -a -v'
+# Rails
+alias b='bundle exec'
+alias bi='bundle install'
