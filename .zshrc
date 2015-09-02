@@ -42,7 +42,7 @@ export RUBY_GC_HEAP_FREE_SLOTS=200000
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
-export RBENV_ROOT=/usr/local/var/rbenv
+# export RBENV_ROOT=/usr/local/var/rbenv
 export PYENV_ROOT=/usr/local/opt/pyenv
 #source "$HOME/bin/rb.sh"
 #source "`brew --prefix grc`/etc/grc.bashrc"

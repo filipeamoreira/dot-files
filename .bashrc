@@ -100,5 +100,3 @@ export PATH=$HOME/.local/bin:/usr/local/bin:/$HOME/.cabal/bin:$PATH
 #Autocomplete
 
 complete -o default -o nospace -F _git g
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
