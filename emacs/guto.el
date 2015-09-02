@@ -2,7 +2,7 @@
 
 ;; Fonts
 
-(set-face-attribute 'default nil :font "Source Code Pro-17")
+(set-face-attribute 'default nil :font "Source Code Pro-21")
 ;;(set-face-attribute 'variable-pitch nil :font "Source Sans Pro-21")
 
 ;; Set sans-serif font for these modes

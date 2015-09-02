@@ -23,7 +23,6 @@ DISABLE_AUTO_TITLE="true"
 
 plugins=(git compleat rails ruby brew github node npm osx pip redis-cli rvm ssh-agent)
 
-source $ZSH/oh-my-zsh.sh
 ulimit -S -n 2048 # open file limit
 [ -n "$TMUX" ] && export TERM=screen-256color
 
@@ -54,7 +53,6 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 source /usr/local/opt/pyenv/completions/pyenv.zsh
 . ~/.profile
-eval "$(hub alias -s)"
 
 export PATH="/Applications/calibre.app/Contents/console.app/Contents/MacOS:$PATH"
 

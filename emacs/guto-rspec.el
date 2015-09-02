@@ -4,7 +4,7 @@
 ;; Find root directory by searching for Gemfile
 (defun* get-closest-gemfile-root (&optional (file "Gemfile"))
   (let ((root (expand-file-name "/")))
-    (loop 
+    (loop
      for d = default-directory then (expand-file-name ".." d)
      if (file-exists-p (expand-file-name file d))
      return d
@@ -64,4 +64,6 @@
 ;;  * run the current spec and all after it (`\C-c ,c`)
 ;;
 ;;  * run spec for entire project (bound to `\C-c ,a`)
-;;
+
+(eval-after-load 'rspec-mode
+  '(rspec-install-snippets))
