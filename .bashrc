@@ -100,3 +100,9 @@ export PATH=$HOME/.local/bin:/usr/local/bin:/$HOME/.cabal/bin:$PATH
 #Autocomplete
 
 complete -o default -o nospace -F _git g
+
+###-tns-completion-start-###
+if [ -f /Users/guto/.tnsrc ]; then 
+    source /Users/guto/.tnsrc 
+fi
+###-tns-completion-end-###

@@ -68,3 +68,9 @@ alias gb='git branch -a -v'
 # Rails
 alias b='bundle exec'
 alias bi='bundle install'
+
+###-tns-completion-start-###
+if [ -f /Users/guto/.tnsrc ]; then 
+    source /Users/guto/.tnsrc 
+fi
+###-tns-completion-end-###
