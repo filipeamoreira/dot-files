@@ -1,8 +1,37 @@
-;; (load-theme 'soothe nil)
+;;(load-theme 'soothe nil)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/personal/themes/")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/personal/themes/emacs-color-theme-solarized")
+(load-theme 'solarized t)
 
 ;; Fonts
 
 (set-face-attribute 'default nil :font "Source Code Pro-21")
+
+;; Packages
+
+(require 'package)
+(add-to-list 'package-archives
+             '("org" . "http://orgmode.org/elpa/") t)
+
+(defvar my/packages
+  '(deft ace-jump-mode auto-complete rbenv key-chord inf-ruby
+     ruby-block ruby-tools ruby-compilation rinari enclose
+     switch-window yasnippet cider ag wc-mode smartparens smart-tab
+     slime key-chord seeing-is-believing minitest))
+
+(require 'cl-lib)
+
+(defun my/install-packages ()
+  "Ensure the packages I use are installed. See `my/packages'."
+  (interactive)
+  (let ((missing-packages (cl-remove-if #'package-installed-p my/packages)))
+    (when missing-packages
+      (message "Installing %d missing package(s)" (length missing-packages))
+      (package-refresh-contents)
+      (mapc #'package-install missing-packages))))
+
+(my/install-packages)
+
 ;;(set-face-attribute 'variable-pitch nil :font "Source Sans Pro-21")
 
 ;; Set sans-serif font for these modes
@@ -38,31 +67,31 @@
                                (auto-revert-tail-mode))))
 
 ;; setting for auto-close brackets for electric-pair-mode regardless of current major mode syntax table
-(setq electric-pair-pairs '(
-                            (?\" . ?\")
-                            (?\{ . ?\})
-                            (?\' . ?\')
-                            (?\[ . ?\])
-                            ) )
+;; (setq electric-pair-pairs '(
+;;                             (?\" . ?\")
+;;                             (?\{ . ?\})
+;;                             (?\' . ?\')
+;;                             (?\[ . ?\])
+;;                             ) )
 ;; Enabling eletric-pair-mode globally
-(add-hook 'text-mode-hook
-          (lambda () (set (make-local-variable 'electric-pair-mode) t)))
+;; (add-hook 'text-mode-hook
+;;           (lambda () (set (make-local-variable 'electric-pair-mode) t)))
 
 ;; Adjust electric-pair-pairs on lisp modes
-(add-hook 'lisp-mode-hook
-          (lambda ()
-            (setq electric-pair-pairs '(
-                                        (?\" . ?\")
-                                        (?\{ . ?\})
-                                        (?\[ . ?\])
-                                        ))))
-(add-hook 'emacs-lisp-mode-hook
-          (lambda ()
-            (setq electric-pair-pairs '(
-                                        (?\" . ?\")
-                                        (?\{ . ?\})
-                                        (?\[ . ?\])
-                                        ))))
+;; (add-hook 'lisp-mode-hook
+;;           (lambda ()
+;;             (setq electric-pair-pairs '(
+;;                                         (?\" . ?\")
+;;                                         (?\{ . ?\})
+;;                                         (?\[ . ?\])
+;;                                         ))))
+;; (add-hook 'emacs-lisp-mode-hook
+;;           (lambda ()
+;;             (setq electric-pair-pairs '(
+;;                                         (?\" . ?\")
+;;                                         (?\{ . ?\})
+;;                                         (?\[ . ?\])
+;;                                         ))))
 (setq search-highlight t            ;; highlight when searching...
       query-replace-highlight t)    ;; ...and replacing
 
@@ -97,15 +126,6 @@
 ;; C-c ; f y	rinari-find-stylesheet
 (require 'rinari)
 (global-rinari-mode)
-
-
-;; Rectangle mark
-(require 'guto-rect-mark)
-(global-set-key (kbd "C-x r C-SPC") 'rm-set-mark)
-(global-set-key (kbd "C-x r C-x")   'rm-exchange-point-and-mark)
-(global-set-key (kbd "C-x r C-w")   'rm-kill-region)
-(global-set-key (kbd "C-x r M-w")   'rm-kill-ring-save)
-
 
 ;; (global-set-key (kbd "C-x r C-SPC") 'rm-set-mark)
 ;; (global-set-key (kbd "C-w")
@@ -185,3 +205,15 @@
 ;; C-x r b – jump to a bookmark
 ;; C-x r l – list your bookmarks
 ;; M-x bookmark-delete – delete a bookmark by name
+
+
+(require 'wc-goal-mode)
+
+(custom-set-variables '(coffee-tab-width 2))
+
+(setq css-indent-offset 2)
+
+(setq js-indent-level 2)
+
+;; Using sudo over ssh and Tramp
+(set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'" "/ssh:%h:"))))
