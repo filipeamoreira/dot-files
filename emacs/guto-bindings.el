@@ -132,4 +132,6 @@
 
 (global-set-key (kbd "C-x F") 'guto-find-file-as-root)
 
+;; wc-goal-mode
+(global-set-key "\C-cw" 'wc-goal-mode)
 (provide 'guto-bindings)

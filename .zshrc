@@ -48,13 +48,13 @@ export PYENV_ROOT=/usr/local/opt/pyenv
 #source "`brew --prefix grc`/etc/grc.bashrc"
 #eval "$(hub alias -s)"
 
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 source /usr/local/opt/pyenv/completions/pyenv.zsh
 . ~/.profile
 
-export PATH="/Applications/calibre.app/Contents/console.app/Contents/MacOS:$PATH"
+
 
 # Aliases
 # Git
@@ -70,6 +70,11 @@ alias b='bundle exec'
 alias bi='bundle install'
 
 alias ssh='TERM=xterm ssh'
+
+alias e='emacsclient -t'
+alias ec='emacsclient -c'
+alias vim='emacsclient -t'
+alias vi='emacsclient -t'
 
 ###-tns-completion-start-###
 if [ -f /Users/guto/.tnsrc ]; then
