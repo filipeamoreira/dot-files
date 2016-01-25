@@ -6,31 +6,61 @@
 ;; Fonts
 
 (set-face-attribute 'default nil :font "Source Code Pro-21")
+(set-face-attribute 'hebrew "SBL Hebrew")
+(set-face-attribute 'greek "SBL Greek")
 
 ;; Packages
 
 (require 'package)
 (add-to-list 'package-archives
              '("org" . "http://orgmode.org/elpa/") t)
+(add-to-list 'package-archives
+	     '("melpa" . "http://melpa.org/packages/") t)
 
 (defvar my/packages
-  '(deft ace-jump-mode auto-complete rbenv key-chord inf-ruby
-     ruby-block ruby-tools ruby-compilation rinari enclose
-     switch-window yasnippet cider ag wc-mode smartparens smart-tab
-     slime key-chord seeing-is-believing minitest))
+  ;; '(deft ace-jump-mode auto-complete rbenv key-chord inf-ruby
+  ;;    ruby-block ruby-tools ruby-compilation rinari enclose
+  ;;    switch-window yasnippet cider ag wc-mode smartparens smart-tab
+  ;;    slime key-chord seeing-is-believing minitest))
+  '(helm ido-vertical-mode pdf-tools org-pdfview
+         deft blank-mode ace-jump-mode auto-complete
+         rbenv key-chord rinari enclose switch-window yasnippet
+         cider ag wc-mode smartparens smart-tab slime
+         key-chord seeing-is-believing minitest))
 
-(require 'cl-lib)
+;; (require 'cl-lib)
 
-(defun my/install-packages ()
-  "Ensure the packages I use are installed. See `my/packages'."
-  (interactive)
-  (let ((missing-packages (cl-remove-if #'package-installed-p my/packages)))
-    (when missing-packages
-      (message "Installing %d missing package(s)" (length missing-packages))
-      (package-refresh-contents)
-      (mapc #'package-install missing-packages))))
+;; (defun my/install-packages ()
+;;   "Ensure the packages I use are installed. See `my/packages'."
+;;   (interactive)
+;;   (let ((missing-packages (cl-remove-if #'package-installed-p my/packages)))
+;;     (when missing-packages
+;;       (message "Installing %d missing package(s)" (length missing-packages))
+;;       (package-refresh-contents)
+;;       (mapc #'package-install missing-packages))))
 
-(my/install-packages)
+;; (my/install-packages)
+
+;; Initialize package repo's
+(package-initialize)
+
+;; Refresh list of packages
+(unless package-archive-contents
+  (package-refresh-contents))
+
+(setq package-list
+      '(helm ido-vertical-mode pdf-tools org-pdfview
+             deft blank-mode ace-jump-mode auto-complete
+             rbenv key-chord rinari enclose switch-window yasnippet
+             cider ag wc-mode smartparens smart-tab slime
+             key-chord seeing-is-believing minitest bundler robe
+             magit projectile projectile-rails flx-ido discover))
+
+;; Install missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
 
 ;;(set-face-attribute 'variable-pitch nil :font "Source Sans Pro-21")
 
@@ -217,3 +247,92 @@
 
 ;; Using sudo over ssh and Tramp
 (set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'" "/ssh:%h:"))))
+
+;; Request UTF-8 when pasting from other applications
+(setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
+
+;; Unbound keys
+(global-set-key (kbd "C-M-SPC") nil)
+
+;; Always use UTF-8
+(setq locale-coding-system 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+
+;; On Mac OSX, delete files by moving them to ~/.Tash
+(cond ((eq system-type 'darwin)
+       (setq delete-by-moving-to-trash t)
+       (setq trash-directory "~/.Trash/")))
+
+;; (setq whitespace-style '(
+;;                          face
+;;                          tabs
+;;                          trailing
+;;                          lines-tail
+;;                          space-before-tab
+;;                          newline
+;;                          empty
+;;                          space-after-tab
+;;                          tab-mark
+;;                          newline-mark))
+;;
+;; (add-hook 'prog-mode-hook 'whitespace-mode)
+;; (add-hook 'before-save-hook 'whitespace-cleanup)
+
+;; Always autoscroll compilation output, so long reuslt listings are easier to
+;; read.
+(setq compilation-scroll-output t)
+
+;; pdf-tools install
+(pdf-tools-install)
+
+;; When using GUI, do not open new frames but re-use existing frames
+;; when opening new files.
+(setq ns-pop-up-frames nil)
+
+;; UI
+;; Hide unnecessary GUI chrome
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(blink-cursor-mode t)
+(show-paren-mode t)
+
+;; enable company mode
+(add-hook 'after-init-hook 'global-company-mode)
+
+;; Set different fonts depending on input type
+;; See here: http://emacs.stackexchange.com/questions/5519/how-to-assign-a-certain-font-for-each-input-method-language-in-emacs-24/5525#5525
+(defun default-input-font ()
+  "changes the set-input-method to nil and selects a default font
+bound to C-c f"
+  (interactive)
+  (set-input-method nil)
+  (face-remap-add-relative 'default :family "Source Code Pro" :height 110))
+
+(defun greek-input-font ()
+  "changes the set-input-method to Greek and selects another font
+bound to C-c g"
+  (interactive)
+  (set-input-method "greek")
+  (face-remap-add-relative 'default :family "SBL Greek" :height 120))
+
+(defun hebrew-input-font ()
+
+  "changes the set-input-method to Hebrew  and selects another font
+bound to C-c h"
+  (interactive)
+  (set-input-method "hebrew") ; you can specify like `hebrew-biblical-tiro`
+  (face-remap-add-relative 'default :family "SBL Hebrew" :height 120))
+
+(global-set-key (kbd "C-c f") 'default-input-font)
+(global-set-key (kbd "C-c g") 'greek-input-font)
+(global-set-key (kbd "C-c h") 'hebrew-input-font)
+
+;; discover. See here: https://www.masteringemacs.org/article/discoverel-discover-emacs-context-menus
+(require 'discover)
+(global-discover-mode 1)
+
+(provide 'guto) ;; guto.el ends here

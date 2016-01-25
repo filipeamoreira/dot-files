@@ -10,6 +10,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
     source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+source "$HOME/.zprofile"
+
 # Nice themes: bira, cloud
 # Nice themes to study: smt
 export ZSH_THEME="kennethreitz"
@@ -17,11 +19,7 @@ export ZSH_THEME="kennethreitz"
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
 
-DISABLE_AUTO_UPDATE="true"
-
-DISABLE_AUTO_TITLE="true"
-
-plugins=(git compleat rails ruby brew github node npm osx pip redis-cli rvm ssh-agent)
+#plugins=(git compleat rails ruby brew github node npm osx pip redis-cli rvm ssh-agent)
 
 ulimit -S -n 2048 # open file limit
 [ -n "$TMUX" ] && export TERM=screen-256color
@@ -53,8 +51,6 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 source /usr/local/opt/pyenv/completions/pyenv.zsh
 . ~/.profile
-
-
 
 # Aliases
 # Git

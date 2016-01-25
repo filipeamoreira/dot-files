@@ -1,0 +1,21 @@
+snippet sce "Capybara scenario" b
+scenario "$1" do
+	$2
+end
+endsnippet
+
+snippet fc "Create factory object" b
+create :$1
+endsnippet
+
+snippet fcv "Create factory object in variable" b
+@$1 = create :$1
+endsnippet
+
+snippet pagec "Page should have content" b
+page.should have_content "$1"
+endsnippet
+
+snippet screen "Capture screenshot to desktop" b
+path = Rails.root.join 'tmp', 'screen.png'; page.save_screenshot path; %x[open '#{path}']
+endsnippet

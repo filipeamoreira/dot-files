@@ -4,3 +4,6 @@
 [submodule "emacs/vendor/emacs-pry"]
 	path = emacs/vendor/emacs-pry
 	url = git@github.com:jacott/emacs-pry
+[submodule "emacs/themes/emacs-color-theme-solarized"]
+	path = emacs/themes/emacs-color-theme-solarized
+	url = https://github.com/sellout/emacs-color-theme-solarized

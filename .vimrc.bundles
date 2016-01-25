@@ -1,0 +1,65 @@
+if &compatible
+  set nocompatible
+end
+
+call plug#begin('~/.vim/bundle')
+
+"
+" Define bundles via Github repos
+
+" NERD tree will be loaded on the first invocation of a NERDTree command
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+
+" Run install script for YouCompleteMe if it was just installed
+function! BuildYCM(info)
+  if a:info.status == 'installed' || a:info.force
+    !./install.py
+  endif
+endfunction
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+
+" Run install script for ctrlp-cmatcher if it was just installed
+function! InstallCtrlpCmatcher(info)
+  if a:info.status == 'installed' || a:info.force
+    !./install.sh
+  endif
+endfunction
+Plug 'JazzCore/ctrlp-cmatcher', { 'do': function('InstallCtrlpCmatcher') }
+
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'scrooloose/syntastic'
+Plug 'SirVer/ultisnips'
+Plug 'tpope/vim-fugitive'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-pathogen'
+Plug 'tpope/vim-rails'
+Plug 'benmills/vimux'
+Plug 'jgdavey/vim-turbux'
+Plug 'powerline/powerline'
+Plug 'altercation/vim-colors-solarized'
+Plug 'scrooloose/nerdcommenter'
+Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-unimpaired'
+Plug 'kchmck/vim-coffee-script'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'mattn/livestyle-vim'
+Plug 'mattn/emmet-vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-endwise'
+Plug 'rizzatti/funcoo.vim'
+Plug 'rizzatti/dash.vim'
+Plug 'tpope/vim-dispatch'
+Plug 'digitaltoad/vim-jade'
+Plug 'tpope/vim-projectionist'
+Plug 'honza/vim-snippets'
+Plug 'sjl/vitality.vim'
+Plug 'keith/tmux.vim'
+
+if filereadable($HOME . "/.vimrc.bundles.local")
+  source ~/.vimrc.bundles.local
+endif
+
+call plug#end()
