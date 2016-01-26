@@ -1,5 +1,7 @@
 (add-hook 'LaTeX-mode-hook (lambda ()
                              (TeX-fold-mode 1)))
+(add-hook 'TeX-mode-hook
+          (lambda () (TeX-fold-mode 1)))
 ;; (C-c C-o C-b) to hide all foldable elements on the buffer
 ;;(add-hook 'find-file-hook 'TeX-fold-buffer t)
 
@@ -33,8 +35,8 @@
 ;; From here: http://www.stefanom.org/setting-up-a-nice-auctex-environment-on-mac-os-x/
 ;; Sync LaTeX source with Skim
 ;; AucTeX
-(setq TeX-auto-save t)
-(setq TeX-parse-self t)
+(setq TeX-parse-self t) ; Enable parse on load.
+(setq TeX-auto-save t) ; Enable parse on save.
 (setq-default TeX-master nil)
 (add-hook 'LaTeX-mode-hook 'visual-line-mode)
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
@@ -48,7 +50,7 @@
 ;; Note: SyncTeX is setup via ~/.latexmkrc (see below)
 (add-hook 'LaTeX-mode-hook (lambda ()
   (push
-    '("latexmk" "latexmk -pdf %s" TeX-run-TeX nil t
+    '("latexmk" "latexmk -xelatex %s" TeX-run-TeX nil t
       :help "Run latexmk on file")
     TeX-command-list)))
 (add-hook 'TeX-mode-hook '(lambda () (setq TeX-command-default "latexmk")))
@@ -82,3 +84,25 @@
 
 ;; add to hook
 (add-hook 'LaTeX-mode-hook 'guto-latex-mode-bindings)
+
+(defun guto-TeX-doc ()
+  "Search documentation with texdoc for symbol at point."
+  (interactive)
+  (call-process "texdoc" nil 0 nil "--view" (thing-at-point 'symbol)))
+
+;; bind it to C-c ? if you want to replace standard TeX-doc
+;; (eval-after-load "tex"
+;;   '(progn
+;;      (define-key TeX-mode-map (kbd "C-c ?") 'mg-TeX-doc)))
+
+;; Add Biblatex shortcuts to RefTeX
+(eval-after-load 'reftex-vars
+  '(progn
+     ;; (also some other reftex-related customizations)
+     (setq reftex-cite-format
+           '((?\C-m . "\\cite[]{%l}")
+             (?f . "\\footcite[][]{%l}")
+             (?t . "\\textcite[]{%l}")
+             (?p . "\\parencite[]{%l}")
+             (?o . "\\citepr[]{%l}")
+             (?n . "\\nocite{%l}")))))

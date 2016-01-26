@@ -22,11 +22,24 @@
   ;;    ruby-block ruby-tools ruby-compilation rinari enclose
   ;;    switch-window yasnippet cider ag wc-mode smartparens smart-tab
   ;;    slime key-chord seeing-is-believing minitest))
-  '(helm ido-vertical-mode pdf-tools org-pdfview
+  '(use_package helm ido-vertical-mode pdf-tools org-pdfview
          deft blank-mode ace-jump-mode auto-complete
          rbenv key-chord rinari enclose switch-window yasnippet
          cider ag wc-mode smartparens smart-tab slime
          key-chord seeing-is-believing minitest))
+
+(eval-when-compile
+  (require 'use-package))
+(require 'diminish)                ;; if you use :diminish
+(require 'bind-key)                ;; if you use any :bind variant
+
+;; Use use-package for package installation and setup
+(use-package smooth-scroll
+             :config
+             (smooth-scroll-mode 1)
+             (setq smooth-scroll/vscroll-step-size 5)
+             )
+
 
 ;; (require 'cl-lib)
 
@@ -334,5 +347,6 @@ bound to C-c h"
 ;; discover. See here: https://www.masteringemacs.org/article/discoverel-discover-emacs-context-menus
 (require 'discover)
 (global-discover-mode 1)
+
 
 (provide 'guto) ;; guto.el ends here

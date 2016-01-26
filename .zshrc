@@ -51,6 +51,7 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 source /usr/local/opt/pyenv/completions/pyenv.zsh
 . ~/.profile
+. ~/.zprofile
 
 # Aliases
 # Git
@@ -77,3 +78,4 @@ if [ -f /Users/guto/.tnsrc ]; then
     source /Users/guto/.tnsrc
 fi
 ###-tns-completion-end-###
+export TEXMFHOME=~/texmf
