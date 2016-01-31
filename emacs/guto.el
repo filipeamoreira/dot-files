@@ -5,6 +5,9 @@
 
 ;; Fonts
 
+;; Evaluates on each new frame
+(setq default-frame-alist '((font . "Source Code Pro-21")))
+(set-default-font "Source Code Pro-21")
 (set-face-attribute 'default nil :font "Source Code Pro-21")
 (set-face-attribute 'hebrew "SBL Hebrew")
 (set-face-attribute 'greek "SBL Greek")
@@ -12,21 +15,54 @@
 ;; Packages
 
 (require 'package)
+(package-initialize)
+
 (add-to-list 'package-archives
              '("org" . "http://orgmode.org/elpa/") t)
-(add-to-list 'package-archives
-	     '("melpa" . "http://melpa.org/packages/") t)
 
-(defvar my/packages
-  ;; '(deft ace-jump-mode auto-complete rbenv key-chord inf-ruby
-  ;;    ruby-block ruby-tools ruby-compilation rinari enclose
-  ;;    switch-window yasnippet cider ag wc-mode smartparens smart-tab
-  ;;    slime key-chord seeing-is-believing minitest))
-  '(use_package helm ido-vertical-mode pdf-tools org-pdfview
-         deft blank-mode ace-jump-mode auto-complete
-         rbenv key-chord rinari enclose switch-window yasnippet
-         cider ag wc-mode smartparens smart-tab slime
-         key-chord seeing-is-believing minitest))
+(defvar guto/packages
+  '(ace-jump-mode
+    ag
+    auto-complete
+    blank-mode
+    bundler
+    cider
+    deft
+    discover
+    enclose
+    flx-ido
+    helm
+    ido-vertical-mode
+    key-chord
+    magit
+    minitest
+    org-pdfview
+    pdf-tools
+    projectile
+    projectile-rails
+    rbenv
+    rinari
+    robe
+    seeing-is-believing
+    slime
+    smart-tab
+    smartparens
+    switch-window
+    tldr
+    use-package
+    wc-mode
+    yasnippet
+    ))
+
+;; Refresh list of packages
+(unless package-archive-contents
+  (package-refresh-contents))
+
+;; Install missing packages
+(dolist (package guto/packages)
+  (unless (package-installed-p package)
+    (package-install package)))
+
 
 (eval-when-compile
   (require 'use-package))
@@ -40,40 +76,7 @@
              (setq smooth-scroll/vscroll-step-size 5)
              )
 
-
-;; (require 'cl-lib)
-
-;; (defun my/install-packages ()
-;;   "Ensure the packages I use are installed. See `my/packages'."
-;;   (interactive)
-;;   (let ((missing-packages (cl-remove-if #'package-installed-p my/packages)))
-;;     (when missing-packages
-;;       (message "Installing %d missing package(s)" (length missing-packages))
-;;       (package-refresh-contents)
-;;       (mapc #'package-install missing-packages))))
-
-;; (my/install-packages)
-
-;; Initialize package repo's
-(package-initialize)
-
-;; Refresh list of packages
-(unless package-archive-contents
-  (package-refresh-contents))
-
-(setq package-list
-      '(helm ido-vertical-mode pdf-tools org-pdfview
-             deft blank-mode ace-jump-mode auto-complete
-             rbenv key-chord rinari enclose switch-window yasnippet
-             cider ag wc-mode smartparens smart-tab slime
-             key-chord seeing-is-believing minitest bundler robe
-             magit projectile projectile-rails flx-ido discover))
-
-;; Install missing packages
-(dolist (package package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
-
+(use-package ido-ubiquitous)
 
 ;;(set-face-attribute 'variable-pitch nil :font "Source Sans Pro-21")
 
@@ -86,7 +89,7 @@
 ;;   (add-hook hook (lambda () (variable-pitch-mode t))))
 (toggle-fullscreen)
 
-(server-mode)
+;;(server-mode)
 
 ;; Confirm emacs closing
 (setq confirm-kill-emacs 'y-or-n-p)
@@ -196,6 +199,7 @@
 (require 'rcodetools)
 (define-key ruby-mode-map (kbd "C-c C-c") 'xmp)
 
+;; Always use UTF-8
 (set-language-environment 'utf-8)
 (set-default-coding-systems 'utf-8)
 (set-selection-coding-system 'utf-8)
@@ -266,13 +270,6 @@
 
 ;; Unbound keys
 (global-set-key (kbd "C-M-SPC") nil)
-
-;; Always use UTF-8
-(setq locale-coding-system 'utf-8)
-(set-terminal-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-(set-selection-coding-system 'utf-8)
-(prefer-coding-system 'utf-8)
 
 ;; On Mac OSX, delete files by moving them to ~/.Tash
 (cond ((eq system-type 'darwin)
@@ -349,4 +346,8 @@ bound to C-c h"
 (global-discover-mode 1)
 
 
+(setq debug-on-error nil) ;; Disable debugging due to annoying error when saving/reloading a file.
+
+;; autocomplete pairs
+(electric-pair-mode 1)
 (provide 'guto) ;; guto.el ends here

@@ -35,18 +35,15 @@ zstyle ':prezto:load' pmodule \
   'prompt' \
   'emacs' \
   'git' \
-  'history' \
-  'history-substring-search' \
   'homebrew' \
   'node' \
   'osx' \
-  'python' \
   'rails' \
-  'rsync' \
   'ruby' \
   'ssh' \
   'syntax-highlighting' \
   'tmux'
+
 
 #
 # Editor
@@ -56,7 +53,7 @@ zstyle ':prezto:load' pmodule \
 zstyle ':prezto:module:editor' key-bindings 'emacs'
 
 # Auto convert .... to ../..
-zstyle ':prezto:module:editor' dot-expansion 'yes'
+# zstyle ':prezto:module:editor' dot-expansion 'yes'
 
 #
 # Git
@@ -77,10 +74,10 @@ zstyle ':prezto:module:editor' dot-expansion 'yes'
 #
 
 # Set the query found color.
-zstyle ':prezto:module:history-substring-search:color' found ''
+# zstyle ':prezto:module:history-substring-search:color' found ''
 
 # Set the query not found color.
-zstyle ':prezto:module:history-substring-search:color' not-found ''
+# zstyle ':prezto:module:history-substring-search:color' not-found ''
 
 # Set the search globbing flags.
 # zstyle ':prezto:module:history-substring-search' globbing-flags ''
@@ -113,10 +110,10 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 #
 
 # Auto start a session when Zsh is launched in a local terminal.
-zstyle ':prezto:module:screen:auto-start' local 'yes'
+# zstyle ':prezto:module:screen:auto-start' local 'yes'
 
 # Auto start a session when Zsh is launched in a SSH connection.
-zstyle ':prezto:module:screen:auto-start' remote 'yes'
+# zstyle ':prezto:module:screen:auto-start' remote 'yes'
 
 #
 # SSH
@@ -137,7 +134,7 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
   'pattern' \
   'cursor' \
   'root'
-#
+
 # Set syntax highlighting styles.
 # zstyle ':prezto:module:syntax-highlighting' styles \
 #   'builtin' 'bg=blue' \
@@ -149,10 +146,10 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
 #
 
 # Auto set the tab and window titles.
-zstyle ':prezto:module:terminal' auto-title 'yes'
+# zstyle ':prezto:module:terminal' auto-title 'yes'
 
 # Set the window title format.
-zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
+# zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
 
 # Set the tab title format.
 # zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
@@ -162,10 +159,10 @@ zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
 #
 
 # Auto start a session when Zsh is launched in a local terminal.
-zstyle ':prezto:module:tmux:auto-start' local 'yes'
+# zstyle ':prezto:module:tmux:auto-start' local 'yes'
 
 # Auto start a session when Zsh is launched in a SSH connection.
-zstyle ':prezto:module:tmux:auto-start' remote 'yes'
+# zstyle ':prezto:module:tmux:auto-start' remote 'yes'
 
 # Integrate with iTerm2.
 zstyle ':prezto:module:tmux:iterm' integrate 'yes'

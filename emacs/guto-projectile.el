@@ -9,4 +9,4 @@
 
 ;; https://github.com/bbatsov/projectile
 ;; https://github.com/asok/projectile-rails
-(add-hook 'projectile-mode-hook 'projectile-rails-on)
+;;(add-hook 'projectile-mode-hook 'projectile-rails-on)

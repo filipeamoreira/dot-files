@@ -17,8 +17,8 @@ fi
 # Editors
 #
 
-export EDITOR='emacs'
-export VISUAL='emacs'
+export EDITOR='nano'
+export VISUAL='nano'
 export PAGER='less'
 
 #
@@ -43,8 +43,8 @@ typeset -gU cdpath fpath mailpath path
 
 # Set the list of directories that Zsh searches for programs.
 path=(
+  ~/bin
   /usr/local/{bin,sbin}
-  /usr/local/texlive/2015/bin/x86_64-darwin
   $path
 )
 
