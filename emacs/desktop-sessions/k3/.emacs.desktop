@@ -1,0 +1,184 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Fri Jan  8 13:59:57 2016
+;; Desktop file format version ÅŒ
+;; Emacs version 24.5.7
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (22159 49373 839632 0) (desktop . "206") "guto@iMac.local" nil nil ((((font-backend mac-ct) (font . "-*-Source Code Pro-normal-normal-normal-*-19-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars . right) (foreground-color . "#DCDCCC") (background-color . "#3F3F3F") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 11) (right-fringe . 11) (alpha) (tool-bar-lines . 0) (title) (fullscreen . fullboth) (menu-bar-lines . 1) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 15) (horizontal-scroll-bars . t) (display-type . color) (background-mode . dark) (cursor-color . "#FFFFEF") (environment) (frameset--id . "4F8D-2FBB-E24C-6700") (frameset--mini t . t) (modeline . t) (minibuffer . t) (unsplittable) (icon-name) (display . "Mac") (explicit-name) (tool-bar-position . top) (visibility . t) (height . 45) (width . 171) (left . 0) (top . 0)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 6) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 96) (min-pixel-width . 110) (min-pixel-height-ignore . 72) (min-pixel-width-ignore . 66) (min-pixel-height-safe . 24) (min-pixel-width-safe . 22)) leaf (pixel-width . 1920) (pixel-height . 1056) (total-width . 147) (total-height . 44) (normal-height . 1.0) (normal-width . 1.0) (buffer "bibleschools" (selected . t) (hscroll . 0) (fringes 11 11 nil) (margins 2) (scroll-bars 15 2 t nil) (vscroll . 0) (dedicated) (point . 535) (start . 1))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring '("binding" "def deplo" "binding" "def remote_extension_version" "def deplo" "local version" "ruby" "esd"))
+(setq register-alist nil)
+(setq file-name-history '("/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/.emacs.d/personal/guto-desktop.el" "~/.emacs.d/personal/guto-sessions.el" "/Users/guto/work/freelance/cupris/cupris/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/vop/store/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/vop/spree_gateway/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/vop/store/.git/COMMIT_EDITMSG" "~/work/freelance/k3/vop/tmp/store-upgrade.md" "~/work/freelance/k3/vop/tmp" "/Users/guto/work/freelance/k3/vop/store/.git/COMMIT_EDITMSG" "~/work/freelance/k3/vop/store/.ruby-gemset" "~/work/freelance/k3/vop/store/.ruby-version" "/Users/guto/work/freelance/k3/vop/bibleschools/.git/COMMIT_EDITMSG" "~/work/freelance/k3/vop/bibleschools/public/system/s3/elfinder/thumbs" "~/work/freelance/k3/vop/bibleschools/public/system/s3/thumbs" "/Users/guto/work/freelance/k3/vop/bibleschools/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/amc/time_tracker/.git/COMMIT_EDITMSG" "/Users/guto/scm/git/best_in_place/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/amc/time_tracker/.git/COMMIT_EDITMSG" "/Users/guto/scm/git/dot-files/.git/COMMIT_EDITMSG" "~/.emacs.d/personal/guto-rbenv.el" "~/work/freelance/k3/amc/time_tracker/spec/helpers/timesheets_helper_spec.rb" "/Users/guto/work/freelance/k3/amc/time_tracker/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/vop/bibleschools/.git/COMMIT_EDITMSG" "~/work/freelance/k3/vop/bibleschools/config/puma.rb" "~/work/freelance/k3/vop/bibleschools/Procfile" "/Users/guto/work/freelance/k3/vop/bibleschools/.git/COMMIT_EDITMSG" "/sudo:root@localhost:/etc/AFP.conf" "/sudo:root@localhost:.CFUserTextEncoding" "/sudo:root@localhost:/Library/Application Support/ServerAutoMount/org.guto-server.automount.sh" "/sudo:root@localhost:/Library/Application Support/ServerAutoMount/org.guto-server.automount.plist" "/sudo:root@localhost:/Library/Application Support/ServerAutoMount" "/etc/auto_master" "~/work/freelance/cupris/doc/survey-research.md" "/Users/guto/work/freelance/k3/amc/time_tracker/.git/COMMIT_EDITMSG" "~/.pryrc" "~/.irbrc" "~/work/freelance/k3/amc/time_tracker/config/database.yml" "~/work/freelance/cupris/cupris/doc/design-comments.md" "~/work/freelance/k3/amc/time_tracker/config/database.yml" "/Users/guto/scm/git/dot-files/.git/COMMIT_EDITMSG" "~/.emacs.d/personal/guto-bookmark.el" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/extensions/test_extension/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/core/.beta_extensions" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/Dropbox/sync/org/work.org" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/Dropbox/sync/org/journal.org" "~/work/freelance/k3/na/core/.beta_server" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/core/lib/git/git_stable.rb" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/core/.beta_server" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/extensions/test_extension/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/extensions/test_extension/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/extensions/test_extension/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/core/extensions/Extensions_added" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/core/extensions/test_extension2" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/extensions/test_extension/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/core/extensions/test_extension/lib/test_extension/version.rb" "~/work/freelance/k3/na/core/extensions/test_extension/lib/test_extension.rb" "~/work/freelance/k3/na/core/extensions/test_extension/lib/test_extension" "~/work/freelance/k3/na/core/extensions/test_extension/lib" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/test_extension/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/test_extension/README" "~/test-ruby.rb" "/Users/guto/work/freelance/k3/na/test_extension/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/test_extension/test_extension.gemspec" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/core/doc/beta_releases.md" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "/Users/guto/products" "/Users/guto/work/freelance/supertouch/newsletter/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/core/lib/deploy.rb" "/Users/guto/scm/git/super-scanner/.git/COMMIT_EDITMSG" "~/scm/git/super-scanner/spec/product_spec.rb" "~/scm/git/super-scanner/spec/promotion_spec.rb" "~/scm/git/super-scanner/spec/discount_line_spec.rb" "~/scm/git/super-scanner/lib/discount_line.rb" "~/scm/git/super-scanner/lib/discount.rb" "/Users/guto/scm/git/super-scanner/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/core/lib/beta_server.rb" "~/work/freelance/k3/na/tmp/bundle-test/bar.gemspec" "/Users/guto/scm/git/super-scanner/.git/COMMIT_EDITMSG" "~/scm/git/super-scanner/Guardfile" "~/scm/git/super-scanner/.rspec" "~/scm/git/super-scanner/lib/order_line.rb" "~/scm/git/super-scanner/lib/order_item.rb"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer ÅŒ
+  nil
+  "bibleschools"
+  'dired-mode
+  '(prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode linum-mode rinari-minor-mode yas-minor-mode diff-hl-dired-mode)
+  535
+  '(nil nil)
+  t
+  '("/Users/guto/work/freelance/k3/vop/bibleschools/")
+  nil)
+
+(desktop-create-buffer ÅŒ
+  nil
+  "na"
+  'dired-mode
+  '(prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode linum-mode yas-minor-mode diff-hl-dired-mode)
+  377
+  '(nil nil)
+  t
+  '("/Users/guto/work/freelance/k3/na/")
+  nil)
+
+(desktop-create-buffer ÅŒ
+  "/Users/guto/work/freelance/k3/na/core/lib/git/git_beta.rb"
+  "git_beta.rb"
+  'ruby-mode
+  '(prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode ruby-end-mode ruby-block-mode linum-mode smart-tab-mode inf-ruby-minor-mode rinari-minor-mode yas-minor-mode minitest-mode rspec-verifiable-mode)
+  934
+  '(530 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer ÅŒ
+  "/Users/guto/work/freelance/k3/na/core/lib/git.rb"
+  "git.rb"
+  'ruby-mode
+  '(prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode ruby-end-mode ruby-block-mode linum-mode smart-tab-mode inf-ruby-minor-mode rinari-minor-mode yas-minor-mode minitest-mode rspec-verifiable-mode)
+  7413
+  '(4159 t)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer ÅŒ
+  nil
+  "naforms"
+  'dired-mode
+  '(prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode ruby-block-mode linum-mode rinari-minor-mode yas-minor-mode diff-hl-dired-mode)
+  262
+  '(nil nil)
+  t
+  '("/Users/guto/work/freelance/k3/na/core/extensions/naforms/")
+  nil)
+
+(desktop-create-buffer ÅŒ
+  nil
+  "lib"
+  'dired-mode
+  '(prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode ruby-block-mode linum-mode rinari-minor-mode yas-minor-mode diff-hl-dired-mode)
+  1181
+  '(nil nil)
+  t
+  '("/Users/guto/work/freelance/k3/na/core/lib/")
+  nil)
+
+(desktop-create-buffer ÅŒ
+  nil
+  "git"
+  'dired-mode
+  '(prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode ruby-block-mode linum-mode rinari-minor-mode yas-minor-mode diff-hl-dired-mode)
+  246
+  '(nil nil)
+  t
+  '("/Users/guto/work/freelance/k3/na/core/lib/git/")
+  nil)
+
+(desktop-create-buffer ÅŒ
+  nil
+  "core"
+  'dired-mode
+  '(prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode ruby-block-mode linum-mode rinari-minor-mode yas-minor-mode diff-hl-dired-mode)
+  669
+  '(nil nil)
+  t
+  '("/Users/guto/work/freelance/k3/na/core/")
+  nil)
+
+(desktop-create-buffer ÅŒ
+  "/Users/guto/work/freelance/k3/na/core/.ruby-version"
+  ".ruby-version"
+  'fundamental-mode
+  '(prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode ruby-block-mode linum-mode smart-tab-mode rinari-minor-mode yas-minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer ÅŒ
+  nil
+  "T"
+  'dired-mode
+  '(prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode ruby-block-mode linum-mode yas-minor-mode diff-hl-dired-mode)
+  7041
+  '(4653 t)
+  t
+  '("/var/folders/pv/qt_ttpzn2t1fhm4zb_h8s64m0000gn/T/")
+  nil)
+
+(desktop-create-buffer ÅŒ
+  "/Users/guto/.ssh/config"
+  "config"
+  'conf-space-mode
+  '(prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode ruby-block-mode linum-mode smart-tab-mode yas-minor-mode)
+  1936
+  '(1820 t)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer ÅŒ
+  nil
+  ".ssh"
+  'dired-mode
+  '(prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode ruby-block-mode linum-mode yas-minor-mode diff-hl-dired-mode)
+  399
+  '(nil nil)
+  t
+  '("/Users/guto/.ssh/")
+  nil)
+
+(desktop-create-buffer ÅŒ
+  "/Users/guto/work/freelance/k3/na/core/script/restart_or_upgrade"
+  "restart_or_upgrade"
+  'sh-mode
+  '(prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode ruby-block-mode linum-mode smart-tab-mode rinari-minor-mode yas-minor-mode)
+  144
+  '(63 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer ÅŒ
+  nil
+  "script"
+  'dired-mode
+  '(prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode ruby-block-mode linum-mode rinari-minor-mode yas-minor-mode diff-hl-dired-mode)
+  538
+  '(nil nil)
+  t
+  '("/Users/guto/work/freelance/k3/na/core/script/")
+  nil)
+
+(desktop-create-buffer ÅŒ
+  "/Users/guto/work/freelance/k3/na/core/script/restart.rb"
+  "restart.rb"
+  'ruby-mode
+  '(prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode ruby-end-mode ruby-block-mode linum-mode smart-tab-mode inf-ruby-minor-mode rinari-minor-mode yas-minor-mode minitest-mode rspec-verifiable-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+

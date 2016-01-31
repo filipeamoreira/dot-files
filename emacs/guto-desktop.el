@@ -1,7 +1,7 @@
 (require 'desktop)
 
 (defvar my-desktop-session-dir
-  (concat (getenv "HOME") "/.emacs.d/desktop-sessions/")
+  (concat (getenv "HOME") "/.emacs.d/personal/desktop-sessions/")
   "*Directory to save desktop sessions in")
 
 (defvar my-desktop-session-name-hist nil

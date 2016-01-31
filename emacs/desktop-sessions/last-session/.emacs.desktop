@@ -1,0 +1,103 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Sun Jan 31 17:58:43 2016
+;; Desktop file format version 208
+;; Emacs version 25.0.90.1
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (22190 19283 366017 0) (desktop . "208") "guto@imac" nil nil ((((font-backend mac-ct) (fontsize . 0) (font . "-*-Source Code Pro-normal-normal-normal-*-21-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 2) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#839496") (background-color . "#002b36") (line-spacing) (left-fringe . 8) (right-fringe . 8) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (scroll-bar-height . 0) (alpha) (fullscreen . fullboth) (display-type . color) (background-mode . dark) (cursor-color . "#839496") (environment) (frameset--id . "8622-9FC9-1E3D-207A") (frameset--mini t . t) (height . 70) (width . 81) (modeline . t) (minibuffer . t) (unsplittable) (left . 1923) (top + -471) (right-divider-width . 0) (bottom-divider-width . 0) (icon-name) (visibility . t) (display . "imac") (explicit-name) (tool-bar-position . top)) ((min-height . 8) (min-width . 10) (min-height-ignore . 5) (min-width-ignore . 6) (min-height-safe . 2) (min-width-safe . 2) (min-pixel-height . 216) (min-pixel-width . 130) (min-pixel-height-ignore . 135) (min-pixel-width-ignore . 78) (min-pixel-height-safe . 54) (min-pixel-width-safe . 26)) vc (pixel-width . 1069) (pixel-height . 1863) (total-width . 82) (total-height . 69) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 1069) (pixel-height . 945) (total-width . 82) (total-height . 35) (normal-height . 0.5) (normal-width . 1.0) (buffer "sabbath_time_widget.html.erb" (selected) (hscroll . 0) (fringes 8 8 nil) (margins 2) (scroll-bars nil 0 t nil 0 nil) (vscroll . 0) (dedicated) (point . 744) (start . 1))) (leaf (last . t) (pixel-width . 1069) (pixel-height . 918) (total-width . 82) (total-height . 34) (normal-height . 0.5) (normal-width . 1.0) (buffer "core" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins 2) (scroll-bars nil 0 t nil 0 nil) (vscroll . 0) (dedicated) (point . 249) (start . 1)))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring '("geo" "gem" "g" "guto.el" "server" "guto.el" "sab" "nae" "zpr" "bun" "guto" "guto.el" "path" "zlogin" "zpro" "profile"))
+(setq register-alist nil)
+(setq file-name-history '("~/work/freelance/k3/na/core/config/initializers/geokit_config.rb" "~/work/freelance/k3/na/core/config/initializers/geokit-rails.rb" "/Users/guto/bin/e" "/Users/guto/Library/LaunchAgents/homebrew.mxcl.emacs.plist" "/Users/guto/bin/et" "/Users/guto/bin/e" "/Users/guto/Library/LaunchAgents/homebrew.mxcl.emacs.plist" "~/scm/git/dot-files/.zshrc" "~/scm/git/dot-files/.zshenv" "~/scm/git/dot-files/.zprofile" "~/scm/git/dot-files/.zprestorc" "~/scm/git/dot-files/.zlogout" "~/scm/git/dot-files/.zlogin" "/Users/guto/bin/e" "/Users/guto/bin/et" "/Users/guto/work/freelance/k3/na/core/config/initializers/abstract_mysql2_adapter.rb" "/Users/guto/work/freelance/k3/na/core/extensions/themediahub/.git/COMMIT_EDITMSG" "/Users/guto/scm/git/el_finder/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/.emacs.d/personal/guto-desktop.el" "~/.emacs.d/personal/guto-sessions.el" "/Users/guto/work/freelance/cupris/cupris/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/vop/store/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/vop/spree_gateway/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/vop/store/.git/COMMIT_EDITMSG" "~/work/freelance/k3/vop/tmp/store-upgrade.md" "~/work/freelance/k3/vop/tmp" "/Users/guto/work/freelance/k3/vop/store/.git/COMMIT_EDITMSG" "~/work/freelance/k3/vop/store/.ruby-gemset" "~/work/freelance/k3/vop/store/.ruby-version" "/Users/guto/work/freelance/k3/vop/bibleschools/.git/COMMIT_EDITMSG" "~/work/freelance/k3/vop/bibleschools/public/system/s3/elfinder/thumbs" "~/work/freelance/k3/vop/bibleschools/public/system/s3/thumbs" "/Users/guto/work/freelance/k3/vop/bibleschools/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/amc/time_tracker/.git/COMMIT_EDITMSG" "/Users/guto/scm/git/best_in_place/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/amc/time_tracker/.git/COMMIT_EDITMSG" "/Users/guto/scm/git/dot-files/.git/COMMIT_EDITMSG" "~/.emacs.d/personal/guto-rbenv.el" "~/work/freelance/k3/amc/time_tracker/spec/helpers/timesheets_helper_spec.rb" "/Users/guto/work/freelance/k3/amc/time_tracker/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/vop/bibleschools/.git/COMMIT_EDITMSG" "~/work/freelance/k3/vop/bibleschools/config/puma.rb" "~/work/freelance/k3/vop/bibleschools/Procfile" "/Users/guto/work/freelance/k3/vop/bibleschools/.git/COMMIT_EDITMSG" "/sudo:root@localhost:/etc/AFP.conf" "/sudo:root@localhost:.CFUserTextEncoding" "/sudo:root@localhost:/Library/Application Support/ServerAutoMount/org.guto-server.automount.sh" "/sudo:root@localhost:/Library/Application Support/ServerAutoMount/org.guto-server.automount.plist" "/sudo:root@localhost:/Library/Application Support/ServerAutoMount" "/etc/auto_master" "~/work/freelance/cupris/doc/survey-research.md" "/Users/guto/work/freelance/k3/amc/time_tracker/.git/COMMIT_EDITMSG" "~/.pryrc" "~/.irbrc" "~/work/freelance/k3/amc/time_tracker/config/database.yml" "~/work/freelance/cupris/cupris/doc/design-comments.md" "~/work/freelance/k3/amc/time_tracker/config/database.yml" "/Users/guto/scm/git/dot-files/.git/COMMIT_EDITMSG" "~/.emacs.d/personal/guto-bookmark.el" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/extensions/test_extension/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/core/.beta_extensions" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/Dropbox/sync/org/work.org" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/Dropbox/sync/org/journal.org" "~/work/freelance/k3/na/core/.beta_server" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/core/lib/git/git_stable.rb" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/core/.beta_server" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/extensions/test_extension/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/extensions/test_extension/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/extensions/test_extension/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/core/extensions/Extensions_added" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/core/extensions/test_extension2" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/extensions/test_extension/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/core/extensions/test_extension/lib/test_extension/version.rb" "~/work/freelance/k3/na/core/extensions/test_extension/lib/test_extension.rb" "~/work/freelance/k3/na/core/extensions/test_extension/lib/test_extension" "~/work/freelance/k3/na/core/extensions/test_extension/lib" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/test_extension/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/test_extension/README" "~/test-ruby.rb" "/Users/guto/work/freelance/k3/na/test_extension/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/test_extension/test_extension.gemspec" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/core/doc/beta_releases.md" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "/Users/guto/products"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  nil
+  "core"
+  'dired-mode
+  '(abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode flx-ido-mode override-global-mode smooth-scroll-mode linum-mode rinari-minor-mode yas-minor-mode company-mode diff-hl-dired-mode)
+  249
+  '(nil nil)
+  t
+  '("/Users/guto/work/freelance/k3/na/core/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/work/freelance/k3/na/core/extensions/nasabbathtime/app/models/sabbath.rb"
+  "sabbath.rb"
+  'ruby-mode
+  '(abbrev-mode beacon-mode prelude-mode auto-revert-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode flx-ido-mode override-global-mode smooth-scroll-mode linum-mode smart-tab-mode inf-ruby-minor-mode rinari-minor-mode yas-minor-mode company-mode minitest-mode)
+  171
+  '(379 t)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/work/freelance/k3/na/core/extensions/nasabbathtime/app/views/widgets/sabbath_time_widget.html.erb"
+  "sabbath_time_widget.html.erb"
+  'html-mode
+  '(abbrev-mode beacon-mode prelude-mode auto-revert-mode global-auto-revert-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode flx-ido-mode override-global-mode smooth-scroll-mode linum-mode smart-tab-mode rinari-minor-mode yas-minor-mode company-mode)
+  744
+  '(733 t)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring (693))))
+
+(desktop-create-buffer 208
+  nil
+  "models"
+  'dired-mode
+  '(abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode flx-ido-mode override-global-mode smooth-scroll-mode linum-mode rinari-minor-mode yas-minor-mode company-mode diff-hl-dired-mode)
+  271
+  '(nil nil)
+  t
+  '("/Users/guto/work/freelance/k3/na/core/extensions/nasabbathtime/app/models/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/work/freelance/k3/na/core/extensions/nasabbathtime/app/models/sabbathtime_extension_callback.rb"
+  "sabbathtime_extension_callback.rb"
+  'ruby-mode
+  '(abbrev-mode beacon-mode prelude-mode auto-revert-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode flx-ido-mode override-global-mode smooth-scroll-mode linum-mode smart-tab-mode inf-ruby-minor-mode rinari-minor-mode yas-minor-mode company-mode minitest-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/work/freelance/k3/na/core/extensions/nasabbathtime/app/views/widgets/sabbath_time_widget_preferences.html.erb"
+  "sabbath_time_widget_preferences.html.erb"
+  'html-mode
+  '(abbrev-mode beacon-mode prelude-mode auto-revert-mode global-auto-revert-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode flx-ido-mode override-global-mode smooth-scroll-mode linum-mode smart-tab-mode rinari-minor-mode yas-minor-mode company-mode)
+  313
+  '(6 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring (426 388 297 247))))
+
+(desktop-create-buffer 208
+  nil
+  "nasabbathtime"
+  'dired-mode
+  '(abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode flx-ido-mode override-global-mode smooth-scroll-mode linum-mode rinari-minor-mode yas-minor-mode company-mode diff-hl-dired-mode)
+  266
+  '(nil nil)
+  t
+  '("/Users/guto/work/freelance/k3/na/core/extensions/nasabbathtime/")
+  nil
+  '((mark-ring nil)))
+
