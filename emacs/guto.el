@@ -12,6 +12,23 @@
 (set-face-attribute 'hebrew "SBL Hebrew")
 (set-face-attribute 'greek "SBL Greek")
 
+;; List of packages
+(defvar list-of-packages
+  '(
+    golden-ratio ;; resize windows based on the golden ratio
+    vlf ;; view large files
+    neotree ;; file browser (http://www.emacswiki.org/emacs/NeoTree)
+    centered-cursor-mode ;; https://marmalade-repo.org/packages/centered-cursor-mode
+    comment-dwim-2 ;; better comment features (https://github.com/remyferre/comment-dwim-2)
+    flycheck-tip ;; show errors on popup-tip (https://github.com/yuutayamada/flycheck-tip)
+    general-close ;; (https://github.com/emacs-berlin/general-close)
+    sicp-info ;; (https://github.com/webframp/sicp-info)
+    eww ;; Read Practical common lisp (https://www.reddit.com/r/emacs/comments/42g6u9/what_are_some_lesserknown_packages_that_you_love/)
+    sx ;; StackExchange on Emacs (https://github.com/vermiculus/sx.el)
+    leerzeichen ;; highlight whitespace characters (https://github.com/fgeller/leerzeichen.el)
+    speed-type ;; touch speed with Emacs (https://github.com/hagleitn/speed-type)
+    ))
+
 ;; Packages
 
 (require 'package)
@@ -77,6 +94,41 @@
              )
 
 (use-package ido-ubiquitous)
+(use-package ucs-cmds)
+
+;; (require 'cl-lib)
+
+;; (defun my/install-packages ()
+;;   "Ensure the packages I use are installed. See `my/packages'."
+;;   (interactive)
+;;   (let ((missing-packages (cl-remove-if #'package-installed-p my/packages)))
+;;     (when missing-packages
+;;       (message "Installing %d missing package(s)" (length missing-packages))
+;;       (package-refresh-contents)
+;;       (mapc #'package-install missing-packages))))
+
+;; (my/install-packages)
+
+;; Initialize package repo's
+(package-initialize)
+
+;; Refresh list of packages
+(unless package-archive-contents
+  (package-refresh-contents))
+
+(setq package-list
+      '(helm ido-vertical-mode pdf-tools org-pdfview
+             deft blank-mode ace-jump-mode auto-complete
+             rbenv key-chord rinari enclose switch-window yasnippet
+             cider ag wc-mode smartparens smart-tab slime
+             key-chord seeing-is-believing minitest bundler robe
+             magit projectile projectile-rails flx-ido discover))
+
+;; Install missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
 
 ;;(set-face-attribute 'variable-pitch nil :font "Source Sans Pro-21")
 
@@ -345,9 +397,9 @@ bound to C-c h"
 (require 'discover)
 (global-discover-mode 1)
 
-
 (setq debug-on-error nil) ;; Disable debugging due to annoying error when saving/reloading a file.
 
 ;; autocomplete pairs
 (electric-pair-mode 1)
+
 (provide 'guto) ;; guto.el ends here
