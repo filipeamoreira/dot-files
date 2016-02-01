@@ -77,13 +77,7 @@
   (interactive)
   (insert-char ?\u200e))
 
-(defun guto-latex-mode-bindings ()
-  "Modify keymaps used by LaTeX mode."
-  (local-set-key (kbd "C-c l f") 'guto-insert-ltr-footnote)
-  (local-set-key (kbd "C-c l l") 'guto-insert-ltr-mark))
 
-;; add to hook
-(add-hook 'LaTeX-mode-hook 'guto-latex-mode-bindings)
 
 (defun guto-TeX-doc ()
   "Search documentation with texdoc for symbol at point."
@@ -106,3 +100,106 @@
              (?p . "\\parencite[]{%l}")
              (?o . "\\citepr[]{%l}")
              (?n . "\\nocite{%l}")))))
+
+;; Bible reference using
+(defun guto-insert-bibleref (book chapter verse)
+  "Insert Bible chapter and verse numbers"
+  (interactive "sBook:
+sChapter:
+sVerse: ")
+  (insert (format "\\bibleverse{\%s}(\%s:%s)" book chapter verse)))
+
+;; So that RefTeX finds my bibliography
+(setq reftex-default-bibliography '("/Users/guto/Documents/ba-dissertation/dissertation.bib"))
+
+;; Query for master file.
+(setq-default TeX-master nil)
+
+
+(defun guto-latex-mode-bindings ()
+  "Modify keymaps used by LaTeX mode."
+  (local-set-key (kbd "C-c l f") 'guto-insert-ltr-footnote)
+  (local-set-key (kbd "C-c l l") 'guto-insert-ltr-mark)
+  (local-set-key (kbd "C-c l b") 'guto-insert-bibleref))
+
+;; add to hook
+(add-hook 'LaTeX-mode-hook 'guto-latex-mode-bindings)
+
+
+;; From here: http://tex.stackexchange.com/questions/50827/a-simpletons-guide-to-tex-workflow-with-emacs
+;; Fontification (remove unnecessary entries as you notice them) http://lists.gnu.org/archive/html/emacs-orgmode/2009-05/msg00236.html http://www.gnu.org/software/auctex/manual/auctex/Fontification-of-macros.html
+(setq font-latex-match-reference-keywords
+      '(
+        ;; biblatex
+        ("printbibliography" "[{")
+        ("addbibresource" "[{")
+        ;; Standard commands
+        ;; ("cite" "[{")
+        ("Cite" "[{")
+        ("parencite" "[{")
+        ("Parencite" "[{")
+        ("footcite" "[{")
+        ("footcitetext" "[{")
+        ;; ;; Style-specific commands
+        ("textcite" "[{")
+        ("Textcite" "[{")
+        ("smartcite" "[{")
+        ("Smartcite" "[{")
+        ("cite*" "[{")
+        ("parencite*" "[{")
+        ("supercite" "[{")
+        ; Qualified citation lists
+        ("cites" "[{")
+        ("Cites" "[{")
+        ("parencites" "[{")
+        ("Parencites" "[{")
+        ("footcites" "[{")
+        ("footcitetexts" "[{")
+        ("smartcites" "[{")
+        ("Smartcites" "[{")
+        ("textcites" "[{")
+        ("Textcites" "[{")
+        ("supercites" "[{")
+        ;; Style-independent commands
+        ("autocite" "[{")
+        ("Autocite" "[{")
+        ("autocite*" "[{")
+        ("Autocite*" "[{")
+        ("autocites" "[{")
+        ("Autocites" "[{")
+        ;; Text commands
+        ("citeauthor" "[{")
+        ("Citeauthor" "[{")
+        ("citetitle" "[{")
+        ("citetitle*" "[{")
+        ("citeyear" "[{")
+        ("citedate" "[{")
+        ("citeurl" "[{")
+        ;; Special commands
+        ("fullcite" "[{")))
+
+(setq font-latex-match-textual-keywords
+      '(
+        ;; biblatex brackets
+        ("parentext" "{")
+        ("brackettext" "{")
+        ("hybridblockquote" "[{")
+        ;; Auxiliary Commands
+        ("textelp" "{")
+        ("textelp*" "{")
+        ("textins" "{")
+        ("textins*" "{")
+        ;; supcaption
+        ("subcaption" "[{")))
+
+(setq font-latex-match-variable-keywords
+      '(
+        ;; amsmath
+        ("numberwithin" "{")
+        ;; enumitem
+        ("setlist" "[{")
+        ("setlist*" "[{")
+        ("newlist" "{")
+        ("renewlist" "{")
+        ("setlistdepth" "{")
+        ("restartlist" "{")))
