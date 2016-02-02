@@ -77,8 +77,6 @@
   (interactive)
   (insert-char ?\u200e))
 
-
-
 (defun guto-TeX-doc ()
   "Search documentation with texdoc for symbol at point."
   (interactive)
@@ -94,7 +92,7 @@
   '(progn
      ;; (also some other reftex-related customizations)
      (setq reftex-cite-format
-           '((?\C-m . "\\cite[]{%l}")
+           '((?c . "\\cite[]{%l}")
              (?f . "\\footcite[][]{%l}")
              (?t . "\\textcite[]{%l}")
              (?p . "\\parencite[]{%l}")

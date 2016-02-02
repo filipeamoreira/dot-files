@@ -1,58 +1,53 @@
-;;(load-theme 'soothe nil)
-(add-to-list 'custom-theme-load-path "~/.emacs.d/personal/themes/")
-(add-to-list 'custom-theme-load-path "~/.emacs.d/personal/themes/emacs-color-theme-solarized")
-(load-theme 'solarized t)
+;; Fullscreen
+(toggle-fullscreen)
 
-;; Fonts
+;; See also other Dired hacks at: https://github.com/Fuco1/dired-hacks
 
-;; Evaluates on each new frame
-(setq default-frame-alist '((font . "Source Code Pro-21")))
-(set-default-font "Source Code Pro-21")
-(set-face-attribute 'default nil :font "Source Code Pro-21")
-(set-face-attribute 'hebrew "SBL Hebrew")
-(set-face-attribute 'greek "SBL Greek")
-
-;; List of packages
-(defvar list-of-packages
-  '(
-    golden-ratio ;; resize windows based on the golden ratio
-    vlf ;; view large files
-    neotree ;; file browser (http://www.emacswiki.org/emacs/NeoTree)
-    centered-cursor-mode ;; https://marmalade-repo.org/packages/centered-cursor-mode
-    comment-dwim-2 ;; better comment features (https://github.com/remyferre/comment-dwim-2)
-    flycheck-tip ;; show errors on popup-tip (https://github.com/yuutayamada/flycheck-tip)
-    general-close ;; (https://github.com/emacs-berlin/general-close)
-    sicp-info ;; (https://github.com/webframp/sicp-info)
-    eww ;; Read Practical common lisp (https://www.reddit.com/r/emacs/comments/42g6u9/what_are_some_lesserknown_packages_that_you_love/)
-    sx ;; StackExchange on Emacs (https://github.com/vermiculus/sx.el)
-    leerzeichen ;; highlight whitespace characters (https://github.com/fgeller/leerzeichen.el)
-    speed-type ;; touch speed with Emacs (https://github.com/hagleitn/speed-type)
-    ))
+;; golden-ratio ;; resize windows based on the golden ratio
+;; vlf ;; view large files
+;; neotree ;; file browser (http://www.emacswiki.org/emacs/NeoTree)
+;; centered-cursor-mode ;; https://marmalade-repo.org/packages/centered-cursor-mode
+;; comment-dwim-2 ;; better comment features (https://github.com/remyferre/comment-dwim-2)
+;; flycheck-tip ;; show errors on popup-tip (https://github.com/yuutayamada/flycheck-tip)
+;; general-close ;; (https://github.com/emacs-berlin/general-close)
+;; sicp ;; (https://github.com/webframp/sicp-info)
+;; eww ;; Read Practical common lisp (https://www.reddit.com/r/emacs/comments/42g6u9/what_are_some_lesserknown_packages_that_you_love/)
+;; sx ;; StackExchange on Emacs (https://github.com/vermiculus/sx.el)
+;; leerzeichen ;; highlight whitespace characters (https://github.com/fgeller/leerzeichen.el)
+;; speed-type ;; touch speed with Emacs (https://github.com/hagleitn/speed-type)
+;; direx ;; Dired based directory explorer
 
 ;; Packages
-
-(require 'package)
-(package-initialize)
-
-(add-to-list 'package-archives
-             '("org" . "http://orgmode.org/elpa/") t)
 
 (defvar guto/packages
   '(ace-jump-mode
     ag
+    aggressive-indent
     auto-complete
     blank-mode
     bundler
+    centered-cursor-mode
     cider
+    comment-dwim-2
     deft
+    direx
+    discover
     discover
     enclose
+    eww
+    elfeed
     flx-ido
+    flycheck-tip
+    general-close
+    golden-ratio
     helm
+    ido-ubiquitous
     ido-vertical-mode
     key-chord
+    leerzeichen
     magit
     minitest
+    neotree
     org-pdfview
     pdf-tools
     projectile
@@ -61,25 +56,42 @@
     rinari
     robe
     seeing-is-believing
+    sicp
     slime
+    smart-mode-line
     smart-tab
     smartparens
+    smooth-scroll
+    solarized-theme
+    speed-type
     switch-window
+    sx
     tldr
+    ucs-cmds
     use-package
+    vlf
     wc-mode
-    yasnippet
-    ))
+    yasnippet))
+
+(require 'package)
+(package-initialize)
+
+(add-to-list 'package-archives
+             '("org" . "http://orgmode.org/elpa/") t)
 
 ;; Refresh list of packages
 (unless package-archive-contents
   (package-refresh-contents))
 
 ;; Install missing packages
-(dolist (package guto/packages)
-  (unless (package-installed-p package)
-    (package-install package)))
+;; (dolist (package guto/packages)
+;;   (unless (package-installed-p package)
+;;     (package-install package)))
 
+;; Use prelude-require-packages to install packages
+;; (prelude-require-packages '(some-package some-other-package))
+
+(prelude-require-packages guto/packages)
 
 (eval-when-compile
   (require 'use-package))
@@ -88,58 +100,14 @@
 
 ;; Use use-package for package installation and setup
 (use-package smooth-scroll
-             :config
-             (smooth-scroll-mode 1)
-             (setq smooth-scroll/vscroll-step-size 5)
-             )
+  :config
+  (smooth-scroll-mode 1)
+  (setq smooth-scroll/vscroll-step-size 5)
+  )
 
 (use-package ido-ubiquitous)
 (use-package ucs-cmds)
 
-;; (require 'cl-lib)
-
-;; (defun my/install-packages ()
-;;   "Ensure the packages I use are installed. See `my/packages'."
-;;   (interactive)
-;;   (let ((missing-packages (cl-remove-if #'package-installed-p my/packages)))
-;;     (when missing-packages
-;;       (message "Installing %d missing package(s)" (length missing-packages))
-;;       (package-refresh-contents)
-;;       (mapc #'package-install missing-packages))))
-
-;; (my/install-packages)
-
-;; Initialize package repo's
-(package-initialize)
-
-;; Refresh list of packages
-(unless package-archive-contents
-  (package-refresh-contents))
-
-(setq package-list
-      '(helm ido-vertical-mode pdf-tools org-pdfview
-             deft blank-mode ace-jump-mode auto-complete
-             rbenv key-chord rinari enclose switch-window yasnippet
-             cider ag wc-mode smartparens smart-tab slime
-             key-chord seeing-is-believing minitest bundler robe
-             magit projectile projectile-rails flx-ido discover))
-
-;; Install missing packages
-(dolist (package package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
-
-
-;;(set-face-attribute 'variable-pitch nil :font "Source Sans Pro-21")
-
-;; Set sans-serif font for these modes
-;; (dolist (hook '(erc-mode-hook
-;;                 LaTeX-mode-hook
-;;                 org-mode-hook
-;;                 edit-server-start-hook
-;;                 markdown-mode-hook))
-;;   (add-hook hook (lambda () (variable-pitch-mode t))))
-(toggle-fullscreen)
 
 ;;(server-mode)
 
@@ -164,32 +132,6 @@
              '("\\.log\\'" . (lambda ()
                                (auto-revert-tail-mode))))
 
-;; setting for auto-close brackets for electric-pair-mode regardless of current major mode syntax table
-;; (setq electric-pair-pairs '(
-;;                             (?\" . ?\")
-;;                             (?\{ . ?\})
-;;                             (?\' . ?\')
-;;                             (?\[ . ?\])
-;;                             ) )
-;; Enabling eletric-pair-mode globally
-;; (add-hook 'text-mode-hook
-;;           (lambda () (set (make-local-variable 'electric-pair-mode) t)))
-
-;; Adjust electric-pair-pairs on lisp modes
-;; (add-hook 'lisp-mode-hook
-;;           (lambda ()
-;;             (setq electric-pair-pairs '(
-;;                                         (?\" . ?\")
-;;                                         (?\{ . ?\})
-;;                                         (?\[ . ?\])
-;;                                         ))))
-;; (add-hook 'emacs-lisp-mode-hook
-;;           (lambda ()
-;;             (setq electric-pair-pairs '(
-;;                                         (?\" . ?\")
-;;                                         (?\{ . ?\})
-;;                                         (?\[ . ?\])
-;;                                         ))))
 (setq search-highlight t            ;; highlight when searching...
       query-replace-highlight t)    ;; ...and replacing
 
@@ -200,9 +142,7 @@
 (require 'smart-tab)
 (global-smart-tab-mode 1)
 
-
 (setq scss-compile-at-save nil)
-
 
 ;; Rinari
 ;; C-c ; f c	rinari-find-controller
@@ -222,8 +162,8 @@
 ;; C-c ; f w	rinari-find-worker
 ;; C-c ; f x	rinari-find-fixture
 ;; C-c ; f y	rinari-find-stylesheet
-(require 'rinari)
-(global-rinari-mode)
+;; (require 'rinari)
+;; (global-rinari-mode)
 
 ;; (global-set-key (kbd "C-x r C-SPC") 'rm-set-mark)
 ;; (global-set-key (kbd "C-w")
@@ -245,11 +185,12 @@
 (require 'enclose)
 (enclose-mode t)
 
-
 ;; Adds vendor to loadpath
 (add-to-list 'load-path "~/.emacs.d/personal/vendor/")
+
 (require 'rcodetools)
-(define-key ruby-mode-map (kbd "C-c C-c") 'xmp)
+
+;; (define-key ruby-mode-map (kbd "C-c C-c") 'xmp)
 
 ;; Always use UTF-8
 (set-language-environment 'utf-8)
@@ -258,13 +199,15 @@
 (set-locale-environment "en_GB.UTF-8")
 (prefer-coding-system 'utf-8)
 
-;; Display date and time on status bar
-;; (setq display-time-day-and-date t
-;;       display-time-24hr-format t)
-;; (display-time)
+(setq buffer-file-coding-system 'utf-8-unix)
+(setq default-file-name-coding-system 'utf-8-unix)
+(setq default-keyboard-coding-system 'utf-8-unix)
+(setq default-process-coding-system '(utf-8-unix . utf-8-unix))
+(setq default-sendmail-coding-system 'utf-8-unix)
+(setq default-terminal-coding-system 'utf-8-unix)
 
-;; nuke whitespaces when writing to a file
-(add-hook 'before-save-hook 'whitespace-cleanup)
+;; delete whitespaces when writing to a file
+;; (add-hook 'before-save-hook 'whitespace-cleanup)
 
 ;;(global-rbenv-mode)
 
@@ -272,8 +215,8 @@
 (global-set-key (kbd "C-x o") 'switch-window)
 (require 'switch-window)
 
-(add-hook 'after-init-hook
-          (lambda () (setq debug-on-error t)))
+;; (add-hook 'after-init-hook
+;;           (lambda () (setq debug-on-error t)))
 
 (yas-global-mode 1)
 
@@ -292,27 +235,13 @@
 ;; Error with emacs 24.4
 (fset 'package-desc-vers 'package--ac-desc-version)
 
-(setq buffer-file-coding-system 'utf-8-unix)
-(setq default-file-name-coding-system 'utf-8-unix)
-(setq default-keyboard-coding-system 'utf-8-unix)
-(setq default-process-coding-system '(utf-8-unix . utf-8-unix))
-(setq default-sendmail-coding-system 'utf-8-unix)
-(setq default-terminal-coding-system 'utf-8-unix)
-
 ;; File bookmarks
 ;; C-x r m – set a bookmark at the current location (e.g. in a file)
 ;; C-x r b – jump to a bookmark
 ;; C-x r l – list your bookmarks
 ;; M-x bookmark-delete – delete a bookmark by name
 
-
 (require 'wc-goal-mode)
-
-(custom-set-variables '(coffee-tab-width 2))
-
-(setq css-indent-offset 2)
-
-(setq js-indent-level 2)
 
 ;; Using sudo over ssh and Tramp
 (set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'" "/ssh:%h:"))))
@@ -327,21 +256,6 @@
 (cond ((eq system-type 'darwin)
        (setq delete-by-moving-to-trash t)
        (setq trash-directory "~/.Trash/")))
-
-;; (setq whitespace-style '(
-;;                          face
-;;                          tabs
-;;                          trailing
-;;                          lines-tail
-;;                          space-before-tab
-;;                          newline
-;;                          empty
-;;                          space-after-tab
-;;                          tab-mark
-;;                          newline-mark))
-;;
-;; (add-hook 'prog-mode-hook 'whitespace-mode)
-;; (add-hook 'before-save-hook 'whitespace-cleanup)
 
 ;; Always autoscroll compilation output, so long reuslt listings are easier to
 ;; read.
@@ -397,9 +311,15 @@ bound to C-c h"
 (require 'discover)
 (global-discover-mode 1)
 
-(setq debug-on-error nil) ;; Disable debugging due to annoying error when saving/reloading a file.
-
 ;; autocomplete pairs
 (electric-pair-mode 1)
 
-(provide 'guto) ;; guto.el ends here
+;; Disable whispace mode cleanup on save
+(setq prelude-clean-whitespace-on-save nil)
+
+;; Turn on everywhere
+(global-aggressive-indent-mode 1)
+(add-to-list 'aggressive-indent-excluded-modes 'html-mode)
+
+(provide 'guto)
+;;; guto.el ends here

@@ -12,7 +12,9 @@ fi
 
 # Customize to your needs...
 
-unalias e
+case $(type e) in
+    (*alias*) unalias e;;
+esac
 
 # Aliases
 
@@ -24,3 +26,8 @@ alias gp='git push'
 alias gb='git branch -a -v'
 alias g='git'
 alias b='bundle exec'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+
+export TEXMFHOME="$HOME/texmf/"
