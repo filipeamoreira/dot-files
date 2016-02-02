@@ -37,7 +37,7 @@
 ;; AucTeX
 (setq TeX-parse-self t) ; Enable parse on load.
 (setq TeX-auto-save t) ; Enable parse on save.
-(setq-default TeX-master nil)
+(setq-default TeX-master nil) ; Query for master file.
 (add-hook 'LaTeX-mode-hook 'visual-line-mode)
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)

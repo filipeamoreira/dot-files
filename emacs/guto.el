@@ -1,6 +1,3 @@
-;; Fullscreen
-(toggle-fullscreen)
-
 ;; See also other Dired hacks at: https://github.com/Fuco1/dired-hacks
 
 ;; golden-ratio ;; resize windows based on the golden ratio
@@ -36,6 +33,7 @@
     enclose
     eww
     elfeed
+    elfeed-org
     flx-ido
     flycheck-tip
     general-close
@@ -102,11 +100,21 @@
 (use-package smooth-scroll
   :config
   (smooth-scroll-mode 1)
-  (setq smooth-scroll/vscroll-step-size 5)
-  )
+  (setq smooth-scroll/vscroll-step-size 5))
 
 (use-package ido-ubiquitous)
 (use-package ucs-cmds)
+
+;; elfeed
+(use-package elfeed
+  :config
+  (global-set-key (kbd "C-x w") 'elfeed)
+  (setf url-queue-timeout 30))
+
+(use-package elfeed-org
+  :config
+  (elfeed-org)
+  (setq rmh-elfeed-org-files (list "~/.emacs.d/personal/elfeed.org")))
 
 
 ;;(server-mode)
@@ -281,31 +289,31 @@
 
 ;; Set different fonts depending on input type
 ;; See here: http://emacs.stackexchange.com/questions/5519/how-to-assign-a-certain-font-for-each-input-method-language-in-emacs-24/5525#5525
-(defun default-input-font ()
-  "changes the set-input-method to nil and selects a default font
-bound to C-c f"
-  (interactive)
-  (set-input-method nil)
-  (face-remap-add-relative 'default :family "Source Code Pro" :height 110))
+;; (defun default-input-font ()
+;;   "changes the set-input-method to nil and selects a default font
+;; bound to C-c f"
+;;   (interactive)
+;;   (set-input-method nil)
+;;   (face-remap-add-relative 'default :family "Source Code Pro" :height 110))
 
-(defun greek-input-font ()
-  "changes the set-input-method to Greek and selects another font
-bound to C-c g"
-  (interactive)
-  (set-input-method "greek")
-  (face-remap-add-relative 'default :family "SBL Greek" :height 120))
+;; (defun greek-input-font ()
+;;   "changes the set-input-method to Greek and selects another font
+;; bound to C-c g"
+;;   (interactive)
+;;   (set-input-method "greek")
+;;   (face-remap-add-relative 'default :family "SBL Greek" :height 120))
 
-(defun hebrew-input-font ()
+;; (defun hebrew-input-font ()
 
-  "changes the set-input-method to Hebrew  and selects another font
-bound to C-c h"
-  (interactive)
-  (set-input-method "hebrew") ; you can specify like `hebrew-biblical-tiro`
-  (face-remap-add-relative 'default :family "SBL Hebrew" :height 120))
+;;   "changes the set-input-method to Hebrew  and selects another font
+;; bound to C-c h"
+;;   (interactive)
+;;   (set-input-method "hebrew") ; you can specify like `hebrew-biblical-tiro`
+;;   (face-remap-add-relative 'default :family "SBL Hebrew" :height 120))
 
-(global-set-key (kbd "C-c f") 'default-input-font)
-(global-set-key (kbd "C-c g") 'greek-input-font)
-(global-set-key (kbd "C-c h") 'hebrew-input-font)
+;; (global-set-key (kbd "C-c f") 'default-input-font)
+;; (global-set-key (kbd "C-c g") 'greek-input-font)
+;; (global-set-key (kbd "C-c h") 'hebrew-input-font)
 
 ;; discover. See here: https://www.masteringemacs.org/article/discoverel-discover-emacs-context-menus
 (require 'discover)
@@ -321,5 +329,16 @@ bound to C-c h"
 (global-aggressive-indent-mode 1)
 (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
 
+;; Fullscreen
+(defun toggle-fullscreen ()
+  "Toggle full screen"
+  (interactive)
+  (set-frame-parameter
+   nil 'fullscreen
+   (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
+
+(toggle-fullscreen)
+
 (provide 'guto)
 ;;; guto.el ends here
+
