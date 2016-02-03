@@ -96,6 +96,13 @@
 (require 'diminish)                ;; if you use :diminish
 (require 'bind-key)                ;; if you use any :bind variant
 
+;; Solarized theme
+(use-package solarized-theme
+  :config
+  (setq solarized-use-variable-pitch nil);; Don't change the font for some headings and titles
+  ;;(setq solarized-scale-org-headlines nil);; Don't change size of org-mode headlines (but keep other size-changes)
+  (setq prelude-theme 'solarized-dark))
+
 ;; Use use-package for package installation and setup
 (use-package smooth-scroll
   :config
@@ -322,8 +329,8 @@
 ;; autocomplete pairs
 (electric-pair-mode 1)
 
-;; Disable whispace mode cleanup on save
-(setq prelude-clean-whitespace-on-save nil)
+;; Cleanup white space on save
+(setq prelude-clean-whitespace-on-save t)
 
 ;; Turn on everywhere
 (global-aggressive-indent-mode 1)
@@ -336,6 +343,13 @@
   (set-frame-parameter
    nil 'fullscreen
    (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
+
+;; Solarized theme settings
+
+;; Don't change the font for some headings and titles
+(setq solarized-use-variable-pitch nil)
+;; Don't change size of org-mode headlines (but keep other size-changes)
+(setq solarized-scale-org-headlines nil)
 
 (toggle-fullscreen)
 
