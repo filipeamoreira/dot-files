@@ -30,10 +30,11 @@
     direx
     discover
     discover
-    enclose
-    eww
+    edit-server
     elfeed
     elfeed-org
+    enclose
+    eww
     flx-ido
     flycheck-tip
     general-close
@@ -41,6 +42,7 @@
     helm
     ido-ubiquitous
     ido-vertical-mode
+    keyfreq
     key-chord
     leerzeichen
     magit
@@ -101,7 +103,8 @@
   :config
   (setq solarized-use-variable-pitch nil);; Don't change the font for some headings and titles
   ;;(setq solarized-scale-org-headlines nil);; Don't change size of org-mode headlines (but keep other size-changes)
-  (setq prelude-theme 'solarized-dark))
+  (setq prelude-theme 'solarized-dark)
+  (load-theme 'solarized-dark))
 
 ;; Use use-package for package installation and setup
 (use-package smooth-scroll
@@ -123,13 +126,17 @@
   (elfeed-org)
   (setq rmh-elfeed-org-files (list "~/.emacs.d/personal/elfeed.org")))
 
+(use-package keyfreq
+  :config
+  (keyfreq-mode 1)
+  (keyfreq-autosave-mode 1))
 
-;;(server-mode)
 
 ;; Confirm emacs closing
 (setq confirm-kill-emacs 'y-or-n-p)
 
 ;; Enables line numbering in all modes
+(setq linum-format " %3d ")
 (global-linum-mode)
 
 ;; Disable system bell
@@ -333,8 +340,8 @@
 (setq prelude-clean-whitespace-on-save t)
 
 ;; Turn on everywhere
-(global-aggressive-indent-mode 1)
-(add-to-list 'aggressive-indent-excluded-modes 'html-mode)
+;; (global-aggressive-indent-mode 1)
+;; (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
 
 ;; Fullscreen
 (defun toggle-fullscreen ()
@@ -350,9 +357,19 @@
 (setq solarized-use-variable-pitch nil)
 ;; Don't change size of org-mode headlines (but keep other size-changes)
 (setq solarized-scale-org-headlines nil)
+;; Scale org-mode headlines
+(setq solarized-scale-org-headlines t)
 
 (toggle-fullscreen)
 
+(server-mode)
+
+(when (require 'edit-server nil t)
+  (setq edit-server-new-frame nil)
+  (edit-server-start))
+
+;; Use command as control
+;; (setq mac-command-modifier 'control)
+
 (provide 'guto)
 ;;; guto.el ends here
-

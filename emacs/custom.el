@@ -51,7 +51,7 @@
  '(coffee-tab-width 2)
  '(custom-safe-themes
    (quote
-    ("f89e21c3aef10d2825f2f079962c2237cd9a45f4dc1958091be8a6f5b69bb70c" default)))
+    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "f89e21c3aef10d2825f2f079962c2237cd9a45f4dc1958091be8a6f5b69bb70c" default)))
  '(fci-rule-character-color "#202020")
  '(main-line-color1 "#1E1E1E")
  '(main-line-color2 "#111111")
@@ -60,7 +60,7 @@
  '(org-pretty-entities t)
  '(package-selected-packages
    (quote
-    (elfeed-org elfeed vlf sx speed-type sicp sicp-info leerzeichen golden-ratio general-close flycheck-tip direx direx-el comment-dwim-2 centered-cursor-mode enh-ruby-mode aggressive-indent auto-complete ace-jump-mode tldr neotree ucs-cmds use-package smooth-scroll icicles zop-to-char zenburn-theme yari yaml-mode web-mode wc-mode wc-goal-mode volatile-highlights vkill utop undo-tree tuareg switch-window smex smartrep smartparens smart-tab slime seeing-is-believing scss-mode scala-mode2 ruby-tools ruby-block robe rinari rbenv rainbow-mode rainbow-delimiters projectile-speedbar projectile-sift projectile-rails projectile-codesearch ov org-ref org-pdfview org-journal operate-on-number move-text minitest markdown-mode magit lorem-ipsum json-mode js2-mode ido-vertical-mode ido-ubiquitous helm-zhihu-daily helm-xcdoc helm-words helm-wordnet helm-w3m helm-w32-launcher helm-unicode helm-projectile helm-descbinds helm-bibtexkey helm-ag haskell-mode haml-mode guru-mode gscholar-bibtex grizzl gotest god-mode go-projectile gitignore-mode gitconfig-mode git-timemachine gist geiser flycheck-ocaml flx-ido expand-region exec-path-from-shell erlang enclose empos elisp-slime-nav ebib easy-kill discover-my-major discover diminish diff-hl deft company-go company-auctex company-anaconda coffee-mode cider cdlatex bundler browse-kill-ring blank-mode bibtex-utils bibretrieve auto-complete-auctex auctex-lua anzu alchemist ag ace-window ace-jump-buffer)))
+    (edit-server elfeed-org elfeed vlf sx speed-type sicp sicp-info leerzeichen golden-ratio general-close flycheck-tip direx direx-el comment-dwim-2 centered-cursor-mode enh-ruby-mode aggressive-indent auto-complete ace-jump-mode tldr neotree ucs-cmds use-package smooth-scroll icicles zop-to-char zenburn-theme yari yaml-mode web-mode wc-mode wc-goal-mode volatile-highlights vkill utop undo-tree tuareg switch-window smex smartrep smartparens smart-tab slime seeing-is-believing scss-mode scala-mode2 ruby-tools ruby-block robe rinari rbenv rainbow-mode rainbow-delimiters projectile-speedbar projectile-sift projectile-rails projectile-codesearch ov org-ref org-pdfview org-journal operate-on-number move-text minitest markdown-mode magit lorem-ipsum json-mode js2-mode ido-vertical-mode ido-ubiquitous helm-zhihu-daily helm-xcdoc helm-words helm-wordnet helm-w3m helm-w32-launcher helm-unicode helm-projectile helm-descbinds helm-bibtexkey helm-ag haskell-mode haml-mode guru-mode gscholar-bibtex grizzl gotest god-mode go-projectile gitignore-mode gitconfig-mode git-timemachine gist geiser flycheck-ocaml flx-ido expand-region exec-path-from-shell erlang enclose empos elisp-slime-nav ebib easy-kill discover-my-major discover diminish diff-hl deft company-go company-auctex company-anaconda coffee-mode cider cdlatex bundler browse-kill-ring blank-mode bibtex-utils bibretrieve auto-complete-auctex auctex-lua anzu alchemist ag ace-window ace-jump-buffer)))
  '(paradox-automatically-star t)
  '(powerline-color1 "#1E1E1E")
  '(powerline-color2 "#111111")

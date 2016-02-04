@@ -9,6 +9,7 @@
 **** http://nullprogram.com/feed
 **** entry-title: \(emacs\|org-mode\)
 **** http://planet.emacsen.org/atom.xml
+**** http://ergoemacs.org/emacs/blog.xml
 *** Web Development                                                     :web:
 **** http://planet.phpunit.de/atom.xml
 **** http://feeds.feedburner.com/symfony/blog
