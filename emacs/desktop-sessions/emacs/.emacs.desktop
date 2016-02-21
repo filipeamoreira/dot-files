@@ -1,0 +1,463 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Sun Feb 21 15:31:17 2016
+;; Desktop file format version 208
+;; Emacs version 25.0.90.1
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (22217 55365 101248 0) (desktop . "208") "guto@mbp" nil nil ((((font-backend mac-ct) (fontsize . 0) (font . "-*-Source Code Pro-normal-normal-normal-*-22-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 2) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#839496") (background-color . "#002b36") (line-spacing) (left-fringe . 8) (right-fringe . 8) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (scroll-bar-height . 0) (alpha) (fullscreen . fullboth) (display-type . color) (background-mode . dark) (cursor-color . "#839496") (environment) (frameset--id . "A837-3223-1024-D9A2") (frameset--mini t . t) (height . 32) (width . 109) (modeline . t) (minibuffer . t) (unsplittable) (left . 0) (top . 0) (right-divider-width . 0) (bottom-divider-width . 0) (icon-name) (visibility . t) (display . "mbp") (explicit-name) (tool-bar-position . top)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 10) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 112) (min-pixel-width . 130) (min-pixel-height-ignore . 84) (min-pixel-width-ignore . 130) (min-pixel-height-safe . 28) (min-pixel-width-safe . 26)) leaf (pixel-width . 1436) (pixel-height . 868) (total-width . 110) (total-height . 31) (normal-height . 1.0) (normal-width . 1.0) (buffer "study.org" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins 6) (scroll-bars nil 0 t nil 0 nil) (vscroll . 0) (dedicated) (point . 263) (start . 1))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring '("org" "jou" "english" "donation_total" "donation_" "Money" "total" "def total" "donation" "add_to_" "shipping_same?" "valida" "shipping" "shipping_same?" "set_or" "add_"))
+(setq register-alist nil)
+(setq file-name-history '("~/Dropbox/sync/notes" "/Users/guto/work/freelance/k3/na/core/extensions/nastore/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/extensions/nastore/.git/rebase-merge/git-rebase-todo" "/Users/guto/work/freelance/k3/na/core/extensions/nastore/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/extensions/naevents/.git/COMMIT_EDITMSG" "~/.emacs.d/personal/guto.el" "~/Dropbox/uni/theology/undergraduate-newbold/final/homiletics/homiletics.org" "/Users/guto/work/freelance/k3/na/core/extensions/nastore/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/extensions/newsdesk/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/extensions/naevents/.git/COMMIT_EDITMSG" "/Users/guto/Documents/ba-dissertation/.git/COMMIT_EDITMSG" "~/.emacs.d/personal/guto-org.el" "~/Documents/ba-dissertation/matthew-lxx-use.tex" "~/Documents/ba-dissertation/messianism-lxx.tex" "~/tmp/Hello.java" "" "~/tmp/hello.java" "~/.emacs.d/personal/guto-latex.el" "/Users/guto/Documents/ba-dissertation/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/extensions/nasabbathtime/.git/COMMIT_EDITMSG" "~/.emacs.d/personal/guto-ruby.el" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/.emacs.d/personal/guto-desktop.el" "~/.emacs.d/personal/guto-sessions.el" "/Users/guto/work/freelance/cupris/cupris/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/vop/store/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/vop/spree_gateway/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/vop/store/.git/COMMIT_EDITMSG" "~/work/freelance/k3/vop/tmp/store-upgrade.md" "~/work/freelance/k3/vop/tmp" "/Users/guto/work/freelance/k3/vop/store/.git/COMMIT_EDITMSG" "~/work/freelance/k3/vop/store/.ruby-gemset" "~/work/freelance/k3/vop/store/.ruby-version" "/Users/guto/work/freelance/k3/vop/bibleschools/.git/COMMIT_EDITMSG" "~/work/freelance/k3/vop/bibleschools/public/system/s3/elfinder/thumbs" "~/work/freelance/k3/vop/bibleschools/public/system/s3/thumbs" "/Users/guto/work/freelance/k3/vop/bibleschools/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/amc/time_tracker/.git/COMMIT_EDITMSG" "/Users/guto/scm/git/best_in_place/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/amc/time_tracker/.git/COMMIT_EDITMSG" "/Users/guto/scm/git/dot-files/.git/COMMIT_EDITMSG" "~/.emacs.d/personal/guto-rbenv.el" "~/work/freelance/k3/amc/time_tracker/spec/helpers/timesheets_helper_spec.rb" "/Users/guto/work/freelance/k3/amc/time_tracker/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/vop/bibleschools/.git/COMMIT_EDITMSG" "~/work/freelance/k3/vop/bibleschools/config/puma.rb" "~/work/freelance/k3/vop/bibleschools/Procfile" "/Users/guto/work/freelance/k3/vop/bibleschools/.git/COMMIT_EDITMSG" "/sudo:root@localhost:/etc/AFP.conf" "/sudo:root@localhost:.CFUserTextEncoding" "/sudo:root@localhost:/Library/Application Support/ServerAutoMount/org.guto-server.automount.sh" "/sudo:root@localhost:/Library/Application Support/ServerAutoMount/org.guto-server.automount.plist" "/sudo:root@localhost:/Library/Application Support/ServerAutoMount" "/etc/auto_master" "~/work/freelance/cupris/doc/survey-research.md" "/Users/guto/work/freelance/k3/amc/time_tracker/.git/COMMIT_EDITMSG" "~/.pryrc" "~/.irbrc" "~/work/freelance/k3/amc/time_tracker/config/database.yml" "~/work/freelance/cupris/cupris/doc/design-comments.md" "~/work/freelance/k3/amc/time_tracker/config/database.yml" "/Users/guto/scm/git/dot-files/.git/COMMIT_EDITMSG" "~/.emacs.d/personal/guto-bookmark.el" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/extensions/test_extension/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/core/.beta_extensions" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/Dropbox/sync/org/work.org" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/Dropbox/sync/org/journal.org" "~/work/freelance/k3/na/core/.beta_server" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/core/lib/git/git_stable.rb" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/core/.beta_server" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/extensions/test_extension/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/extensions/test_extension/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/extensions/test_extension/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/core/extensions/Extensions_added" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/core/extensions/test_extension2" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/extensions/test_extension/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/core/extensions/test_extension/lib/test_extension/version.rb" "~/work/freelance/k3/na/core/extensions/test_extension/lib/test_extension.rb" "~/work/freelance/k3/na/core/extensions/test_extension/lib/test_extension" "~/work/freelance/k3/na/core/extensions/test_extension/lib" "/Users/guto/work/freelance/k3/na/core/.git/COMMIT_EDITMSG" "/Users/guto/work/freelance/k3/na/test_extension/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/test_extension/README" "~/test-ruby.rb" "/Users/guto/work/freelance/k3/na/test_extension/.git/COMMIT_EDITMSG" "~/work/freelance/k3/na/test_extension/test_extension.gemspec"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/Users/guto/Dropbox/sync/notes/study.org"
+  "study.org"
+  'org-mode
+  '(auto-fill-mode abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode flx-ido-mode helm-mode company-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode)
+  263
+  '(21 t)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines . t))
+  '((mark-ring (21))))
+
+(desktop-create-buffer 208
+  nil
+  "notes"
+  'dired-mode
+  '(abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode flx-ido-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode diff-hl-dired-mode)
+  479
+  '(nil nil)
+  t
+  '("/Users/guto/Dropbox/sync/notes/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "sync"
+  'dired-mode
+  '(abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode flx-ido-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode diff-hl-dired-mode)
+  1443
+  '(nil nil)
+  t
+  '("/Users/guto/Dropbox/sync/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/.emacs.d/personal/guto-journal.el"
+  "guto-journal.el"
+  'emacs-lisp-mode
+  '(abbrev-mode eldoc-mode beacon-mode prelude-mode global-auto-revert-mode smartparens-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode flx-ido-mode helm-mode company-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode smart-tab-mode guru-mode elisp-slime-nav-mode rainbow-delimiters-mode rainbow-mode)
+  1
+  '(1248 t)
+  nil
+  nil
+  '((buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring (324))))
+
+(desktop-create-buffer 208
+  nil
+  "personal"
+  'dired-mode
+  '(abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode flx-ido-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode diff-hl-dired-mode)
+  1180
+  '(295 t)
+  t
+  '("/Users/guto/.emacs.d/personal/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "org"
+  'dired-mode
+  '(abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode flx-ido-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode diff-hl-dired-mode)
+  234
+  '(nil nil)
+  t
+  '("/Users/guto/Dropbox/sync/org/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "Dropbox"
+  'dired-mode
+  '(abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode flx-ido-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode diff-hl-dired-mode)
+  1554
+  '(nil nil)
+  t
+  '("/Users/guto/Dropbox/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/work/freelance/k3/na/core/extensions/nastore/authorize-credentials.txt"
+  "authorize-credentials.txt"
+  'text-mode
+  '(abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode flx-ido-mode helm-mode company-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode smart-tab-mode projectile-rails-mode)
+  58
+  '(42 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (15 42 15 71 42 15))))
+
+(desktop-create-buffer 208
+  nil
+  "core"
+  'dired-mode
+  '(abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode flx-ido-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode projectile-rails-mode diff-hl-dired-mode)
+  249
+  '(nil nil)
+  t
+  '("/Users/guto/work/freelance/k3/na/core/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/work/freelance/k3/na/core/extensions/nastore/app/models/order.rb"
+  "order.rb"
+  'enh-ruby-mode
+  '(abbrev-mode beacon-mode prelude-mode auto-revert-mode global-auto-revert-mode smartparens-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode flx-ido-mode helm-mode company-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode smart-tab-mode guru-mode projectile-rails-mode)
+  17640
+  '(6076 t)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (2890 16607 10625 14865 10587 2890 2232 1 14795 10630 2890 2890 1077 2890 2890 12223))))
+
+(desktop-create-buffer 208
+  "/Users/guto/work/freelance/k3/na/core/.bundle/gems/countries-0.9.3/lib/countries/country.rb"
+  "country.rb"
+  'enh-ruby-mode
+  '(abbrev-mode beacon-mode prelude-mode global-auto-revert-mode smartparens-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode flx-ido-mode helm-mode company-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode smart-tab-mode guru-mode)
+  493
+  '(45 t)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (1815 44 28 2396))))
+
+(desktop-create-buffer 208
+  nil
+  "countries"
+  'dired-mode
+  '(abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode flx-ido-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode diff-hl-dired-mode)
+  278
+  '(nil nil)
+  t
+  '("/Users/guto/work/freelance/k3/na/core/.bundle/gems/countries-0.9.3/lib/countries/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "nastore"
+  'dired-mode
+  '(abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode flx-ido-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode projectile-rails-mode diff-hl-dired-mode)
+  434
+  '(nil nil)
+  t
+  '("/Users/guto/work/freelance/k3/na/core/extensions/nastore/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/work/freelance/k3/na/core/extensions/nastore/.git/rebase-merge/git-rebase-todo"
+  "git-rebase-todo"
+  'git-rebase-mode
+  '(abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode diff-hl-mode flx-ido-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode projectile-rails-mode with-editor-mode)
+  1
+  '(nil nil)
+  t
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/work/freelance/k3/na/core/extensions/nastore/app/views/store/shared/_user_details.html.erb"
+  "_user_details.html.erb"
+  'web-mode
+  '(abbrev-mode beacon-mode prelude-mode auto-revert-mode global-auto-revert-mode smartparens-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode flx-ido-mode helm-mode company-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode smart-tab-mode guru-mode projectile-rails-mode)
+  806
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/work/freelance/k3/na/core/extensions/nastore/app/controllers/store/orders_controller.rb"
+  "orders_controller.rb"
+  'enh-ruby-mode
+  '(abbrev-mode beacon-mode prelude-mode auto-revert-mode global-auto-revert-mode smartparens-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode flx-ido-mode helm-mode company-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode smart-tab-mode guru-mode projectile-rails-mode)
+  5129
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/work/freelance/k3/na/core/extensions/nastore/app/controllers/donations_controller.rb"
+  "donations_controller.rb"
+  'enh-ruby-mode
+  '(abbrev-mode beacon-mode prelude-mode auto-revert-mode global-auto-revert-mode smartparens-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode flx-ido-mode helm-mode company-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode smart-tab-mode guru-mode projectile-rails-mode)
+  2044
+  '(1 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (1727 1652 1 4464 1301 1727 1727 1727 1727 1655 1722 1))))
+
+(desktop-create-buffer 208
+  "/Users/guto/work/freelance/k3/na/core/extensions/nastore/app/views/store/products/_product.html.erb"
+  "_product.html.erb"
+  'web-mode
+  '(abbrev-mode beacon-mode prelude-mode auto-revert-mode global-auto-revert-mode smartparens-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode flx-ido-mode helm-mode company-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode smart-tab-mode guru-mode projectile-rails-mode)
+  431
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/work/freelance/k3/na/core/extensions/nastore/app/views/donations/_paypal_submit.html.erb"
+  "_paypal_submit.html.erb"
+  'web-mode
+  '(abbrev-mode beacon-mode prelude-mode auto-revert-mode global-auto-revert-mode smartparens-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode flx-ido-mode helm-mode company-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode smart-tab-mode guru-mode projectile-rails-mode)
+  54
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "donations"
+  'dired-mode
+  '(abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode flx-ido-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode projectile-rails-mode diff-hl-dired-mode)
+  340
+  '(nil nil)
+  t
+  '("/Users/guto/work/freelance/k3/na/core/extensions/nastore/app/views/donations/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/work/freelance/k3/na/core/extensions/nastore/app/helpers/store/products_helper.rb"
+  "products_helper.rb"
+  'enh-ruby-mode
+  '(abbrev-mode beacon-mode prelude-mode auto-revert-mode global-auto-revert-mode smartparens-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode flx-ido-mode helm-mode company-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode smart-tab-mode guru-mode projectile-rails-mode)
+  502
+  '(420 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (420))))
+
+(desktop-create-buffer 208
+  nil
+  "controllers"
+  'dired-mode
+  '(abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode flx-ido-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode projectile-rails-mode diff-hl-dired-mode)
+  482
+  '(nil nil)
+  t
+  '("/Users/guto/work/freelance/k3/na/core/extensions/nastore/app/controllers/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/work/freelance/k3/na/core/extensions/nastore/config/routes.rb"
+  "routes.rb"
+  'enh-ruby-mode
+  '(abbrev-mode beacon-mode prelude-mode auto-revert-mode global-auto-revert-mode smartparens-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode flx-ido-mode helm-mode company-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode smart-tab-mode guru-mode projectile-rails-mode)
+  976
+  '(273 t)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (36))))
+
+(desktop-create-buffer 208
+  nil
+  "config"
+  'dired-mode
+  '(abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode flx-ido-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode projectile-rails-mode diff-hl-dired-mode)
+  760
+  '(nil nil)
+  t
+  '("/Users/guto/work/freelance/k3/na/core/extensions/nastore/config/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "store"
+  'dired-mode
+  '(abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode flx-ido-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode projectile-rails-mode diff-hl-dired-mode)
+  336
+  '(nil nil)
+  t
+  '("/Users/guto/work/freelance/k3/na/core/extensions/nastore/app/helpers/store/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "helpers"
+  'dired-mode
+  '(abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode flx-ido-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode projectile-rails-mode diff-hl-dired-mode)
+  456
+  '(nil nil)
+  t
+  '("/Users/guto/work/freelance/k3/na/core/extensions/nastore/app/helpers/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/work/freelance/k3/na/core/extensions/nastore/app/helpers/store_helper.rb"
+  "store_helper.rb"
+  'enh-ruby-mode
+  '(abbrev-mode beacon-mode prelude-mode auto-revert-mode global-auto-revert-mode smartparens-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode flx-ido-mode helm-mode company-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode smart-tab-mode guru-mode projectile-rails-mode)
+  1
+  '(2158 t)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "products"
+  'dired-mode
+  '(abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode flx-ido-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode projectile-rails-mode diff-hl-dired-mode)
+  282
+  '(nil nil)
+  t
+  '("/Users/guto/work/freelance/k3/na/core/extensions/nastore/app/views/store/products/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/work/freelance/k3/na/core/extensions/nastore/app/views/store/products/index.html.erb"
+  "index.html.erb"
+  'web-mode
+  '(abbrev-mode beacon-mode prelude-mode auto-revert-mode global-auto-revert-mode smartparens-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode flx-ido-mode helm-mode company-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode smart-tab-mode guru-mode projectile-rails-mode)
+  2
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "store"
+  'dired-mode
+  '(abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode flx-ido-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode projectile-rails-mode diff-hl-dired-mode)
+  446
+  '(nil nil)
+  t
+  '("/Users/guto/work/freelance/k3/na/core/extensions/nastore/app/views/store/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "store"
+  'dired-mode
+  '(abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode flx-ido-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode projectile-rails-mode diff-hl-dired-mode)
+  227
+  '(nil nil)
+  t
+  '("/Users/guto/work/freelance/k3/na/core/extensions/nastore/app/views/store/store/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/work/freelance/k3/na/core/extensions/nastore/app/views/store/products/show.html.erb"
+  "show.html.erb"
+  'web-mode
+  '(abbrev-mode beacon-mode prelude-mode auto-revert-mode global-auto-revert-mode smartparens-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode flx-ido-mode helm-mode company-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode smart-tab-mode guru-mode projectile-rails-mode)
+  61
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/work/freelance/k3/na/core/extensions/nastore/app/helpers/store/orders_helper.rb"
+  "orders_helper.rb"
+  'enh-ruby-mode
+  '(abbrev-mode beacon-mode prelude-mode auto-revert-mode global-auto-revert-mode smartparens-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode flx-ido-mode helm-mode company-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode smart-tab-mode guru-mode projectile-rails-mode)
+  743
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/work/freelance/k3/na/core/extensions/nastore/app/helpers/store/purchased_order_items_helper.rb"
+  "purchased_order_items_helper.rb"
+  'enh-ruby-mode
+  '(abbrev-mode beacon-mode prelude-mode auto-revert-mode global-auto-revert-mode smartparens-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode flx-ido-mode helm-mode company-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode smart-tab-mode guru-mode projectile-rails-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/work/freelance/k3/na/core/extensions/nastore/app/views/donations/_form.html.erb"
+  "_form.html.erb"
+  'web-mode
+  '(abbrev-mode beacon-mode prelude-mode auto-revert-mode global-auto-revert-mode smartparens-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode flx-ido-mode helm-mode company-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode smart-tab-mode guru-mode projectile-rails-mode)
+  436
+  '(436 t)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring (377 377))))
+
+(desktop-create-buffer 208
+  "/Users/guto/work/freelance/k3/na/core/extensions/nastore/app/models/shipping_address.rb"
+  "shipping_address.rb"
+  'enh-ruby-mode
+  '(abbrev-mode beacon-mode prelude-mode auto-revert-mode global-auto-revert-mode smartparens-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode flx-ido-mode helm-mode company-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode smart-tab-mode guru-mode projectile-rails-mode)
+  419
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "models"
+  'dired-mode
+  '(abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode flx-ido-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode projectile-rails-mode diff-hl-dired-mode)
+  996
+  '(nil nil)
+  t
+  '("/Users/guto/work/freelance/k3/na/core/extensions/nastore/app/models/")
+  nil
+  '((mark-ring nil)))
+

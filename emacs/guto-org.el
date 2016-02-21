@@ -79,7 +79,7 @@
 ;;(setq ispell-dictionary "es")
 
 ;; fontify code in code blocks
-(setq org-src-fontify-natively t)
+(setq org-src-fontify-natively nil)
 
 ;; Shows everything pretty on-screen
-(setq org-startup-indented t)
+(setq org-startup-indented nil)

@@ -2,12 +2,12 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Thu Feb  4 12:09:51 2016
+;; Created Wed Feb 17 03:19:53 2016
 ;; Desktop file format version 208
 ;; Emacs version 25.0.90.1
 
 ;; Global section:
-(setq desktop-saved-frameset [frameset 1 (22195 16271 851547 0) (desktop . "208") "guto@mbp" nil nil ((((font-backend mac-ct) (fontsize . 0) (font . "-*-Source Code Pro-normal-normal-normal-*-21-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 2) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#DCDCCC") (background-color . "#3F3F3F") (line-spacing) (left-fringe . 8) (right-fringe . 8) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (scroll-bar-height . 0) (alpha) (fullscreen . fullboth) (display-type . color) (background-mode . dark) (cursor-color . "#FFFFEF") (environment) (frameset--id . "2A9F-D96D-8413-02A5") (frameset--mini t . t) (modeline . t) (minibuffer . t) (unsplittable) (right-divider-width . 0) (bottom-divider-width . 0) (icon-name) (display . "mbp") (explicit-name) (tool-bar-position . top) (visibility . t) (height . 33) (width . 109) (left . 0) (top . 0)) ((min-height . 4) (min-width . 10) (min-height-ignore . 2) (min-width-ignore . 9) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 108) (min-pixel-width . 130) (min-pixel-height-ignore . 54) (min-pixel-width-ignore . 117) (min-pixel-height-safe . 27) (min-pixel-width-safe . 26)) leaf (pixel-width . 1436) (pixel-height . 869) (total-width . 110) (total-height . 32) (normal-height . 1.0) (normal-width . 1.0) (buffer "homiletics.org" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins 5) (scroll-bars nil 0 t nil 0 nil) (vscroll . 0) (dedicated) (point . 3498) (start . 2671))))])
+(setq desktop-saved-frameset [frameset 1 (22211 59097 608092 0) (desktop . "208") "guto@mbp" nil nil ((((font-backend mac-ct) (fontsize . 0) (font . "-*-Source Code Pro-normal-normal-normal-*-22-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 2) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#839496") (background-color . "#002b36") (line-spacing) (left-fringe . 8) (right-fringe . 8) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (scroll-bar-height . 0) (alpha) (fullscreen . fullboth) (display-type . color) (background-mode . dark) (cursor-color . "#839496") (environment) (frameset--id . "6FBF-74E9-CD94-886A") (frameset--mini t . t) (height . 32) (width . 109) (modeline . t) (minibuffer . t) (unsplittable) (left . 0) (top . 0) (right-divider-width . 0) (bottom-divider-width . 0) (icon-name) (visibility . t) (display . "mbp") (explicit-name) (tool-bar-position . top)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 10) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 112) (min-pixel-width . 130) (min-pixel-height-ignore . 84) (min-pixel-width-ignore . 130) (min-pixel-height-safe . 28) (min-pixel-width-safe . 26)) leaf (pixel-width . 1436) (pixel-height . 868) (total-width . 110) (total-height . 31) (normal-height . 1.0) (normal-width . 1.0) (buffer "homiletics.org" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins 6) (scroll-bars nil 0 t nil 0 nil) (vscroll . 0) (dedicated) (point . 9052) (start . 1))))])
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
@@ -18,50 +18,26 @@
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 208
-  "/Users/guto/Dropbox/uni/theology/undergraduate-newbold/final/homiletics/homiletics.org"
+  "/Users/guto/uni/theology/undergraduate-newbold/final/homiletics/homiletics.org"
   "homiletics.org"
   'org-mode
-  '(auto-fill-mode abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode flx-ido-mode helm-mode company-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode org-indent-mode)
-  3498
-  '(5564 t)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (truncate-lines . t))
-  '((mark-ring (9956 4316 75 9733))))
-
-(desktop-create-buffer 208
-  "/Users/guto/.emacs.d/personal/preload/preload.el"
-  "preload.el"
-  'emacs-lisp-mode
-  '(abbrev-mode eldoc-mode beacon-mode prelude-mode global-auto-revert-mode smartparens-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode flx-ido-mode helm-mode company-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode smart-tab-mode aggressive-indent-mode guru-mode elisp-slime-nav-mode rainbow-delimiters-mode rainbow-mode)
-  307
-  '(217 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . prefer-utf-8-unix))
-  '((mark-ring (217 151 172 307))))
-
-(desktop-create-buffer 208
-  nil
-  "preload"
-  'dired-mode
-  '(abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode flx-ido-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode diff-hl-dired-mode)
-  238
+  '(auto-fill-mode abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode flx-ido-mode helm-mode company-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode org-beamer-mode)
+  9052
   '(nil nil)
-  t
-  '("/Users/guto/.emacs.d/personal/preload/")
   nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines . t))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   nil
-  "personal"
+  "homiletics"
   'dired-mode
   '(abbrev-mode beacon-mode prelude-mode global-auto-revert-mode volatile-highlights-mode projectile-mode anzu-mode flx-ido-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode linum-mode diff-hl-dired-mode)
-  1885
-  '(234 t)
+  1734
+  '(nil nil)
   t
-  '("/Users/guto/.emacs.d/personal/")
+  '("/Users/guto/uni/theology/undergraduate-newbold/final/homiletics/")
   nil
   '((mark-ring nil)))
 

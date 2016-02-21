@@ -1,5 +1,5 @@
-(defvar org-journal-dir "~/Dropbox/sync/org")
-(defvar org-journal-file "~/Dropbox/sync/org/journal.org"
+(defvar org-journal-dir "~/Dropbox/sync/notes")
+(defvar org-journal-file "~/Dropbox/sync/notes/journal.org"
   "Path to OrgMode journal file.")
 
 (defvar org-journal-date-format "%Y%m%d - %A"

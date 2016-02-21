@@ -16,6 +16,8 @@
 
 ;; Packages
 
+;; This
+
 (defvar guto/packages
   '(ace-jump-mode
     ag
@@ -26,10 +28,11 @@
     centered-cursor-mode
     cider
     comment-dwim-2
+    crux
     deft
     direx
     discover
-    discover
+    define-word
     edit-server
     elfeed
     elfeed-org
@@ -40,8 +43,11 @@
     general-close
     golden-ratio
     helm
+    helm-bibtex
+    ;; hlinum
     ido-ubiquitous
     ido-vertical-mode
+    ispell
     keyfreq
     key-chord
     leerzeichen
@@ -49,6 +55,7 @@
     minitest
     neotree
     org-pdfview
+    org-ref
     pdf-tools
     projectile
     projectile-rails
@@ -131,13 +138,53 @@
   (keyfreq-mode 1)
   (keyfreq-autosave-mode 1))
 
+;; Set of useful extensions to Emacs
+(use-package crux
+  :config
+  ;;(define-key KEYMAP "\C-c i" nil)
+  ;; FIXME: Need to unset this first
+  (define-key global-map (kbd "C-c i)") nil)
+  (global-unset-key "\C-c i")
+  (global-set-key (kbd "C-c i") 'crux-ispell-word-then-abbrev)
+  (setq save-abbrevs 'silently)
+  (setq-default abbrev-mode t))
+
+;; Definition of words using a web service
+(use-package define-word
+  :config
+  (global-set-key (kbd "C-c d") 'define-word-at-point))
+
+;; Synonymous
+;; C-c s l synosaurus-lookup
+;; C-c s r synosaurus-choose-and-replace
+(use-package synosaurus
+  :config
+  (synosaurus-mode))
+
+;; Ispell dictionary
+(use-package ispell
+  :config
+  (ispell-change-dictionary "en_GB"))
+
+;; helm-bibtex
+(use-package helm-bibtex
+  :config
+  (setq helm-bibtex-bibliography '("~/Documents/ba-dissertation/dissertation.bib" "~/Documents/zotero.bib")))
+
+;; Highlight current line
+;; (use-package hlinum
+;;   :config
+;;   (linum-highlight-in-all-buffersp t)
+;;   (hlinum-activate))
 
 ;; Confirm emacs closing
 (setq confirm-kill-emacs 'y-or-n-p)
 
 ;; Enables line numbering in all modes
-(setq linum-format " %3d ")
-(global-linum-mode)
+(setq linum-format "%4d \u2502") ;; with solid line separator
+(global-linum-mode t)
+(set-face-attribute 'linum nil :height 200)
+
 
 ;; Disable system bell
 (setq visible-bell 1)
@@ -295,7 +342,6 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-(blink-cursor-mode t)
 (show-paren-mode t)
 
 ;; enable company mode
@@ -370,6 +416,47 @@
 
 ;; Use command as control
 ;; (setq mac-command-modifier 'control)
+
+;; remove auto save when focus is lost
+(remove-hook 'focus-out-hook 'prelude-auto-save-command)
+
+;; stop blinking cursor
+(blink-cursor-mode -1)
+
+;; indent yanked code
+
+
+;; automatically indenting yanked text if in programming-modes
+(defvar yank-indent-modes '(emacs-lisp-mode
+                            c-mode c++-mode
+                            tcl-mode sql-mode
+                            perl-mode cperl-mode
+                            java-mode jde-mode
+                            lisp-interaction-mode
+                            LaTeX-mode TeX-mode)
+  "Modes in which to indent regions that are yanked (or yank-popped)")
+
+(defvar yank-advised-indent-threshold 1000
+  "Threshold (# chars) over which indentation does not automatically occur.")
+
+(defun yank-advised-indent-function (beg end)
+  "Do indentation, as long as the region isn't too large."
+  (if (<= (- end beg) yank-advised-indent-threshold)
+      (indent-region beg end nil)))
+
+(defadvice yank (after yank-indent activate)
+  "If current mode is one of 'yank-indent-modes, indent yanked text (with prefix arg don't indent)."
+  (if (and (not (ad-get-arg 0))
+           (member major-mode yank-indent-modes))
+      (let ((transient-mark-mode nil))
+    (yank-advised-indent-function (region-beginning) (region-end)))))
+
+(defadvice yank-pop (after yank-pop-indent activate)
+  "If current mode is one of 'yank-indent-modes, indent yanked text (with prefix arg don't indent)."
+  (if (and (not (ad-get-arg 0))
+           (member major-mode yank-indent-modes))
+    (let ((transient-mark-mode nil))
+    (yank-advised-indent-function (region-beginning) (region-end)))))
 
 (provide 'guto)
 ;;; guto.el ends here

@@ -17,17 +17,18 @@ fi
 # Editors
 #
 
-export EDITOR='nano'
-export VISUAL='nano'
+export EDITOR='e'
+export VISUAL='e'
 export PAGER='less'
 
 #
 # Language
 #
 
-if [[ -z "$LANG" ]]; then
-  export LANG='en_US.UTF-8'
-fi
+# if [[ -z "$LANG" ]]; then
+#   export LANG='en_GB.UTF-8'
+# fi
+export LANG='en_GB.UTF-8'
 
 #
 # Paths

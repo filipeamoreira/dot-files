@@ -87,6 +87,9 @@
        ;;(ruby-tools-mode +1)
        ;; CamelCase aware editing operations
        (subword-mode +1)
+       (global-unset-key "\C-c /")
+       (define-key global-map (kbd "\C-c /)") nil)
+       (global-set-key "\C-c /" 'comment-or-uncomment-region)
        (electric-pair-mode -1));; This is creating issues with single and double quotes
 
      (setq prelude-ruby-mode-hook 'prelude-ruby-mode-defaults)
