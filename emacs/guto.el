@@ -1,3 +1,7 @@
+;;; package -- Summary
+
+;;; Commentary:
+
 ;; See also other Dired hacks at: https://github.com/Fuco1/dired-hacks
 
 ;; golden-ratio ;; resize windows based on the golden ratio
@@ -8,7 +12,7 @@
 ;; flycheck-tip ;; show errors on popup-tip (https://github.com/yuutayamada/flycheck-tip)
 ;; general-close ;; (https://github.com/emacs-berlin/general-close)
 ;; sicp ;; (https://github.com/webframp/sicp-info)
-;; eww ;; Read Practical common lisp (https://www.reddit.com/r/emacs/comments/42g6u9/what_are_some_lesserknown_packages_that_you_love/)
+;; eww ;; Read Practical common Lisp (https://www.reddit.com/r/emacs/comments/42g6u9/what_are_some_lesserknown_packages_that_you_love/)
 ;; sx ;; StackExchange on Emacs (https://github.com/vermiculus/sx.el)
 ;; leerzeichen ;; highlight whitespace characters (https://github.com/fgeller/leerzeichen.el)
 ;; speed-type ;; touch speed with Emacs (https://github.com/hagleitn/speed-type)
@@ -17,6 +21,8 @@
 ;; Packages
 
 ;; This
+
+;;; Code:
 
 (defvar guto/packages
   '(ace-jump-mode
@@ -56,9 +62,10 @@
     neotree
     org-pdfview
     org-ref
+    ;;persp-mode
     pdf-tools
-    projectile
-    projectile-rails
+    ;;projectile
+    ;;projectile-rails
     rbenv
     rinari
     robe
@@ -73,6 +80,7 @@
     speed-type
     switch-window
     sx
+    tide
     tldr
     ucs-cmds
     use-package
@@ -143,7 +151,7 @@
   :config
   ;;(define-key KEYMAP "\C-c i" nil)
   ;; FIXME: Need to unset this first
-  (define-key global-map (kbd "C-c i)") nil)
+  (define-key global-map (kbd "C-c i") nil)
   (global-unset-key "\C-c i")
   (global-set-key (kbd "C-c i") 'crux-ispell-word-then-abbrev)
   (setq save-abbrevs 'silently)
@@ -170,6 +178,24 @@
 (use-package helm-bibtex
   :config
   (setq helm-bibtex-bibliography '("~/Documents/ba-dissertation/dissertation.bib" "~/Documents/zotero.bib")))
+
+;; Tide configuration
+(use-package tide
+  :config
+  (add-hook 'typescript-mode-hook
+            (lambda ()
+              (tide-setup)
+              (flycheck-mode +1)
+              (setq flycheck-check-syntax-automatically '(save mode-enabled))
+              (eldoc-mode +1)
+              ;; company is an optional dependency. You have to
+              ;; install it separately via package-install
+              (company-mode-on))))
+
+;; (use-package persp-mode
+;;   :config
+;;   (setq wg-morph-on nil) ;; switch off animation
+;;   (persp-mode t))
 
 ;; Highlight current line
 ;; (use-package hlinum
@@ -457,6 +483,16 @@
            (member major-mode yank-indent-modes))
     (let ((transient-mark-mode nil))
     (yank-advised-indent-function (region-beginning) (region-end)))))
+
+;; Use OSX extended character entry with right alt/option/meta key in emacs
+(setq mac-right-alternate-modifier nil)
+
+;; Use gnus to read mailing list
+;; Fire up gnus and
+;; B
+;; nntp
+;; news.gmane.org
+(setq gnus-select-method '(nntp "ger.gmane.org"))
 
 (provide 'guto)
 ;;; guto.el ends here

@@ -83,3 +83,6 @@
 
 ;; Shows everything pretty on-screen
 (setq org-startup-indented nil)
+
+;; Set mode of other extensions to org-mode
+(add-to-list 'auto-mode-alist '("\\.txt\\'" . org-mode))
