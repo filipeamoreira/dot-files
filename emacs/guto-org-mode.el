@@ -75,14 +75,15 @@
         ("CANCELED"  . shadow)
         ))
 
-;; FIXME Only load on org-mode
-;;(setq ispell-dictionary "es")
-
 ;; fontify code in code blocks
 (setq org-src-fontify-natively nil)
 
 ;; Shows everything pretty on-screen
 (setq org-startup-indented nil)
 
+;; Allow use of alphabetical characters as bullets
+(setq org-list-allow-alphabetical t)
+
 ;; Set mode of other extensions to org-mode
 (add-to-list 'auto-mode-alist '("\\.txt\\'" . org-mode))
+(add-to-list 'auto-mode-alist '("\\TODO\\'" . org-mode))

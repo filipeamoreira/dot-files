@@ -36,11 +36,17 @@ export TEXMFHOME="$HOME/texmf/"
 # Editors
 #
 
-export EDITOR='e'
-export VISUAL='e'
+# export EDITOR='e'
+# export VISUAL='e'
 export PAGER='less'
 
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+
+. /Users/guto/.nix-profile/etc/profile.d/nix.sh
+# Nix is setting SSL_CERT_FILE and this breaks homebrew
+unset SSL_CERT_FILE
+
+export ANDROID_HOME=/usr/local/opt/android-sdk

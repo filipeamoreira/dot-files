@@ -135,7 +135,7 @@
 ;; wc-goal-mode
 (global-set-key "\C-cw" 'wc-goal-mode)
 
-(global-set-key "\C-c /" 'comment-or-uncomment-region)
+(global-set-key (kbd "C-c /") 'comment-or-uncomment-region)
 
 ;; avy-mode. See prelude-key-chord
 (global-set-key (kbd "C-c a") 'avy-goto-word-or-subword-1)
@@ -144,4 +144,5 @@
 (key-chord-define-global "jj" 'avy-goto-word-or-subword-1)
 (key-chord-define-global "kk" 'avy-goto-char)
 (key-chord-define-global "xx" 'nil)
+
 (provide 'guto-bindings)

@@ -89,13 +89,34 @@
        (subword-mode +1)
        (global-unset-key "\C-c /")
        (define-key global-map (kbd "\C-c /)") nil)
-       (global-set-key "\C-c /" 'comment-or-uncomment-region)
+       (global-set-key "\C-c /" 'comment-or-uncomment-region-or-line)
        (electric-pair-mode -1));; This is creating issues with single and double quotes
 
      (setq prelude-ruby-mode-hook 'prelude-ruby-mode-defaults)
 
      (add-hook 'ruby-mode-hook (lambda ()
                                  (run-hooks 'prelude-ruby-mode-hook)))))
+
+(defvar enh-ruby-mode-map
+  (let ((map (make-sparse-keymap)))
+    (define-key map "{"             'enh-ruby-electric-brace)
+    (define-key map "}"             'enh-ruby-electric-brace)
+    (define-key map (kbd "M-C-a")   'enh-ruby-beginning-of-defun)
+    (define-key map (kbd "M-C-e")   'enh-ruby-end-of-defun)
+    (define-key map (kbd "M-C-b")   'enh-ruby-backward-sexp)
+    (define-key map (kbd "M-C-f")   'enh-ruby-forward-sexp)
+    (define-key map (kbd "M-C-p")   'enh-ruby-beginning-of-block)
+    (define-key map (kbd "M-C-n")   'enh-ruby-end-of-block)
+    (define-key map (kbd "M-C-h")   'enh-ruby-mark-defun)
+    (define-key map (kbd "M-C-q")   'enh-ruby-indent-exp)
+    (define-key map (kbd "C-c C-e") 'enh-ruby-find-error)
+    (define-key map (kbd "C-c C-f") 'enh-ruby-insert-end)
+    ;;(define-key map (kbd "C-c /")   'enh-ruby-insert-end)
+    (define-key map (kbd "M-C-u")   'enh-ruby-up-sexp)
+    (define-key map (kbd "C-j")     'reindent-then-newline-and-indent)
+    map)
+  "Syntax table in use in enh-ruby-mode buffers.")
+
 
 (provide 'guto-ruby)
 ;;; guto-ruby.el ends here

@@ -26,6 +26,15 @@
 
 ;; pdf-tools
 
+;; Use pdf-tools to open PDF files
+(setq TeX-view-program-selection '((output-pdf "PDF Tools"))
+      TeX-source-correlate-start-server t)
+
+;; Update PDF buffers after successful LaTeX runs
+(add-hook 'TeX-after-TeX-LaTeX-command-finished-hook
+          #'TeX-revert-document-buffer)
+
+
 ;; (setq TeX-view-program-selection
 ;;       '(((output-dvi style-pstricks) "dvips and gv")
 ;;         (output-dvi "xdvi")
@@ -61,7 +70,6 @@
 (setq TeX-view-program-selection '((output-pdf "PDF Viewer")))
 (setq TeX-view-program-list
      '(("PDF Viewer" "/Applications/Skim.app/Contents/SharedSupport/displayline -b -g %n %o %b")))
-
 
 ;; Custom functions
 

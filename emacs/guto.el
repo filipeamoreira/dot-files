@@ -31,6 +31,7 @@
     auto-complete
     blank-mode
     bundler
+    bug-hunter
     centered-cursor-mode
     cider
     comment-dwim-2
@@ -56,14 +57,15 @@
     ispell
     keyfreq
     key-chord
+    ledger-mode
     leerzeichen
     magit
     minitest
     neotree
     org-pdfview
-    org-ref
+    ;;org-ref
     ;;persp-mode
-    pdf-tools
+    ;;pdf-tools
     ;;projectile
     ;;projectile-rails
     rbenv
@@ -172,7 +174,7 @@
 ;; Ispell dictionary
 (use-package ispell
   :config
-  (ispell-change-dictionary "en_GB"))
+  (ispell-change-dictionary "english"))
 
 ;; helm-bibtex
 (use-package helm-bibtex
@@ -202,6 +204,18 @@
 ;;   :config
 ;;   (linum-highlight-in-all-buffersp t)
 ;;   (hlinum-activate))
+
+;; golden-ratio
+(use-package golden-ratio
+  :diminish golden-ratio-mode
+  :config (progn
+            ;;(add-to-list ’golden-ratio-extra-commands ’ace-window)
+            (golden-ratio-mode 1)))
+
+;; (use-package which-key
+;;   :diminish which-key-mode
+;;   :config (add-hook ’after-init-hook ’which-key-mode))
+
 
 ;; Confirm emacs closing
 (setq confirm-kill-emacs 'y-or-n-p)
@@ -357,7 +371,7 @@
 (setq compilation-scroll-output t)
 
 ;; pdf-tools install
-(pdf-tools-install)
+;; (pdf-tools-install)
 
 ;; When using GUI, do not open new frames but re-use existing frames
 ;; when opening new files.
@@ -494,5 +508,7 @@
 ;; news.gmane.org
 (setq gnus-select-method '(nntp "ger.gmane.org"))
 
+;; Overwriting earlier definition
+(global-set-key "\C-c /" 'comment-or-uncomment-region-or-line)
 (provide 'guto)
 ;;; guto.el ends here
