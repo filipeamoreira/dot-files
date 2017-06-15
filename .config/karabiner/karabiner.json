@@ -11,7 +11,7 @@
                     {
                         "manipulators": [
                             {
-                                "description": "Change right command to command+control+option+shift (hyper).",
+                                "description": "Change right command to hyper",
                                 "from": {
                                     "key_code": "right_command",
                                     "modifiers": {
@@ -28,6 +28,29 @@
                                             "right_control",
                                             "right_option"
                                         ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Change caps lock to control/escape",
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_control",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "escape"
                                     }
                                 ],
                                 "type": "basic"
@@ -53,9 +76,7 @@
             },
             "name": "Profile",
             "selected": true,
-            "simple_modifications": {
-                "caps_lock": "left_control"
-            },
+            "simple_modifications": {},
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
                 "keyboard_type": "ansi"
