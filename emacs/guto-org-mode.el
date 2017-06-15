@@ -77,6 +77,8 @@
 
 ;; fontify code in code blocks
 (setq org-src-fontify-natively nil)
+(setq font-lock-add-keywords nil)
+(setq font-lock-maximum-decoration nil)
 
 ;; Shows everything pretty on-screen
 (setq org-startup-indented nil)
@@ -85,5 +87,39 @@
 (setq org-list-allow-alphabetical t)
 
 ;; Set mode of other extensions to org-mode
-(add-to-list 'auto-mode-alist '("\\.txt\\'" . org-mode))
+;;(add-to-list 'auto-mode-alist '("\\.txt\\'" . org-mode))
 (add-to-list 'auto-mode-alist '("\\TODO\\'" . org-mode))
+
+;; Write the thesis in org-mode
+
+;; My custom LaTeX class for Org-mode export. require is needed for it to work.
+;;(require 'org-latex)
+;;(require 'ox-bibtex)
+
+(setq org-latex-to-pdf-process (list "latexmk %f"))
+
+;;(require 'org-latex)
+(unless (boundp 'org-export-latex-classes)
+  (setq org-export-latex-classes nil))
+
+(add-hook 'org-mode-hook 'wc-mode)
+
+(add-to-list 'org-latex-classes
+             '("org-article"
+               "\\documentclass[a4paper,12pt]{article}
+
+\\usepackage[utf8]{inputenc}
+\\usepackage{lmodern}
+\\usepackage[T1]{fontenc}
+
+\\usepackage{fixltx2e}
+
+\\newcommand\\foo{bar}
+               [NO-DEFAULT-PACKAGES]
+               [NO-PACKAGES]
+               [EXTRA]"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))

@@ -25,7 +25,7 @@
 ;;; Code:
 
 (defvar guto/packages
-  '(ace-jump-mode
+  '(;;ace-jump-mode
     ag
     aggressive-indent
     auto-complete
@@ -47,8 +47,8 @@
     eww
     flx-ido
     flycheck-tip
-    general-close
-    golden-ratio
+    syntactic-close
+    ;;golden-ratio
     helm
     helm-bibtex
     ;; hlinum
@@ -73,7 +73,7 @@
     robe
     seeing-is-believing
     sicp
-    slime
+    ;;slime
     smart-mode-line
     smart-tab
     smartparens
@@ -81,6 +81,7 @@
     solarized-theme
     speed-type
     switch-window
+    ;;ace-window
     sx
     tide
     tldr
@@ -88,6 +89,7 @@
     use-package
     vlf
     wc-mode
+    wc-goal-mode
     yasnippet))
 
 (require 'package)
@@ -122,6 +124,16 @@
   ;;(setq solarized-scale-org-headlines nil);; Don't change size of org-mode headlines (but keep other size-changes)
   (setq prelude-theme 'solarized-dark)
   (load-theme 'solarized-dark))
+
+;; Theme settings
+
+;; (add-hook 'after-make-frame-functions
+;;           (lambda (frame)
+;;             (let ((mode (if (display-graphic-p frame) 'dark 'dark)))
+;;               (set-frame-parameter frame 'background-mode mode)
+;;               (set-terminal-parameter frame 'background-mode mode))
+;;             (enable-theme 'solarized)))
+
 
 ;; Use use-package for package installation and setup
 (use-package smooth-scroll
@@ -174,7 +186,7 @@
 ;; Ispell dictionary
 (use-package ispell
   :config
-  (ispell-change-dictionary "english"))
+  (ispell-change-dictionary "en_GB"))
 
 ;; helm-bibtex
 (use-package helm-bibtex
@@ -206,11 +218,11 @@
 ;;   (hlinum-activate))
 
 ;; golden-ratio
-(use-package golden-ratio
-  :diminish golden-ratio-mode
-  :config (progn
-            ;;(add-to-list ’golden-ratio-extra-commands ’ace-window)
-            (golden-ratio-mode 1)))
+;; (use-package golden-ratio
+;;   :diminish golden-ratio-mode
+;;   :config (progn
+;;             ;;(add-to-list ’golden-ratio-extra-commands ’ace-window)
+;;             (golden-ratio-mode 1)))
 
 ;; (use-package which-key
 ;;   :diminish which-key-mode
@@ -316,13 +328,27 @@
 (setq default-terminal-coding-system 'utf-8-unix)
 
 ;; delete whitespaces when writing to a file
-;; (add-hook 'before-save-hook 'whitespace-cleanup)
+;; (add-hook 'before-save-hook 'whitespace-cleanup
 
 ;;(global-rbenv-mode)
 
 ;; Visual window switching
-(global-set-key (kbd "C-x o") 'switch-window)
 (require 'switch-window)
+(global-set-key (kbd "C-x o") 'switch-window)
+
+;;; Visual window with ace-window
+;; (global-set-key (kbd "C-x o") 'ace-window)
+;; (global-set-key (kbd "M-p") 'ace-window)
+
+;; (defvar aw-dispatch-alist
+;;   '((?x aw-delete-window " Ace - Delete Window")
+;;     (?m aw-swap-window " Ace - Swap Window")
+;;     (?n aw-flip-window)
+;;     (?v aw-split-window-vert " Ace - Split Vert Window")
+;;     (?b aw-split-window-horz " Ace - Split Horz Window")
+;;     (?i delete-other-windows " Ace - Maximize Window")
+;;     (?o delete-other-windows))
+;;   "List of actions for `aw-dispatch-default'.")
 
 ;; (add-hook 'after-init-hook
 ;;           (lambda () (setq debug-on-error t)))
@@ -448,11 +474,9 @@
 
 (toggle-fullscreen)
 
-(server-mode)
-
-(when (require 'edit-server nil t)
-  (setq edit-server-new-frame nil)
-  (edit-server-start))
+;; (when (require 'edit-server nil t)
+;;   (setq edit-server-new-frame nil)
+;;   (edit-server-start))
 
 ;; Use command as control
 ;; (setq mac-command-modifier 'control)
@@ -510,5 +534,25 @@
 
 ;; Overwriting earlier definition
 (global-set-key "\C-c /" 'comment-or-uncomment-region-or-line)
+
+;; Stop making window height even
+(setq even-window-heights nil)
+
+;; (if (display-graphic-p)
+;;     (use-package solarized
+;;       :init
+;;       (progn
+;;         (setq solarized-use-variable-pitch nil)
+;;         (setq solarized-high-contrast-mode-line t)
+;;         (load-theme 'solarized-dark t)))
+;;   (load-theme 'wombat t))
+
+;; Apparently helps issue with terminal mode theme
+;; (custom-set-faces (if (not window-system) '(default ((t (:background "nil"))))))
+
+
+;; Emacs is start as daemon on Mac
+(server-mode)
+
 (provide 'guto)
 ;;; guto.el ends here

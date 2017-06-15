@@ -1,4 +1,3 @@
-#
 # Executes commands at the start of an interactive session.
 #
 # Authors:
@@ -27,6 +26,14 @@ alias gb='git branch -a -v'
 alias g='git'
 alias b='bundle exec'
 
+# Emacs aliases
+
+alias emd='/usr/local/bin/emacs --daemon'
+alias em='TERM=screen-16color /usr/local/bin/emacsclient --tty -nw'
+alias emacs='TERM=screen-16color /usr/local/bin/emacsclient --tty -nw'
+alias emn='/usr/local/bin/emacsclient -c --no-wait'
+alias emacs-gui='/usr/local/bin/emacsclient -c --no-wait'
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
@@ -36,8 +43,8 @@ export TEXMFHOME="$HOME/texmf/"
 # Editors
 #
 
-# export EDITOR='e'
-# export VISUAL='e'
+export EDITOR=~/bin/EDITOR
+export VISUAL=~/bin/EDITOR
 export PAGER='less'
 
 
@@ -50,3 +57,21 @@ test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_in
 unset SSL_CERT_FILE
 
 export ANDROID_HOME=/usr/local/opt/android-sdk
+
+# Instalacao das Funcoes ZZ (www.funcoeszz.net)
+# export PATH=/Users/guto/scm/git/funcoeszz:$PATH
+# export ZZPATH=/Users/guto/scm/git/funcoeszz/funcoeszz
+# export ZZDIR=/Users/guto/scm/git/funcoeszz/zz
+# source /Users/guto/.zzzshrc
+# source /usr/local/share/zsh/site-functions/
+
+export GPGKEY=C535A26E
+
+# go
+export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH="/usr/local/opt/qt5/bin:$PATH"
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+export PATH="/usr/local/opt/qt@5.5/bin:$PATH"

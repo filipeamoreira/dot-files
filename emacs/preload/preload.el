@@ -1,6 +1,8 @@
 ;; Fonts
 (setq default-frame-alist '((font . "Source Code Pro-20")))
 (set-default-font "Source Code Pro-20")
+;;(set-default-font "Noto Mono-22")
+;; (set-default-font "Input Mono-18")
 (set-face-attribute 'default nil :font "Source Code Pro-20")
 
 (set-face-attribute 'fixed-pitch nil :font "Source Code Pro-20")

@@ -17,11 +17,12 @@
 ;; http://tex.stackexchange.com/questions/36876/reftex-doesnt-turn-on-automatically-when-loading-auctex-after-upgrade-to-tex-li
 ;; Start RefTeX
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+(add-hook 'LaTeX-mode-hook 'turn-on-auto-fill)
 (setq reftex-plug-into-AUCTeX t)
 (add-hook 'LaTeX-mode-hook
           (lambda ()
             (reftex-mode t)
-            (flyspell-mode t)
+            (flyspell-mode t) ;; disable this as it slows my emacs
             ))
 
 ;; pdf-tools
@@ -48,7 +49,7 @@
 (setq TeX-auto-save t) ; Enable parse on save.
 (setq-default TeX-master nil) ; Query for master file.
 (add-hook 'LaTeX-mode-hook 'visual-line-mode)
-(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+;; (add-hook 'LaTeX-mode-hook 'flyspell-mode)
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
 (setq reftex-plug-into-AUCTeX t)
@@ -100,7 +101,9 @@
   '(progn
      ;; (also some other reftex-related customizations)
      (setq reftex-cite-format
-           '((?c . "\\cite[]{%l}")
+           '(
+             ;;(?a . "\\autocite[]{%l}")
+             (?c . "\\cite[]{%l}")
              (?f . "\\footcite[][]{%l}")
              (?t . "\\textcite[]{%l}")
              (?p . "\\parencite[]{%l}")
@@ -209,3 +212,158 @@ sVerse: ")
         ("renewlist" "{")
         ("setlistdepth" "{")
         ("restartlist" "{")))
+
+;; Pick which latex font configuration to use
+
+(require 'ox-latex)
+(setq org-latex-listings t)
+
+;; ;; Originally taken from Bruno Tavernier: http://thread.gmane.org/gmane.emacs.orgmode/31150/focus=31432
+;; ;; but adapted to use latexmk 4.20 or higher.
+;; (defun guto-auto-tex-cmd ()
+;;   "When exporting from .org with latex, automatically run latex,
+;;      pdflatex, or xelatex as appropriate, using latexmk."
+;;   (let ((texcmd)))
+;;   ;; default command: oldstyle latex via dvi
+;;   (setq texcmd "latexmk -dvi -pdfps -quiet %f")
+;;   ;; pdflatex -> .pdf
+;;   (if (string-match "LATEX_CMD: pdflatex" (buffer-string))
+;;       (setq texcmd "latexmk -pdf -quiet %f"))
+;;   ;; xelatex -> .pdf
+;;   (if (string-match "LATEX_CMD: xelatex" (buffer-string))
+;;       (setq texcmd "latexmk -pdflatex=xelatex -pdf -quiet %f"))
+;;   ;; LaTeX compilation command
+;;   (setq org-latex-to-pdf-process (list texcmd)))
+
+;; (add-hook 'org-export-latex-after-initial-vars-hook 'guto-auto-tex-cmd)
+
+;; ;; Specify default packages to be included in every tex file, whether pdflatex or xelatex
+;; (setq org-latex-packages-alist
+;;       '(("" "graphicx" t)
+;;             ("" "longtable" nil)
+;;             ("" "float" nil)))
+
+;; (defun guto-auto-tex-parameters ()
+;;       "Automatically select the tex packages to include."
+;;       ;; default packages for ordinary latex or pdflatex export
+;;       (setq org-latex-default-packages-alist
+;;             '(("AUTO" "inputenc" t)
+;;               ("T1"   "fontenc"   t)
+;;               (""     "fixltx2e"  nil)
+;;               (""     "wrapfig"   nil)
+;;               (""     "soul"      t)
+;;               (""     "textcomp"  t)
+;;               (""     "marvosym"  t)
+;;               (""     "wasysym"   t)
+;;               (""     "latexsym"  t)
+;;               (""     "amssymb"   t)
+;;               (""     "hyperref"  nil)))
+
+;;       ;; Packages to include when xelatex is used
+;;       (if (string-match "LATEX_CMD: xelatex" (buffer-string))
+;;           (setq org-latex-default-packages-alist
+;;                 '(("" "fontspec" t)
+;;                   ("" "xunicode" t)
+;;                   ("" "url" t)
+;;                   ("" "rotating" t)
+;;                   ("american" "babel" t)
+;;                   ("babel" "csquotes" t)
+;;                   ("" "soul" t)
+;;                   ("xetex" "hyperref" nil)
+;;                   )))
+
+;;       (if (string-match "LATEX_CMD: xelatex" (buffer-string))
+;;           (setq org-latex-classes
+;;                 (cons '("article"
+;;                         "\\documentclass[11pt,article,oneside]{memoir}"
+;;                         ("\\section{%s}" . "\\section*{%s}")
+;;                         ("\\subsection{%s}" . "\\subsection*{%s}")
+;;                         ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+;;                         ("\\paragraph{%s}" . "\\paragraph*{%s}")
+;;                         ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))
+;;                       org-latex-classes))))
+
+;; ;; (latex :variables
+;; ;;        latex-build-command "LatexMk"
+;; ;;        latex-enable-auto-fill t)
+
+;; ;; Default packages included in every tex file, pdflatex or xelatex
+;; (setq org-latex-packages-alist
+;;       '(("" "graphicx" t)
+;;         ("" "longtable" nil)
+;;         ("" "float" nil)))
+
+;; ;; source: https://lists.gnu.org/archive/html/emacs-orgmode/2013-06/msg00240.html
+;; (defun guto-auto-tex-cmd (backend)
+;;   "When exporting from .org with latex,
+;;   automatically run latex, pdflatex, or xelatex as appropriate,
+;;   using latexmk."
+;;   (let ((texcmd))
+;;     (setq texcmd "latexmk -pdf %f")
+;;     (if (string-match "LATEX_CMD: pdflatex" (buffer-string))
+;;         (progn
+;;           (setq texcmd "latexmk -pdf -pdflatex='pdflatex -file-line-error --shell-escape -synctex=1' %f")
+;;           (setq org-latex-default-packages-alist
+;;                 '(("AUTO" "inputenc" t)
+;;                   ("T1"   "fontenc"   t)
+;;                   (""     "fixltx2e"  nil)
+;;                   (""     "wrapfig"   nil)
+;;                   (""     "soul"      t)
+;;                   (""     "textcomp"  t)
+;;                   (""     "marvosym"  t)
+;;                   (""     "wasysym"   t)
+;;                   (""     "latexsym"  t)
+;;                   (""     "amssymb"   t)
+;;                   (""     "hyperref"  nil)))))
+;;     (if (string-match "LATEX_CMD: xelatex" (buffer-string))
+;;         (progn
+;;           (setq texcmd "latexmk -pdflatex='xelatex -file-line-error --shell-escape -synctex=1' -pdf %f")
+;;           (setq org-latex-default-packages-alist
+;;                 '(("" "fontspec" t)
+;;                   ("" "xunicode" t)
+;;                   ("" "url" t)
+;;                   ;; ("" "rotating" t)
+;;                   ;; ("" "memoir-article-styles" t)
+;;                   ;; ("american" "babel" t)
+;;                   ;; ("babel" "csquotes" t)
+;;                   ;; ("" "listings" nil)
+;;                   ("svgnames" "xcolor" t)
+;;                   ("" "soul" t)
+;;                   ("xetex, colorlinks=true, urlcolor=FireBrick, plainpages=false, pdfpagelabels, bookmarksnumbered" "hyperref" nil)
+;;                   ))
+;;           (setq org-latex-classes
+;;                 (cons '("memarticle"
+;;                         "\\documentclass[11pt,oneside,article]{memoir}"
+;;                         ("\\section{%s}" . "\\section*{%s}")
+;;                         ("\\subsection{%s}" . "\\subsection*{%s}")
+;;                         ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+;;                         ("\\paragraph{%s}" . "\\paragraph*{%s}")
+;;                         ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))
+;;                       org-latex-classes))))
+
+;;     (setq org-latex-pdf-process (list texcmd))))
+;; (add-hook 'org-export-before-parsing-hook 'guto-auto-tex-cmd)
+
+
+;; (add-hook 'org-export-latex-after-initial-vars-hook 'guto-auto-tex-parameters)
+
+
+(defun guto-insert-footnote ()
+  "Insert \\footnote{} in the text"
+  (interactive "*")
+  (TeX-insert-macro "footnote"))
+
+(add-hook 'Tex-latex-mode
+          (lambda()
+            (local-unset-key (kbd "C-c f"))))
+
+;;(eval-after-load "TeX-latex-mode"
+  ;;(unbind-key "C-c f" prelude-mode-map))
+
+(eval-after-load "TeX-latex-mode"
+  '(define-key prelude-mode-map (kbd "C-c f") 'guto-insert-footnote))
+
+;;(eval-after-load "TeX-latex-mode"
+  ;;(unbind-key "C-c f" prelude-mode-map))
+
+(add-hook 'latex-mode-hook 'wc-mode)

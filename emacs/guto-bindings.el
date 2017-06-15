@@ -66,7 +66,7 @@
 ;; C-x SPC => ace-jump
 ;; C-u C-x SPC => ace-jump-char-mode
 ;; C-u C-u C-x SPC => ace-jump-line-mode
-(define-key global-map (kbd "C-x SPC") 'ace-jump-mode)
+;; (define-key global-map (kbd "C-x SPC") 'ace-jump-mode)
 
 ;; (global-set-key "\C-x\C-m" 'execute-extended-command)
 ;; (global-set-key "\C-c\C-m" 'execute-extended-command)
@@ -74,7 +74,9 @@
 ;; Map Mac cmd as meta
 (setq mac-option-modifier 'super)
 (setq mac-command-modifier 'meta)
+
 ;; (setq mac-option-key-is-meta nil)
+;;(setq mac-option-modifier 'meta)
 ;; (setq mac-command-key-is-meta t)
 ;; (setq mac-option-modifier 'meta)
 ;; (setq mac-command-modifier 'none)
@@ -115,8 +117,6 @@
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "M-RET") 'toggle-fullscreen)
 
-(setq mac-option-modifier 'meta)
-
 (global-set-key (kbd "C-x f") 'ido-find-file)
 
 
@@ -138,11 +138,17 @@
 (global-set-key (kbd "C-c /") 'comment-or-uncomment-region)
 
 ;; avy-mode. See prelude-key-chord
+(global-set-key (kbd "C-:") 'avy-goto-char)
+(global-set-key (kbd "C-'") 'avy-goto-word-or-subword-1)
+(global-set-key (kbd "M-g f") 'avy-goto-line)
+(global-set-key (kbd "M-g w") 'avy-goto-word-1)
+(global-set-key (kbd "M-g e") 'avy-goto-word-0)
+
 (global-set-key (kbd "C-c a") 'avy-goto-word-or-subword-1)
 (global-set-key (kbd "M-g M-g") 'avy-goto-line)
 (global-set-key (kbd "M-g g") 'avy-goto-line)
-(key-chord-define-global "jj" 'avy-goto-word-or-subword-1)
-(key-chord-define-global "kk" 'avy-goto-char)
+;; (key-chord-define-global "jj" 'avy-goto-word-or-subword-1)
+;; (key-chord-define-global "kk" 'avy-goto-char)
 (key-chord-define-global "xx" 'nil)
 
 (provide 'guto-bindings)
