@@ -73,3 +73,19 @@
 
 ;; Set auto scroll
 (setq compilation-scroll-output t)
+
+;; Setup rbenv path
+(setenv "PATH"
+        (concat (getenv "HOME") "/.rbenv/shims:"
+                (getenv "HOME") "/.rbenv/bin:" (getenv "PATH")))
+
+(setq exec-path
+      (cons (concat (getenv "HOME") "/.rbenv/shims")
+            (cons (concat (getenv "HOME") "/.rbenv/bin") exec-path)))
+
+(require 'rspec-mode)
+
+(eval-after-load 'rspec-mode
+  '(rspec-install-snippets))
+
+(add-hook 'after-init-hook 'inf-ruby-switch-setup)

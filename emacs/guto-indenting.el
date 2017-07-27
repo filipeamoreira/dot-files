@@ -1,4 +1,6 @@
 (defun my-setup-indent (n)
+  ;; general
+  (setq-default tab-width n)
   ;; java/c/c++
   (setq-local c-basic-offset n)
   ;; web development
@@ -27,3 +29,4 @@
 ;; a few major-modes does NOT inherited from prog-mode
 ;; (add-hook 'lua-mode-hook 'my-setup-indent)
 ;; (add-hook 'web-mode-hook 'my-setup-indent)
+(editorconfig-mode 1)

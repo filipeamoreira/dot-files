@@ -37,16 +37,25 @@ alias emacs-gui='/usr/local/bin/emacsclient -c --no-wait'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
+alias wr='run_after_save "RAILS_ENV=test bundle exec rake spec_apollo_for_boosted_bets"'
+
 export TEXMFHOME="$HOME/texmf/"
 
 # See .zprofile
 # Editors
 #
 
-export EDITOR=~/bin/EDITOR
-export VISUAL=~/bin/EDITOR
+# export EDITOR=~/bin/EDITOR
+# export VISUAL=~/bin/EDITOR
+export EDITOR=/usr/local/bin/vim
+export VISUAL=/usr/local/bin/vim
+
 export PAGER='less'
 
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+eval "$(rbenv init -)"
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
@@ -76,3 +85,5 @@ export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+
+# source /usr/local/share/gem_home/gem_home.sh

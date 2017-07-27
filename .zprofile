@@ -17,8 +17,8 @@ fi
 # Editors
 #
 
-export EDITOR=~/bin/EDITOR
-export VISUAL=~/bin/EDITOR
+export EDITOR=/usr/local/bin/vim
+export VISUAL=/usr/local/bin/vim
 export PAGER='less'
 
 #
@@ -87,3 +87,17 @@ if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
 else
     eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
 fi
+
+
+function run_after_save {
+  prefix=$1
+  file=$2
+  line=$3
+  if [ -z "$line" ]; then
+    nodemon -x "$prefix $file" -w "$file"
+  else
+    nodemon -x "$prefix $file:$line" -w "$file"
+  fi
+}
+
+export PATH="$HOME/.cargo/bin:$PATH"
