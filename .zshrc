@@ -25,6 +25,7 @@ alias gp='git push'
 alias gb='git branch -a -v'
 alias g='git'
 alias b='bundle exec'
+alias kill_puma="ps -ax | grep puma | head | awk '{ print $1}' | xargs echo | xargs kill -9"
 
 # Emacs aliases
 
