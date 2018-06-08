@@ -16,14 +16,10 @@
 
 ;; http://tex.stackexchange.com/questions/36876/reftex-doesnt-turn-on-automatically-when-loading-auctex-after-upgrade-to-tex-li
 ;; Start RefTeX
-(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
-(add-hook 'LaTeX-mode-hook 'turn-on-auto-fill)
+(require 'reftex)
 (setq reftex-plug-into-AUCTeX t)
-(add-hook 'LaTeX-mode-hook
-          (lambda ()
-            (reftex-mode t)
-            (flyspell-mode t) ;; disable this as it slows my emacs
-            ))
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex)   ; with AUCTeX LaTeX mode
+(add-hook 'LaTeX-mode-hook 'turn-on-auto-fill)
 
 ;; pdf-tools
 
@@ -102,7 +98,7 @@
      ;; (also some other reftex-related customizations)
      (setq reftex-cite-format
            '(
-             ;;(?a . "\\autocite[]{%l}")
+             (?a . "\\autocite[]{%l}")
              (?c . "\\cite[]{%l}")
              (?f . "\\footcite[][]{%l}")
              (?t . "\\textcite[]{%l}")
@@ -111,25 +107,23 @@
              (?n . "\\nocite{%l}")))))
 
 ;; Bible reference using
-(defun guto-insert-bibleref (book chapter verse)
+(defun guto-insert-bibleref (reference)
   "Insert Bible chapter and verse numbers"
-  (interactive "sBook:
-sChapter:
-sVerse: ")
-  (insert (format "\\bibleverse{\%s}(\%s:%s)" book chapter verse)))
+  (interactive "sBible reference:")
+  (insert (format "\\pbibleverse{\%s}" reference)))
 
-;; So that RefTeX finds my bibliography
-(setq reftex-default-bibliography '("/Users/guto/Documents/ba-dissertation/dissertation.bib"))
 
 ;; Query for master file.
 (setq-default TeX-master nil)
 
 
+(global-set-key (kbd "C-c l") nil)
+
 (defun guto-latex-mode-bindings ()
   "Modify keymaps used by LaTeX mode."
-  (local-set-key (kbd "C-c l f") 'guto-insert-ltr-footnote)
-  (local-set-key (kbd "C-c l l") 'guto-insert-ltr-mark)
-  (local-set-key (kbd "C-c l b") 'guto-insert-bibleref))
+  (global-set-key (kbd "C-c l f") 'guto-insert-ltr-footnote)
+  (global-set-key (kbd "C-c l l") 'guto-insert-ltr-mark)
+  (global-set-key (kbd "C-c l b") 'guto-insert-bibleref))
 
 ;; add to hook
 (add-hook 'LaTeX-mode-hook 'guto-latex-mode-bindings)
@@ -365,5 +359,18 @@ sVerse: ")
 
 ;;(eval-after-load "TeX-latex-mode"
   ;;(unbind-key "C-c f" prelude-mode-map))
+
+;; helm-bibtex configuration
+(autoload 'helm-bibtex "helm-bibtex" "" t)
+;; Bibliography files
+(setq bibtex-completion-bibliography
+      '("~/Documents/school/master-theology-newbold/modules/dissertation/biblio.bib"))
+
+;; So that RefTeX finds my bibliography
+(setq reftex-default-bibliography '("~/Documents/school/master-theology-newbold/modules/dissertation/biblio.bib"))
+
+(setq bibtex-completion-notes-path "~/Dropbox/sync/notes/bibliography")
+
+(auto-fill-mode t) ;;
 
 (add-hook 'latex-mode-hook 'wc-mode)

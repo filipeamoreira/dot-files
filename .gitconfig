@@ -2,29 +2,29 @@
 	name = Filipe A Moreira
 	email = code@filipeamoreira.com
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        branch = auto
+	diff = auto
+	status = auto
+	branch = auto
+	branch = auto
 
 [color "branch"]
-       current = yellow reverse
-       local = yellow
-       remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
 
 [color "diff"]
-       meta = yellow bold
-       frag = magenta bold
-       old = red bold
-       new = green bold
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
 
 [color "status"]
-       added = yellow
-       changed = green
-       untracked = cyan
+	added = yellow
+	changed = green
+	untracked = cyan
 
 [github]
-        user = filipeamoreira
+	user = filipeamoreira
 [branch]
 	autosetupmerge = true
 [core]
@@ -32,50 +32,51 @@
 	filemode = false
 	excludesfile = /Users/guto/.gitignore
 	autocrlf = input
+	symlinks = true
 [alias]
-       # I like using the interactive mode to make complex commits
-       ai = add --interactive
-       # All the aliases relate to commits. Note that
-       # they are grouped by common prefixes, so I don't
-       # confuse what I want done by accident.
-       c = commit
-       # commit with a message
-       cm = commit -m
-       cma = commit -a -m
-       # amending the previous commit
-       ca = commit --amend
-       caa = commit -a --amend -C HEAD
+	# I like using the interactive mode to make complex commits
+	ai = add --interactive
+	# All the aliases relate to commits. Note that
+	# they are grouped by common prefixes, so I don't
+	# confuse what I want done by accident.
+	c = commit
+	# commit with a message
+	cm = commit -m
+	cma = commit -a -m
+	# amending the previous commit
+	ca = commit --amend
+	caa = commit -a --amend -C HEAD
 
-       # reset
-       ## soft resets
-       r = reset
-       r1 = reset HEAD^
-       r2 = reset HEAD^^
-       ## hard resets
-       rh = reset --hard
-       rh1 = reset HEAD^ --hard
-       rh2 = reset HEAD^^ --hard
+	# reset
+	## soft resets
+	r = reset
+	r1 = reset HEAD^
+	r2 = reset HEAD^^
+	## hard resets
+	rh = reset --hard
+	rh1 = reset HEAD^ --hard
+	rh2 = reset HEAD^^ --hard
 
-       # shortcuts for commands
-       s = status
-       d = diff
-       a = add
-       co = checkout
-       b = branch -a -v
-       l = log
-       f = fetch
-       r = reset
-       p = push
+	# shortcuts for commands
+	s = status
+	d = diff
+	a = add
+	co = checkout
+	b = branch -a -v
+	f = fetch
+	r = reset
+	p = push
 
-       co = checkout
-       ci = commit
-       st = status
-       br = branch
-       hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-       type = cat-file -t
-       dump = cat-file -p
-       lol = log --graph --decorate --oneline
-       lola = log --graph --decorate --oneline --all
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+	lol = log --graph --decorate --oneline
+	lola = log --graph --decorate --oneline --all
+	l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
 
 [push]
@@ -95,6 +96,13 @@
 	clean = git media clean %f
 	smudge = git media smudge %f
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 	required = true
+	process = git-lfs filter-process
+[credential]
+	helper = osxkeychain
+[magit]
+	hideCampaign = true
+[partners]
+	current = guto-lvs

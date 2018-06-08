@@ -88,10 +88,10 @@ syntax on
 filetype plugin indent on
 
 " Setup Solarized
-set background=dark
-let g:solarized_visibility = 'high'
-colorscheme solarized
-call togglebg#map("<F5>")
+" set background=dark
+" let g:solarized_visibility = 'high'
+" colorscheme solarized
+" call togglebg#map("<F5>")
 
 " Fix ugly SignColumn particularly when using gitgutter
 highlight clear SignColumn

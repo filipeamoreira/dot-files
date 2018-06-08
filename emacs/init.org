@@ -1,0 +1,1477 @@
+#+BEGIN_SRC emacs-lisp
+
+; guto-bindings.el
+
+;; It's all about the project.
+(global-set-key (kbd "C-c f") 'find-file-in-project)
+
+;; You know, like Readline.
+(global-set-key (kbd "C-M-h") 'backward-kill-word)
+
+;; Completion that uses many different methods to find options.
+(global-set-key (kbd "M-/") 'hippie-expand)
+
+;; Font size
+(define-key global-map (kbd "C-+") 'text-scale-increase)
+(define-key global-map (kbd "C--") 'text-scale-decrease)
+
+;; Use regex searches by default.
+(global-set-key (kbd "C-s") 'isearch-forward-regexp)
+(global-set-key (kbd "\C-r") 'isearch-backward-regexp)
+(global-set-key (kbd "M-%") 'query-replace-regexp)
+(global-set-key (kbd "C-M-s") 'isearch-forward)
+(global-set-key (kbd "C-M-r") 'isearch-backward)
+(global-set-key (kbd "C-M-%") 'query-replace)
+
+;; Jump to a definition in the current file. (Protip: this is awesome.)
+(global-set-key (kbd "C-x C-i") 'imenu)
+
+;; File finding
+(global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
+(global-set-key (kbd "C-c y") 'bury-buffer)
+(global-set-key (kbd "C-c r") 'revert-buffer)
+
+;; Window switching. (C-x o goes to the next window)
+(windmove-default-keybindings) ;; Shift+direction
+(global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1))) ;; back one
+(global-set-key (kbd "C-x C-o") (lambda () (interactive) (other-window 2))) ;; forward two
+
+;; Should be able to eval-and-replace anywhere.
+(global-set-key (kbd "C-c e") 'esk-eval-and-replace)
+
+;; So good!
+(global-set-key (kbd "C-c g") 'magit-status)
+(global-set-key (kbd "C-x g") 'magit-status)
+
+;; Maps Ctrl-z to undo
+(global-set-key (kbd "C-z") 'undo)
+
+;; Maps Ctrl-x-m to M-x
+(global-set-key "\C-x\C-m" 'execute-extended-command)
+(global-set-key "\C-c\C-m" 'execute-extended-command)
+
+;; Maps Ctrl-c Ctrl-k to kill-region
+(global-set-key "\C-x\C-k" 'kill-region)
+(global-set-key "\C-c\C-k" 'kill-region)
+
+(global-set-key "\C-c#" 'comment-or-uncomment-region)
+(global-set-key "\C-c/" 'comment-or-uncomment-region)
+
+;; Fullscreen mode
+(global-set-key (kbd "M-RET") 'ns-toggle-fullscreen)
+
+;; Resize window
+(global-set-key (kbd "<M-S-right>") 'shrink-window-horizontally)
+(global-set-key (kbd "<M-S-left>") 'enlarge-window-horizontally)
+(global-set-key (kbd "<M-S-down>") 'shrink-window)
+(global-set-key (kbd "<M-S-up>") 'enlarge-window)
+
+;; ;; ace jump mode
+;; C-x SPC => ace-jump
+;; C-u C-x SPC => ace-jump-char-mode
+;; C-u C-u C-x SPC => ace-jump-line-mode
+;; (define-key global-map (kbd "C-x SPC") 'ace-jump-mode)
+
+;; (global-set-key "\C-x\C-m" 'execute-extended-command)
+;; (global-set-key "\C-c\C-m" 'execute-extended-command)
+
+;; Map Mac cmd as meta
+(setq mac-option-modifier 'super)
+(setq mac-command-modifier 'meta)
+
+;; (setq mac-option-key-is-meta nil)
+;;(setq mac-option-modifier 'meta)
+;; (setq mac-command-key-is-meta t)
+;; (setq mac-option-modifier 'meta)
+;; (setq mac-command-modifier 'none)
+;; (setq mac-option-modifier 'meta)
+(set-keyboard-coding-system nil)
+
+
+;; org-mode bindings
+
+(global-set-key (kbd "C-c o a") 'org-agenda-list)
+(global-set-key (kbd "C-c o t") 'org-todo-list)
+(global-set-key (kbd "C-c o p") 'org-insert-property-drawer)
+(global-set-key (kbd "C-c o d") 'org-date)
+(global-set-key (kbd "C-c o j") 'org-journal-entry)
+(global-set-key (kbd "C-c o r") 'org-remember)
+(global-set-key (kbd "C-c o a") 'org-agenda)
+
+
+;; Defining some aliases
+(defalias 'afm 'auto-fill-mode)
+(defalias 'mm 'markdown-mode)
+(defalias 'wc 'word-count)
+(defalias 'wcr 'word-count-region)
+(defalias 'qrr 'query-replace-regexp)
+(defalias 'fs 'flyspell-mode)
+(defalias 'oa 'org-agenda)
+(defalias 'uf 'unfill-region)
+(defalias 'eb 'eval-buffer)
+
+;; Extra bindings for dired
+
+(global-set-key (kbd "C-x C-d") 'ido-dired)
+(global-set-key (kbd "C-x d") 'ido-dired)
+
+;; Overrides the proced command
+(global-set-key (kbd "C-x p")  'previous-multiframe-window)
+
+(global-set-key (kbd "RET") 'newline-and-indent)
+(global-set-key (kbd "M-RET") 'toggle-fullscreen)
+
+(global-set-key (kbd "C-x f") 'ido-find-file)
+
+
+;; Maps Ctrl-w to kill backward word or kill region
+(global-set-key "\C-w"
+                (lambda (arg)
+                  (interactive "p")
+                  (cond ((region-active-p) (kill-region (region-beginning) (region-end)))
+                        (t (backward-kill-word arg)))))
+
+;;(global-set-key (kbd "#" (lambda () (self-insert-command "#"))))
+;; (global-set-key (kbd "#") (self-insert-command "#"))
+
+(global-set-key (kbd "C-x F") 'guto-find-file-as-root)
+
+;; wc-goal-mode
+(global-set-key "\C-cw" 'wc-goal-mode)
+
+(global-set-key (kbd "C-c /") 'comment-or-uncomment-region)
+
+;; avy-mode. See prelude-key-chord
+(global-set-key (kbd "C-:") 'avy-goto-char)
+(global-set-key (kbd "C-'") 'avy-goto-word-or-subword-1)
+(global-set-key (kbd "M-g f") 'avy-goto-line)
+(global-set-key (kbd "M-g w") 'avy-goto-word-1)
+(global-set-key (kbd "M-g e") 'avy-goto-word-0)
+
+(global-set-key (kbd "C-c a") 'avy-goto-word-or-subword-1)
+(global-set-key (kbd "M-g M-g") 'avy-goto-line)
+(global-set-key (kbd "M-g g") 'avy-goto-line)
+;; (key-chord-define-global "jj" 'avy-goto-word-or-subword-1)
+;; (key-chord-define-global "kk" 'avy-goto-char)
+(key-chord-define-global "xx" 'nil)
+
+(provide 'guto-bindings)
+
+;; end of guto-bindings.el
+
+;; guto-bookmark.el
+(require 'bookmark)
+
+(defvar guto-minibuffer-map (copy-keymap minibuffer-local-must-match-map)
+  "Keymap for `bookmark-do-quick-jump'")
+
+(define-key guto-minibuffer-map
+  [remap self-insert-command] 'guto-self-insert-complete-and-exit)
+(define-key guto-minibuffer-map " " "-")
+
+(defvar guto-display-function nil)
+
+(defun guto-self-insert-complete-and-exit (n)
+  (interactive "p")
+  (self-insert-command n)
+  (ignore-errors
+    (completion--do-completion nil 'expect-exact))
+  (let ((candidates (completion-all-sorted-completions)))
+    (cond
+      ((null candidates)
+       (backward-delete-char-untabify 1)
+       (minibuffer-complete))
+      ((eq 1 (safe-length candidates))
+       (minibuffer-complete-and-exit)))))
+
+;;;###autoload
+(defun guto-bookmark-jump (bookmark)
+  "Jump to specified bookmark with auto-completion and auto-acceptance."
+  (interactive
+   (list
+    (if (window-minibuffer-p)
+        (error "Already in minibuffer")
+     (let ((minibuffer-local-must-match-map guto-minibuffer-map))
+       (completing-read "Jump to bookmark: " bookmark-alist nil t)))))
+  (ignore-errors
+    (bookmark-jump bookmark guto-display-function)))
+
+(global-set-key (kbd "M-m") 'guto-bookmark-jump)
+
+;; end of guto-bookmark.el
+
+
+;; guto-desktop.el
+
+(require 'desktop)
+
+(defvar my-desktop-session-dir
+  (concat (getenv "HOME") "/.emacs.d/personal/desktop-sessions/")
+  "*Directory to save desktop sessions in")
+
+(defvar my-desktop-session-name-hist nil
+  "Desktop session name history")
+
+(defun my-desktop-save (&optional name)
+  "Save desktop by name."
+  (interactive)
+  (unless name
+    (setq name (my-desktop-get-session-name "Save session" t)))
+  (when name
+    (make-directory (concat my-desktop-session-dir name) t)
+    (desktop-save (concat my-desktop-session-dir name) t)))
+
+(defun my-desktop-save-and-clear ()
+  "Save and clear desktop."
+  (interactive)
+  (call-interactively 'my-desktop-save)
+  (desktop-clear)
+  (setq desktop-dirname nil))
+
+(defun my-desktop-read (&optional name)
+  "Read desktop by name."
+  (interactive)
+  (unless name
+    (setq name (my-desktop-get-session-name "Load session")))
+  (when name
+    (desktop-clear)
+    (desktop-read (concat my-desktop-session-dir name))))
+
+(defun my-desktop-change (&optional name)
+  "Change desktops by name."
+  (interactive)
+  (let ((name (my-desktop-get-current-name)))
+    (when name
+      (my-desktop-save name))
+    (call-interactively 'my-desktop-read)))
+
+(defun my-desktop-name ()
+  "Return the current desktop name."
+  (interactive)
+  (let ((name (my-desktop-get-current-name)))
+    (if name
+        (message (concat "Desktop name: " name))
+      (message "No named desktop loaded"))))
+
+(defun my-desktop-get-current-name ()
+  "Get the current desktop name."
+  (when desktop-dirname
+    (let ((dirname (substring desktop-dirname 0 -1)))
+      (when (string= (file-name-directory dirname) my-desktop-session-dir)
+        (file-name-nondirectory dirname)))))
+
+(defun my-desktop-get-session-name (prompt &optional use-default)
+  "Get a session name."
+  (let* ((default (and use-default (my-desktop-get-current-name)))
+         (full-prompt (concat prompt (if default
+                                         (concat " (default " default "): ")
+                                       ": "))))
+    (completing-read full-prompt (and (file-exists-p my-desktop-session-dir)
+                                      (directory-files my-desktop-session-dir))
+                     nil nil nil my-desktop-session-name-hist default)))
+
+(defun my-desktop-kill-emacs-hook ()
+  "Save desktop before killing emacs."
+  (when (file-exists-p (concat my-desktop-session-dir "last-session"))
+    (setq desktop-file-modtime
+          (nth 5 (file-attributes (desktop-full-file-name (concat my-desktop-session-dir "last-session"))))))
+  (my-desktop-save "last-session"))
+
+(add-hook 'kill-emacs-hook 'my-desktop-kill-emacs-hook)
+
+;; end of guto-desktop.el
+
+
+;; guto-erc.el
+
+(setq erc-nick "filipeamoreira")
+(setq erc-show-my-nick t)
+(setq erc-track-showcount t)
+(setq erc-user-full-name "Filipe Moreira")
+(setq erc-server "irc.freenode.net")
+
+;; end of guto-erc.el
+
+;; guto-functions.el
+
+(defun levenshtein-distance (str1 str2)
+  "Return the edit distance between strings STR1 and STR2."
+  ;; FIXME: interactive call not working
+  ;; (interactive "sString One:\nsString Two:")
+
+  (if (not (stringp str1))
+      (error "Argument was not a string: %s" str1))
+  (if (not (stringp str2))
+      (error "Argument was not a string: %s" str2))
+  (let* ((make-table (function (lambda (columns rows init)
+                                 (make-vector rows (make-vector columns init)))))
+         (tref (function (lambda (table x y)
+                           (aref (aref table y) x))))
+         (tset (function (lambda (table x y object)
+                           (let ((row (copy-sequence (aref table y))))
+                             (aset row x object)
+                             (aset table y row) object))))
+         (length-str1 (length str1))
+         (length-str2 (length str2))
+         (d (funcall make-table (1+ length-str1) (1+ length-str2) 0)))
+    (let ((i 0) (j 0))
+      (while (<= i length-str1)
+        (funcall tset d i 0 i)
+        (setq i (1+ i)))
+      (while (<= j length-str2)
+        (funcall tset d 0 j j)
+        (setq j (1+ j))))
+    (let ((i 1))
+      (while (<= i length-str1)
+        (let ((j 1))
+          (while (<= j length-str2)
+            (let* ((cost (if (equal (aref str1 (1- i)) (aref str2 (1- j)))
+                             0
+                           1))
+                   (deletion (1+ (funcall tref d (1- i) j)))
+                   (insertion (1+ (funcall tref d i (1- j))))
+                   (substitution (+ (funcall tref d (1- i) (1- j)) cost)))
+              (funcall tset d i j (min insertion deletion substitution)))
+            (setq j (1+ j))))
+        (setq i (1+ i))))
+    (message (funcall tref d length-str1 length-str2))))
+
+
+;; (defun foo3 (n)             ; foo3 takes one argument,
+;;   (interactive "nCount:") ;   which is read with the Minibuffer.
+;;   (forward-word (* 2 n)))
+;; ⇒ foo3
+
+;; (defun three-b (b1 b2 b3)
+;;   "Select three existing buffers.
+;;      Put them into three windows, selecting the last one."
+;;   (interactive "bBuffer1:\nbBuffer2:\nbBuffer3:")
+;;   (delete-other-windows)
+;;   (split-window (selected-window) 8)
+;;   (switch-to-buffer b1)
+;;   (other-window 1)
+;;   (split-window (selected-window) 8)
+;;   (switch-to-buffer b2)
+;;   (other-window 1)
+;;   (switch-to-buffer b3))
+;; ⇒ three-b
+;; (three-b "*scratch*" "declarations.texi" "*mail*")
+;; ⇒ nil
+
+
+(defun create-scratch-buffer ()
+  "Create a new scratch buffer."
+  (interactive)
+  (progn
+    (switch-to-buffer (get-buffer-create (generate-new-buffer-name "*scratch*")))
+    (insert
+";; This buffer is for notes you don't want to save, and for Lisp evaluation.
+;; If you want to create a file, visit that file with C-x C-f,
+;; then enter the text in that file's own buffer.\n\n")
+    (emacs-lisp-mode)))
+
+(defun org-find-dangling-clock ()
+  "Find a dangling clock entry in an org-mode buffer"
+  (interactive)
+  (re-search-forward "CLOCK: \\[[^]]*\\] *$"))
+
+(defun kill-other-buffers ()
+  "Kill all other buffers."
+  (interactive)
+  (mapc 'kill-buffer
+        (delq (current-buffer)
+              (remove-if-not 'buffer-file-name (buffer-list)))))
+
+
+(defun guto-find-file-as-root ()
+  "Like `ido-find-file, but automatically edit the file with
+root-privileges (using tramp/sudo), if the file is not writable by
+user."
+  (interactive)
+  (let ((file (ido-read-file-name "Edit as root: ")))
+    (unless (file-writable-p file)
+      (setq file (concat "/sudo:root@localhost:" file)))
+    (find-file file)))
+;; or some other keybinding...
+
+(defun uniq-lines (beg end)
+  "Unique lines in region.
+Called from a program, there are two arguments:
+BEG and END (region to sort)."
+  (interactive "r")
+  (save-excursion
+    (save-restriction
+      (narrow-to-region beg end)
+      (goto-char (point-min))
+      (while (not (eobp))
+        (kill-line 1)
+        (yank)
+        (let ((next-line (point)))
+          (while
+              (re-search-forward
+               (format "^%s" (regexp-quote (car kill-ring))) nil t)
+            (replace-match "" nil nil))
+          (goto-char next-line))))))
+
+(defun what-face (pos)
+  (interactive "d")
+  (let ((face (or (get-char-property (point) 'read-face-name)
+                  (get-char-property (point) 'face))))
+    (if face (message "Face: %s" face) (message "No face at %d" pos))))
+
+(defun remove-dos-eol ()
+  "Do not show ^M in files containing mixed UNIX and DOS line endings."
+  (interactive)
+  (setq buffer-display-table (make-display-table))
+  (aset buffer-display-table ?\^M []))
+
+(defun markdown-preview-file ()
+  "use Marked 2 to preview the current file"
+  (interactive)
+  (shell-command
+   (format "open -a 'Marked 2.app' %s"
+           (shell-quote-argument (buffer-file-name))))
+  )
+(global-set-key "\C-cm" 'markdown-preview-file)
+
+(defun describe-eol ()
+  (interactive)
+  (let ((eol-type (coding-system-eol-type buffer-file-coding-system)))
+    (when (vectorp eol-type)
+      (setq eol-type (coding-system-eol-type (aref eol-type 0))))
+    (message "Line endings are of type: %s"
+             (case eol-type
+               (0 "Unix") (1 "DOS") (2 "Mac") (t "Unknown")))))
+
+;; Fix line endings
+(defun dos2unix (buffer)
+  "Automate M-% C-q C-m RET C-q C-j RET"
+  (interactive "*b")
+  (save-excursion
+    (goto-char (point-min))
+    (while (search-forward (string ?\C-m) nil t)
+      (replace-match (string ?\C-j) nil t))))
+
+(defun comment-or-uncomment-region-or-line ()
+  "Comments or uncomments the region or the current line if there's no active region."
+  (interactive)
+  (let (beg end)
+    (if (region-active-p)
+        (setq beg (region-beginning) end (region-end))
+      (setq beg (line-beginning-position) end (line-end-position)))
+    (comment-or-uncomment-region beg end)))
+
+;; end of guto-functions.el
+
+;; guto-helm.el
+
+(require 'helm-config)
+
+
+(global-set-key (kbd "M-x") 'execute-extended-command)
+(global-set-key (kbd "C-x RET") 'helm-M-x)
+
+;; Disable header line
+(setq helm-display-header-line nil) ;; t by default
+;; Turn-off source header line width
+;; (set-face-attribute 'helm-source-header nil :height 0.1)
+
+;; Use autoresize
+;; (helm-autoresize-mode 1)
+
+;; Use fixed width
+(setq helm-autoresize-max-height 30)
+(setq helm-autoresize-min-height 30)
+
+;; No more random windows
+(setq helm-split-window-in-side-p t)
+
+
+;; end of guto-helm.el
+
+;; guto-journal.el
+
+(defvar org-journal-dir "~/Dropbox/sync/notes")
+(defvar org-journal-file "~/Dropbox/sync/notes/journal.org"
+  "Path to OrgMode journal file.")
+
+(defvar org-journal-date-format "%Y%m%d - %A"
+  "Date format string for journal headings.")
+
+(defvar org-journal-time-format "%H:%M"
+  "Date format string for journal headings.")
+
+(defun journal ()
+  "Create a new diary entry for today."
+  (interactive)
+  (switch-to-buffer (find-file org-journal-file))
+  (widen)
+  ;;(let ((today (format-time-string org-journal-date-format)))
+  (let ((isearch-forward t) (today (format-time-string org-journal-date-format))
+        (now (format-time-string org-journal-time-format)))
+
+    (beginning-of-buffer)
+    (unless (org-goto-local-search-headings today nil t)
+      ((lambda ()
+         (insert "\n")
+         (org-insert-heading)
+         (insert today)
+         (insert "\n"))))
+    (org-show-entry)
+    (org-narrow-to-subtree)
+    (end-of-buffer)
+    (org-insert-subheading t)
+    ;; (insert "\n  - " )
+    (auto-fill-mode 1)
+    (set-fill-column 100)))
+
+(global-set-key (kbd "C-c j") 'journal)
+
+(defun find-org-markers (regexp)
+  (occur regexp)
+  (pop-to-buffer "*Occur*"))
+
+(defun find-top-org-headers ()
+  (interactive)
+  (find-org-markers "^\\*[^*]"))
+
+(defun find-all-org-headers ()
+  (interactive)
+  (find-org-markers "^\\*+"))
+
+(defun find-org-links ()
+  (interactive)
+  (find-org-markers "\\[\\["))
+
+;; end of guto-journal.el
+
+;; guto-key-chord.el
+
+(key-chord-define-global "0o" ")")
+;; Sadly, "1q" is impossible to hit on my keyboard.
+(key-chord-define-global "1q" "!")
+(key-chord-define-global "2w" "@")
+(key-chord-define-global "3e" "#")
+(key-chord-define-global "4r" "$")
+(key-chord-define-global "5t" "%")
+(key-chord-define-global "6y" "^")
+(key-chord-define-global "6t" "^")
+(key-chord-define-global "7y" "&")
+(key-chord-define-global "8u" "*")
+(key-chord-define-global "9i" "(")
+(key-chord-define-global "-p" "_")
+;; (key-chord-define-global ";;" "\C-e;")
+;; (key-chord-define-global "fg" 'iy-go-to-char)
+;; (key-chord-define-global "df" 'iy-go-to-char-backward)
+
+(key-chord-define emacs-lisp-mode-map
+                  "7y" "&optional ")
+(key-chord-mode 1)
+
+
+;; end of guto-key-chord.el
+
+;; guto-org-mode.el
+
+;; org-mode modules
+(setq org-modules '(org-bbdb
+                    org-gnus
+                    org-info
+                    org-jsinfo
+                    org-habit
+                    org-irc
+                    org-mouse
+                    org-annotate-file
+                    org-eval
+                    org-expiry
+                    org-interactive-query
+                    org-man
+                    org-panel
+                    org-screen
+                    org-toc))
+
+;; ido style completion
+(setq org-completion-use-ido t)
+
+;; bindings
+(global-set-key (kbd "C-c c") 'org-capture)
+(global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c l") 'org-store-link)
+;; (global-set-key (kbd "C-c L") 'org-insert-link-global)
+;; (global-set-key (kbd "C-c O") 'org-open-at-point-global)
+;; (require 'org)
+;; (define-key org-mode-map (kbd "C-c v") 'org-show-todo-tree)
+;; (define-key org-mode-map (kbd "C-c C-r") 'org-refile)
+;; (define-key org-mode-map (kbd "C-c R") 'org-reveal)
+
+(setq org-directory "~/Dropbox/sync/org")
+(setq org-default-notes-file (concat org-directory "/notes.org"))
+;; Set to the name of the file where new notes will be stored
+(setq org-mobile-inbox-for-pull "~/org/flagged.org")
+;; Set to <your Dropbox root directory>/MobileOrg.
+(setq org-mobile-directory "~/Dropbox/MobileOrg")
+;; org-mode variables
+;; Hide the (nth - 1) star
+(setq org-hide-leading-stars t)
+;; Default to overview mode
+(setq org-startup-folded t)
+;; Align tables on file visit
+(setq org-startup-align-all-tables t)
+;; Add timestamp to TODO completion
+(setq org-log-done t)
+;; TODO states
+(setq org-todo-keywords
+      '((sequence "TODO(t!)" "STARTED(s!)" "WAITING(w!)" "DONE(d!)" "|" "CANCELLED(c!) DEFERRED(f!)")))
+;; Fast selection of TODO states
+(setq org-use-fast-todo-selection t)
+
+;; Clock mode
+
+;; bindings
+;; C-c C-x C-i     (org-clock-in)
+;; C-c C-x C-o     (org-clock-out)
+(setq org-clock-persist 'history)
+(org-clock-persistence-insinuate)
+
+;; Pomodoro/countdown timer
+;; C-c C-x ; (org-timer-set-timer)
+;; C-x n s org-narrow-to-subtree
+;; C-x n b org-narrow-to-block
+;; C-x n w widen
+
+(setq org-todo-keyword-faces
+      '(
+        ("TODO"  . (:foreground "firebrick2" :weight bold))
+        ("WAITING"  . (:foreground "olivedrab" :weight bold))
+        ("LATER"  . (:foreground "sienna" :weight bold))
+        ("PROJECT"  . (:foreground "steelblue" :weight bold))
+        ("DONE"  . (:foreground "forestgreen" :weight bold))
+        ("MAYBE"  . (:foreground "dimgrey" :weight bold))
+        ("CANCELED"  . shadow)
+        ))
+
+;; fontify code in code blocks
+(setq org-src-fontify-natively nil)
+(setq font-lock-add-keywords nil)
+(setq font-lock-maximum-decoration nil)
+
+;; Shows everything pretty on-screen
+(setq org-startup-indented nil)
+
+;; Allow use of alphabetical characters as bullets
+(setq org-list-allow-alphabetical t)
+
+;; Set mode of other extensions to org-mode
+;;(add-to-list 'auto-mode-alist '("\\.txt\\'" . org-mode))
+(add-to-list 'auto-mode-alist '("\\TODO\\'" . org-mode))
+
+;; Write the thesis in org-mode
+
+;; My custom LaTeX class for Org-mode export. require is needed for it to work.
+;;(require 'org-latex)
+;;(require 'ox-bibtex)
+
+(setq org-latex-to-pdf-process (list "latexmk %f"))
+
+;;(require 'org-latex)
+(unless (boundp 'org-export-latex-classes)
+  (setq org-export-latex-classes nil))
+
+(add-hook 'org-mode-hook 'wc-mode)
+
+(add-to-list 'org-latex-classes
+             '("org-article"
+               "\\documentclass[a4paper,12pt]{article}
+
+\\usepackage[utf8]{inputenc}
+\\usepackage{lmodern}
+\\usepackage[T1]{fontenc}
+
+\\usepackage{fixltx2e}
+
+\\newcommand\\foo{bar}
+               [NO-DEFAULT-PACKAGES]
+               [NO-PACKAGES]
+               [EXTRA]"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
+;; end of guto-org-mode.el
+
+;; guto-rbenv.el
+
+;; https://simao.io/blog/2013/12/19/emacs-and-rbenv
+
+(setenv "PATH"
+        (concat (getenv "HOME") "/.rbenv/shims:"
+                (getenv "HOME") "/.rbenv/bin:" (getenv "PATH")))
+
+(setq exec-path
+      (cons (concat (getenv "HOME") "/.rbenv/shims")
+            (cons (concat (getenv "HOME") "/.rbenv/bin") exec-path)))
+
+(global-rbenv-mode)
+
+
+;; end of guto-rbenv.el
+
+;; guto-ruby.el
+
+;;; guto-ruby.el --- Emacs Prelude: A nice setup for Ruby (and Rails) devs.
+;;
+;; Copyright © 2011-2016 Bozhidar Batsov
+;;
+;; Author: Bozhidar Batsov <bozhidar@batsov.com>
+;; Modified: Filipe Moreira <famoreira@gmail.com>
+;; URL: https://github.com/filipeamoreira/prelude
+;; Version: 1.0.0
+;; Keywords: convenience
+
+;; This file is not part of GNU Emacs.
+
+;;; Commentary:
+
+;; Some basic configuration for Ruby and Rails development.
+
+;;; License:
+
+;; This program is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License
+;; as published by the Free Software Foundation; either version 3
+;; of the License, or (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs; see the file COPYING.  If not, write to the
+;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+
+;;; Code:
+
+(require 'prelude-programming)
+
+(prelude-require-packages '(enh-ruby-mode inf-ruby yari projectile-rails))
+
+(add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
+(autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for ruby files" t)
+
+;; Rake files are ruby, too, as are gemspecs, rackup files, and gemfiles.
+(add-to-list 'auto-mode-alist '("\\.rb\\'" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.rake\\'" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("Rakefile\\'" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.gemspec\\'" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.ru\\'" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile\\'" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("Guardfile\\'" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("Capfile\\'" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.cap\\'" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.thor\\'" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.rabl\\'" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("Thorfile\\'" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("Vagrantfile\\'" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.jbuilder\\'" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("Podfile\\'" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.podspec\\'" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("Puppetfile\\'" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("Berksfile\\'" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("Appraisals\\'" . enh-ruby-mode))
+
+;; We never want to edit Rubinius bytecode
+(add-to-list 'completion-ignored-extensions ".rbc")
+
+(define-key 'help-command (kbd "R") 'yari)
+
+;; For Ruby files, enable projectile and projectile-rails
+(add-hook 'projectile-mode-hook 'projectile-rails-on)
+(add-hook 'enh-ruby-mode-hook 'global-rbenv-mode)
+(add-hook 'enh-ruby-mode-hook 'rbenv-use-corresponding)
+(add-hook 'enh-ruby-mode-hook 'robe-mode)
+(add-hook 'enh-ruby-mode-hook 'yard-mode)
+
+;; Prevent ruby-mode from adding magic encoding comments to the top of files
+(setq ruby-insert-encoding-magic-comment nil)
+
+;; ;; Use enhance ruby mode
+;; (require 'seeing-is-believing)
+;; (add-hook 'enh-ruby-mode-hook 'seeing-is-believing)
+
+(eval-after-load 'enh-ruby-mode
+  '(progn
+     (defun prelude-ruby-mode-defaults ()
+       (inf-ruby-minor-mode +1)
+       ;;(ruby-tools-mode +1)
+       ;; CamelCase aware editing operations
+       (subword-mode +1)
+       (global-unset-key "\C-c /")
+       (define-key global-map (kbd "\C-c /)") nil)
+       (global-set-key "\C-c /" 'comment-or-uncomment-region-or-line)
+       (electric-pair-mode -1));; This is creating issues with single and double quotes
+
+     (setq prelude-ruby-mode-hook 'prelude-ruby-mode-defaults)
+
+     (add-hook 'ruby-mode-hook (lambda ()
+                                 (run-hooks 'prelude-ruby-mode-hook)))))
+
+(defvar enh-ruby-mode-map
+  (let ((map (make-sparse-keymap)))
+    (define-key map "{"             'enh-ruby-electric-brace)
+    (define-key map "}"             'enh-ruby-electric-brace)
+    (define-key map (kbd "M-C-a")   'enh-ruby-beginning-of-defun)
+    (define-key map (kbd "M-C-e")   'enh-ruby-end-of-defun)
+    (define-key map (kbd "M-C-b")   'enh-ruby-backward-sexp)
+    (define-key map (kbd "M-C-f")   'enh-ruby-forward-sexp)
+    (define-key map (kbd "M-C-p")   'enh-ruby-beginning-of-block)
+    (define-key map (kbd "M-C-n")   'enh-ruby-end-of-block)
+    (define-key map (kbd "M-C-h")   'enh-ruby-mark-defun)
+    (define-key map (kbd "M-C-q")   'enh-ruby-indent-exp)
+    (define-key map (kbd "C-c C-e") 'enh-ruby-find-error)
+    (define-key map (kbd "C-c C-f") 'enh-ruby-insert-end)
+    ;;(define-key map (kbd "C-c /")   'enh-ruby-insert-end)
+    (define-key map (kbd "M-C-u")   'enh-ruby-up-sexp)
+    (define-key map (kbd "C-j")     'reindent-then-newline-and-indent)
+    map)
+  "Syntax table in use in enh-ruby-mode buffers.")
+
+
+(provide 'guto-ruby)
+
+;;; guto-ruby.el ends here
+
+;; guto-term.el
+
+(setq multi-term-program "/usr/local/bin/zsh")
+
+;; end of guto-term.el
+
+;; guto.el
+
+;;; package -- Summary
+
+;;; Commentary:
+
+;; See also other Dired hacks at: https://github.com/Fuco1/dired-hacks
+
+;; golden-ratio ;; resize windows based on the golden ratio
+;; vlf ;; view large files
+;; neotree ;; file browser (http://www.emacswiki.org/emacs/NeoTree)
+;; centered-cursor-mode ;; https://marmalade-repo.org/packages/centered-cursor-mode
+;; comment-dwim-2 ;; better comment features (https://github.com/remyferre/comment-dwim-2)
+;; flycheck-tip ;; show errors on popup-tip (https://github.com/yuutayamada/flycheck-tip)
+;; general-close ;; (https://github.com/emacs-berlin/general-close)
+;; sicp ;; (https://github.com/webframp/sicp-info)
+;; eww ;; Read Practical common Lisp (https://www.reddit.com/r/emacs/comments/42g6u9/what_are_some_lesserknown_packages_that_you_love/)
+;; sx ;; StackExchange on Emacs (https://github.com/vermiculus/sx.el)
+;; leerzeichen ;; highlight whitespace characters (https://github.com/fgeller/leerzeichen.el)
+;; speed-type ;; touch speed with Emacs (https://github.com/hagleitn/speed-type)
+;; direx ;; Dired based directory explorer
+
+;; Packages
+
+;; This
+
+;;; Code:
+
+;; Theme path
+;;(let ((basedir "~/.emacs.d/personal/themes/"))
+;;  (dolist (f (directory-files basedir))
+;;    (if (and (not (or (equal f ".") (equal f "..")))
+;;             (file-directory-p (concat basedir f)))
+;;        (add-to-list 'custom-theme-load-path (concat basedir f)))))
+
+;; (require 'color-theme-solarized)
+;; (color-theme-solarized)
+
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+
+(add-to-list 'package-archives
+             '("org" . "http://orgmode.org/elpa/") t)
+
+(setq package-pinned-packages
+      '((helm-bibtex . "melpa")
+        (evil . "melpa")
+        (evil-commentary . "melpa-stable")))
+
+(setq package-archive-priorities
+      '(("melpa-stable" .  9)
+        ("melpa" . 10)
+        ))
+
+(defvar guto/packages
+  '(;;ace-jump-mode
+    key-chord
+    ag
+    aggressive-indent
+    auto-complete
+    ;;blank-mode
+    bundler
+    bug-hunter
+    centered-cursor-mode
+    cider
+    comment-dwim-2
+    crux
+    deft
+    direx
+    discover
+    define-word
+    devdocs
+    editorconfig
+    edit-server
+    elfeed
+    ;; elfeed-org
+    enclose
+    eww
+    flx-ido
+    flycheck-tip
+    syntactic-close
+    ;;golden-ratio
+    helm
+    helm-bibtex
+    helm-ag
+    ;; hlinum
+    ido-completing-read+
+    ido-vertical-mode
+    interleave
+    ispell
+    keyfreq
+    rjsx-mode
+    ledger-mode
+    leerzeichen
+    magit
+    minitest
+    neotree
+    org
+    ;;org-pdfview
+    ;;org-ref
+    ;;persp-mode
+    ;;pdf-tools
+    ;;projectile
+    ;;projectile-rails
+    rbenv
+    rinari
+    robe
+    rspec-mode
+    seeing-is-believing
+    ;;sicp
+    ;;slime
+    smart-mode-line
+    smart-tab
+    smartparens
+    smooth-scroll
+    solarized-theme
+    speed-type
+    switch-window
+    ;;ace-window
+    sx
+    tide
+    tldr
+    ;;ucs-cmds
+    use-package
+    vlf
+    wc-mode
+    wc-goal-mode
+    yasnippet
+    zotxt))
+
+;; (require 'package)
+;; (package-initialize)
+
+;; Refresh list of packages
+;; (unless package-archive-contents
+;;  (package-refresh-contents))
+
+;; Install missing packages
+;; (dolist (package guto/packages)
+;;   (unless (package-installed-p package)
+;;    (package-install package)))
+
+;; Use use-package and ensure packages are installed if not already
+(setq use-package-always-ensure t)
+
+;; Use prelude-require-packages to install packages
+;; (prelude-require-packages '(some-package some-other-package))
+
+;; (prelude-require-packages guto/packages)
+
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
+(setq use-package-verbose t)
+(setq use-package-always-ensure t)
+
+(require 'use-package)
+
+(use-package guto/packages)
+
+(eval-when-compile
+  (require 'use-package))
+
+(require 'diminish)                ;; if you use :diminish
+(require 'bind-key)                ;; if you use any :bind variant
+
+;; ;; Solarized theme
+ (use-package solarized-theme
+   :config
+   (setq solarized-use-variable-pitch nil);; Don't change the font for some headings and titles
+   (setq solarized-scale-org-headlines nil);; Don't change size of org-mode headlines (but keep other size-changes)
+   (setq solarized-use-less-bold t) ;; Use less bolding
+   (setq prelude-theme 'solarized-dark)
+   (load-theme 'solarized-dark))
+
+;; Theme settings
+
+;; (add-hook 'after-make-frame-functions
+;;           (lambda (frame)
+;;             (let ((mode (if (display-graphic-p frame) 'dark 'dark)))
+;;               (set-frame-parameter frame 'background-mode mode)
+;;               (set-terminal-parameter frame 'background-mode mode))
+;;             (enable-theme 'solarized)))
+
+
+
+;; Use use-package for package installation and setup
+(use-package smooth-scroll
+  :config
+  (smooth-scroll-mode 1)
+  (setq smooth-scroll/vscroll-step-size 5))
+
+(use-package ido-completing-read+)
+;;(use-package ucs-cmds)
+
+;; elfeed
+;;(use-package elfeed
+;;  :config
+;;  (global-set-key (kbd "C-x w") 'elfeed)
+;;  (setf url-queue-timeout 30))
+
+;;(use-package elfeed-org
+;;  :config
+;;  (elfeed-org)
+;;  (setq rmh-elfeed-org-files (list "~/.emacs.d/personal/elfeed.org")))
+
+(use-package keyfreq
+  :config
+  (keyfreq-mode 1)
+  (keyfreq-autosave-mode 1))
+
+;; Set of useful extensions to Emacs
+(use-package crux
+  :config
+  ;;(define-key KEYMAP "\C-c i" nil)
+  ;; FIXME: Need to unset this first
+  (define-key global-map (kbd "C-c i") nil)
+  (global-unset-key "\C-c i")
+  (global-set-key (kbd "C-c i") 'crux-ispell-word-then-abbrev)
+  (setq save-abbrevs 'silently)
+  (setq-default abbrev-mode t))
+
+;; Definition of words using a web service
+(use-package define-word
+  :config
+  (global-set-key (kbd "C-c d") 'define-word-at-point))
+
+;; Synonymous
+;; C-c s l synosaurus-lookup
+;; C-c s r synosaurus-choose-and-replace
+;;(use-package synosaurus
+;;  :config
+;;  (synosaurus-mode))
+
+;; Ispell dictionary
+(use-package ispell
+  :config
+  (ispell-change-dictionary "en_GB"))
+
+;; helm-bibtex
+(use-package helm-bibtex
+  :config
+  (setq helm-bibtex-bibliography '("~/Documents/school/master-theology-newbold/modules/dissertation/biblio.bib")))
+
+;; Tide configuration
+(use-package tide
+  :config
+  (add-hook 'typescript-mode-hook
+            (lambda ()
+              (tide-setup)
+              (flycheck-mode +1)
+              (setq flycheck-check-syntax-automatically '(save mode-enabled))
+              (eldoc-mode +1)
+              ;; company is an optional dependency. You have to
+              ;; install it separately via package-install
+              (company-mode-on))))
+
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))
+
+;; (use-package persp-mode
+;;   :config
+;;   (setq wg-morph-on nil) ;; switch off animation
+;;   (persp-mode t))
+
+;; Highlight current line
+;; (use-package hlinum
+;;   :config
+;;   (linum-highlight-in-all-buffersp t)
+;;   (hlinum-activate))
+
+;; golden-ratio
+;; (use-package golden-ratio
+;;   :diminish golden-ratio-mode
+;;   :config (progn
+;;             ;;(add-to-list ’golden-ratio-extra-commands ’ace-window)
+;;             (golden-ratio-mode 1)))
+
+;; (use-package which-key
+;;   :diminish which-key-mode
+;;   :config (add-hook ’after-init-hook ’which-key-mode))
+
+
+;; Confirm emacs closing
+(setq confirm-kill-emacs 'y-or-n-p)
+
+;; Enables line numbering in all modes
+(setq linum-format "%4d \u2502") ;; with solid line separator
+(global-linum-mode t)
+(set-face-attribute 'linum nil :height 200)
+
+
+;; Disable system bell
+(setq visible-bell 1)
+
+;; Replace region with yank
+(delete-selection-mode t)
+
+;; Disable transient mark mode
+;; Use C-<SPC> C-<SPC> to temporally activate it.
+(setq transient-mark-mode nil)
+
+;; Load auto-revert-tail-mode after opening .log file
+(add-to-list 'auto-mode-alist
+             '("\\.log\\'" . (lambda ()
+                               (auto-revert-tail-mode))))
+
+(setq search-highlight t            ;; highlight when searching...
+      query-replace-highlight t)    ;; ...and replacing
+
+(add-to-list 'hippie-expand-try-functions-list
+             'yas/hippie-try-expand) ;put yasnippet in hippie-expansion list
+
+(setq smart-tab-using-hippie-expand t)
+(require 'smart-tab)
+(global-smart-tab-mode 1)
+
+(setq scss-compile-at-save nil)
+
+;; Rinari
+;; C-c ; f c	rinari-find-controller
+;; C-c ; f e	rinari-find-environment
+;; C-c ; f f	rinari-find-file-in-project
+;; C-c ; f h	rinari-find-helper
+;; C-c ; f i	rinari-find-migration
+;; C-c ; f j	rinari-find-javascript
+;; C-c ; f l	rinari-find-plugin
+;; C-c ; f m	rinari-find-model
+;; C-c ; f n	rinari-find-configuration
+;; C-c ; f o	rinari-find-log
+;; C-c ; f p	rinari-find-public
+;; C-c ; f s	rinari-find-script
+;; C-c ; f t	rinari-find-test
+;; C-c ; f v	rinari-find-view
+;; C-c ; f w	rinari-find-worker
+;; C-c ; f x	rinari-find-fixture
+;; C-c ; f y	rinari-find-stylesheet
+;; (require 'rinari)
+;; (global-rinari-mode)
+
+;; (global-set-key (kbd "C-x r C-SPC") 'rm-set-mark)
+;; (global-set-key (kbd "C-w")
+;;                 '(lambda(b e) (interactive "r")
+;;                    (if rm-mark-active
+;;                        (rm-kill-region b e) (kill-region b e))))
+;; (global-set-key (kbd "M-w")
+;;                 '(lambda(b e) (interactive "r")
+;;                    (if rm-mark-active
+;;                        (rm-kill-ring-save b e) (kill-ring-save b e))))
+;; (global-set-key (kbd "C-x C-x")
+;;                 '(lambda(&optional p) (interactive "p")
+;;                    (if rm-mark-active
+;;                        (rm-exchange-point-and-mark p) (exchange-point-and-mark p))))
+
+
+(setq dired-use-ls-dired nil)
+
+(require 'enclose)
+(enclose-mode t)
+
+;; Adds vendor to loadpath
+(add-to-list 'load-path "~/.emacs.d/personal/vendor/")
+
+(require 'rcodetools)
+
+;; (define-key ruby-mode-map (kbd "C-c C-c") 'xmp)
+
+;; Always use UTF-8
+(set-language-environment 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-selection-coding-system 'utf-8)
+(set-locale-environment "en_GB.UTF-8")
+(prefer-coding-system 'utf-8)
+
+(setq buffer-file-coding-system 'utf-8-unix)
+(setq default-file-name-coding-system 'utf-8-unix)
+(setq default-keyboard-coding-system 'utf-8-unix)
+(setq default-process-coding-system '(utf-8-unix . utf-8-unix))
+(setq default-sendmail-coding-system 'utf-8-unix)
+(setq default-terminal-coding-system 'utf-8-unix)
+
+;; delete whitespaces when writing to a file
+;; (add-hook 'before-save-hook 'whitespace-cleanup
+
+;;(global-rbenv-mode)
+
+;; Visual window switching
+(require 'switch-window)
+(global-set-key (kbd "C-x o") 'switch-window)
+
+;;; Visual window with ace-window
+;; (global-set-key (kbd "C-x o") 'ace-window)
+;; (global-set-key (kbd "M-p") 'ace-window)
+
+;; (defvar aw-dispatch-alist
+;;   '((?x aw-delete-window " Ace - Delete Window")
+;;     (?m aw-swap-window " Ace - Swap Window")
+;;     (?n aw-flip-window)
+;;     (?v aw-split-window-vert " Ace - Split Vert Window")
+;;     (?b aw-split-window-horz " Ace - Split Horz Window")
+;;     (?i delete-other-windows " Ace - Maximize Window")
+;;     (?o delete-other-windows))
+;;   "List of actions for `aw-dispatch-default'.")
+
+;; (add-hook 'after-init-hook
+;;           (lambda () (setq debug-on-error t)))
+
+(yas-global-mode 1)
+
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
+
+;; FIXME Should move this out of source control
+(setq paradox-github-token "b8d4d69f51510df60a13635b9f4161ac13c7394c")
+
+;; Sidebar list of frames
+(global-set-key (kbd "s-s") 'sr-speedbar-toggle)
+
+;; Speeds up saves
+;; http://www.method-combination.net/blog/archives/2011/03/11/speeding-up-emacs-saves.html
+(setq vc-handled-backends nil)
+
+;; Error with emacs 24.4
+(fset 'package-desc-vers 'package--ac-desc-version)
+
+;; File bookmarks
+;; C-x r m – set a bookmark at the current location (e.g. in a file)
+;; C-x r b – jump to a bookmark
+;; C-x r l – list your bookmarks
+;; M-x bookmark-delete – delete a bookmark by name
+
+(require 'wc-goal-mode)
+
+;; Using sudo over ssh and Tramp
+(set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'" "/ssh:%h:"))))
+
+;; Request UTF-8 when pasting from other applications
+(setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
+
+;; Unbound keys
+(global-set-key (kbd "C-M-SPC") nil)
+
+;; On Mac OSX, delete files by moving them to ~/.Tash
+(cond ((eq system-type 'darwin)
+       (setq delete-by-moving-to-trash t)
+       (setq trash-directory "~/.Trash/")))
+
+;; Always autoscroll compilation output, so long reuslt listings are easier to
+;; read.
+(setq compilation-scroll-output t)
+
+;; pdf-tools install
+;; (pdf-tools-install)
+
+;; When using GUI, do not open new frames but re-use existing frames
+;; when opening new files.
+(setq ns-pop-up-frames nil)
+
+;; UI
+;; Hide unnecessary GUI chrome
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(show-paren-mode t)
+
+;; enable company mode
+(add-hook 'after-init-hook 'global-company-mode)
+
+;; Set different fonts depending on input type
+;; See here: http://emacs.stackexchange.com/questions/5519/how-to-assign-a-certain-font-for-each-input-method-language-in-emacs-24/5525#5525
+;; (defun default-input-font ()
+;;   "changes the set-input-method to nil and selects a default font
+;; bound to C-c f"
+;;   (interactive)
+;;   (set-input-method nil)
+;;   (face-remap-add-relative 'default :family "Source Code Pro" :height 110))
+
+;; (defun greek-input-font ()
+;;   "changes the set-input-method to Greek and selects another font
+;; bound to C-c g"
+;;   (interactive)
+;;   (set-input-method "greek")
+;;   (face-remap-add-relative 'default :family "SBL Greek" :height 120))
+
+;; (defun hebrew-input-font ()
+
+;;   "changes the set-input-method to Hebrew  and selects another font
+;; bound to C-c h"
+;;   (interactive)
+;;   (set-input-method "hebrew") ; you can specify like `hebrew-biblical-tiro`
+;;   (face-remap-add-relative 'default :family "SBL Hebrew" :height 120))
+
+;; (global-set-key (kbd "C-c f") 'default-input-font)
+;; (global-set-key (kbd "C-c g") 'greek-input-font)
+;; (global-set-key (kbd "C-c h") 'hebrew-input-font)
+
+;; discover. See here: https://www.masteringemacs.org/article/discoverel-discover-emacs-context-menus
+(require 'discover)
+(global-discover-mode 1)
+
+;; autocomplete pairs
+(electric-pair-mode 1)
+
+;; Cleanup white space on save
+(setq prelude-clean-whitespace-on-save t)
+
+;; Turn on everywhere
+;; (global-aggressive-indent-mode 1)
+;; (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
+
+;; Fullscreen
+(defun toggle-fullscreen ()
+  "Toggle full screen"
+  (interactive)
+  (set-frame-parameter
+   nil 'fullscreen
+   (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
+
+;; Solarized theme settings
+
+;; Don't change the font for some headings and titles
+(setq solarized-use-variable-pitch nil)
+;; Don't change size of org-mode headlines (but keep other size-changes)
+(setq solarized-scale-org-headlines nil)
+;; Scale org-mode headlines
+(setq solarized-scale-org-headlines t)
+
+(toggle-fullscreen)
+
+;; (when (require 'edit-server nil t)
+;;   (setq edit-server-new-frame nil)
+;;   (edit-server-start))
+
+;; Use command as control
+;; (setq mac-command-modifier 'control)
+
+;; remove auto save when focus is lost
+(remove-hook 'focus-out-hook 'prelude-auto-save-command)
+
+;; stop blinking cursor
+(blink-cursor-mode -1)
+
+;; indent yanked code
+
+
+;; automatically indenting yanked text if in programming-modes
+(defvar yank-indent-modes '(emacs-lisp-mode
+                            c-mode c++-mode
+                            tcl-mode sql-mode
+                            perl-mode cperl-mode
+                            java-mode jde-mode
+                            lisp-interaction-mode
+                            LaTeX-mode TeX-mode)
+  "Modes in which to indent regions that are yanked (or yank-popped)")
+
+(defvar yank-advised-indent-threshold 1000
+  "Threshold (# chars) over which indentation does not automatically occur.")
+
+(defun yank-advised-indent-function (beg end)
+  "Do indentation, as long as the region isn't too large."
+  (if (<= (- end beg) yank-advised-indent-threshold)
+      (indent-region beg end nil)))
+
+(defadvice yank (after yank-indent activate)
+  "If current mode is one of 'yank-indent-modes, indent yanked text (with prefix arg don't indent)."
+  (if (and (not (ad-get-arg 0))
+           (member major-mode yank-indent-modes))
+      (let ((transient-mark-mode nil))
+    (yank-advised-indent-function (region-beginning) (region-end)))))
+
+(defadvice yank-pop (after yank-pop-indent activate)
+  "If current mode is one of 'yank-indent-modes, indent yanked text (with prefix arg don't indent)."
+  (if (and (not (ad-get-arg 0))
+           (member major-mode yank-indent-modes))
+    (let ((transient-mark-mode nil))
+    (yank-advised-indent-function (region-beginning) (region-end)))))
+
+;; Use OSX extended character entry with right alt/option/meta key in emacs
+(setq mac-right-alternate-modifier nil)
+
+;; Use gnus to read mailing list
+;; Fire up gnus and
+;; B
+;; nntp
+;; news.gmane.org
+(setq gnus-select-method '(nntp "ger.gmane.org"))
+
+;; Overwriting earlier definition
+(global-set-key "\C-c /" 'comment-or-uncomment-region-or-line)
+
+;; Stop making window height even
+(setq even-window-heights nil)
+
+;; (if (display-graphic-p)
+;;     (use-package solarized
+;;       :init
+;;       (progn
+;;         (setq solarized-use-variable-pitch nil)
+;;         (setq solarized-high-contrast-mode-line t)
+;;         (load-theme 'solarized-dark t)))
+;;   (load-theme 'wombat t))
+
+;; Apparently helps issue with terminal mode theme
+;; (custom-set-faces (if (not window-system) '(default ((t (:background "nil"))))))
+
+
+;; Enable visual line mode
+;; (global-visual-line-mode)
+
+(auto-fill-mode)
+
+;; Emacs is start as daemon on Mac
+(server-mode)
+
+;; Integrate with Finda
+;; More info: https://keminglabs.com/finda/
+(load "~/.finda/integrations/emacs/finda.el")
+
+(x-focus-frame nil)
+
+(provide 'guto)
+;;; guto.el ends here
+
+#+END_SRC

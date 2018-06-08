@@ -7,3 +7,6 @@
 [submodule "emacs/themes/emacs-color-theme-solarized"]
 	path = emacs/themes/emacs-color-theme-solarized
 	url = https://github.com/sellout/emacs-color-theme-solarized
+[submodule "emacs/themes/color-theme-solarized"]
+	path = emacs/themes/color-theme-solarized
+	url = https://github.com/sellout/emacs-color-theme-solarized

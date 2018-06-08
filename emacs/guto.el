@@ -24,25 +24,54 @@
 
 ;;; Code:
 
+;; Theme path
+;;(let ((basedir "~/.emacs.d/personal/themes/"))
+;;  (dolist (f (directory-files basedir))
+;;    (if (and (not (or (equal f ".") (equal f "..")))
+;;             (file-directory-p (concat basedir f)))
+;;        (add-to-list 'custom-theme-load-path (concat basedir f)))))
+
+;; (require 'color-theme-solarized)
+;; (color-theme-solarized)
+
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+
+(add-to-list 'package-archives
+             '("org" . "http://orgmode.org/elpa/") t)
+
+(setq package-pinned-packages
+      '((helm-bibtex . "melpa")
+        (evil . "melpa")
+        (evil-commentary . "melpa-stable")))
+
+(setq package-archive-priorities
+      '(("melpa-stable" .  9)
+        ("melpa" . 10)
+        ))
+
 (defvar guto/packages
   '(;;ace-jump-mode
+    key-chord
     ag
     aggressive-indent
     auto-complete
-    blank-mode
+    ;;blank-mode
     bundler
     bug-hunter
     centered-cursor-mode
     cider
-    comment-dwim-2
+   comment-dwim-2
     crux
     deft
     direx
     discover
     define-word
+    devdocs
+    editorconfig
     edit-server
     elfeed
-    elfeed-org
+    ;; elfeed-org
     enclose
     eww
     flx-ido
@@ -51,33 +80,38 @@
     ;;golden-ratio
     helm
     helm-bibtex
+    helm-ag
     ;; hlinum
-    ido-ubiquitous
+    ido-completing-read+
     ido-vertical-mode
+    interleave
     ispell
     keyfreq
-    key-chord
+    rjsx-mode
     ledger-mode
     leerzeichen
     magit
     minitest
     neotree
-    org-pdfview
+    org
+    ;;org-pdfview
     ;;org-ref
     ;;persp-mode
-    ;;pdf-tools
-    ;;projectile
-    ;;projectile-rails
+    pdf-tools
+    projectile
+    projectile-rails
     rbenv
     rinari
     robe
+    rspec-mode
     seeing-is-believing
-    sicp
+    ;;sicp
     ;;slime
     smart-mode-line
     smart-tab
     smartparens
     smooth-scroll
+    shell-pop
     solarized-theme
     speed-type
     switch-window
@@ -85,27 +119,26 @@
     sx
     tide
     tldr
-    ucs-cmds
+    ;;ucs-cmds
     use-package
     vlf
     wc-mode
     wc-goal-mode
-    yasnippet))
+    yasnippet
+    zotxt
+    zpresent))
 
 (require 'package)
 (package-initialize)
-
-(add-to-list 'package-archives
-             '("org" . "http://orgmode.org/elpa/") t)
 
 ;; Refresh list of packages
 (unless package-archive-contents
   (package-refresh-contents))
 
 ;; Install missing packages
-;; (dolist (package guto/packages)
-;;   (unless (package-installed-p package)
-;;     (package-install package)))
+(dolist (package guto/packages)
+  (unless (package-installed-p package)
+    (package-install package)))
 
 ;; Use prelude-require-packages to install packages
 ;; (prelude-require-packages '(some-package some-other-package))
@@ -117,13 +150,14 @@
 (require 'diminish)                ;; if you use :diminish
 (require 'bind-key)                ;; if you use any :bind variant
 
-;; Solarized theme
-(use-package solarized-theme
-  :config
-  (setq solarized-use-variable-pitch nil);; Don't change the font for some headings and titles
-  ;;(setq solarized-scale-org-headlines nil);; Don't change size of org-mode headlines (but keep other size-changes)
-  (setq prelude-theme 'solarized-dark)
-  (load-theme 'solarized-dark))
+;; ;; Solarized theme
+ (use-package solarized-theme
+   :config
+   (setq solarized-use-variable-pitch nil);; Don't change the font for some headings and titles
+   (setq solarized-scale-org-headlines nil);; Don't change size of org-mode headlines (but keep other size-changes)
+   (setq solarized-use-less-bold t) ;; Use less bolding
+   (setq prelude-theme 'solarized-dark)
+   (load-theme 'solarized-dark))
 
 ;; Theme settings
 
@@ -135,25 +169,26 @@
 ;;             (enable-theme 'solarized)))
 
 
+
 ;; Use use-package for package installation and setup
 (use-package smooth-scroll
   :config
   (smooth-scroll-mode 1)
   (setq smooth-scroll/vscroll-step-size 5))
 
-(use-package ido-ubiquitous)
-(use-package ucs-cmds)
+(use-package ido-completing-read+)
+;;(use-package ucs-cmds)
 
 ;; elfeed
-(use-package elfeed
-  :config
-  (global-set-key (kbd "C-x w") 'elfeed)
-  (setf url-queue-timeout 30))
+;;(use-package elfeed
+;;  :config
+;;  (global-set-key (kbd "C-x w") 'elfeed)
+;;  (setf url-queue-timeout 30))
 
-(use-package elfeed-org
-  :config
-  (elfeed-org)
-  (setq rmh-elfeed-org-files (list "~/.emacs.d/personal/elfeed.org")))
+;;(use-package elfeed-org
+;;  :config
+;;  (elfeed-org)
+;;  (setq rmh-elfeed-org-files (list "~/.emacs.d/personal/elfeed.org")))
 
 (use-package keyfreq
   :config
@@ -179,9 +214,9 @@
 ;; Synonymous
 ;; C-c s l synosaurus-lookup
 ;; C-c s r synosaurus-choose-and-replace
-(use-package synosaurus
-  :config
-  (synosaurus-mode))
+;;(use-package synosaurus
+;;  :config
+;;  (synosaurus-mode))
 
 ;; Ispell dictionary
 (use-package ispell
@@ -191,7 +226,7 @@
 ;; helm-bibtex
 (use-package helm-bibtex
   :config
-  (setq helm-bibtex-bibliography '("~/Documents/ba-dissertation/dissertation.bib" "~/Documents/zotero.bib")))
+  (setq helm-bibtex-bibliography '("~/Documents/school/master-theology-newbold/modules/dissertation/biblio.bib")))
 
 ;; Tide configuration
 (use-package tide
@@ -205,6 +240,11 @@
               ;; company is an optional dependency. You have to
               ;; install it separately via package-install
               (company-mode-on))))
+
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))
 
 ;; (use-package persp-mode
 ;;   :config
@@ -229,13 +269,66 @@
 ;;   :config (add-hook ’after-init-hook ’which-key-mode))
 
 
+(use-package shell-pop
+  :bind (("C-t" . shell-pop))
+  :config
+  (setq shell-pop-shell-type (quote ("ansi-term" "*ansi-term*" (lambda nil (ansi-term shell-pop-term-shell)))))
+  (setq shell-pop-term-shell "/bin/zsh")
+  ;; need to do this manually or not picked up by `shell-pop'
+  (shell-pop--set-shell-type 'shell-pop-shell-type shell-pop-shell-type))
+
+
+;; pdf-tools
+;;; Install epdfinfo via 'brew install pdf-tools' and then install the
+;;; pdf-tools elisp via the use-package below. To upgrade the epdfinfo
+;;; server, just do 'brew upgrade pdf-tools' prior to upgrading to newest
+;;; pdf-tools package using Emacs package system. If things get messed
+;;; up, just do 'brew uninstall pdf-tools', wipe out the elpa
+;;; pdf-tools package and reinstall both as at the start.
+(use-package pdf-tools
+  :ensure t
+  :config
+  (custom-set-variables
+   '(pdf-tools-handle-upgrades nil)) ; Use brew upgrade pdf-tools instead.
+  (setq pdf-info-epdfinfo-program "/usr/local/bin/epdfinfo"))
+(pdf-tools-install)
+
+;; (use-package pdf-tools
+;;   :ensure t
+;;  :pin manual ;;manually update
+;;  :config
+;;  ;; initialise
+;;  (pdf-tools-install)
+;;  (setq-default pdf-view-display-size 'fit-page)
+;;  ;; automatically annotate highlights
+;;  (setq pdf-annot-activate-created-annotations t)
+;;  ;; use isearch instead of swiper
+;;  (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward)
+;;  ;; turn off cua so copy works
+;;  (add-hook 'pdf-view-mode-hook (lambda () (cua-mode 0)))
+;;  ;; more fine-grained zooming
+;;  (setq pdf-view-resize-factor 1.1)
+;;  ;; keyboard shortcuts
+;;  (define-key pdf-view-mode-map (kbd "h") 'pdf-annot-add-highlight-markup-annotation)
+;;  (define-key pdf-view-mode-map (kbd "t") 'pdf-annot-add-text-annotation)
+;;  (define-key pdf-view-mode-map (kbd "D") 'pdf-annot-delete)
+;;  ;; wait until map is available
+;;  (with-eval-after-load "pdf-annot"
+;;    (define-key pdf-annot-edit-contents-minor-mode-map (kbd "<return>") 'pdf-annot-edit-contents-commit)
+;;    (define-key pdf-annot-edit-contents-minor-mode-map (kbd "<S-return>") 'newline)
+;;    ;; save after adding comment
+;;    (advice-add 'pdf-annot-edit-contents-commit :after 'guto/save-buffer-no-args)))
+
+;; zpresent(https://bitbucket.org/zck/zpresent.el)
+(use-package zpresent :ensure t)
+
 ;; Confirm emacs closing
 (setq confirm-kill-emacs 'y-or-n-p)
 
 ;; Enables line numbering in all modes
-(setq linum-format "%4d \u2502") ;; with solid line separator
-(global-linum-mode t)
-(set-face-attribute 'linum nil :height 200)
+;; (setq linum-format "%4d \u2502") ;; with solid line separator;
+;; (global-linum-mode t)
+;; (set-face-attribute 'linum nil :height 200)
 
 
 ;; Disable system bell
@@ -551,8 +644,36 @@
 ;; (custom-set-faces (if (not window-system) '(default ((t (:background "nil"))))))
 
 
+;; Enable visual line mode
+;; (global-visual-line-mode)
+
+(auto-fill-mode)
+
 ;; Emacs is start as daemon on Mac
 (server-mode)
+
+;; Integrate with Finda
+;; More info: https://keminglabs.com/finda/
+(load "~/.finda/integrations/emacs/finda.el")
+
+(x-focus-frame nil)
+
+;; Disable package ssl signature
+(setq package-check-signature nil)
+
+;; Allows persistence of buffer names
+(setq ido-use-virtual-buffers 1)
+
+;; Improved look and feel
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+(add-to-list 'default-frame-alist '(ns-appearance . dark))
+
+;; Native line numbers
+(global-display-line-numbers-mode)
+
+;; Edit browser text on emacs
+(require 'atomic-chrome)
+(atomic-chrome-start-server)
 
 (provide 'guto)
 ;;; guto.el ends here

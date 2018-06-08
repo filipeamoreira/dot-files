@@ -16,3 +16,14 @@ export MONDO_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaSI6Im9hdXRoY2xpZW50
 # Client LVS
 export APOLLO_HOME=~/work/freelance/lvs/apollo_home
 export PATH="$PATH:$APOLLO_HOME/gems/tools/bin"
+
+# To be used with Chromium
+export GOOGLE_API_KEY=AIzaSyAKaGpQenHubM364lpfeWPtgfgrstlEHZY
+export GOOGLE_DEFAULT_CLIENT_ID=382778178937-hif7glfmqllvkhjdtjemn6q6dlfh40gf.apps.googleusercontent.com
+export GOOGLE_DEFAULT_CLIENT_SECRET=RzAo3JLyzYNQPAHbyccroMf4
+
+# Github
+export HOMEBREW_GITHUB_API_TOKEN=5e379fedf0671c9b55495b4cd2408cd6f2af73c6
+
+# Disable homebrew auto update
+export HOMEBREW_NO_AUTO_UPDATE=1

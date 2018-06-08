@@ -4,12 +4,16 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+# POWERLEVEL9K_MODE='Source Code Pro for Powerline'
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
 # Customize to your needs...
+# https://superuser.com/questions/655607/removing-the-useless-space-at-the-end-of-the-right-prompt-of-zsh-rprompt
+# ZLE_RPROMPT_INDENT=0
 
 case $(type e) in
     (*alias*) unalias e;;
@@ -25,66 +29,63 @@ alias gp='git push'
 alias gb='git branch -a -v'
 alias g='git'
 alias b='bundle exec'
-alias kill_puma="ps -ax | grep puma | head | awk '{ print $1}' | xargs echo | xargs kill -9"
+alias v='vagrant'
+# alias kill_puma="ps -ax | grep puma | head | awk '{ print $1}' | xargs echo | xargs kill -9"
+
+
+function kill_puma {
+    ps -ax | grep puma | head | awk '{ print $1}' | xargs echo | xargs kill -9;
+}
 
 # Emacs aliases
-
 alias emd='/usr/local/bin/emacs --daemon'
 alias em='TERM=screen-16color /usr/local/bin/emacsclient --tty -nw'
 alias emacs='TERM=screen-16color /usr/local/bin/emacsclient --tty -nw'
 alias emn='/usr/local/bin/emacsclient -c --no-wait'
 alias emacs-gui='/usr/local/bin/emacsclient -c --no-wait'
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-
-alias wr='run_after_save "RAILS_ENV=test bundle exec rake spec_apollo_for_boosted_bets"'
-
 export TEXMFHOME="$HOME/texmf/"
 
 # See .zprofile
 # Editors
 #
-
 # export EDITOR=~/bin/EDITOR
 # export VISUAL=~/bin/EDITOR
 export EDITOR=/usr/local/bin/vim
 export VISUAL=/usr/local/bin/vim
-
 export PAGER='less'
-
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-
-eval "$(rbenv init -)"
-
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
-. /Users/guto/.nix-profile/etc/profile.d/nix.sh
+# . /Users/guto/.nix-profile/etc/profile.d/nix.sh
 # Nix is setting SSL_CERT_FILE and this breaks homebrew
-unset SSL_CERT_FILE
-
-export ANDROID_HOME=/usr/local/opt/android-sdk
-
-# Instalacao das Funcoes ZZ (www.funcoeszz.net)
-# export PATH=/Users/guto/scm/git/funcoeszz:$PATH
-# export ZZPATH=/Users/guto/scm/git/funcoeszz/funcoeszz
-# export ZZDIR=/Users/guto/scm/git/funcoeszz/zz
-# source /Users/guto/.zzzshrc
-# source /usr/local/share/zsh/site-functions/
+# unset SSL_CERT_FILE
 
 export GPGKEY=C535A26E
 
 # go
-export GOROOT=/usr/local/opt/go/libexec
-export GOPATH=$HOME/.go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-export PATH="/usr/local/opt/qt5/bin:$PATH"
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
-export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+# export GOPATH=$HOME/.go
+# export GOROOT=/usr/local/opt/go/libexec
+# export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+# export ASDFINSTALLS=$HOME/.asdf/installs
+# GOV=$(~/.asdf/bin/asdf current golang | sed  's/ (set by .*)//g')
+# export GOROOT=$ASDFINSTALLS/golang/$GOV/go/
 
+# export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 # source /usr/local/share/gem_home/gem_home.sh
+# export PATH="/usr/local/opt/gpg-agent/bin:$PATH"
+export PATH="/usr/local/opt/texinfo/bin:$PATH"
+
+# https://github.com/junegunn/fzf
+# command-line fuzzy finder
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+## Language version managers
+
+# asdf
+
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+# Prepend programming language binaries via ASDF shims
+PATH="$HOME/.asdf/bin:$PATH"
+PATH="$HOME/.asdf/shims:$PATH"

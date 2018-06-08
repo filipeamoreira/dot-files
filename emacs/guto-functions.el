@@ -164,3 +164,9 @@ BEG and END (region to sort)."
         (setq beg (region-beginning) end (region-end))
       (setq beg (line-beginning-position) end (line-end-position)))
     (comment-or-uncomment-region beg end)))
+
+
+;; wrapper for save-buffer ignoring arguments
+(defun guto/save-buffer-no-args ()
+  "Save buffer ignoring arguments"
+  (save-buffer))
