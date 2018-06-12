@@ -61,7 +61,8 @@
     bug-hunter
     centered-cursor-mode
     cider
-   comment-dwim-2
+    comment-dwim-2
+    company-restclient
     crux
     deft
     direx
@@ -101,6 +102,7 @@
     projectile
     projectile-rails
     rbenv
+    restclient
     rinari
     robe
     rspec-mode
@@ -129,7 +131,6 @@
     zpresent))
 
 (require 'package)
-(package-initialize)
 
 ;; Refresh list of packages
 (unless package-archive-contents
