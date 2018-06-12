@@ -246,11 +246,6 @@ shell:
 #     - { ... , command: { program: "alacritty", args: ["-e", "vttest"] } }
 key_bindings:
   - { key: Space,    mods: Control, chars: "\x00"                        } # tmux lead key
-  - { key: Grave,                   chars: "\x60"                        } # `
-  - { key: Grave,    mods: Shift,   chars: "\x7e"                        } # ~
-  - { key: Apostrophe,              chars: "\x27"                        } # '
-  - { key: Apostrophe, mods: Shift, chars: "\x22"                        } # "
-  - { key: Key6,     mods: Shift,   chars: "\x5e"                        } # ^
   - { key: V,        mods: Command, action: Paste                        }
   - { key: C,        mods: Command, action: Copy                         }
   - { key: Q,        mods: Command, action: Quit                         }
