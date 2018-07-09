@@ -142,7 +142,7 @@
                 }
             ],
             "name": "int",
-            "selected": true,
+            "selected": false,
             "simple_modifications": [
                 {
                     "from": {
@@ -294,7 +294,7 @@
                 }
             ],
             "name": "ext",
-            "selected": false,
+            "selected": true,
             "simple_modifications": [
                 {
                     "from": {
