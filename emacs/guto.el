@@ -676,5 +676,9 @@
 (require 'atomic-chrome)
 (atomic-chrome-start-server)
 
+;; Use pandoc as the markdown command
+(custom-set-variables
+ '(markdown-command "/usr/local/bin/pandoc"))
+
 (provide 'guto)
 ;;; guto.el ends here

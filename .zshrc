@@ -30,12 +30,9 @@ alias gb='git branch -a -v'
 alias g='git'
 alias b='bundle exec'
 alias v='vagrant'
-# alias kill_puma="ps -ax | grep puma | head | awk '{ print $1}' | xargs echo | xargs kill -9"
 
-
-function kill_puma {
-    ps -ax | grep puma | head | awk '{ print $1}' | xargs echo | xargs kill -9;
-}
+alias dps='docker ps | cut -c-$(tput cols)'
+alias ds=dps
 
 # Emacs aliases
 alias emd='/usr/local/bin/emacs --daemon'
