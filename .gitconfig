@@ -29,7 +29,7 @@
 	autosetupmerge = true
 [core]
 	quotepath = false
-	filemode = false
+	filemode = true
 	excludesfile = /Users/guto/.gitignore
 	autocrlf = input
 	symlinks = true
@@ -59,17 +59,15 @@
 
 	# shortcuts for commands
 	s = status
+	st = status
 	d = diff
 	a = add
-	co = checkout
 	b = branch -a -v
 	f = fetch
 	r = reset
 	p = push
-
 	co = checkout
 	ci = commit
-	st = status
 	br = branch
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	type = cat-file -t

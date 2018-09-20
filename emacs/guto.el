@@ -128,7 +128,8 @@
     wc-goal-mode
     yasnippet
     zotxt
-    zpresent))
+    ;;zpresent
+    ))
 
 (require 'package)
 
@@ -321,7 +322,7 @@
 ;;    (advice-add 'pdf-annot-edit-contents-commit :after 'guto/save-buffer-no-args)))
 
 ;; zpresent(https://bitbucket.org/zck/zpresent.el)
-(use-package zpresent :ensure t)
+;; (use-package zpresent :ensure t)
 
 ;; Confirm emacs closing
 (setq confirm-kill-emacs 'y-or-n-p)

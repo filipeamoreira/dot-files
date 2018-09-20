@@ -87,3 +87,5 @@ function run_after_save {
     nodemon -x "$prefix $file:$line" -w "$file"
   fi
 }
+
+export PATH="$HOME/.cargo/bin:$PATH"
