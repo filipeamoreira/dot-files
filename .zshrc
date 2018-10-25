@@ -35,49 +35,22 @@ alias dps='docker ps | cut -c-$(tput cols)'
 alias ds=dps
 
 # Emacs aliases
-alias emd='/usr/local/bin/emacs --daemon'
-alias em='TERM=screen-16color /usr/local/bin/emacsclient --tty -nw'
-alias emacs='TERM=screen-16color /usr/local/bin/emacsclient --tty -nw'
-alias emn='/usr/local/bin/emacsclient -c --no-wait'
-alias emacs-gui='/usr/local/bin/emacsclient -c --no-wait'
+alias e='TERM=screen-16color /usr/local/opt/emacs/bin/emacsclient --tty -nw'
+alias emacs='/usr/local/opt/emacs/bin/emacsclient -c --no-wait'
 
-export TEXMFHOME="$HOME/texmf/"
-
-# See .zprofile
-# Editors
-#
-# export EDITOR=~/bin/EDITOR
-# export VISUAL=~/bin/EDITOR
-export EDITOR=/usr/local/bin/vim
-export VISUAL=/usr/local/bin/vim
-export PAGER='less'
-
-test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+# test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
 # . /Users/guto/.nix-profile/etc/profile.d/nix.sh
 # Nix is setting SSL_CERT_FILE and this breaks homebrew
 # unset SSL_CERT_FILE
 
-export GPGKEY=C535A26E
-
-# go
-# export GOPATH=$HOME/.go
-# export GOROOT=/usr/local/opt/go/libexec
-# export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-# export ASDFINSTALLS=$HOME/.asdf/installs
-# GOV=$(~/.asdf/bin/asdf current golang | sed  's/ (set by .*)//g')
-# export GOROOT=$ASDFINSTALLS/golang/$GOV/go/
-
-# export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
-# source /usr/local/share/gem_home/gem_home.sh
-# export PATH="/usr/local/opt/gpg-agent/bin:$PATH"
-export PATH="/usr/local/opt/texinfo/bin:$PATH"
+# Docker setup
+# https://github.com/docker/for-mac/issues/1948
+autoload -Uz compinit; compinit
 
 # https://github.com/junegunn/fzf
 # command-line fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-## Language version managers
 
 # asdf
 

@@ -27,3 +27,24 @@ export HOMEBREW_GITHUB_API_TOKEN=5e379fedf0671c9b55495b4cd2408cd6f2af73c6
 
 # Disable homebrew auto update
 export HOMEBREW_NO_AUTO_UPDATE=1
+
+export TEXMFHOME="$HOME/texmf/"
+
+# export EDITOR=~/bin/EDITOR
+# export VISUAL=~/bin/EDITOR
+export EDITOR=e
+export VISUAL=e
+export PAGER='less'
+
+export GPGKEY=C535A26E
+
+export PATH="/usr/local/opt/texinfo/bin:$PATH"
+
+PATH="$HOME/.asdf/bin:$PATH"
+PATH="$HOME/.asdf/shims:$PATH"
+
+# brew info openssl
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+
+

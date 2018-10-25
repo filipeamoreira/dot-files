@@ -38,7 +38,8 @@ zstyle ':prezto:load' pmodule \
   'node' \
   'osx' \
   'ruby' \
-  'ssh'
+  'ssh' \
+  'docker'
 
 #
 # Editor
