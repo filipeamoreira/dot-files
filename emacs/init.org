@@ -1354,9 +1354,6 @@ BEG and END (region to sort)."
 ;; autocomplete pairs
 (electric-pair-mode 1)
 
-;; Cleanup white space on save
-(setq prelude-clean-whitespace-on-save t)
-
 ;; Turn on everywhere
 ;; (global-aggressive-indent-mode 1)
 ;; (add-to-list 'aggressive-indent-excluded-modes 'html-mode)

@@ -1,0 +1,31 @@
+exit
+exit
+exit
+exit
+exit
+exit
+ll
+ls -l
+cat Gemfile.lock
+.clear
+clear
+ls -l
+-rw-r--r--   1 guto           staff    79106 2018-01-29 10:40 virtualodds
+-rw-r--r--   1 guto           staff     6523 2018-05-10 09:28 Gemfile
+clear
+cd ..
+cd isbb-retail/
+clear
+docker/start
+cd ..
+cd j
+cd fdj
+clear
+docker/start
+docker/start
+clear
+clear
+b rails s
+bundle exec rails server
+exit
+exit

@@ -34,11 +34,18 @@
 ;; (require 'color-theme-solarized)
 ;; (color-theme-solarized)
 
-(add-to-list 'package-archives
-             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+;; (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
+;;                     (not (gnutls-available-p))))
+;;        (protocol (if no-ssl "http" "https")))
 
-(add-to-list 'package-archives
-             '("org" . "http://orgmode.org/elpa/") t)
+;;   (add-to-list 'package-archives (cons "melpa-stable" (concat protocol "://stable.melpa.org/packages/")) t)
+;;   (add-to-list 'package-archives (cons "org" (concat protocol "://orgmode.org/elpa/")) t)
+
+;;   (when (< emacs-major-version 24)
+;;     ;; For important compatibility libraries like cl-lib
+;;     (add-to-list 'package-archives (cons "gnu" (concat protocol "://elpa.gnu.org/packages/")))))
+
+;; (package-initialize)
 
 (setq package-pinned-packages
       '((helm-bibtex . "melpa")
@@ -51,12 +58,10 @@
         ))
 
 (defvar guto/packages
-  '(;;ace-jump-mode
-    key-chord
+  '(key-chord
     ag
     aggressive-indent
     auto-complete
-    ;;blank-mode
     bundler
     bug-hunter
     centered-cursor-mode
@@ -72,43 +77,34 @@
     editorconfig
     edit-server
     elfeed
-    ;; elfeed-org
     enclose
     eww
     flx-ido
     flycheck-tip
     syntactic-close
-    ;;golden-ratio
     helm
     helm-bibtex
     helm-ag
-    ;; hlinum
     ido-completing-read+
     ido-vertical-mode
     interleave
     ispell
     keyfreq
-    rjsx-mode
     ledger-mode
     leerzeichen
     magit
     minitest
     neotree
     org
-    ;;org-pdfview
-    ;;org-ref
-    ;;persp-mode
+    org-board
     pdf-tools
     projectile
-    projectile-rails
     rbenv
     restclient
     rinari
     robe
     rspec-mode
     seeing-is-believing
-    ;;sicp
-    ;;slime
     smart-mode-line
     smart-tab
     smartparens
@@ -117,18 +113,15 @@
     solarized-theme
     speed-type
     switch-window
-    ;;ace-window
     sx
     tide
     tldr
-    ;;ucs-cmds
     use-package
     vlf
     wc-mode
     wc-goal-mode
     yasnippet
     zotxt
-    ;;zpresent
     ))
 
 (require 'package)
@@ -152,7 +145,7 @@
 (require 'diminish)                ;; if you use :diminish
 (require 'bind-key)                ;; if you use any :bind variant
 
-;; ;; Solarized theme
+;; Solarized theme
  (use-package solarized-theme
    :config
    (setq solarized-use-variable-pitch nil);; Don't change the font for some headings and titles
@@ -171,14 +164,19 @@
 ;;             (enable-theme 'solarized)))
 
 
+(use-package magit
+  :config
+  (setq magit-commit-show-diff nil)
+  (setq magit-refresh-status-buffer nil)
+  (setq auto-revert-buffer-list-filter 'magit-auto-revert-repository-buffers-p))
 
+;; TODO: Redo this using https://github.com/jwiegley/use-package
 ;; Use use-package for package installation and setup
 (use-package smooth-scroll
   :config
   (smooth-scroll-mode 1)
   (setq smooth-scroll/vscroll-step-size 5))
 
-(use-package ido-completing-read+)
 ;;(use-package ucs-cmds)
 
 ;; elfeed
@@ -287,13 +285,13 @@
 ;;; pdf-tools package using Emacs package system. If things get messed
 ;;; up, just do 'brew uninstall pdf-tools', wipe out the elpa
 ;;; pdf-tools package and reinstall both as at the start.
-(use-package pdf-tools
-  :ensure t
-  :config
-  (custom-set-variables
-   '(pdf-tools-handle-upgrades nil)) ; Use brew upgrade pdf-tools instead.
-  (setq pdf-info-epdfinfo-program "/usr/local/bin/epdfinfo"))
-(pdf-tools-install)
+;;(use-package pdf-tools
+;;  :ensure t
+;;  :config
+;;  (custom-set-variables
+;;   '(pdf-tools-handle-upgrades nil)) ; Use brew upgrade pdf-tools instead.
+;;  (setq pdf-info-epdfinfo-program "/usr/local/bin/epdfinfo"))
+;;(pdf-tools-install)
 
 ;; (use-package pdf-tools
 ;;   :ensure t
@@ -422,9 +420,6 @@
 (setq default-sendmail-coding-system 'utf-8-unix)
 (setq default-terminal-coding-system 'utf-8-unix)
 
-;; delete whitespaces when writing to a file
-;; (add-hook 'before-save-hook 'whitespace-cleanup
-
 ;;(global-rbenv-mode)
 
 ;; Visual window switching
@@ -543,9 +538,6 @@
 ;; autocomplete pairs
 (electric-pair-mode 1)
 
-;; Cleanup white space on save
-(setq prelude-clean-whitespace-on-save t)
-
 ;; Turn on everywhere
 ;; (global-aggressive-indent-mode 1)
 ;; (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
@@ -652,19 +644,16 @@
 (auto-fill-mode)
 
 ;; Emacs is start as daemon on Mac
-(server-mode)
+;;(server-mode)
 
 ;; Integrate with Finda
 ;; More info: https://keminglabs.com/finda/
 (load "~/.finda/integrations/emacs/finda.el")
 
-(x-focus-frame nil)
+;;(x-focus-frame nil)
 
 ;; Disable package ssl signature
 (setq package-check-signature nil)
-
-;; Allows persistence of buffer names
-(setq ido-use-virtual-buffers 1)
 
 ;; Improved look and feel
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
@@ -680,6 +669,12 @@
 ;; Use pandoc as the markdown command
 (custom-set-variables
  '(markdown-command "/usr/local/bin/pandoc"))
+
+;; Disable whitespace cleanup on save
+(setq prelude-clean-whitespace-on-save nil)
+(setq prelude-whitespace nil)
+
+(whitespace-mode +1)
 
 (provide 'guto)
 ;;; guto.el ends here

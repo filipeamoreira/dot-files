@@ -1,22 +1,27 @@
-;; org-mode modules
-(setq org-modules '(org-bbdb
-                    org-gnus
-                    org-info
-                    org-jsinfo
-                    org-habit
-                    org-irc
-                    org-mouse
-                    org-annotate-file
-                    org-eval
-                    org-expiry
-                    org-interactive-query
-                    org-man
-                    org-panel
-                    org-screen
-                    org-toc))
+;; (use-package org-mode
+;;   :config
+;;   ;; org-mode modules
+;;   (setq org-modules '(org-bbdb
+;;                       org-gnus
+;;                       org-info
+;;                       org-jsinfo
+;;                       org-habit
+;;                       org-irc
+;;                       org-mouse
+;;                       org-annotate-file
+;;                       org-eval
+;;                       org-expiry
+;;                       org-interactive-query
+;;                       org-man
+;;                       org-panel
+;;                       org-screen
+;;                       org-toc))
+;;   ;; ido style completion
+;;   (setq org-completion-use-ido t)
 
-;; ido style completion
-(setq org-completion-use-ido t)
+;;   :bind (("C-c c" . org-capture)
+;;          ("C-c a" . org-agenda))
+;;   )
 
 ;; bindings
 (global-set-key (kbd "C-c c") 'org-capture)
@@ -75,8 +80,9 @@
         ("CANCELED"  . shadow)
         ))
 
-;; fontify code in code blocks
-(setq org-src-fontify-natively nil)
+;; Enable syntax highlighting on code blocks
+(setq org-src-fontify-natively t)
+
 (setq font-lock-add-keywords nil)
 (setq font-lock-maximum-decoration nil)
 

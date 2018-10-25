@@ -1,0 +1,255 @@
+;;; -*- coding: utf-8 -*-
+(("/Users/guto/work/freelance/lvs/apollo_home/gems/market/app/helpers/apollo/market/market_renderer_helper.rb" . 5257)
+ ("/Users/guto/work/freelance/lvs/apollo_home/widgets/src/cash_out/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/widgets/src/cash_out/components"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/widgets/src/cash_out/components/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/widgets/src/cash_out/components/Activity.jsx"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/widgets/src/cash_out/components/Activity.jsx" . 5955)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/rest_api/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/rest_api/.bundle"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/spec/app/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/isbb/spec/app/controllers"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/spec/app/controllers/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/isbb/spec/app/controllers/admin"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/spec/app/controllers/admin/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/isbb/spec/app/controllers/admin/highlights"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/mobile_app/spec/controllers/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/mobile_app/spec/controllers/apollo"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/mobile_app/spec/controllers/apollo/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/mobile_app/spec/controllers/apollo/mobile_app"))
+ ("/Users/guto/.emacs.d/core/prelude-editor.el" . 7473)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/mobile_app/spec/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/mobile_app/spec/spec_helper.rb"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/mobile_app/spec/controllers/apollo/mobile_app/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/mobile_app/spec/controllers/apollo/mobile_app/user_sessions_controller_spec.rb"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/mobile_app/spec/spec_helper.rb" . 52)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/highlights/spec/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/highlights/spec/app"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/highlights/spec/app/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/highlights/spec/app/controllers"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/highlights/spec/app/controllers/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/highlights/spec/app/controllers/admin"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/highlights/spec/app/controllers/admin/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/highlights/spec/app/controllers/admin/highlights"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/highlights/spec/app/controllers/admin/highlights/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/highlights/spec/app/controllers/admin/highlights/news_controller_spec.rb"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/spec/controllers/apollo/mainbook/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/isbb/spec/controllers/apollo/mainbook/.."))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/spec/controllers/apollo/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/isbb/spec/controllers/apollo/.."))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/spec/controllers/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/isbb/spec/controllers/.."))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/spec/models/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/isbb/spec/models/apollo"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/spec/models/apollo/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/isbb/spec/models/apollo/account"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/spec/models/apollo/account/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/isbb/spec/models/apollo/account/user_spec.rb"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/spec/models/apollo/account/user_spec.rb" . 15)
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/config/application.rb" . 154)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/app/assets/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/advert/app/assets/.."))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/app/cells/apollo/advert/advert_cell.rb" . 135)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/app/cells/apollo/advert/advert/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/advert/app/cells/apollo/advert/advert/show.html.erb"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/app/cells/apollo/advert/advert/show.html.erb" . 65)
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/spec/app/controllers/admin/highlights/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/isbb/spec/app/controllers/admin/highlights/news_controller_spec.rb"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/spec/app/controllers/admin/highlights/news_controller_spec.rb" . 11441)
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/spec/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/isbb/spec/spec_helper.rb"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/app/cells/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/advert/app/cells/apollo"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/app/cells/apollo/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/advert/app/cells/apollo/advert"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/app/cells/apollo/advert/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/advert/app/cells/apollo/advert/base_cell.rb"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/.bundle/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/isbb/.bundle/gems"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/.bundle/gems/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/isbb/.bundle/gems/cells-3.11.3"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/.bundle/gems/cells-3.11.3/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/isbb/.bundle/gems/cells-3.11.3/lib"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/.bundle/gems/cells-3.11.3/lib/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/isbb/.bundle/gems/cells-3.11.3/lib/cell"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/lib/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/isbb/lib/apollo"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/.bundle/gems/actionpack-5.1.0/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/isbb/.bundle/gems/actionpack-5.1.0/lib"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/.bundle/gems/actionpack-5.1.0/lib/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/isbb/.bundle/gems/actionpack-5.1.0/lib/action_controller"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/.bundle/gems/actionpack-5.1.0/lib/action_controller/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/isbb/.bundle/gems/actionpack-5.1.0/lib/action_controller/test_case.rb"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/spec/controllers/admin/betradar_adverts_controller_spec.rb" . 289)
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/.bundle/gems/rspec-rails-3.7.2/lib/rspec/rails/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/isbb/.bundle/gems/rspec-rails-3.7.2/lib/rspec/rails/adapters.rb"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/.bundle/gems/rspec-rails-3.7.2/lib/rspec/rails/adapters.rb" . 5434)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/code_quality/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/code_quality/apollo_code_quality.gemspec"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/code_quality/apollo_code_quality.gemspec" . 1377)
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/.bundle/gems/rspec-core-3.7.1/lib/rspec/core/example.rb" . 16329)
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/.bundle/gems/actionpack-5.1.0/lib/action_controller/test_case.rb" . 20186)
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/.bundle/gems/rspec-core-3.7.1/lib/rspec/core/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/isbb/.bundle/gems/rspec-core-3.7.1/lib/rspec/core/example_group.rb"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/.bundle/gems/rspec-core-3.7.1/lib/rspec/core/example_group.rb" . 27323)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/spec/controllers/admin/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/advert/spec/controllers/admin/.."))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/spec/controllers/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/advert/spec/controllers/.."))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/spec/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/advert/spec/cells"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/spec/cells/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/advert/spec/cells/apollo"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/spec/cells/apollo/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/advert/spec/cells/apollo/advert"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/spec/cells/apollo/advert/advert_cell_spec.rb" . 4612)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/spec/cells/apollo/advert/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/advert/spec/cells/apollo/advert/advert_cell_spec.rb"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/market/apollo_market.gemspec" . 1028)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/market/README.md" . 2638)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/admin/apollo_admin.gemspec" . 1073)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/admin/CHANGELOG.md" . 165)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/market/CHANGELOG.md" . 83)
+ ("/Users/guto/Documents/school/master-theology-newbold/modules/dissertation/"
+  (dired-filename . "/Users/guto/Documents/school/master-theology-newbold/modules/dissertation/chapter-1.tex"))
+ ("/Users/guto/Documents/school/master-theology-newbold/modules/dissertation/chapter-1.tex" . 22796)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/mainbook/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/mainbook/.."))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/branding/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/branding/.git"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/widgets/.git/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/widgets/.git/hooks"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/widgets/.git/hooks/applypatch-msg.sample" . 11)
+ ("/Users/guto/work/freelance/lvs/apollo_home/widgets/.git/hooks/pre-commit.sample" . 13)
+ ("/Users/guto/work/freelance/lvs/apollo_home/widgets/.git/hooks/pre-push.sample" . 11)
+ ("/Users/guto/work/freelance/lvs/apollo_home/widgets/.git/hooks/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/widgets/.git/hooks/post-merge"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/widgets-test"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/widgets/package.json" . 3240)
+ ("/Users/guto/work/freelance/lvs/apollo_home/widgets/webpack.config.js" . 8126)
+ ("/Users/guto/work/freelance/lvs/apollo_home/widgets/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/widgets/src"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/widgets/src/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/widgets/src/common"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/widgets/src/common/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/widgets/src/common/options.js"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/widgets/src/common/options.js" . 8709)
+ ("/Users/guto/work/freelance/lvs/apollo_home/widgets-test/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/widgets-test/package.json"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/widgets-test/package.json" . 1335)
+ ("/Users/guto/.npm/_logs/2018-10-10T11_43_20_947Z-debug.log" . 18864)
+ ("/Users/guto/.npm/_logs/"
+  (dired-filename . "/Users/guto/.npm/_logs/2018-10-10T11_47_37_113Z-debug.log"))
+ ("/Users/guto/.npm/_logs/2018-10-10T11_47_37_113Z-debug.log" . 454432)
+ ("/Users/guto/work/freelance/lvs/apollo_home/widgets-test/.git/hooks/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/widgets-test/.git/hooks/.."))
+ ("/Users/guto/work/freelance/lvs/apollo_home/widgets-test/.git/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/widgets-test/.git/config"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/widgets-test/.git/config" . 156)
+ ("/Users/guto/scm/git/npm/"
+  (dired-filename . "/Users/guto/scm/git/npm/cli"))
+ ("/Users/guto/scm/git/npm/cli/"
+  (dired-filename . "/Users/guto/scm/git/npm/cli/."))
+ ("/Users/guto/work/freelance/lvs/apollo_home/widgets-test/.git/hooks/post-merge.sh" . 13)
+ ("/Users/guto/work/freelance/lvs/apollo_home/widgets-test/.git/hooks/post-merge" . 501)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/mobile_app/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/mobile_app/spec"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/admin/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/admin/CHANGELOG.md"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/market/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/market/README.md"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/inline_video/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/inline_video/README.md"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/promotions/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/promotions/.bundle"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/expert/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/expert/.."))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/api/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/api/.bundle"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/in_play/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/in_play/.bundle"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/config/initializers/paperclip.rb" . 248)
+ ("/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/Gemfile" . 1099)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/app/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/advert/app/models"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/app/models/apollo/advert/betradar_advert.rb" . 76)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/app/models/apollo/advert/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/advert/app/models/apollo/advert/.."))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/app/models/apollo/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/advert/app/models/apollo/advert_base.rb"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/app/models/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/advert/app/models/apollo"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/multi_lingual/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/multi_lingual/.bundle"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/multi_lingual/lib/apollo_multi_lingual.rb" . 405)
+ ("/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/Gemfile.lock" . 12988)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/app/models/apollo/advert_base.rb" . 4844)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/lib/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/advert/lib/apollo_advert.rb"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/.bundle"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/config/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/config/initializers"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/config/initializers/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/config/initializers/paperclip.rb"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/config/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/isbb/config/initializers"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/config/initializers/apollo_configuration.rb" . 1245)
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/config/initializers/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/isbb/config/initializers/apollo_configuration.rb"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/lib/apollo_advert.rb" . 167)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/app/models/apollo/advert_flash.rb" . 438)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/app/metals/advert_rack_application.rb" . 2475)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/inline_video"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/admin/app/models/apollo/video_asset.rb" . 1196)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/admin/app/models/apollo/asset.rb" . 526)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/admin/app/controllers/admin/assets_controller.rb" . 446)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/admin/app/views/admin/assets/index.html.erb" . 320)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/promotions/app/models/apollo/promotions/promotion_image.rb" . 332)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/communications/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/communications/.bundle"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/Gemfile" . 4885)
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/advert/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/advert/lib"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/gems/highlights/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/gems/highlights/spec"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/isbb/config"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/config/initializers/cells-rails-5-monkey-patch.rb" . 1266)
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/.bundle/gems/cells-3.11.3/lib/cell/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/isbb/.bundle/gems/cells-3.11.3/lib/cell/test_case.rb"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/isbb/.bundle/gems/cells-3.11.3/lib/cell/test_case.rb" . 2179)
+ ("/Users/guto/.emacs.d/savefile/recentf" . 8583)
+ ("/Users/guto/.emacs.d/personal/persistence/ido.last" . 45219)
+ ("/Users/guto/work/freelance/lvs/apollo_home/widgets/.git/hooks/post-merge" . 179)
+ ("/Users/guto/.emacs.d/"
+  (dired-filename . "/Users/guto/.emacs.d/modules"))
+ ("/Users/guto/.emacs.d/personal/"
+  (dired-filename . "/Users/guto/.emacs.d/personal/preload"))
+ ("/Users/guto/.emacs.d/personal/init.org" . 41722)
+ ("/Users/guto/.emacs.d/personal/guto.el" . 20932)
+ ("/Users/guto/.emacs.d/personal/persistence/savehist" . 2860)
+ ("/Users/guto/.emacs.d/core/prelude-custom.el" . 1501)
+ ("/Users/guto/.emacs.d/README.md" . 23252)
+ ("/Users/guto/.emacs.d/personal/preload/preload.el" . 578)
+ ("/Users/guto/.emacs.d/personal/preload/"
+  (dired-filename . "/Users/guto/.emacs.d/personal/preload/preload.el"))
+ ("/Users/guto/work/freelance/lvs/apollo_home/widgets/src/betslip/"
+  (dired-filename . "/Users/guto/work/freelance/lvs/apollo_home/widgets/src/betslip/callbacks.js"))
+ ("/Users/guto/scm/git/prelude/core/prelude-custom.el" . 1601)
+ ("/Users/guto/.emacs.d/modules/prelude-js.el" . 1693)
+ ("/Users/guto/.emacs.d/modules/"
+  (dired-filename . "/Users/guto/.emacs.d/modules/prelude-programming.el"))
+ ("/Users/guto/.emacs.d/modules/prelude-css.el" . 1286)
+ ("/Users/guto/.emacs.d/modules/prelude-programming.el" . 2396)
+ ("/Users/guto/work/freelance/lvs/apollo_home/widgets/src/betslip/callbacks.js" . 2152)
+ ("/"
+  (dired-filename . "/Volumes"))
+ ("/Volumes/"
+  (dired-filename . "/Volumes/Disk Image"))
+ ("/Users/guto/.emacs.d/personal/persistence/eshell/"
+  (dired-filename . "/Users/guto/.emacs.d/personal/persistence/eshell/.."))
+ ("/Users/guto/.emacs.d/personal/persistence/"
+  (dired-filename . "/Users/guto/.emacs.d/personal/persistence/..")))
