@@ -30,12 +30,6 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 
 export TEXMFHOME="$HOME/texmf/"
 
-# export EDITOR=~/bin/EDITOR
-# export VISUAL=~/bin/EDITOR
-export EDITOR=e
-export VISUAL=e
-export PAGER='less'
-
 export GPGKEY=C535A26E
 
 export PATH="/usr/local/opt/texinfo/bin:$PATH"

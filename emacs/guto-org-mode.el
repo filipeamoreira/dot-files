@@ -129,3 +129,11 @@
                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
                ("\\paragraph{%s}" . "\\paragraph*{%s}")
                ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
+;; TODO: Merge configuration into use-package format
+(use-package org
+  :config
+  (require 'ox-md nil t)
+  (setq org-hierarchical-todo-statistics nil)
+  (setq org-checkbox-hierarchical-statistics nil)
+  (setq org-export-dispatch-use-expert-ui t))

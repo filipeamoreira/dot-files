@@ -40,7 +40,7 @@ alias emacs='/usr/local/opt/emacs/bin/emacsclient -c --no-wait'
 
 # test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
-# . /Users/guto/.nix-profile/etc/profile.d/nix.sh
+. /Users/guto/.nix-profile/etc/profile.d/nix.sh
 # Nix is setting SSL_CERT_FILE and this breaks homebrew
 # unset SSL_CERT_FILE
 
@@ -52,6 +52,9 @@ autoload -Uz compinit; compinit
 # command-line fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# autojump
+#   Use `j`
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 # asdf
 
 . $HOME/.asdf/asdf.sh
@@ -59,3 +62,6 @@ autoload -Uz compinit; compinit
 # Prepend programming language binaries via ASDF shims
 PATH="$HOME/.asdf/bin:$PATH"
 PATH="$HOME/.asdf/shims:$PATH"
+
+# OPAM configuration
+. /Users/guto/.asdf/installs/ocaml/4.06.1/opam-init/init.zsh > /dev/null 2> /dev/null || true

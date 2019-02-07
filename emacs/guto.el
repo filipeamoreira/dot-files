@@ -76,6 +76,7 @@
     devdocs
     editorconfig
     edit-server
+    ;; ehn-ruby-mode
     elfeed
     enclose
     eww
@@ -145,6 +146,13 @@
 (require 'diminish)                ;; if you use :diminish
 (require 'bind-key)                ;; if you use any :bind variant
 
+(use-package key-chord
+  :config
+  ;; disable key-chord
+  (key-chord-mode -1)
+  ;; disable individual key-chord bindings
+  ;;(key-chord-define-global "jj" nil)
+  )
 ;; Solarized theme
  (use-package solarized-theme
    :config
@@ -163,12 +171,22 @@
 ;;               (set-terminal-parameter frame 'background-mode mode))
 ;;             (enable-theme 'solarized)))
 
+(use-package tide
+  :ensure
+  :config
+  (flycheck-mode 1))
+
+
+(use-package enh-ruby-mode
+  :config
+  (setq enh-ruby-add-encoding-comment-on-save nil))
 
 (use-package magit
   :config
-  (setq magit-commit-show-diff nil)
-  (setq magit-refresh-status-buffer nil)
-  (setq auto-revert-buffer-list-filter 'magit-auto-revert-repository-buffers-p))
+  ;; (setq magit-commit-show-diff nil)
+  ;; (setq auto-revert-buffer-list-filter 'magit-auto-revert-repository-buffers-p)
+  ;; Check other options here: https://magit.vc/manual/magit/Switching-Buffers.html
+  (setq magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1))
 
 ;; TODO: Redo this using https://github.com/jwiegley/use-package
 ;; Use use-package for package installation and setup
@@ -222,6 +240,12 @@
 (use-package ispell
   :config
   (ispell-change-dictionary "en_GB"))
+
+;; helm-ag
+(use-package helm-ag
+  :config
+  ;;(setq helm-ag-base-command "rg --no-heading") ;; FIXME: Colour output is broken
+  (setq helm-ag-base-command "ag --nocolor --nogroup"))
 
 ;; helm-bibtex
 (use-package helm-bibtex
@@ -643,14 +667,11 @@
 
 (auto-fill-mode)
 
-;; Emacs is start as daemon on Mac
-;;(server-mode)
-
 ;; Integrate with Finda
 ;; More info: https://keminglabs.com/finda/
 (load "~/.finda/integrations/emacs/finda.el")
 
-;;(x-focus-frame nil)
+(x-focus-frame nil)
 
 ;; Disable package ssl signature
 (setq package-check-signature nil)
@@ -675,6 +696,12 @@
 (setq prelude-whitespace nil)
 
 (whitespace-mode +1)
+
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+(add-to-list 'default-frame-alist '(ns-appearance . dark))
+
+;; Start Emacs server
+(server-mode)
 
 (provide 'guto)
 ;;; guto.el ends here

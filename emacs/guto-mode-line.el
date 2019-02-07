@@ -148,4 +148,4 @@
 ;; (add-hook 'markdown-mode-hook (lambda () (wordcount-mode)))
 
 ;; (setq sml/theme 'dark)
-(sml/setup)
+;; (sml/setup)

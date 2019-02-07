@@ -17,8 +17,8 @@ fi
 # Editors
 #
 
-export EDITOR=/usr/local/bin/vim
-export VISUAL=/usr/local/bin/vim
+export EDITOR='TERM=screen-16color /usr/local/opt/emacs/bin/emacsclient --tty -nw'
+export VISUAL='TERM=screen-16color /usr/local/opt/emacs/bin/emacsclient --tty -nw'
 export PAGER='less'
 
 #
@@ -89,3 +89,4 @@ function run_after_save {
 }
 
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"

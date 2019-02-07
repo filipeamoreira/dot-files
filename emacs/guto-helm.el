@@ -22,7 +22,8 @@
     :ensure helm
     :config (progn
               (global-set-key (kbd "C-x d") 'helm-find-files)
-              (global-set-key (kbd "C-x C-d") 'ido-dired)
+              (global-set-key (kbd "C-x C-d") 'helm-find-files)
+              ;; (global-set-key (kbd "C-x C-d") 'ido-dired)
               (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
               (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
               (define-key helm-map (kbd "C-z")  'helm-select-action)))
