@@ -376,9 +376,12 @@
 (add-to-list 'hippie-expand-try-functions-list
              'yas/hippie-try-expand) ;put yasnippet in hippie-expansion list
 
-(setq smart-tab-using-hippie-expand t)
-(require 'smart-tab)
-(global-smart-tab-mode 1)
+(use-package smart-tab
+  :ensure t
+  :config
+  (setq smart-tab-user-provided-completion-function 'company-complete)
+  (setq smart-tab-using-hippie-expand t)
+  (global-smart-tab-mode 1))
 
 (setq scss-compile-at-save nil)
 
@@ -692,8 +695,8 @@
  '(markdown-command "/usr/local/bin/pandoc"))
 
 ;; Disable whitespace cleanup on save
-(setq prelude-clean-whitespace-on-save nil)
-(setq prelude-whitespace nil)
+;; (setq prelude-clean-whitespace-on-save nil)
+;; (setq prelude-whitespace nil)
 
 (whitespace-mode +1)
 
