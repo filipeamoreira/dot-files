@@ -23,8 +23,8 @@
 (blink-cursor-mode 0)              ;; No blinking cursor
 
 ;; Disable whitespace cleanup on save
-(setq prelude-clean-whitespace-on-save nil)
-(setq prelude-whitespace nil)
+;; (setq prelude-clean-whitespace-on-save nil)
+;; (setq prelude-whitespace nil)
 
 ;; Set persistence folder
 (setq emacs-persistence-directory (concat user-emacs-directory "personal/persistence/"))

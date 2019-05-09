@@ -33,6 +33,7 @@
 	excludesfile = /Users/guto/.gitignore
 	autocrlf = input
 	symlinks = true
+	hooksPath = /Users/guto/scm/git/git-identities/hooks
 [alias]
 	# I like using the interactive mode to make complex commits
 	ai = add --interactive

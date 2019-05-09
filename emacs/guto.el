@@ -50,7 +50,9 @@
 (setq package-pinned-packages
       '((helm-bibtex . "melpa")
         (evil . "melpa")
-        (evil-commentary . "melpa-stable")))
+        (evil-commentary . "melpa-stable")
+        (restclient . "melpa-stable")
+        ))
 
 (setq package-archive-priorities
       '(("melpa-stable" .  9)
@@ -698,13 +700,16 @@
 ;; (setq prelude-clean-whitespace-on-save nil)
 ;; (setq prelude-whitespace nil)
 
-(whitespace-mode +1)
+;; (whitespace-mode +1)
 
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
 
 ;; Start Emacs server
 (server-mode)
+
+;; set default directory
+(setq default-directory "/Users/guto/")
 
 (provide 'guto)
 ;;; guto.el ends here

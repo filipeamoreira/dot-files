@@ -30,7 +30,7 @@ alias gb='git branch -a -v'
 alias g='git'
 alias b='bundle exec'
 alias v='vagrant'
-
+alias grep='/usr/local/bin/ggrep'
 alias dps='docker ps | cut -c-$(tput cols)'
 alias ds=dps
 

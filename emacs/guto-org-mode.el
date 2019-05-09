@@ -136,4 +136,8 @@
   (require 'ox-md nil t)
   (setq org-hierarchical-todo-statistics nil)
   (setq org-checkbox-hierarchical-statistics nil)
-  (setq org-export-dispatch-use-expert-ui t))
+  (setq org-export-dispatch-use-expert-ui t)
+  org-babel-load-languages '((xxx . t)
+                             (ledger . t)
+                             ...
+                             (yyy . t)))

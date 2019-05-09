@@ -109,7 +109,7 @@
 ;; Bible reference using
 (defun guto-insert-bibleref (reference)
   "Insert Bible chapter and verse numbers"
-  (interactive "sBible reference:")
+  (interactive "sBible reference: ")
   (insert (format "\\pbibleverse{\%s}" reference)))
 
 

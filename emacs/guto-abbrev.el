@@ -1,4 +1,5 @@
-;; sample use of emacs abbreviation feature
+(setq abbrev-file-name             ;; tell emacs where to read abbrev
+      (concat (prin1 emacs-persistence-directory) "abbrev_defs"))
 
 (define-abbrev-table
   'global-abbrev-table '(
@@ -35,8 +36,8 @@
 ;; stop asking whether to save newly added abbrev when quitting emacs
 (setq save-abbrevs nil)
 
-(setq abbrev-file-name             ;; tell emacs where to read abbrev
-      "~/.emacs.d/personal/abbrev_defs")
-
 ;; turn on abbrev mode globally
 (setq-default abbrev-mode t)
+
+;; disable abbrev-mode in the the prelude-mode
+(add-hook 'prelude-mode (lambda () (abbrev-mode -1)))
