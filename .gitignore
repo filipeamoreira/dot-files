@@ -2,4 +2,5 @@ emacs-starter-kit
 .DS_Store
 .zeus.sock
 .bundle
-emacs/persistence/*
+/emacs/persistence/
+/.config/karabiner/automatic_backups/
