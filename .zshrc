@@ -33,6 +33,8 @@ alias v='vagrant'
 alias grep='/usr/local/bin/ggrep'
 alias dps='docker ps | cut -c-$(tput cols)'
 alias ds=dps
+alias d='docker'
+alias dc='docker-compose'
 
 # Emacs aliases
 alias e='TERM=screen-16color /usr/local/opt/emacs/bin/emacsclient --tty -nw'
