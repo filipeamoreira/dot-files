@@ -50,6 +50,7 @@
 (setq package-pinned-packages
       '((helm-bibtex . "melpa")
         (evil . "melpa")
+        (solarized-theme . "melpa")
         (evil-commentary . "melpa-stable")
         (restclient . "melpa-stable")
         ))
