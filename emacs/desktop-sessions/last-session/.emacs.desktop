@@ -1,104 +1,32 @@
-;; -*- mode: emacs-lisp; lexical-binding:t; coding: utf-8-emacs; -*-
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Wed Jul  3 08:07:51 2019
+;; Created Thu Oct 10 10:16:06 2019
 ;; Desktop file format version 208
-;; Emacs version 27.0.50
+;; Emacs version 26.3
 
 ;; Global section:
-(setq desktop-saved-frameset [frameset 1 (23836 21575 584362 0) (desktop . "208") "guto@mbp.local" nil nil ((((minibuffer . t) (font-backend mac-ct) (fontsize . 0) (font . "-*-Source Code Pro-normal-normal-normal-*-20-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 2) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#839496") (background-color . "#002b36") (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (undecorated) (ns-appearance . dark) (ns-transparent-titlebar . t) (z-group) (no-focus-on-map) (no-accept-focus) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 15) (scroll-bar-height . 15) (alpha) (fullscreen . fullboth) (display-type . color) (background-mode . dark) (cursor-color . "#839496") (environment) (last-focus-update . t) (frameset--id . "677A-1DF4-1B73-8755") (frameset--mini t . t) (height . 67) (width . 85) (modeline . t) (unsplittable) (left . 1685) (top + -412) (icon-name) (visibility . t) (display . "mbp.local") (explicit-name) (tool-bar-position . top)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 4) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 100) (min-pixel-width . 120) (min-pixel-height-ignore . 75) (min-pixel-width-ignore . 48) (min-pixel-height-safe . 25) (min-pixel-width-safe . 24)) leaf (pixel-width . 1036) (pixel-height . 1650) (total-width . 86) (total-height . 66) (normal-height . 1.0) (normal-width . 1.0) (buffer "Gemfile" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 3795) (start . 2508)) (prev-buffers ("magit: fdj-cms" 1 216) ("Gemfile" 1833 2655) ("loro-cms/master.key" 1 1) ("loro-cms/config" 1 831) ("fdj-cms/master.key" 1 33) ("fdj-cms" 1 587) ("isbb/master.key" 1 33) ("magit: isbb" 1 264) ("isbb/config" 1 246) ("isbb" 1 1431) ("fdj-cms/config" 1 830))))])
+(setq desktop-saved-frameset [frameset 1 (23966 63190 642654 0) (desktop . "208") "guto@mbp.local" nil nil ((((minibuffer . t) (font-backend mac-ct) (fontsize . 0) (font . "-*-Source Code Pro-normal-normal-normal-*-20-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 2) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#839496") (background-color . "#002b36") (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (undecorated) (ns-appearance . dark) (ns-transparent-titlebar . t) (z-group) (no-focus-on-map) (no-accept-focus) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (scroll-bar-height . 0) (alpha) (fullscreen . fullboth) (display-type . color) (background-mode . dark) (cursor-color . "#839496") (environment) (frameset--id . "62FB-CCFA-B120-DE01") (frameset--mini t . t) (height . 67) (width . 85) (modeline . t) (unsplittable) (left . 1685) (top + -412) (icon-name) (visibility . t) (display . "mbp.local") (explicit-name) (tool-bar-position . top)) ((min-height . 8) (min-width . 10) (min-height-ignore . 6) (min-width-ignore . 4) (min-height-safe . 2) (min-width-safe . 2) (min-pixel-height . 200) (min-pixel-width . 120) (min-pixel-height-ignore . 150) (min-pixel-width-ignore . 48) (min-pixel-height-safe . 50) (min-pixel-width-safe . 24)) vc (pixel-width . 1036) (pixel-height . 1650) (total-width . 86) (total-height . 66) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 1036) (pixel-height . 825) (total-width . 86) (total-height . 33) (normal-height . 0.5) (normal-width . 1.0) (buffer "magit: isbb-retail" (selected) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 245) (start . 1))) (leaf (last . t) (pixel-width . 1036) (pixel-height . 825) (total-width . 86) (total-height . 33) (normal-height . 0.5) (normal-width . 1.0) (buffer "magit-process: isbb-retail" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 310) (start . 1)))))])
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
 (setq search-ring '("description" "tools" "sus"))
-(setq regexp-search-ring '(#("con" 0 3 (isearch-case-fold-search t)) #("compi" 0 5 (isearch-case-fold-search t)) #("puma" 0 4 (isearch-case-fold-search t)) #("web-con" 0 7 (isearch-case-fold-search t)) #("bindex" 0 6 (isearch-case-fold-search t)) #("branding name" 0 13 (isearch-case-fold-search t)) #("vendor" 0 6 (isearch-case-fold-search t)) #("pi" 0 2 (isearch-case-fold-search t)) #("capistrano" 0 10 (isearch-case-fold-search t)) #("net-ssh" 0 7 (isearch-case-fold-search t)) #("code" 0 4 (isearch-case-fold-search t)) #(":" 0 1 (isearch-case-fold-search t)) #("lib" 0 3 (isearch-case-fold-search t)) #("spring" 0 6 (isearch-case-fold-search t)) #("net" 0 3 (isearch-case-fold-search t)) #("sass" 0 4 (isearch-case-fold-search t))))
+(setq regexp-search-ring '("rails-html" "update" "solarized" "solari" "theme" "solarized-the" "theme" "ema" "dot-f" "magit" "ag" "async" "rubygems" "advert" "admin" "adver"))
 (setq register-alist nil)
-(setq file-name-history '("~/work/freelance/lvs/apollo_home/fdj-cms/Gemfile" "~/work/freelance/lvs/apollo_home/fdj-cms/config/master.key" "~/work/freelance/lvs/apollo_home/isbb/config/master.key" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/provision_internal" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/provision" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/build_platform_internal" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/Dockerfile" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/build_platform" "~/work/freelance/lvs/apollo_home/fdj-cms/Jenkinsfile" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/compile_assets" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/platform_setup.sh" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/Dockerfile.platform" "~/work/freelance/lvs/apollo_home/fdj-cms/unf_ext.patch" "~/.ssh/known_hosts" "~/work/freelance/lvs/apollo_home/fdj-cms/Gemfile.lock" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/docker-compose.yml" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/setup" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/platform-setup.sh" "~/work/freelance/lvs/apollo_home/fdj-cms/config/environments/fdj_cms_server_production.rb" "~/work/freelance/lvs/apollo_home/fdj-cms/config/application.yml" "~/Dropbox/church/sermon/sermon-planner.org" "~/work/freelance/lvs/apollo_home/gems/branding/spec/factories/background.rb" "~/work/freelance/lvs/apollo_home/gems/branding/spec/controllers/admin/branding/backgrounds_controller_spec.rb" "~/work/freelance/lvs/apollo_home/fdj-cms/spec/spec_helper.rb" "/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/.git/rebase-merge/git-rebase-todo" "~/work/freelance/lvs/apollo_home/fdj-cms/.rubocop.yml" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/run_linter" "~/work/freelance/lvs/apollo_home/docker-abp/jenkins-build-images/web-build/build-platform.sh" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/build-platform" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/setup_database" "/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/.git/rebase-merge/git-rebase-todo" "~/Dropbox/sync/notes/freelance/lvs.org" "~/work/freelance/lvs/apollo_home/gems/core/lib/apollo/core/asset_path.rb" "/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/.git/rebase-merge/git-rebase-todo" "~/work/freelance/lvs/apollo_home/fdj-cms/.bundle/gems/ffi-1.11.1/lib/ffi.rb" "~/work/freelance/lvs/apollo_home/fdj-cms/.bundle/gems/activesupport-5.2.2/lib/active_support/dependencies.rb" "~/work/freelance/lvs/apollo_home/fdj-cms/.bundle/extensions/x86_64-darwin-18/2.5.0-static/ffi-1.11.1/ffi_c.bundle" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/.env.ci" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/run_tests_single" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/run_security_audit" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/teardown_aborted" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/teardown" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/image-setup.sh" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/database-shell" "~/Dropbox/uni/computer-science/ba-computer-science/how-computers-work/how-computers-work.org" "~/.gemrc" "~/work/freelance/lvs/apollo_home/docker-abp/jenkins-build-images/web-build-platform/Dockerfile" "~/work/freelance/lvs/apollo_home/docker-abp/jenkins-build-images/web-build/Dockerfile" #("~/work/freelance/lvs/apollo_home/docker-abp/jenkins-build-images/web-build/setup.sh" 1 83 (match-part "/Users/guto/work/freelance/lvs/apollo_home/docker-abp/jenkins-build-images/web-build/setup.sh")) "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/development/docker-compose.yml" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/development/Dockerfile" "~/work/freelance/lvs/apollo_home/docker-abp/jenkins-build-images/docker-compose.yml" "~/work/freelance/lvs/apollo_home/docker-abp/jenkins-build-images/Jenkinsfile" "~/work/freelance/lvs/apollo_home/docker-abp/jenkins-build-images/web-build/entrypoint.sh" "~/work/freelance/lvs/apollo_home/docker-abp/jenkins-build-images/web-build/entrypoint" "~/work/freelance/lvs/apollo_home/docker-abp/jenkins-build-images/web-build/build-platform" "~/work/freelance/lvs/apollo_home/fdj-cms/Vagrantfile" "~/Dropbox/church/sermon/NT/matthew/24/20190615-perseverance-until-the-end-portuguese/20190615-perseverance-until-the-end.org" "~/Dropbox/uni/computer-science/ba-computer-science/intro-programming-i/sleuth/20190618-case-303-stage-4/sketch.js" "~/Dropbox/uni/computer-science/ba-computer-science/intro-programming-i/sleuth/20190618-case-303-stage-1/sketch.js" "~/Dropbox/uni/computer-science/ba-computer-science/intro-programming-i/sleuth/20190617-case-302-stage-1/sketch.js" "~/Dropbox/uni/computer-science/ba-computer-science/intro-programming-i/sleuth/20190618-case-303-stage-3/sketch.js" "~/Dropbox/uni/computer-science/ba-computer-science/intro-programming-i/sleuth/20190617-case-302-stage-4/sketch.js" "~/Dropbox/uni/computer-science/ba-computer-science/intro-programming-i/sleuth/20190617-case-302-stage-4/scene.png" "/Volumes/Disk Image/accounts.org" #("~/Dropbox/uni/computer-science/ba-computer-science/intro-programming-i/sleuth/20190617-case-301-stage-4/sketch.js" 1 113 (match-part "/Users/guto/Dropbox/uni/computer-science/ba-computer-science/intro-programming-i/sleuth/20190617-case-301-stage-4/sketch.js")) "~/work/freelance/lvs/apollo_home/gems/publication/lib/apollo/publication/logfile_writer.rb" "~/work/freelance/lvs/apollo_home/gems/publication/spec/apollo/publication/logfile_writer_spec.rb" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/run_test_single" "~/work/freelance/lvs/apollo_home/tmp/env-files/ENV_FILE_DOCKER" "~/work/freelance/lvs/apollo_home/fdj-cms/ENV_FILE_DOCKER" "~/work/freelance/lvs/apollo_home/fdj-cms/.bundle/gems/net-ssh-5.0.2/.rubocop.yml" "~/work/freelance/lvs/apollo_home/gems/core/spec/rspec_test/factories/required.rb" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/run_tests" "~/Dropbox/uni/computer-science/ba-computer-science/intro-programming-i/sleuth/20190616-case-202-stage-1/sketch.js" "~/Dropbox/uni/computer-science/ba-computer-science/intro-programming-i/sleuth/20190616-case-201-stage-1/sketch.js" "~/Dropbox/uni/computer-science/ba-computer-science/intro-programming-i/sleuth/20190616-case-101-stage-3/sketch.js" "~/Dropbox/uni/computer-science/ba-computer-science/intro-programming-i/sleuth/20190616-case-101-stage-1/sketch.js" "~/Dropbox/uni/computer-science/ba-computer-science/intro-programming-i/sleuth/20190616-case-101-stage-2/sketch.js" "~/Dropbox/uni/computer-science/ba-computer-science/intro-programming-i/sleuth/20190616-case-101/sketch.js" "~/Dropbox/uni/computer-science/ba-computer-science/numerical-mathematics/numerical-mathematics.org" "~/Dropbox/uni/computer-science/ba-computer-science/intro-programming-i/intro-programming-i.org" "~/Dropbox/church/youth-retreat/20190531-dublin/20190531-dublin.org" "~/Dropbox/church/youth-retreat/20190531-dublin/20190531-dublin-fortes.org" "~/work/freelance/lvs/apollo_home/loro-cms/docker/environments/ci/Dockerfile" "~/work/freelance/lvs/apollo_home/loro-cms/docker/environments/ci/docker-compose.yml" "~/work/freelance/lvs/apollo_home/loro-cms/Jenkinsfile" "~/.zshrc" "~/work/freelance/lvs/apollo_home/fdj-cms/.gitignore" "~/work/freelance/lvs/apollo_home/gems/core/lib/apollo/core/cache_clearer.rb" "~/work/freelance/lvs/apollo_home/fdj-cms/.ruby-version" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/global-cleanup" "~/work/freelance/lvs/apollo_home/fdj-cms/Vagrantfile2" "~/work/freelance/lvs/apollo_home/docker-abp/jenkins-build-images/web-build/utils" "~/.gitignore" "~/work/freelance/lvs/apollo_home/fdj-cms/docker/lint" "~/.zpreztorc" #("~/.zshenv" 1 9 (match-part "/Users/guto/.zshenv")) "~/work/freelance/lvs/apollo_home/docker-abp/jenkins-build-images/web-build-platform/build-config/ssh.tar"))
+(setq file-name-history '("/Users/guto/work/freelance/lvs/apollo_home/isbb-retail/.git/rebase-merge/git-rebase-todo" "~/work/freelance/lvs/apollo_home/isbb/Gemfile" "~/work/freelance/lvs/apollo_home/isbb-retail/Gemfile.lock" "~/work/freelance/lvs/apollo_home/isbb-retail/Gemfile" "~/work/freelance/lvs/apollo_home/isbb-retail/docker/environments/ci/run_security_audit" "/Volumes/Disk Image/accounts.org" "~/work/freelance/lvs/apollo_home/isbb-retail/app/controllers/apollo/results/legacy_results_controller.rb" "~/work/freelance/lvs/apollo_home/isbb-retail/app/controllers/apollo/results/mainbook_controller.rb" "~/work/freelance/lvs/apollo_home/isbb-retail/app/helpers/apollo/betslip/betslip_helper.rb" "~/work/freelance/lvs/apollo_home/isbb-retail/app/services/apollo/results/filter.rb" "~/work/freelance/lvs/apollo_home/isbb-retail/bin/setup" "~/work/freelance/lvs/apollo_home/isbb-retail/bin/update" "~/work/freelance/lvs/apollo_home/isbb-retail/db/migrate/20121211105249_add_retail_seed_data.rb" "~/work/freelance/lvs/apollo_home/isbb-retail/db/migrate/20121220162636_update_date_formats.rb" "~/work/freelance/lvs/apollo_home/isbb-retail/db/migrate/20130607095123_update_time_formats_a_further_time.rb" "~/work/freelance/lvs/apollo_home/isbb-retail/db/migrate/20130318153841_update_time_formats_yet_again.rb" "~/work/freelance/lvs/apollo_home/isbb-retail/lib/apollo/isbb_flat_renderer_views.rb" "~/work/freelance/lvs/apollo_home/isbb-retail/presenters/mainbook/event_mapping_presenter.rb" "~/work/freelance/lvs/apollo_home/isbb-retail/presenters/mainbook/market_presenter.rb" "~/work/freelance/lvs/apollo_home/isbb-retail/presenters/match_result/market_presenters/base.rb" "~/work/freelance/lvs/apollo_home/isbb-retail/presenters/match_result/market_presenters/blank_market.rb" "~/work/freelance/lvs/apollo_home/isbb-retail/presenters/match_result/market_presenters/basketball/winning_outcome_only.rb" "~/work/freelance/lvs/apollo_home/isbb-retail/spec/controllers/apollo/mainbook/retail_controller_spec.rb" "~/work/freelance/lvs/apollo_home/isbb-retail/spec/helpers/application_helper_spec.rb" "~/work/freelance/lvs/apollo_home/isbb-retail/spec/presenters/match_result/market_presenters/tennis/main_dynamic_over_under.rb" "~/work/freelance/lvs/apollo_home/isbb-retail/spec/routing/routing_spec.rb" "~/work/freelance/lvs/apollo_home/isbb-retail/spec/support/helpers.rb" "~/work/freelance/lvs/apollo_home/isbb-retail/spec/spec_helper.rb" "~/work/freelance/lvs/apollo_home/isbb-retail/app/controllers/apollo/mainbook/retail_controller.rb" "~/work/freelance/lvs/apollo_home/isbb-retail/app/helpers/apollo/market/market_renderer_helper.rb" "~/scm/git/dot-files/emacs/custom.el" "~/.emacs.d/personal/guto.el" "~/scm/git/dot-files/emacs/guto.el" "~/work/freelance/lvs/apollo_home/isbb-retail/docker/environments/ci/run_linter" "~/work/freelance/lvs/apollo_home/isbb-retail/docker/environments/ci/platform_setup" "~/work/freelance/lvs/apollo_home/isbb-retail/docker/environments/ci/build_platform_internal" "~/work/freelance/lvs/apollo_home/isbb-retail/docker/environments/ci/build_platform" "~/work/freelance/lvs/apollo_home/isbb-retail/docker/environments/ci/.env" "~/work/freelance/lvs/apollo_home/isbb-retail/config/credentials.yml.enc" "~/work/freelance/lvs/apollo_home/isbb-retail/Jenkinsfile" "~/work/freelance/lvs/apollo_home/isbb-retail/docker/environments/ci/setup" "~/work/freelance/lvs/apollo_home/gems/results/spec/spec_helper.rb" "~/work/freelance/lvs/apollo_home/gems/results/apollo_results.gemspec" "~/work/freelance/lvs/apollo_home/gems/mainbook/apollo_mainbook.gemspec" "/Users/guto/work/freelance/lvs/apollo_home/isbb-retail/.git/rebase-merge/git-rebase-todo" "~/work/freelance/lvs/apollo_home/gems/admin/apollo_admin.gemspec" "~/work/freelance/lvs/apollo_home/demobet-drupal/.env" "~/work/freelance/lvs/apollo_home/gems/account/spec/spec_helper.rb" "~/work/freelance/lvs/apollo_home/gems/account/apollo_account.gemspec" "~/work/freelance/lvs/apollo_home/gems/advert/apollo_advert.gemspec" "~/work/freelance/lvs/apollo_home/gems/admin/app/models/apollo/setting.rb" "~/work/freelance/lvs/apollo_home/gems/account/lib/apollo/account/tools.rb" "~/work/freelance/lvs/apollo_home/gems/account/spec/lib/apollo/account/tools_spec.rb" "~/work/freelance/lvs/apollo_home/fdj-cms/spec/spec_helper.rb" "~/work/freelance/lvs/apollo_home/isbb/spec/spec_helper.rb" "~/work/freelance/lvs/apollo_home/isbb/Rakefile" "~/work/freelance/lvs/apollo_home/gems/admin/lib/apollo_admin.rb" "~/work/freelance/lvs/apollo_home/gems/admin/spec/app/controllers/admin/footer_links_controller_spec.rb" "~/work/freelance/lvs/apollo_home/gems/mainbook/spec/helpers/apollo/mainbook/mainbook_helper_spec.rb" "~/work/freelance/lvs/apollo_home/gems/highlights/spec/app/models/apollo/highlights/service_spec.rb" "~/work/freelance/lvs/apollo_home/gems/betslip_async/spec/lib/apollo/betslip_async/csrf_token_validate_spec.rb" "~/work/freelance/lvs/apollo_home/gems/core/spec/models/apollo/core/tag_commander_spec.rb" "~/work/freelance/lvs/apollo_home/gems/api/spec/controllers/apollo/api/boosted_bets_grid_controller_spec.rb" "~/work/freelance/lvs/apollo_home/gems/admin/spec/spec_helper.rb" "~/work/freelance/lvs/apollo_home/fdj-cms/.gitignore" "~/work/freelance/lvs/apollo_home/fdj-cms/Gemfile" "~/work/freelance/lvs/apollo_home/fdj-cms/config/application.rb" "~/work/freelance/lvs/apollo_home/gems/rest_api/lib/apollo/rest_api/session_encryptor.rb" "~/work/freelance/lvs/apollo_home/gems/rest_api/lib/apollo/rest_api/uuid_middleware.rb" "~/work/freelance/lvs/apollo_home/gems/account/lib/apollo_account.rb" "~/work/freelance/lvs/apollo_home/gems/account/spec/models/apollo/account/betslip_detail_spec.rb" "~/work/freelance/lvs/apollo_home/gems/account/spec/shared_examples/keep_alive_headers.rb" "~/work/freelance/lvs/apollo_home/gems/account/spec/app/presenters/apollo/account/settled_with_bonus_presenter_spec.rb" "~/work/freelance/lvs/apollo_home/gems/branding/spec/factories/favicon.rb" "~/work/freelance/lvs/apollo_home/gems/account/spec/app/metals/keep_alive_controller_spec.rb" "~/work/freelance/lvs/apollo_home/gems/branding/spec/spec_helper.rb" "~/work/freelance/lvs/apollo_home/gems/branding/spec/factories/background.rb" "~/work/freelance/lvs/apollo_home/gems/mainbook/spec/views/apollo/mainbook/eventpaths/view.html.erb_spec.rb" "~/work/freelance/lvs/apollo_home/gems/admin/app/models/apollo/service.rb" "~/work/freelance/lvs/apollo_home/gems/highlights/app/models/apollo/highlights/service.rb" "~/work/freelance/lvs/apollo_home/gems/admin/app/controllers/admin/important_events_controller.rb" "~/work/freelance/lvs/apollo_home/gems/admin/spec/controllers/admin/important_events_controller_spec.rb" "~/work/freelance/lvs/apollo_home/gems/results/app/controllers/apollo/results/results_controller.rb" "~/work/freelance/lvs/apollo_home/gems/results/spec/app/controller/mainbook_controller_spec.rb" "~/work/freelance/lvs/apollo_home/gems/results/app/controllers/apollo/results/mainbook_controller.rb" "~/work/freelance/lvs/apollo_home/isbb-retail/app/views/apollo/market/_icons.html.erb" "~/work/freelance/lvs/apollo_home/gems/market/app/views/apollo/market/_icons.html.erb" "~/work/freelance/lvs/apollo_home/gems/market/spec/app/views/apollo/market/_icons_spec.rb" "~/work/freelance/lvs/apollo_home/fdj-cms/Vagrantfile" "~/work/freelance/lvs/apollo_home/fdj-cms/Gemfile.lock" "~/work/freelance/lvs/apollo_home/gems/results/app/controllers/apollo/results/toto_controller.rb" "~/work/freelance/lvs/apollo_home/isbb-retail/spec/controllers/apollo/results/results_controller_spec.rb" "~/work/freelance/lvs/apollo_home/isbb/spec/controllers/apollo/account/summary_controller_spec.rb" "~/work/freelance/lvs/apollo_home/isbb/spec/controllers/apollo/balance_controller_spec.rb" "~/work/freelance/lvs/apollo_home/isbb/spec/controllers/apollo/experts_controller_spec.rb" "~/work/freelance/lvs/apollo_home/isbb/spec/controllers/terms_and_conditions_controller_spec.rb" "~/work/freelance/lvs/apollo_home/isbb-retail/app/controllers/apollo/results/results_controller.rb" "~/work/freelance/lvs/apollo_home/gems/advert/spec/factories/advert_base_factory.rb" "~/work/freelance/lvs/apollo_home/gems/multi_lingual/lib/apollo/multi_lingual/concerns/models/cache_functionality.rb"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 208
-  "/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/Gemfile"
-  "Gemfile"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  3795
-  '(3772 t)
   nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 23835 29033 700890 0) (buffer-file-coding-system . utf-8-unix) (fill-column . 120))
-  '((mark-ring (3722 2606 1925 3720 3674 3414))))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/lvs/apollo_home/loro-cms/config/master.key"
-  "master.key"
-  'fundamental-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode)
-  1
-  '(1 nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 23835 28623 501583 0) (buffer-file-coding-system . utf-8-unix) (fill-column . 120))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  nil
-  "config"
+  "isbb-retail"
   'dired-mode
   '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  831
-  '(nil nil)
+  2022
+  '(1 t)
   t
-  '("/Users/guto/work/freelance/lvs/apollo_home/loro-cms/config/")
-  '((buffer-display-time 23835 28499 270420 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/config/master.key"
-  "master.key"
-  'fundamental-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode)
-  33
-  '(1 nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 23835 28499 266188 0) (buffer-file-coding-system . utf-8-unix) (fill-column . 120))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  nil
-  "fdj-cms"
-  'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  587
-  '(nil nil)
-  t
-  '("/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/")
-  '((buffer-display-time 23835 28479 206828 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/lvs/apollo_home/isbb/config/master.key"
-  "master.key"
-  'fundamental-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode)
-  33
-  '(1 nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 23835 28476 482802 0) (buffer-file-coding-system . utf-8-unix) (fill-column . 120))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  nil
-  "config"
-  'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  246
-  '(nil nil)
-  t
-  '("/Users/guto/work/freelance/lvs/apollo_home/isbb/config/")
-  '((buffer-display-time 23835 27996 106918 0))
+  '("/Users/guto/work/freelance/lvs/apollo_home/isbb-retail/")
+  '((buffer-display-time 23966 63054 349640 0))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -106,310 +34,10 @@
   "isbb"
   'dired-mode
   '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  1431
-  '(243 t)
+  1375
+  '(nil nil)
   t
   '("/Users/guto/work/freelance/lvs/apollo_home/isbb/")
-  '((buffer-display-time 23835 27961 810515 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  nil
-  "config"
-  'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  830
-  '(nil nil)
-  t
-  '("/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/config/")
-  '((buffer-display-time 23835 27946 283147 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  nil
-  "loro-cms"
-  'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  1793
-  '(nil nil)
-  t
-  '("/Users/guto/work/freelance/lvs/apollo_home/loro-cms/")
-  '((buffer-display-time 23835 27929 46293 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/Jenkinsfile"
-  "Jenkinsfile"
-  'groovy-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  3544
-  '(3872 t)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 23835 25991 213121 0) (buffer-file-coding-system . utf-8-unix) (fill-column . 120))
-  '((mark-ring (2002 3891 3871 3660 2770 3426 3413 3571 2636 3493))))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/provision_platform"
-  "provision_platform"
-  'fundamental-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode)
-  1176
-  '(1 t)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 23835 25991 212837 0) (buffer-file-coding-system . utf-8-unix) (fill-column . 120))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/provision_platform_internal"
-  "provision_platform_internal"
-  'fundamental-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode)
-  839
-  '(840 t)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 23835 25991 212838 0) (buffer-file-coding-system . utf-8-unix) (fill-column . 120))
-  '((mark-ring (1))))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/provision_internal"
-  "provision_internal"
-  'sh-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  849
-  '(1 nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 23835 25951 956106 0) (buffer-file-coding-system . utf-8-unix) (fill-column . 120))
-  '((mark-ring (849 756))))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/provision"
-  "provision"
-  'sh-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  1382
-  '(1 nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 23835 25928 931970 0) (buffer-file-coding-system . utf-8-unix) (fill-column . 120))
-  '((mark-ring (954 1336 586 524 1178 1001))))
-
-(desktop-create-buffer 208
-  nil
-  "ci"
-  'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  1109
-  '(1 nil)
-  t
-  '("/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/")
-  '((buffer-display-time 23835 25177 678972 0))
-  '((mark-ring (1))))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/build_platform_internal"
-  "build_platform_internal"
-  'fundamental-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode)
-  588
-  '(626 t)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 23835 24976 112804 0) (buffer-file-coding-system . utf-8-unix) (fill-column . 120))
-  '((mark-ring (626 1))))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/build_platform"
-  "build_platform"
-  'sh-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  631
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 23835 23600 907096 0) (buffer-file-coding-system . utf-8-unix) (fill-column . 120))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/Dockerfile"
-  "Dockerfile"
-  'dockerfile-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  1647
-  '(1551 nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 23835 23316 30919 0) (buffer-file-coding-system . utf-8-unix) (fill-column . 120))
-  '((mark-ring (1 2314 1648 1521 1589))))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/Dockerfile.platform"
-  "Dockerfile.platform"
-  'dockerfile-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  1694
-  '(1521 t)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 23835 23316 28344 0) (buffer-file-coding-system . utf-8-unix) (fill-column . 120))
-  '((mark-ring (1521 1))))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/lvs/apollo_home/docker-abp/jenkins-build-images/web-build/build-platform.sh"
-  "build-platform.sh"
-  'sh-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  761
-  '(1 nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 23835 22714 8215 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring (476))))
-
-(desktop-create-buffer 208
-  nil
-  "web-build"
-  'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  333
-  '(nil nil)
-  t
-  '("/Users/guto/work/freelance/lvs/apollo_home/docker-abp/jenkins-build-images/web-build/")
-  '((buffer-display-time 23835 22711 948340 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  nil
-  "jenkins-build-images"
-  'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  608
-  '(nil nil)
-  t
-  '("/Users/guto/work/freelance/lvs/apollo_home/docker-abp/jenkins-build-images/")
-  '((buffer-display-time 23835 22710 991355 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/compile_assets"
-  "compile_assets"
-  'sh-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  66
-  '(379 t)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 23835 18988 645144 0) (buffer-file-coding-system . utf-8-unix) (fill-column . 120))
-  '((mark-ring (326 381 1))))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/compile_assets_internal"
-  "compile_assets_internal"
-  'fundamental-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode)
-  232
-  '(365 t)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 23835 18968 308549 0) (buffer-file-coding-system . utf-8-unix) (fill-column . 120))
-  '((mark-ring (365 1))))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/platform_setup"
-  "platform_setup"
-  'sh-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  311
-  '(1 nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 23835 17696 487123 0) (buffer-file-coding-system . utf-8-unix) (fill-column . 120))
-  '((mark-ring (533))))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/docker-compose.yml"
-  "docker-compose.yml"
-  'yaml-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode subword-mode)
-  1045
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 23835 17621 886573 0) (buffer-file-coding-system . utf-8-unix) (fill-column . 120))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/docker/environments/ci/setup"
-  "setup"
-  'sh-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  657
-  '(548 nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 23835 17012 477400 0) (buffer-file-coding-system . utf-8-unix) (fill-column . 120))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  nil
-  "guto"
-  'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  5006
-  '(1 t)
-  t
-  '("/Users/guto/")
-  '((buffer-display-time 23835 12826 772123 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/.ssh/known_hosts"
-  "known_hosts"
-  'fundamental-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode smart-tab-mode)
-  37598
-  '(31178 t)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 23834 8011 850032 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring (1))))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/Gemfile.lock"
-  "Gemfile.lock"
-  'fundamental-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode)
-  12672
-  '(3249 t)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 23833 60412 843128 0) (buffer-file-coding-system . utf-8-unix) (fill-column . 120))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/config/environments/fdj_cms_server_production.rb"
-  "fdj_cms_server_production.rb"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  571
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 23833 55255 364485 0) (buffer-file-coding-system . utf-8-unix) (fill-column . 120))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/lvs/apollo_home/fdj-cms/config/application.yml"
-  "application.yml"
-  'yaml-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode subword-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 23833 55255 179484 0) (buffer-file-coding-system . utf-8-unix) (fill-column . 120))
+  '((buffer-display-time 23966 63047 769103 0))
   '((mark-ring nil)))
 
