@@ -54,6 +54,24 @@ autoload -Uz compinit; compinit
 # command-line fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# FZF config source: https://github.com/silvanocerza/dotfiles/blob/master/zsh/zshrc#L44-L55
+# Uses fd as default command showing also hidden files
+FZF_DEFAULT_COMMAND="fd --hidden"
+
+# ctrl+o opens Visual Studio Code on current folder or file
+FZF_DEFAULT_OPTS="--bind='ctrl-o:execute-silent(code {})+abort'"
+
+# If current selection is a text file shows its content,
+# if it's a directory shows its content, the rest is ignored
+FZF_CTRL_T_OPTS="--preview-window wrap --preview '
+if [[ -f {} ]]; then
+    file --mime {} | grep -q \"text\/.*;\" && cat {} || (tput setaf 1; file --mime {})
+elif [[ -d {} ]]; then
+    ls -ls
+else;
+    tput setaf 1; echo YOU ARE NOT SUPPOSED TO SEE THIS!
+fi'"
+
 # autojump
 #   Use `j`
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
@@ -67,3 +85,5 @@ PATH="$HOME/.asdf/shims:$PATH"
 
 # OPAM configuration
 . /Users/guto/.asdf/installs/ocaml/4.06.1/opam-init/init.zsh > /dev/null 2> /dev/null || true
+# Load functions
+source ~/.functions.sh
