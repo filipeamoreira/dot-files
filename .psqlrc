@@ -1,0 +1,36 @@
+\set QUIET 1
+
+-- Errors are ignored in interactive sessions,
+-- and not when reading script files.
+\set ON_ERROR_ROLLBACK interactive
+
+-- To have all queries display query times.
+\timing
+
+-- Verbose error reports.
+\set VERBOSITY verbose
+
+-- Use table format (with headers across the top) by default,
+-- but switch to expanded table format when there's a lot of data,
+-- which makes it much easier to read.
+\x auto
+
+-- Use a separate history file per-database.
+\set HISTFILE ~/.psql_history- :DBNAME
+
+-- If a command is run more than once in a row,
+-- only store it once in the history.
+\set HISTCONTROL ignoredups
+
+-- By default, NULL displays as an empty space. Is it actually an empty
+-- string, or is it null? This makes that distinction visible.
+\pset null '(null)'
+
+-- Create `ea` command to save time
+-- source: https://www.pgmustard.com/getting-a-query-plan
+\set ea 'EXPLAIN (ANALYZE, VERBOSE, BUFFERS, FORMAT JSON)'
+
+-- ECHO any queries performed 'behind the scenes' by psql (e.g. \l)
+\set ECHO_HIDDEN on
+
+\unset QUIET
