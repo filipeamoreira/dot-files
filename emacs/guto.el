@@ -156,23 +156,6 @@
   ;; disable individual key-chord bindings
   ;;(key-chord-define-global "jj" nil)
   )
-;; Solarized theme
- (use-package solarized-theme
-   :config
-   (setq solarized-use-variable-pitch nil);; Don't change the font for some headings and titles
-   (setq solarized-scale-org-headlines nil);; Don't change size of org-mode headlines (but keep other size-changes)
-   (setq solarized-use-less-bold t) ;; Use less bolding
-   (setq prelude-theme 'solarized-dark)
-   (load-theme 'solarized-dark))
-
-;; Theme settings
-
-;; (add-hook 'after-make-frame-functions
-;;           (lambda (frame)
-;;             (let ((mode (if (display-graphic-p frame) 'dark 'dark)))
-;;               (set-frame-parameter frame 'background-mode mode)
-;;               (set-terminal-parameter frame 'background-mode mode))
-;;             (enable-theme 'solarized)))
 
 (use-package tide
   :ensure
@@ -583,11 +566,11 @@
 ;; Solarized theme settings
 
 ;; Don't change the font for some headings and titles
-(setq solarized-use-variable-pitch nil)
+;; (setq solarized-use-variable-pitch nil)
 ;; Don't change size of org-mode headlines (but keep other size-changes)
-(setq solarized-scale-org-headlines nil)
+;; (setq solarized-scale-org-headlines nil)
 ;; Scale org-mode headlines
-(setq solarized-scale-org-headlines t)
+;; (setq solarized-scale-org-headlines t)
 
 (toggle-fullscreen)
 

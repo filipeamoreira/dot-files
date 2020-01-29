@@ -28,7 +28,7 @@ alias gl='git pull'
 alias gp='git push'
 alias gb='git branch -a -v'
 alias g='git'
-alias b='bundle exec'
+alias be='bundle exec'
 alias v='vagrant'
 alias grep='/usr/local/bin/ggrep'
 alias dps='docker ps | cut -c-$(tput cols)'
@@ -42,7 +42,8 @@ alias emacs='/usr/local/opt/emacs/bin/emacsclient -c --no-wait'
 
 # test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
-. /Users/guto/.nix-profile/etc/profile.d/nix.sh
+# TODO: Fix this: https://github.com/NixOS/nix/issues/2925
+# . /Users/guto/.nix-profile/etc/profile.d/nix.sh
 # Nix is setting SSL_CERT_FILE and this breaks homebrew
 # unset SSL_CERT_FILE
 
