@@ -1,799 +1,187 @@
-;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; -*- mode: emacs-lisp; lexical-binding:t; coding: utf-8-emacs; -*-
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Wed Jan 22 10:32:35 2020
+;; Created Tue Apr 21 20:25:39 2020
 ;; Desktop file format version 208
-;; Emacs version 26.3
+;; Emacs version 28.0.50
 
 ;; Global section:
-(setq desktop-saved-frameset [frameset 1 (24104 9411 195548 0) (desktop . "208") "guto@mbp.local" nil nil ((((minibuffer . t) (font-backend mac-ct) (fontsize . 0) (font . "-*-Source Code Pro-normal-normal-normal-*-20-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 2) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#839496") (background-color . "#002b36") (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (undecorated) (ns-appearance . dark) (ns-transparent-titlebar . t) (z-group) (no-focus-on-map) (no-accept-focus) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (scroll-bar-height . 0) (alpha) (fullscreen . fullboth) (display-type . color) (background-mode . dark) (cursor-color . "#839496") (environment) (frameset--id . "99B8-AC8A-748B-9F4C") (frameset--mini t . t) (height . 76) (width . 88) (modeline . t) (unsplittable) (left . 1682) (top + -541) (icon-name) (visibility . t) (display . "mbp.local") (explicit-name) (tool-bar-position . top)) ((min-height . 16) (min-width . 10) (min-height-ignore . 12) (min-width-ignore . 4) (min-height-safe . 4) (min-width-safe . 2) (min-pixel-height . 400) (min-pixel-width . 120) (min-pixel-height-ignore . 300) (min-pixel-width-ignore . 48) (min-pixel-height-safe . 100) (min-pixel-width-safe . 24)) vc (pixel-width . 1072) (pixel-height . 1850) (total-width . 89) (total-height . 74) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 1072) (pixel-height . 450) (total-width . 89) (total-height . 18) (normal-height . 0.25) (normal-width . 1.0) (buffer "silkfred.org" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 1602) (start . 949))) (leaf (pixel-width . 1072) (pixel-height . 475) (total-width . 89) (total-height . 19) (normal-height . 0.25) (normal-width . 1.0) (buffer "orders.rake" (selected) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 7453) (start . 7162))) (leaf (pixel-width . 1072) (pixel-height . 475) (total-width . 89) (total-height . 19) (normal-height . 0.25) (normal-width . 1.0) (buffer "clipper_controller.rb" (selected) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 1800) (start . 1419))) (leaf (last . t) (pixel-width . 1072) (pixel-height . 450) (total-width . 89) (total-height . 18) (normal-height . 0.25) (normal-width . 1.0) (buffer "packages_controller.rb" (selected) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 613) (start . 200)))))])
+(setq desktop-saved-frameset [frameset 1 (24223 18611 454855 0) (desktop . "208") "guto@mbp.local" nil nil ((((minibuffer . t) (fontsize . 0) (font . "-*-Source Code Pro-normal-normal-normal-*-20-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 2) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#839496") (background-color . "#002b36") (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (undecorated) (ns-appearance . dark) (ns-transparent-titlebar . t) (z-group) (no-focus-on-map) (no-accept-focus) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 15) (scroll-bar-height . 15) (alpha) (fullscreen) (display-type . color) (background-mode . dark) (cursor-color . "#839496") (environment) (last-focus-update . t) (tabs (current-tab (name . "*helm M-x*") (explicit-name))) (frameset--id . "43D6-DDF3-A890-B8B9") (frameset--mini t . t) (height . 73) (width . 278) (modeline . t) (unsplittable) (left . 0) (top . 1133) (icon-name) (visibility . t) (display . "mbp.local") (explicit-name) (tool-bar-position . top)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 4) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 100) (min-pixel-width . 120) (min-pixel-height-ignore . 75) (min-pixel-width-ignore . 48) (min-pixel-height-safe . 25) (min-pixel-width-safe . 24)) leaf (pixel-width . 3352) (pixel-height . 1800) (total-width . 279) (total-height . 72) (normal-height . 1.0) (normal-width . 1.0) (buffer "magit: futurelearn" (selected . t) (hscroll . 0) (fringes 8 8 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 1) (start . 1)) (prev-buffers ("magit: futurelearn" 1 1) ("PageHeader/index.tsx" 1388 3105) ("show.html.haml" 1280 8896) ("show.html.haml_spec.rb" 2273 2273) ("PageHeader" 1 751) ("_yotpo_course_reviews.html.haml" 1 206) ("magit-stash: futurelearn" 1 1))))])
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
 (setq search-ring '("description" "tools" "sus"))
-(setq regexp-search-ring '("add_order" "ledge" "pry" "ledge" "def added_to" "not added" "def comple" "fli" "flipper" "pring" "dump" "hij" "PasswordVali" "valid" "password" "admin"))
+(setq regexp-search-ring '(#("Heading" 0 7 (isearch-case-fold-search nil)) #("fit" 0 3 (isearch-case-fold-search t)) #("Revie" 0 5 (isearch-case-fold-search nil)) #("MainWi" 0 6 (isearch-case-fold-search nil)) "Reviews" "Yotpo" "review" "revie" "header" "admin" "puma" "storage" "display_reviews" "displa" "pry" "star"))
 (setq register-alist nil)
-(setq file-name-history '("~/work/freelance/silkfred/SilkFred/app/controllers/admin/clipper/packages_controller.rb" "~/work/freelance/silkfred/SilkFred/app/controllers/admin/clipper_controller.rb" "~/work/freelance/silkfred/SilkFred/app/models/order.rb" "~/work/freelance/silkfred/SilkFred/lib/tasks/orders.rake" "~/work/freelance/silkfred/SilkFred/Gemfile" "~/work/freelance/silkfred/SilkFred/app/models/order_item.rb" "~/work/freelance/silkfred/SilkFred/app/controllers/admin/clipper/boomerang_returns_controller.rb" "~/work/freelance/silkfred/SilkFred/config/routes/admin_updated_routes.rb" "~/work/freelance/silkfred/SilkFred/config/routes.rb" "/Users/guto/work/freelance/silkfred/SilkFred/.git/rebase-merge/git-rebase-todo" "~/.git_identities" "~/.ssh/id_rsa_silkfred.pub" "~/work/freelance/silkfred/SilkFred/app/views/admin/clipper/boomerang_returns/index.html.erb" "~/work/freelance/silkfred/SilkFred/app/mailers/admin_users_mailer.rb" "~/work/freelance/silkfred/SilkFred/app/controllers/admin/admin_users_controller.rb" "~/work/freelance/silkfred/SilkFred/README.md" "~/work/freelance/silkfred/SilkFred/app/views/admin/experiments/_experiment_cells.html.erb" "~/work/freelance/silkfred/SilkFred/app/views/admin/experiments/_experiment_table.html.erb" "~/work/freelance/silkfred/SilkFred/app/views/admin/experiments/index.html.erb" "~/work/freelance/silkfred/SilkFred/app/models/experiment.rb" "~/work/freelance/silkfred/SilkFred/app/controllers/admin/experiments_controller.rb" "~/work/freelance/silkfred/SilkFred/app/controllers/admin/boutiques_controller.rb" "~/work/freelance/silkfred/SilkFred/app/models/admin_user.rb" "~/work/freelance/silkfred/SilkFred/db/seeds.rb" "~/work/freelance/silkfred/SilkFred/config/routes/account_routes.rb" "~/work/freelance/silkfred/SilkFred/spec/spec_helper.rb" "~/work/freelance/silkfred/SilkFred/spec/rails_helper.rb" "~/work/freelance/silkfred/SilkFred/.rspec_parallel" "~/work/freelance/silkfred/SilkFred/.rspec" "~/work/freelance/silkfred/SilkFred/spec/system/products/returning_a_product_spec.rb" "~/work/freelance/silkfred/SilkFred/.circleci/config.yml" "~/work/freelance/silkfred/SilkFred/app/services/feeds/attraqt.rb" "/Users/guto/work/freelance/silkfred/SilkFred/.git/rebase-merge/git-rebase-todo" "~/Dropbox/sync/notes/freelance/tusker/tusker.org" "~/Dropbox/sync/notes/business.org" "~/work/freelance/silkfred/SilkFred/config/mongoid.yml" "~/work/freelance/silkfred/SilkFred/.ruby-version" "~/work/freelance/silkfred/SilkFred/DOCKER-README" "~/work/playground/elixir/rumbl/lib/rumbl_web/controllers/auth_controller.ex" "~/work/playground/elixir/rumbl/lib/rumbl/accounts.ex" "~/work/playground/elixir/rumbl/lib/rumbl_web/controllers/session_controller.ex" "~/work/playground/elixir/rumbl/lib/rumbl_web/templates/layout/app.html.eex" "~/work/freelance/other/tusker/hobgoblin/Gemfile" "~/work/playground/elixir/rumbl/lib/rumbl_web/controllers/auth.ex" "~/work/playground/elixir/rumbl/lib/rumbl_web/templates/user/new.html.eex" "~/work/playground/elixir/rumbl/lib/rumbl_web/router.ex" "~/work/playground/elixir/rumbl/lib/rumbl_web/controllers/user_controller.ex" "~/work/playground/elixir/rumbl/lib/rumbl_web/endpoint.ex" "~/work/playground/elixir/rumbl/lib/rumbl/accounts/accounts.ex" "~/work/playground/elixir/rumbl/lib/rumbl/accounts/user.ex" "~/work/playground/elixir/rumbl/lib/rumbl_web/views/user_view.ex" "~/work/playground/elixir/rumbl/lib/rumbl_web/templates/user/index.html.eex" "~/work/playground/elixir/rumbl/lib/rumbl/accounts/user.change1.ex" "~/work/playground/elixir/rumbl/lib/rumbl/application.ex" "~/work/playground/elixir/rumbl/lib/rumbl/repo.ex" "~/work/playground/elixir/rumbl/lib/rumbl_web/views/error_view.ex" "~/work/playground/elixir/rumbl/lib/rumbl_web/templates/user/user.html.eex" "~/work/playground/elixir/rumbl/lib/rumbl_web.ex" "~/work/playground/elixir/rumbl/lib/rumbl_web/templates/page/index.html.eex" "~/work/projects/elixir/lrm/lib/lrm_web/endpoint.ex" "~/work/projects/elixir/lrm/config/config.exs" "~/work/projects/elixir/lrm/mix.exs" "~/work/projects/elixir/lrm/lib/lrm_web/controllers/hello_controller.ex" "~/work/projects/elixir/lrm/lib/lrm_web/templates/hello/index.html.eex" "~/work/projects/elixir/lrm/lib/lrm_web/views/hello_view.ex" "~/work/projects/elixir/lrm/config/dev.exs" "~/work/projects/elixir/lrm/README.md" "~/Downloads/csv-export.csv" "~/work/old-playground/ruby/csv-parser/montage/README.md" "/Users/guto/work/old-playground/ruby/csv-parser/montage/.git/rebase-merge/git-rebase-todo" "~/work/old-playground/ruby/csv-parser/montage/config/environments/development.rb" "~/work/old-playground/ruby/csv-parser/montage/config/storage.yml" "~/work/old-playground/ruby/csv-parser/montage/app/models/image_montage.rb" "~/work/old-playground/ruby/csv-parser/montage/Procfile.workers" "~/work/old-playground/ruby/csv-parser/montage/config/master.key" "~/work/old-playground/ruby/csv-parser/montage/Procfile" "/Users/guto/work/old-playground/ruby/csv-parser/montage/.git/rebase-merge/git-rebase-todo" "~/work/old-playground/ruby/csv-parser/montage/config/environments/production.rb" "~/Downloads/csv-export (11).csv" "~/Downloads/csv-export (10).csv" "~/work/old-playground/ruby/csv-parser/montage/config/environment.rb" "~/work/old-playground/ruby/csv-parser/montage/config/application.rb" "/var/folders/_v/bxlr9hjn5g3dhn5kcxhc4tww0000gn/T/5909.credentials.yml" "/var/folders/_v/bxlr9hjn5g3dhn5kcxhc4tww0000gn/T/95852.credentials.yml" "/Users/guto/work/old-playground/ruby/csv-parser/montage/.git/rebase-merge/git-rebase-todo" "~/Downloads/csv-export (9).csv" "~/Downloads/csv-export (8).csv" "~/Downloads/csv-export (6).csv" "~/work/old-playground/ruby/csv-parser/pairs.csv" "~/work/old-playground/ruby/csv-parser/montage/Gemfile" "~/work/old-playground/ruby/csv-parser/montage/bin/delayed_job" "~/work/old-playground/ruby/csv-parser/montage/.gitignore" "~/work/freelance/other/tusker/hobgoblin/Procfile" "/Users/guto/work/old-playground/ruby/csv-parser/montage/.git/rebase-merge/git-rebase-todo" "~/Downloads/csv-export (2).csv" "/Users/guto/work/old-playground/ruby/csv-parser/montage/.git/rebase-merge/git-rebase-todo" "~/work/old-playground/ruby/csv-parser/montage/app/assets/stylesheets/image_montages.scss" "~/work/old-playground/ruby/csv-parser/montage/app/assets/stylesheets/scaffolds.scss" "~/work/old-playground/ruby/csv-parser/montage/app/assets/stylesheets/application.scss" "~/work/old-playground/ruby/csv-parser/montage/app/assets/stylesheets/application.css"))
+(setq file-name-history '(#("~/projects/futurelearn/.env.development" 1 39 (match-part "/Users/guto/projects/futurelearn/.env.development")) "~/projects/futurelearn/spec/views/courses/show.html.haml_spec.rb" "~/projects/futurelearn/app/views/courses/show.html.haml" "/Users/guto/projects/futurelearn/.git/rebase-merge/git-rebase-todo" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/ReviewsWidget/index.tsx" "/Users/guto/projects/futurelearn/.git/rebase-merge/git-rebase-todo" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/PageHeader/index.tsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/ReviewsWidget/MainWidget/index.tsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/YotpoReviews/index.tsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/ReviewsWidget/index.js" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/PageHeader/OrganisationLogo.tsx" "~/projects/futurelearn/Gemfile" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/ReviewsWidget/mainWidget.tsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/ReviewsWidget/index.test.tsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/PageHeader/index.test.tsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/PageHeader/PageHeaderKeyInfoItem.tsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/PageHeader/PageHeader.module.scss" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/YotpoWidget/index.test.tsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/YotpoWidget/index.tsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/PageHeader/StarReviewsWidget.tsx" "/Volumes/Disk Image/accounts.org" "~/projects/futurelearn/config/dotenv/staging_env.erb" "~/projects/futurelearn/config/dotenv/sandbox_env.erb" "~/projects/futurelearn/config/dotenv/playground_env.erb" "~/projects/futurelearn/config/environments/playground.rb" "~/projects/futurelearn/config/environments/development.rb" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/PageHeader/PageHeaderKeyInfoItem.test.tsx" "~/.fligo.yaml" "/usr/local/share/zsh-completions/_xsel" "~/work/projects/lean_shopping/app/views/products/index.html.erb" "~/work/projects/lean_shopping/app/controllers/application_controller.rb" "~/work/projects/lean_shopping/config/master.key" "~/work/projects/lean_shopping/config/storage.yml" "~/work/projects/lean_shopping/Gemfile" "~/work/projects/lean_shopping/app/views/orders/_form.html.erb" "~/work/projects/lean_shopping/app/views/sessions/new.html.erb" "~/work/projects/lean_shopping/app/views/sessions/login.html.erb" "~/work/projects/lean_shopping/app/views/offers/_form.html.erb" "~/work/projects/lean_shopping/app/models/offer.rb" "~/work/projects/lean_shopping/app/views/orders/index.html.erb" "~/work/projects/lean_shopping/app/controllers/offers_controller.rb" "~/work/projects/lean_shopping/config/environments/development.rb" "~/work/projects/lean_shopping/config/environments/production.rb" "/var/folders/_v/bxlr9hjn5g3dhn5kcxhc4tww0000gn/T/80811.credentials.yml" "~/work/projects/lean_shopping/app/services/product_parser.rb" "~/work/projects/lean_shopping/app/models/order.rb" "~/work/projects/lean_shopping/app/controllers/orders_controller.rb" "~/work/projects/lean_shopping/app/views/shared/_nav_bar.html.erb" "~/work/projects/lean_shopping/app/views/layouts/application.html.erb" "~/work/projects/lean_shopping/app/controllers/products_controller.rb" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/CallToAction/index.test.tsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/CallToAction/index.tsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/enums.ts" "~/projects/futurelearn/spec/presenters/course_descriptions/react_presenter_spec.rb" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/CallToAction/ButtonWithPostAction.tsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/PageHeader/keyInfoService.ts" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/PageHeader/keyInfoService.test.ts" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/Partners/index.test.jsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/factories/Course.ts" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/factories/MetaData.ts" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/factories/index.ts" "~/projects/futurelearn/package.json" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/types.ts" "~/projects/futurelearn/spec/presenters/course_descriptions/page_presenter_spec.rb" "~/projects/futurelearn/app/services/reviews_service.rb" #("~/icloud-drive/data/church/sermon/NT/matthew/17/20191102-the-transfiguration/20191102-the-transfiguration.org" 1 2 (match-part "/Users/guto/icloud-drive/data/church/sermon/NT/matthew/17/20191102-the-transfiguration/20191102-the-transfiguration.org") 2 109 (match-part "/Users/guto/icloud-drive/data/church/sermon/NT/matthew/17/20191102-the-transfiguration/20191102-the-transfiguration.org")) "~/projects/futurelearn/lib/include_helper.rb" "~/projects/futurelearn/app/presenters/course_descriptions/react_presenter.rb" "~/projects/futurelearn/app/presenters/react/base_presenter.rb" "~/projects/futurelearn/app/models/course.rb" "~/projects/futurelearn/app/presenters/course_descriptions/page_presenter.rb" "~/projects/futurelearn/app/presenters/course_descriptions/wishlist_buttons_presenter.rb" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/factories/Organisation.ts" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/factories/ImageUrl.ts" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/factories/CourseCollectionAccess.ts" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/factories/CoBrandingOrganisation.ts" "~/projects/futurelearn/app/presenters/course_descriptions/meta_data_presenter.rb" #("~/Dropbox/sync/notes/freelance/futurelearn/futurelearn.org" 1 2 (match-part "/Users/guto/Dropbox/sync/notes/freelance/futurelearn/futurelearn.org") 2 58 (match-part "/Users/guto/Dropbox/sync/notes/freelance/futurelearn/futurelearn.org")) "~/projects/futurelearn/spec/models/course_spec.rb" "~/projects/futurelearn/app/presenters/react/model_presenter.rb" "~/projects/futurelearn/app/presenters/course_presenter.rb" "~/projects/futurelearn/spec/spec_helper.rb" "~/projects/futurelearn/spec/factories/course.rb" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/factories/Activity.ts" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/factories/Enrolment.ts" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/factories/Run.ts" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/factories/StickyBanner.ts" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/factories/Week.ts" "~/projects/futurelearn/tsconfig.json" "~/.emacs.d/modules/prelude-js.el" "~/.emacs.d/modules/prelude-go.el" "~/.emacs.d/modules/prelude-lisp.el" "~/.emacs.d/modules/prelude-ruby.el" "~/.emacs.d/modules/prelude-ts.el" "~/.emacs.d/personal/guto-js.el" "~/projects/futurelearn/app/helpers/course_helper.rb" "~/work/projects/lean_shopping/lib/tasks/products.rake" "~/work/projects/lean_shopping/app/models/product.rb" "~/work/projects/lean_shopping/config/database.yml"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 208
-  "/Users/guto/Dropbox/sync/notes/freelance/silkfred/silkfred.org"
-  "silkfred.org"
-  'org-mode
-  '(auto-fill-mode abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode wc-mode)
-  1602
-  '(1558 t)
+  "/Users/guto/projects/futurelearn/.env.development"
+  ".env.development"
+  'fundamental-mode
+  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode)
+  24
+  '(24 t)
   nil
   nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24104 9353 664576 0) (buffer-file-coding-system . utf-8-unix) (truncate-lines . t))
-  '((mark-ring (1501 1397 1328 949 551 912 925 876 925 851 925 830 925 804 925 779))))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/app/controllers/admin/clipper/packages_controller.rb"
-  "packages_controller.rb"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  613
-  '(268 nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24104 9353 664503 0) (buffer-file-coding-system . undecided-unix))
+  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 24223 18584 734492 0) (buffer-file-coding-system . utf-8-unix))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/lib/tasks/orders.rake"
-  "orders.rake"
+  "/Users/guto/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/PageHeader/index.tsx"
+  "index.tsx"
+  'web-mode
+  '(abbrev-mode eldoc-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode tide-mode smerge-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
+  3105
+  '(2912 t)
+  nil
+  nil
+  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 24223 3091 525098 0) (buffer-file-coding-system . utf-8-unix) (case-fold-search . t))
+  '((mark-ring (920 790 4851 1))))
+
+(desktop-create-buffer 208
+  "/Users/guto/projects/futurelearn/app/views/courses/show.html.haml"
+  "show.html.haml"
+  'haml-mode
+  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smerge-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
+  8896
+  '(1280 t)
+  nil
+  nil
+  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 24223 2834 462787 0) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (8931 1280))))
+
+(desktop-create-buffer 208
+  "/Users/guto/projects/futurelearn/spec/views/courses/show.html.haml_spec.rb"
+  "show.html.haml_spec.rb"
   'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  7453
+  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smerge-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
+  29356
+  '(2273 t)
+  nil
+  nil
+  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 24223 2778 406375 0) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (2273 2273))))
+
+(desktop-create-buffer 208
+  nil
+  "PageHeader"
+  'dired-mode
+  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode global-whitespace-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
+  751
+  '(nil nil)
+  t
+  '("/Users/guto/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/PageHeader/")
+  '((buffer-display-time 24223 2656 427010 0))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/projects/futurelearn/app/views/courses/_yotpo_course_reviews.html.haml"
+  "_yotpo_course_reviews.html.haml"
+  'haml-mode
+  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
+  206
   '(1 t)
   nil
   nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24104 9353 664552 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/app/controllers/admin/clipper_controller.rb"
-  "clipper_controller.rb"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  1800
-  '(1 t)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24104 9353 664528 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring (264))))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/app/models/order.rb"
-  "order.rb"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  45708
-  '(18513 t)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24104 9075 258747 0) (buffer-file-coding-system . utf-8-unix))
-  '((mark-ring (6766 6357 6323 1 42411))))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/lib/tasks/clipper.rake"
-  "clipper.rake"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 24104 8167 463566 0) (buffer-file-coding-system . undecided-unix))
+  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 24223 2314 637339 0) (buffer-file-coding-system . utf-8-unix))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   nil
-  "tasks"
+  "courses"
   'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  956
+  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode global-whitespace-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
+  250
   '(nil nil)
   t
-  '("/Users/guto/work/freelance/silkfred/SilkFred/lib/tasks/")
-  '((buffer-display-time 24104 8167 463565 0))
+  '("/Users/guto/projects/futurelearn/app/views/courses/")
+  '((buffer-display-time 24223 1933 75001 0))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/app/models/order_item.rb"
-  "order_item.rb"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  35514
-  '(3479 t)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24104 8094 940651 0) (buffer-file-coding-system . utf-8-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/Gemfile"
-  "Gemfile"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  4295
-  '(4080 t)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24104 7509 532618 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring (4159 1 4402))))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/app/models/concerns/cancellations.rb"
-  "cancellations.rb"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  2260
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24104 7509 319445 0) (buffer-file-coding-system . utf-8-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/app/controllers/admin/clipper/boomerang_returns_controller.rb"
-  "boomerang_returns_controller.rb"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  586
-  '(305 nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24104 7235 394389 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/app/views/admin/clipper/packages/new.html.erb"
-  "new.html.erb"
+  "/Users/guto/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/PageHeader/index.test.tsx"
+  "index.test.tsx"
   'web-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  2148
-  '(2161 nil)
+  '(abbrev-mode eldoc-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode tide-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
+  1522
+  '(238 t)
   nil
   nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24104 7222 845371 0) (buffer-file-coding-system . undecided-unix))
+  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 24222 65531 149251 0) (buffer-file-coding-system . utf-8-unix) (case-fold-search . t))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/config/initializers/flipper.rb"
-  "flipper.rb"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  317
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24104 4738 896185 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/config/routes/admin_updated_routes.rb"
-  "admin_updated_routes.rb"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  26206
-  '(1 t)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24104 291 908567 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring (3422))))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/config/routes.rb"
-  "routes.rb"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  286
-  '(240 t)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24104 230 297265 0) (buffer-file-coding-system . utf-8-unix))
-  '((mark-ring (5736))))
-
-(desktop-create-buffer 208
-  nil
-  "packages"
-  'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  474
-  '(nil nil)
-  t
-  '("/Users/guto/work/freelance/silkfred/SilkFred/app/views/admin/clipper/packages/")
-  '((buffer-display-time 24104 83 432261 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/app/views/admin/clipper/boomerang_returns/index.html.erb"
-  "index.html.erb"
+  "/Users/guto/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/ReviewsWidget/index.tsx"
+  "index.tsx"
   'web-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  1154
+  '(abbrev-mode eldoc-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode tide-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
+  591
+  '(444 nil)
+  nil
+  nil
+  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 24222 65531 149280 0) (buffer-file-coding-system . utf-8-unix) (case-fold-search . t))
+  '((mark-ring (614 498 467 477 444 373 1 492))))
+
+(desktop-create-buffer 208
+  nil
+  "ReviewsWidget"
+  'dired-mode
+  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode global-whitespace-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
+  352
   '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24103 63557 104643 0) (buffer-file-coding-system . undecided-unix))
+  t
+  '("/Users/guto/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/ReviewsWidget/")
+  '((buffer-display-time 24222 64373 815732 0))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
-  "/Users/guto/.git_identities"
-  ".git_identities"
-  'fundamental-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode smart-tab-mode)
-  171
-  '(172 t)
   nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24103 63557 104640 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring (73))))
-
-(desktop-create-buffer 208
-  "/Users/guto/.ssh/id_rsa_silkfred.pub"
-  "id_rsa_silkfred.pub"
-  'fundamental-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode smart-tab-mode)
-  589
-  '(1 nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24103 63554 630150 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring (745 1))))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/app/controllers/admin/admin_users_controller.rb"
-  "admin_users_controller.rb"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  2850
+  "CourseDescriptionPage"
+  'dired-mode
+  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode global-whitespace-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
+  502
   '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24103 16089 36318 0) (buffer-file-coding-system . utf-8-unix))
+  t
+  '("/Users/guto/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/")
+  '((buffer-display-time 24222 64369 173600 0))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/app/mailers/admin_users_mailer.rb"
-  "admin_users_mailer.rb"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24103 15782 794860 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/README.md"
-  "README.md"
-  'gfm-mode
-  '(abbrev-mode eldoc-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode)
-  932
-  '(243 t)
-  nil
-  nil
-  '((tab-width . 4) (indent-tabs-mode) (buffer-display-time 24103 11834 952392 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring (243 243 243 243 243 243 243 243 243 243 243 243 3634 204 182 121))))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/app/controllers/admin/experiments_controller.rb"
-  "experiments_controller.rb"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  731
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24103 11827 561500 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/app/views/admin/experiments/_experiment_cells.html.erb"
-  "_experiment_cells.html.erb"
+  "/Users/guto/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/ReviewsWidget/MainWidget/index.tsx"
+  "index.tsx"
   'web-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  1869
-  '(nil nil)
+  '(abbrev-mode eldoc-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode tide-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
+  388
+  '(338 nil)
   nil
   nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24103 11865 881776 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
+  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 24222 62918 234300 0) (buffer-file-coding-system . utf-8-unix) (case-fold-search . t))
+  '((mark-ring (338 1 338))))
 
 (desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/app/views/admin/experiments/_experiment_table.html.erb"
-  "_experiment_table.html.erb"
+  "/Users/guto/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/YotpoReviews/index.tsx"
+  "index.tsx"
   'web-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  1043
+  '(abbrev-mode eldoc-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode tide-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
+  326
   '(nil nil)
   nil
   nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24103 11416 827875 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/app/views/admin/experiments/index.html.erb"
-  "index.html.erb"
-  'web-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  898
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24103 11408 254392 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/app/models/experiment.rb"
-  "experiment.rb"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  4648
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24103 11865 822007 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/app/controllers/admin/boutiques_controller.rb"
-  "boutiques_controller.rb"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  4701
-  '(1 t)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24103 11290 826286 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring (68))))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/app/models/admin_user.rb"
-  "admin_user.rb"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  77
-  '(404 t)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24103 10987 159433 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring (1 3634 2450 499 578 282))))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/db/seeds.rb"
-  "seeds.rb"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  309
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24103 7895 100716 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/config/routes/account_routes.rb"
-  "account_routes.rb"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24103 7882 377397 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/spec/spec_helper.rb"
-  "spec_helper.rb"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  2307
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24103 7787 241197 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/spec/rails_helper.rb"
-  "rails_helper.rb"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24103 7354 174048 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/spec/system/products/returning_a_product_spec.rb"
-  "returning_a_product_spec.rb"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  1857
-  '(3203 t)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24103 7354 174048 0) (buffer-file-coding-system . utf-8-unix))
-  '((mark-ring (5008 1))))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/.rspec_parallel"
-  ".rspec_parallel"
-  'fundamental-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode)
-  50
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24103 7297 103744 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/.rspec"
-  ".rspec"
-  'fundamental-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode)
-  9
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24103 7297 4539 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/.circleci/config.yml"
-  "config.yml"
-  'yaml-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode subword-mode)
-  2231
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24103 6760 433205 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/app/services/feeds/attraqt.rb"
-  "attraqt.rb"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  20642
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24103 4940 693388 0) (buffer-file-coding-system . undecided-unix))
+  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 24222 61741 481289 0) (buffer-file-coding-system . utf-8-unix))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   nil
-  "silkfred"
+  "futurelearn"
   'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  193
+  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode global-whitespace-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
+  790
   '(nil nil)
   t
-  '("/Users/guto/Dropbox/sync/notes/freelance/silkfred/")
-  '((buffer-display-time 24103 2410 225982 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  nil
-  "freelance"
-  'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  278
-  '(nil nil)
-  t
-  '("/Users/guto/Dropbox/sync/notes/freelance/")
-  '((buffer-display-time 24103 2405 468830 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  nil
-  "lvs"
-  'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  290
-  '(nil nil)
-  t
-  '("/Users/guto/Dropbox/sync/notes/freelance/lvs/")
-  '((buffer-display-time 24103 2385 779084 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  nil
-  "tusker"
-  'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  196
-  '(nil nil)
-  t
-  '("/Users/guto/Dropbox/sync/notes/freelance/tusker/")
-  '((buffer-display-time 24103 2364 490348 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/Dropbox/sync/notes/business.org"
-  "business.org"
-  'org-mode
-  '(auto-fill-mode abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode wc-mode)
-  22196
-  '(18564 t)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24103 142 234507 0) (buffer-file-coding-system . utf-8-unix) (truncate-lines . t))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/app/models/user.rb"
-  "user.rb"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  1712
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24102 64793 418426 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/app/services/seed_importer.rb"
-  "seed_importer.rb"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  658
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24102 61219 99577 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  nil
-  "models"
-  'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  12076
-  '(1074 t)
-  t
-  '("/Users/guto/work/freelance/silkfred/SilkFred/app/models/")
-  '((buffer-display-time 24102 61081 880971 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/config/mongoid.yml"
-  "mongoid.yml"
-  'yaml-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode subword-mode)
-  108
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24102 61075 793310 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  nil
-  "SilkFred"
-  'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  941
-  '(1 t)
-  t
-  '("/Users/guto/work/freelance/silkfred/SilkFred/")
-  '((buffer-display-time 24102 59965 216697 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  nil
-  "tmp"
-  'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  252
-  '(253 nil)
-  t
-  '("/Users/guto/work/freelance/silkfred/tmp/")
-  '((buffer-display-time 24102 59904 193802 0))
-  '((mark-ring (252))))
-
-(desktop-create-buffer 208
-  nil
-  "silkfred"
-  'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  2237
-  '(228 t)
-  t
-  '("/Users/guto/work/freelance/silkfred/")
-  '((buffer-display-time 24102 59830 568769 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  nil
-  "db"
-  'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  192
-  '(nil nil)
-  t
-  '("/Users/guto/work/freelance/silkfred/SilkFred/db/")
-  '((buffer-display-time 24102 58352 920356 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  nil
-  "seeds"
-  'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  198
-  '(nil nil)
-  t
-  '("/Users/guto/work/freelance/silkfred/SilkFred/db/seeds/")
-  '((buffer-display-time 24102 58352 276535 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  nil
-  "faqs"
-  'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  201
-  '(nil nil)
-  t
-  '("/Users/guto/work/freelance/silkfred/SilkFred/db/seeds/faqs/")
-  '((buffer-display-time 24102 58351 411929 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/lii"
-  "lii"
-  'fundamental-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24102 58335 232648 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  nil
-  "rails_upgrade"
-  'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  203
-  '(nil nil)
-  t
-  '("/Users/guto/work/freelance/silkfred/SilkFred/rails_upgrade/")
-  '((buffer-display-time 24102 56940 739760 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  nil
-  "old_cap"
-  'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  198
-  '(nil nil)
-  t
-  '("/Users/guto/work/freelance/silkfred/SilkFred/old_cap/")
-  '((buffer-display-time 24102 56937 138390 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/TODO"
-  "TODO"
-  'org-mode
-  '(auto-fill-mode abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode wc-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24102 56909 167218 0) (buffer-file-coding-system . utf-8-unix) (truncate-lines . t))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/Dockerfile"
-  "Dockerfile"
-  'dockerfile-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  1060
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24102 56875 54313 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/DOCKER-README"
-  "DOCKER-README"
-  'fundamental-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode)
-  1203
-  '(1202 t)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24102 56840 700094 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/.ruby-version"
-  ".ruby-version"
-  'fundamental-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24102 55855 250617 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/Dockerfile-Mongo"
-  "Dockerfile-Mongo"
-  'fundamental-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24102 56893 801029 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/Capfile"
-  "Capfile"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24102 56837 878511 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/Sermepa Order Notification.httpclient"
-  "Sermepa Order Notification.httpclient"
-  'fundamental-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24102 56906 103372 0) (buffer-file-coding-system . no-conversion))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/bitbucket-pipelines.yml"
-  "bitbucket-pipelines.yml"
-  'yaml-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode subword-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24102 56918 679872 0) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/work/freelance/silkfred/SilkFred/docker-compose.yml"
-  "docker-compose.yml"
-  'yaml-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode subword-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24102 56925 672381 0) (buffer-file-coding-system . undecided-unix))
+  '("/Users/guto/projects/futurelearn/")
+  '((buffer-display-time 24222 61119 273239 0))
   '((mark-ring nil)))
 

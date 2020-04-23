@@ -563,6 +563,8 @@
    nil 'fullscreen
    (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
 
+;; (toggle-fullscreen)
+
 ;; Solarized theme settings
 
 ;; Don't change the font for some headings and titles
@@ -572,7 +574,7 @@
 ;; Scale org-mode headlines
 ;; (setq solarized-scale-org-headlines t)
 
-(toggle-fullscreen)
+
 
 ;; (when (require 'edit-server nil t)
 ;;   (setq edit-server-new-frame nil)

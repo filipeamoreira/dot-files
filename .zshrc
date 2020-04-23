@@ -79,7 +79,7 @@ fi'"
 # asdf
 
 . $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+
 # Prepend programming language binaries via ASDF shims
 PATH="$HOME/.asdf/bin:$PATH"
 PATH="$HOME/.asdf/shims:$PATH"
@@ -88,3 +88,5 @@ PATH="$HOME/.asdf/shims:$PATH"
 . /Users/guto/.asdf/installs/ocaml/4.06.1/opam-init/init.zsh > /dev/null 2> /dev/null || true
 # Load functions
 source ~/.functions.sh
+
+# source /Users/guto/Library/Preferences/org.dystroy.broot/launcher/bash/br

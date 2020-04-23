@@ -1,21 +1,25 @@
--- local application = require "hs.application"
--- local window = require "hs.window"
---local hotkey = require "hs.hotkey"
---local screen = require "hs.screen"
---local alert = require "hs.alert"
-
--- local hyper = {"shift", "ctrl", "opt", "cmd"}
 local hyper = {"shift", "cmd", "alt", "ctrl"}
---local hyper = {"⌘", "⌥", "⌃", "⇧"}
 
 require "window_management"
 
-hs.hotkey.bind(hyper, "s", function()
-  hs.reload()
+hs.hotkey.bind(hyper, "R", function()
+                  hs.reload()
 end)
 
-hs.alert.show("Config loaded")
+-- lock screen shortcut
+hs.hotkey.bind(hyper, 'P', function() hs.caffeinate.startScreensaver() end)
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "W", function()
-  hs.alert.show("Hello World!")
-end)
+hs.grid.setMargins({0, 0})
+-- Shortcut to commonly used applications
+hs.hotkey.bind(hyper, 'E', function () hs.application.launchOrFocus("Emacs") end)
+hs.hotkey.bind(hyper, 'T', function () hs.application.launchOrFocus("Alacritty") end)
+hs.hotkey.bind(hyper, 'B', function () hs.application.launchOrFocus("Firefox Developer Edition") end)
+-- hs.hotkey.bind(hyper, 'C', function () hs.application.launchOrFocus("Chromium") end)
+hs.hotkey.bind(hyper, 'C', function () hs.application.launchOrFocus("Google Chrome Canary") end)
+hs.hotkey.bind(hyper, 'K', function () hs.application.launchOrFocus("Slack") end)
+hs.hotkey.bind(hyper, 'M', function () hs.application.launchOrFocus("Thunderbird") end)
+hs.hotkey.bind(hyper, 'N', function () hs.application.launchOrFocus("Firefox Nightly") end)
+
+
+-- Notify the config has been loaded
+hs.alert.show('Hammerspoon config loaded')

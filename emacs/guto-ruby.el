@@ -118,5 +118,12 @@
   "Syntax table in use in enh-ruby-mode buffers.")
 
 
+;; don't insert tabs
+(setq indent-tabs-mode nil)
+
+;; Highlight Whitespace
+(setq whitespace-style '(face trailing tab))
+(global-whitespace-mode t)
+
 (provide 'guto-ruby)
 ;;; guto-ruby.el ends here
