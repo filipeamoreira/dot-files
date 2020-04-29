@@ -83,6 +83,11 @@ fi'"
 # Prepend programming language binaries via ASDF shims
 PATH="$HOME/.asdf/bin:$PATH"
 PATH="$HOME/.asdf/shims:$PATH"
+# append completions to fpath
+#fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+#autoload -Uz compinit
+#compinit
 
 # OPAM configuration
 . /Users/guto/.asdf/installs/ocaml/4.06.1/opam-init/init.zsh > /dev/null 2> /dev/null || true
@@ -90,3 +95,12 @@ PATH="$HOME/.asdf/shims:$PATH"
 source ~/.functions.sh
 
 # source /Users/guto/Library/Preferences/org.dystroy.broot/launcher/bash/br
+
+# source: https://docs.brew.sh/Shell-Completion
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
