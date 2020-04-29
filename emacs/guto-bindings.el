@@ -149,6 +149,6 @@
 (global-set-key (kbd "M-g g") 'avy-goto-line)
 ;; (key-chord-define-global "jj" 'avy-goto-word-or-subword-1)
 ;; (key-chord-define-global "kk" 'avy-goto-char)
-(key-chord-define-global "xx" 'nil)
+;; (key-chord-define-global "xx" 'nil)
 
 (provide 'guto-bindings)

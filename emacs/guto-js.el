@@ -1,8 +1,8 @@
 (custom-set-variables '(coffee-tab-width 2))
 (setq js-indent-level 2)
 
-;; use web-mode for .jsx files
-;; (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+;; use js-jsx-mode for mdx (Storybook) files
+(add-to-list 'auto-mode-alist '("\\.mdx$" . js-jsx-mode))
 
 ;; turn on flychecking globally
 (add-hook 'after-init-hook #'global-flycheck-mode)

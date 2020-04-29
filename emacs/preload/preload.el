@@ -6,12 +6,6 @@
    ("org"         . "https://orgmode.org/elpa/")
    ("gnu"         . "https://elpa.gnu.org/packages/")))
 
-;; Set default theme
-(setq solarized-use-variable-pitch nil);; Don't change the font for some headings and titles
-(setq solarized-scale-org-headlines nil);; Don't change size of org-mode headlines (but keep other size-changes)
-(setq solarized-use-less-bold t) ;; Use less bolding
-(setq prelude-theme 'solarized-dark)
-
 ;; Fonts
 (setq default-frame-alist '((font . "Source Code Pro-20")))
 (set-frame-font "Source Code Pro-20")
