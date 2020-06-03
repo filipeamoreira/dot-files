@@ -52,6 +52,7 @@
         (evil . "melpa")
         (solarized-theme . "melpa")
         (evil-commentary . "melpa-stable")
+        (writeroom-mode . "melpa-stable")
         (restclient . "melpa-stable")
         ))
 
@@ -125,6 +126,7 @@
     tldr
     use-package
     vlf
+    writeroom-mode
     wc-mode
     wc-goal-mode
     yasnippet
@@ -585,7 +587,7 @@
 ;; Scale org-mode headlines
 ;; (setq solarized-scale-org-headlines t)
 
-
+(setq prelude-theme 'solarized-dark)
 
 ;; (when (require 'edit-server nil t)
 ;;   (setq edit-server-new-frame nil)
@@ -707,6 +709,20 @@
 
 ;; set default directory
 (setq default-directory "/Users/guto/")
+
+(defun writing-mode ()
+  (interactive)
+  (setq buffer-face-mode-face '(:family "Source Code Sans Pro-20" :height 150))
+  (buffer-face-mode)
+  (linum-mode 0)
+  (writeroom-mode 1)
+  (blink-cursor-mode)
+  (visual-line-mode 1)
+  (setq truncate-lines nil)
+  (setq-default line-spacing 5)
+  (setq global-hl-line-mode nil))
+
+(add-hook 'markdown-mode-hook 'writing-mode)
 
 (provide 'guto)
 ;;; guto.el ends here
