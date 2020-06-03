@@ -2,7 +2,7 @@
 (setq js-indent-level 2)
 
 ;; use js-jsx-mode for mdx (Storybook) files
-(add-to-list 'auto-mode-alist '("\\.mdx$" . js-jsx-mode))
+(add-to-list 'auto-mode-alist '("\\.mdx$" . rjsx-mode))
 
 ;; turn on flychecking globally
 (add-hook 'after-init-hook #'global-flycheck-mode)

@@ -1,7 +1,7 @@
 ;; (require 'helm-config)
 
 ;; (global-set-key (kbd "M-x") 'execute-extended-command)
-;; (global-set-key (kbd "C-x RET") 'helm-M-x)
+(global-set-key (kbd "C-x RET") 'helm-M-x)
 
 ;; ;; Disable header line
 ;; (setq helm-display-header-line nil) ;; t by default
@@ -23,7 +23,7 @@
     :config (progn
               (global-set-key (kbd "C-x d") 'helm-find-files)
               (global-set-key (kbd "C-x C-d") 'helm-find-files)
-              ;; (global-set-key (kbd "C-x C-d") 'ido-dired)
+              (global-set-key (kbd "C-x RET") 'helm-M-x)
               (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
               (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
               (define-key helm-map (kbd "C-z")  'helm-select-action)))

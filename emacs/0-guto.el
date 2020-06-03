@@ -72,6 +72,7 @@
     comment-dwim-2
     company-restclient
     crux
+    dap-mode
     deft
     direx
     discover
@@ -82,6 +83,7 @@
     ;; ehn-ruby-mode
     elfeed
     enclose
+    exec-path-from-shell
     eww
     flx-ido
     flycheck-tip
@@ -119,6 +121,7 @@
     switch-window
     sx
     tide
+    typescript-mode
     tldr
     use-package
     vlf
@@ -148,6 +151,14 @@
   (require 'use-package))
 (require 'diminish)                ;; if you use :diminish
 (require 'bind-key)                ;; if you use any :bind variant
+
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+
+(setq solarized-use-variable-pitch nil)
+(setq solarized-scale-org-headlines nil)
+(setq solarized-use-less-bold t)
+(setq prelude-theme 'solarized-dark)
 
 (use-package key-chord
   :config
@@ -508,9 +519,9 @@
 
 ;; UI
 ;; Hide unnecessary GUI chrome
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+;; (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+;; (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+;; (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (show-paren-mode t)
 
 ;; enable company mode
@@ -660,7 +671,7 @@
 
 ;; Integrate with Finda
 ;; More info: https://keminglabs.com/finda/
-(load "~/.finda/integrations/emacs/finda.el")
+;;(load "~/.finda/integrations/emacs/finda.el")
 
 (x-focus-frame nil)
 
@@ -675,8 +686,8 @@
 (global-display-line-numbers-mode)
 
 ;; Edit browser text on emacs
-(require 'atomic-chrome)
-(atomic-chrome-start-server)
+;; (require 'atomic-chrome)
+;; (atomic-chrome-start-server)
 
 ;; Use pandoc as the markdown command
 (custom-set-variables
