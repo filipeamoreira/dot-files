@@ -18,7 +18,7 @@ hs.hotkey.bind(hyper, 'O', function () hs.application.launchOrFocus("Chromium") 
 hs.hotkey.bind(hyper, 'A', function () hs.application.launchOrFocus("Google Chrome Canary") end)
 hs.hotkey.bind(hyper, 'C', function () hs.application.launchOrFocus("Google Chrome") end)
 hs.hotkey.bind(hyper, 'K', function () hs.application.launchOrFocus("Slack") end)
-hs.hotkey.bind(hyper, 'M', function () hs.application.launchOrFocus("Thunderbird") end)
+-- hs.hotkey.bind(hyper, 'M', function () hs.application.launchOrFocus("Thunderbird") end)
 hs.hotkey.bind(hyper, 'N', function () hs.application.launchOrFocus("Firefox Nightly") end)
 hs.hotkey.bind(hyper, 'V', function () hs.application.launchOrFocus("Visual Studio Code - Insiders") end)
 
