@@ -70,8 +70,13 @@
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
 (add-hook 'enh-ruby-mode-hook 'global-rbenv-mode)
 (add-hook 'enh-ruby-mode-hook 'rbenv-use-corresponding)
-(add-hook 'enh-ruby-mode-hook 'robe-mode)
 (add-hook 'enh-ruby-mode-hook 'yard-mode)
+
+;; Robe
+(add-hook 'enh-ruby-mode-hook 'robe-mode) ;; FIXME: Not working
+(global-robe-mode)
+(eval-after-load 'company
+  '(push 'company-robe company-backends))
 
 ;; Prevent ruby-mode from adding magic encoding comments to the top of files
 (setq ruby-insert-encoding-magic-comment nil)

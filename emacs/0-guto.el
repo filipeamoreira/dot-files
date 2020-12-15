@@ -101,10 +101,14 @@
     leerzeichen
     magit
     minitest
+    multiple-cursors
     neotree
     org
     org-board
+    lsp-origami
+    origami
     pdf-tools
+    prettier
     projectile
     rbenv
     restclient
@@ -113,7 +117,7 @@
     rspec-mode
     seeing-is-believing
     smart-mode-line
-    smart-tab
+    ;; smart-tab ;; broken on 20200908
     smartparens
     smooth-scroll
     shell-pop
@@ -126,9 +130,11 @@
     tldr
     use-package
     vlf
+    vterm
     writeroom-mode
     wc-mode
     wc-goal-mode
+    yard-mode
     yasnippet
     zotxt
     ))
@@ -162,6 +168,56 @@
 (setq solarized-use-less-bold t)
 (setq prelude-theme 'solarized-dark)
 
+;; Prettier global setup
+;; https://github.com/jscheid/prettier.el
+
+(add-hook 'after-init-hook #'global-prettier-mode)
+
+;; (dir-locals-set-class-variables 'prettier-js
+;;                                 '((js-mode . ((eval . (prettier-mode t))))
+;;                                   (typescript . ((eval . (prettier-mode t))))))
+
+;; (dir-locals-set-directory-class "/Users/guto/projects/fl/futurelearn/" 'prettier-js)
+
+(setq prettier-enabled-parsers '(css
+                                 json
+                                 scss
+                                 toml
+                                 typescript))
+
+;; (dir-locals-set-class-variables 'prettier-js
+;;                                 '((typescript . ((eval . (prettier-mode t))))
+;;                                   (web-mode . ((eval . (prettier-mode t))))
+;;                                   (js-mode . ((eval . (prettier-mode t))))))
+
+;; (dir-locals-set-directory-class "~/projects/fl/futurelearn/" 'prettier-js)
+
+;; (use-package prettier-js
+;;   :after js2-mode
+;;   :init
+;;   (add-hook 'js2-mode-hook 'prettier-js-mode)
+;;   (add-hook 'web-mode-hook 'prettier-js-mode)
+;;   :config
+;;   (setq prettier-js-args '("--trailing-comma" "all"
+;;                            "--bracket-spacing" "false"))
+
+
+
+  ;; (defun enable-minor-mode (my-pair)
+  ;;   "Enable minor mode if filename match the regexp.  MY-PAIR is a cons cell (regexp . minor-mode)."
+  ;;   (if (buffer-file-name)
+  ;;       (if (string-match (car my-pair) buffer-file-name)
+  ;;           (funcall (cdr my-pair)))))
+  ;; (add-hook 'web-mode-hook #'(lambda ()
+  ;;                              (enable-minor-mode
+  ;;                               '("\\.jsx?\\'" . prettier-js-mode)))))
+
+;; github.com/akermu/emacs-libvterm
+(use-package vterm
+  :ensure t
+  :config
+  (setq vterm-max-scrollback 100000))
+
 (use-package key-chord
   :config
   ;; disable key-chord
@@ -175,10 +231,18 @@
   :config
   (flycheck-mode 1))
 
-
-(use-package enh-ruby-mode
+(use-package multiple-cursors
+  :ensure
   :config
-  (setq enh-ruby-add-encoding-comment-on-save nil))
+  (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+  (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+  (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this))
+
+
+;;(use-package enh-ruby-mode
+;;  :config
+;;  (setq enh-ruby-add-encoding-comment-on-save nil))
 
 (use-package magit
   :config
@@ -243,8 +307,10 @@
 ;; helm-ag
 (use-package helm-ag
   :config
-  ;;(setq helm-ag-base-command "rg --no-heading") ;; FIXME: Colour output is broken
-  (setq helm-ag-base-command "ag --nocolor --nogroup"))
+  (setq helm-ag-base-command "rg --vimgrep --no-heading --smart-case")
+  (setq helm-move-to-line-cycle-in-source 'nil)
+  ;; (setq helm-ag-base-command "ag --nocolor --nogroup")
+  )
 
 ;; helm-bibtex
 (use-package helm-bibtex
@@ -375,12 +441,12 @@
 (add-to-list 'hippie-expand-try-functions-list
              'yas/hippie-try-expand) ;put yasnippet in hippie-expansion list
 
-(use-package smart-tab
-  :ensure t
-  :config
-  (setq smart-tab-user-provided-completion-function 'company-complete)
-  (setq smart-tab-using-hippie-expand t)
-  (global-smart-tab-mode 1))
+;; (use-package smart-tab
+;;   :ensure t
+;;   :config
+;;   (setq smart-tab-user-provided-completion-function 'company-complete)
+;;   (setq smart-tab-using-hippie-expand t)
+;;   (global-smart-tab-mode 1))
 
 (setq scss-compile-at-save nil)
 
@@ -722,7 +788,12 @@
   (setq-default line-spacing 5)
   (setq global-hl-line-mode nil))
 
-(add-hook 'markdown-mode-hook 'writing-mode)
+;;(add-hook 'markdown-mode-hook 'writing-mode)
+
+;; https://karthinks.com/software/batteries-included-with-emacs/
+(setq view-read-only t)
+
+(global-set-key (kbd "C-c t") 'vterm-other-window)
 
 (provide 'guto)
 ;;; guto.el ends here

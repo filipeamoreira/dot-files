@@ -4,20 +4,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(coffee-tab-width 2)
- '(custom-safe-themes
-   (quote
-    ("d91ef4e714f05fff2070da7ca452980999f5361209e679ee988e3c432df24347" "0598c6a29e13e7112cfbc2f523e31927ab7dce56ebb2016b567e1eff6dc1fd4f" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(markdown-command "/usr/local/bin/pandoc")
  '(package-selected-packages
-   (quote
-    (lua-mode db db-pg emacsql emacsql-psql exsqlaim-mode flycheck-soar format-sql helm-sql-connect org-sql pg sqlformat sqlup-mode flymake-ruby zotxt wc-goal-mode wc-mode vlf speed-type shell-pop smooth-scroll smart-mode-line seeing-is-believing robe edit-server company-restclient sicp fzf projectile-rails yaml-mode scss-mode geiser ensime scala-mode racer flycheck-rust cargo rust-mode yari company-anaconda anaconda-mode flycheck-ocaml merlin utop tuareg company-auctex cdlatex haskell-mode gotest go-projectile go-eldoc company-go go-mode alchemist elixir-mode erlang elisp-slime-nav slime clojure-mode company helm-descbinds helm-projectile textile-mode forge swift-mode rubocop ehn-ruby-mode ehn-ruby wgrep-helm wgrep-ag wgrep js2-mode rake doom-themes org-board org-web-tools fennel-mode dklrt flycheck-ledger hledger-mode atomic-chrome exwm ox-pandoc transmission evil php-mode protobuf-mode feature-mode rainbow-mode elfeed inf-ruby 0blayout helm helm-bibtexkey interleavev interleave intero htmlize yard-mode web-mode groovy-mode coffee-mode 4clojure devdocs dockerfile-mode json-mode haml-mode csv-mode auctex rainbow-delimiters which-key vkill use-package undo-tree ucs-cmds tide sx switch-window smartparens rspec-mode rinari rbenv ov org-pdfview operate-on-number neotree move-text minitest magit leerzeichen ledger-mode langtool keyfreq key-chord imenu-anywhere ido-vertical-mode ido-completing-read+ helm-bibtex helm-ag guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck-tip flx-ido expand-region exec-path-from-shell enh-ruby-mode enclose elfeed-org easy-kill discover-my-major discover direx diff-hl deft define-word crux comment-dwim-2 cider centered-cursor-mode bundler bug-hunter browse-kill-ring blank-mode beacon auto-complete anzu aggressive-indent ag ace-window)))
- '(pdf-tools-handle-upgrades nil)
- '(safe-local-variable-values
-   (quote
-    ((TeX-master . "index")
-     (TeX-master . "main")
-     (TeX-master . t))))
- '(tramp-syntax (quote default) nil (tramp)))
+   '(vterm lua-mode yard-mode csv-mode evil oriogami zotxt zop-to-char zenburn-theme yari yaml-mode writeroom-mode which-key web-mode wc-mode wc-goal-mode volatile-highlights vlf utop use-package undo-tree tuareg tldr tide tern syntactic-close sx switch-window super-save speed-type solarized-theme smooth-scroll smartrep smartparens smart-mode-line slime shell-pop seeing-is-believing scss-mode scala-mode rspec-mode ron-mode robe rinari rbenv rainbow-mode rainbow-delimiters racer projectile-rails prettier pdf-tools org-board operate-on-number neotree multiple-cursors move-text minitest magit lsp-ui lsp-origami leerzeichen ledger-mode keyfreq key-chord json-mode js2-mode interleave imenu-anywhere ido-vertical-mode ido-completing-read+ hl-todo helm-projectile helm-descbinds helm-bibtex helm-ag haskell-mode haml-mode guru-mode gotest go-projectile gitignore-mode gitconfig-mode git-timemachine gist geiser flycheck-tip flycheck-rust flycheck-ocaml flx-ido expand-region exec-path-from-shell erlang enh-ruby-mode enclose elisp-slime-nav elfeed editorconfig edit-server easy-kill discover-my-major discover direx diminish diff-hl devdocs deft define-word dap-mode crux company-restclient company-lsp company-go company-auctex company-anaconda comment-dwim-2 coffee-mode cider centered-cursor-mode cdlatex cargo bundler bug-hunter browse-kill-ring beacon auto-complete anzu alchemist aggressive-indent ag)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

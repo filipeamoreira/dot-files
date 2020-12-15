@@ -2,186 +2,210 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Tue Apr 21 20:25:39 2020
+;; Created Mon Dec 14 22:20:14 2020
 ;; Desktop file format version 208
-;; Emacs version 28.0.50
+;; Emacs version 27.1
 
 ;; Global section:
-(setq desktop-saved-frameset [frameset 1 (24223 18611 454855 0) (desktop . "208") "guto@mbp.local" nil nil ((((minibuffer . t) (fontsize . 0) (font . "-*-Source Code Pro-normal-normal-normal-*-20-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 2) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#839496") (background-color . "#002b36") (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (undecorated) (ns-appearance . dark) (ns-transparent-titlebar . t) (z-group) (no-focus-on-map) (no-accept-focus) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 15) (scroll-bar-height . 15) (alpha) (fullscreen) (display-type . color) (background-mode . dark) (cursor-color . "#839496") (environment) (last-focus-update . t) (tabs (current-tab (name . "*helm M-x*") (explicit-name))) (frameset--id . "43D6-DDF3-A890-B8B9") (frameset--mini t . t) (height . 73) (width . 278) (modeline . t) (unsplittable) (left . 0) (top . 1133) (icon-name) (visibility . t) (display . "mbp.local") (explicit-name) (tool-bar-position . top)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 4) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 100) (min-pixel-width . 120) (min-pixel-height-ignore . 75) (min-pixel-width-ignore . 48) (min-pixel-height-safe . 25) (min-pixel-width-safe . 24)) leaf (pixel-width . 3352) (pixel-height . 1800) (total-width . 279) (total-height . 72) (normal-height . 1.0) (normal-width . 1.0) (buffer "magit: futurelearn" (selected . t) (hscroll . 0) (fringes 8 8 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 1) (start . 1)) (prev-buffers ("magit: futurelearn" 1 1) ("PageHeader/index.tsx" 1388 3105) ("show.html.haml" 1280 8896) ("show.html.haml_spec.rb" 2273 2273) ("PageHeader" 1 751) ("_yotpo_course_reviews.html.haml" 1 206) ("magit-stash: futurelearn" 1 1))))])
+(setq desktop-saved-frameset [frameset 1 (24535 58654 508015 0) (desktop . "208") "guto@ruth" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font . "-*-Source Code Pro-normal-normal-normal-*-16-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars . right) (horizontal-scroll-bars) (foreground-color . "#839496") (background-color . "#002b36") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (alpha) (scroll-bar-foreground) (scroll-bar-background) (tab-bar-lines . 0) (height . 51) (tool-bar-lines . 0) (title) (inhibit-double-buffering) (menu-bar-lines . 1) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 15) (scroll-bar-height . 15) (no-focus-on-map) (no-accept-focus) (fullscreen) (visibility . t) (skip-taskbar) (z-group) (display-type . color) (background-mode . dark) (cursor-color . "#839496") (environment) (ns-transparent-titlebar . t) (ns-appearance . dark) (last-focus-update . t) (frameset--id . "D846-166C-13F0-AE43") (frameset--mini t . t) (width . 188) (modeline . t) (unsplittable) (left . 0) (top . 23) (icon-name) (display . "Mac") (explicit-name) (tool-bar-position . top)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 6) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 80) (min-pixel-width . 100) (min-pixel-height-ignore . 60) (min-pixel-width-ignore . 60) (min-pixel-height-safe . 20) (min-pixel-width-safe . 20)) leaf (pixel-width . 1920) (pixel-height . 1015) (total-width . 192) (total-height . 51) (normal-height . 1.0) (normal-width . 1.0) (buffer "quotations_controller.rb" (selected . t) (hscroll . 0) (fringes 8 8 nil nil) (margins nil) (scroll-bars nil 2 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 322) (start . 1)) (prev-buffers ("show.html.erb" 98 1188) ("_comment_form.html.erb" 1 430) ("_comment.html.erb" 1 142) ("quotations_controller.rb" 285 371) ("magit: innotex" 1 181) ("_job.html.erb" 1282 1984))))])
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring '("description" "tools" "sus"))
-(setq regexp-search-ring '(#("Heading" 0 7 (isearch-case-fold-search nil)) #("fit" 0 3 (isearch-case-fold-search t)) #("Revie" 0 5 (isearch-case-fold-search nil)) #("MainWi" 0 6 (isearch-case-fold-search nil)) "Reviews" "Yotpo" "review" "revie" "header" "admin" "puma" "storage" "display_reviews" "displa" "pry" "star"))
+(setq search-ring '(#("order" 0 5 (isearch-case-fold-search t isearch-regexp-function nil)) #("exper" 0 5 (isearch-regexp-function nil isearch-case-fold-search t)) #("orio" 0 4 (isearch-case-fold-search t isearch-regexp-function nil))))
+(setq regexp-search-ring '(#("focus" 0 5 (isearch-case-fold-search t)) #("btn" 0 3 (isearch-case-fold-search t)) #("comment" 0 7 (isearch-case-fold-search t)) #("select" 0 6 (isearch-case-fold-search t)) #("sel" 0 3 (isearch-case-fold-search t)) #("selec" 0 5 (isearch-case-fold-search t)) #("place" 0 5 (isearch-case-fold-search t)) #("date" 0 4 (isearch-case-fold-search t)) #("@comment" 0 8 (isearch-case-fold-search t)) #("text" 0 4 (isearch-case-fold-search t)) #("prettier" 0 8 (isearch-case-fold-search t)) #("TimeLine" 0 8 (isearch-case-fold-search nil)) #("review" 0 6 (isearch-case-fold-search t)) #("displa" 0 6 (isearch-case-fold-search t)) #("Syllabus" 0 8 (isearch-case-fold-search nil)) #("font-size" 0 9 (isearch-case-fold-search t))))
 (setq register-alist nil)
-(setq file-name-history '(#("~/projects/futurelearn/.env.development" 1 39 (match-part "/Users/guto/projects/futurelearn/.env.development")) "~/projects/futurelearn/spec/views/courses/show.html.haml_spec.rb" "~/projects/futurelearn/app/views/courses/show.html.haml" "/Users/guto/projects/futurelearn/.git/rebase-merge/git-rebase-todo" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/ReviewsWidget/index.tsx" "/Users/guto/projects/futurelearn/.git/rebase-merge/git-rebase-todo" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/PageHeader/index.tsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/ReviewsWidget/MainWidget/index.tsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/YotpoReviews/index.tsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/ReviewsWidget/index.js" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/PageHeader/OrganisationLogo.tsx" "~/projects/futurelearn/Gemfile" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/ReviewsWidget/mainWidget.tsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/ReviewsWidget/index.test.tsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/PageHeader/index.test.tsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/PageHeader/PageHeaderKeyInfoItem.tsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/PageHeader/PageHeader.module.scss" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/YotpoWidget/index.test.tsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/YotpoWidget/index.tsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/PageHeader/StarReviewsWidget.tsx" "/Volumes/Disk Image/accounts.org" "~/projects/futurelearn/config/dotenv/staging_env.erb" "~/projects/futurelearn/config/dotenv/sandbox_env.erb" "~/projects/futurelearn/config/dotenv/playground_env.erb" "~/projects/futurelearn/config/environments/playground.rb" "~/projects/futurelearn/config/environments/development.rb" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/PageHeader/PageHeaderKeyInfoItem.test.tsx" "~/.fligo.yaml" "/usr/local/share/zsh-completions/_xsel" "~/work/projects/lean_shopping/app/views/products/index.html.erb" "~/work/projects/lean_shopping/app/controllers/application_controller.rb" "~/work/projects/lean_shopping/config/master.key" "~/work/projects/lean_shopping/config/storage.yml" "~/work/projects/lean_shopping/Gemfile" "~/work/projects/lean_shopping/app/views/orders/_form.html.erb" "~/work/projects/lean_shopping/app/views/sessions/new.html.erb" "~/work/projects/lean_shopping/app/views/sessions/login.html.erb" "~/work/projects/lean_shopping/app/views/offers/_form.html.erb" "~/work/projects/lean_shopping/app/models/offer.rb" "~/work/projects/lean_shopping/app/views/orders/index.html.erb" "~/work/projects/lean_shopping/app/controllers/offers_controller.rb" "~/work/projects/lean_shopping/config/environments/development.rb" "~/work/projects/lean_shopping/config/environments/production.rb" "/var/folders/_v/bxlr9hjn5g3dhn5kcxhc4tww0000gn/T/80811.credentials.yml" "~/work/projects/lean_shopping/app/services/product_parser.rb" "~/work/projects/lean_shopping/app/models/order.rb" "~/work/projects/lean_shopping/app/controllers/orders_controller.rb" "~/work/projects/lean_shopping/app/views/shared/_nav_bar.html.erb" "~/work/projects/lean_shopping/app/views/layouts/application.html.erb" "~/work/projects/lean_shopping/app/controllers/products_controller.rb" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/CallToAction/index.test.tsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/CallToAction/index.tsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/enums.ts" "~/projects/futurelearn/spec/presenters/course_descriptions/react_presenter_spec.rb" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/CallToAction/ButtonWithPostAction.tsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/PageHeader/keyInfoService.ts" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/PageHeader/keyInfoService.test.ts" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/Partners/index.test.jsx" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/factories/Course.ts" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/factories/MetaData.ts" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/factories/index.ts" "~/projects/futurelearn/package.json" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/types.ts" "~/projects/futurelearn/spec/presenters/course_descriptions/page_presenter_spec.rb" "~/projects/futurelearn/app/services/reviews_service.rb" #("~/icloud-drive/data/church/sermon/NT/matthew/17/20191102-the-transfiguration/20191102-the-transfiguration.org" 1 2 (match-part "/Users/guto/icloud-drive/data/church/sermon/NT/matthew/17/20191102-the-transfiguration/20191102-the-transfiguration.org") 2 109 (match-part "/Users/guto/icloud-drive/data/church/sermon/NT/matthew/17/20191102-the-transfiguration/20191102-the-transfiguration.org")) "~/projects/futurelearn/lib/include_helper.rb" "~/projects/futurelearn/app/presenters/course_descriptions/react_presenter.rb" "~/projects/futurelearn/app/presenters/react/base_presenter.rb" "~/projects/futurelearn/app/models/course.rb" "~/projects/futurelearn/app/presenters/course_descriptions/page_presenter.rb" "~/projects/futurelearn/app/presenters/course_descriptions/wishlist_buttons_presenter.rb" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/factories/Organisation.ts" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/factories/ImageUrl.ts" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/factories/CourseCollectionAccess.ts" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/factories/CoBrandingOrganisation.ts" "~/projects/futurelearn/app/presenters/course_descriptions/meta_data_presenter.rb" #("~/Dropbox/sync/notes/freelance/futurelearn/futurelearn.org" 1 2 (match-part "/Users/guto/Dropbox/sync/notes/freelance/futurelearn/futurelearn.org") 2 58 (match-part "/Users/guto/Dropbox/sync/notes/freelance/futurelearn/futurelearn.org")) "~/projects/futurelearn/spec/models/course_spec.rb" "~/projects/futurelearn/app/presenters/react/model_presenter.rb" "~/projects/futurelearn/app/presenters/course_presenter.rb" "~/projects/futurelearn/spec/spec_helper.rb" "~/projects/futurelearn/spec/factories/course.rb" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/factories/Activity.ts" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/factories/Enrolment.ts" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/factories/Run.ts" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/factories/StickyBanner.ts" "~/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/factories/Week.ts" "~/projects/futurelearn/tsconfig.json" "~/.emacs.d/modules/prelude-js.el" "~/.emacs.d/modules/prelude-go.el" "~/.emacs.d/modules/prelude-lisp.el" "~/.emacs.d/modules/prelude-ruby.el" "~/.emacs.d/modules/prelude-ts.el" "~/.emacs.d/personal/guto-js.el" "~/projects/futurelearn/app/helpers/course_helper.rb" "~/work/projects/lean_shopping/lib/tasks/products.rake" "~/work/projects/lean_shopping/app/models/product.rb" "~/work/projects/lean_shopping/config/database.yml"))
+(setq file-name-history '("~/projects/coderelax/innotex/innotex/app/models/ability.rb" "~/projects/coderelax/innotex/innotex/app/views/quotations/_comment_form.html.erb" "~/projects/coderelax/innotex/innotex/app/views/quotations/_comment.html.erb" #("~/projects/coderelax/innotex/innotex/app/javascript/stylesheets/main.scss" 1 73 (match-part "/Users/guto/projects/coderelax/innotex/innotex/app/javascript/stylesheets/main.scss")) "~/projects/coderelax/innotex/innotex/app/views/quotations/_job.html.erb" "~/projects/coderelax/innotex/innotex/app/views/quotations/show.html.erb" "~/projects/coderelax/innotex/innotex/app/views/quotations/_form.html.erb" "~/projects/coderelax/innotex/innotex/app/models/user.rb" "~/projects/coderelax/innotex/innotex/app/models/quotation.rb" "~/projects/fl/futurelearn/package.json" "~/projects/fl/futurelearn/app/javascript/components/DesignSystem/Structure/Timeline/TimelineCard/index.test.jsx" "~/projects/fl/futurelearn/app/javascript/components/Pages/Programs/Shared/SyllabusSection/CourseTimelineItem.test.tsx" "~/projects/fl/futurelearn/app/assets/stylesheets/application/2-brand/_type-scale.scss" "~/projects/fl/futurelearn/app/assets/stylesheets/application/2-brand/_fontsize-lineheight.scss" "~/projects/fl/futurelearn/app/javascript/components/DesignSystem/Structure/Timeline/TimelineCard/TimelineCard.module.scss" "~/projects/fl/futurelearn/app/javascript/components/DesignSystem/Structure/Timeline/Timeline.module.scss" "~/projects/fl/futurelearn/app/javascript/components/DesignSystem/Structure/Timeline/TimelineItem/TimelineContent/index.jsx" "~/projects/fl/futurelearn/app/javascript/components/Pages/Programs/Shared/SyllabusSection/index.tsx" "~/projects/fl/futurelearn/app/assets/stylesheets/application/2-brand/_colours.scss" "~/projects/fl/design-tokens/properties/color.json" "~/projects/fl/design-tokens/README.md" "~/projects/fl/futurelearn/app/javascript/components/DesignSystem/CoreStyles/Icon/Icon.module.scss" "~/projects/fl/futurelearn/app/javascript/components/Partials/ReviewStars/CalculateStarType.ts" "~/projects/fl/futurelearn/app/javascript/components/Partials/ReviewStars/ReviewStars.module.scss" "~/projects/fl/futurelearn/app/javascript/components/Pages/Programs/ExpertTrackDescriptionPage/types.ts" "~/projects/fl/futurelearn/app/javascript/components/DesignSystem/Structure/CardGrid/index.jsx" "~/projects/fl/futurelearn/app/views/courses/index.html.haml" "~/projects/fl/futurelearn/app/controllers/courses_controller.rb" "~/projects/fl/futurelearn/app/javascript/components/Pages/Programs/ExpertTrackDescriptionPage/index.tsx" #("~/projects/fl/futurelearn/db/schema.rb" 1 38 (match-part "/Users/guto/projects/fl/futurelearn/db/schema.rb")) "~/projects/fl/futurelearn/app/models/reviewable_rating.rb" "~/projects/fl/futurelearn/app/presenters/expert_track_presenter.rb" "~/projects/coderelax/innotex/innotex/app/views/quotations/_jobs_fields.html.erb" "~/projects/coderelax/innotex/innotex/app/controllers/quotations_controller.rb" "~/.fligo.yaml" "~/.fligo.env" "~/projects/fl/futurelearn/app/models/run.rb" "~/projects/fl/futurelearn/app/controllers/concerns/course_description_page.rb" #("~/projects/fl/futurelearn.org" 1 29 (match-part "/Users/guto/projects/fl/futurelearn.org")) "~/projects/fl/futurelearn/app/javascript/application/application/view/analytics/trackView.js" "~/projects/fl/futurelearn/app/javascript/application/application/view/analytics/trackClicks.js" "~/projects/fl/futurelearn/app/javascript/application/application/view/analytics/index.js" "~/projects/fl/futurelearn/app/javascript/utils/tracking/ahoyWrapper.js" "~/projects/fl/futurelearn/app/controllers/concerns/event_tracking.rb" "~/projects/fl/futurelearn/app/controllers/application_controller.rb" "~/projects/fl/futurelearn/app/controllers/runs_controller.rb" "~/projects/fl/futurelearn/lib/future_learn/google_tag_manager.rb" "~/projects/coderelax/innotex/innotex/app/views/quotations/new.html.erb" "~/projects/coderelax/innotex/innotex/package.json" "~/projects/coderelax/innotex/innotex/app/javascript/stylesheets/application.scss" #("~/projects/coderelax/innotex/innotex/app/views/orders/new.html.erb" 1 66 (match-part "/Users/guto/projects/coderelax/innotex/innotex/app/views/orders/new.html.erb")) #("~/projects/coderelax/innotex/innotex/db/schema.rb" 1 49 (match-part "/Users/guto/projects/coderelax/innotex/innotex/db/schema.rb")) #("~/projects/fl/futurelearn/spec/features/admin/co_branding_organisations_spec.rb" 1 79 (match-part "/Users/guto/projects/fl/futurelearn/spec/features/admin/co_branding_organisations_spec.rb")) "~/projects/fl/futurelearn/spec/controllers/runs_controller_spec.rb" "~/projects/fl/futurelearn/spec/controllers/concerns/course_description_page_spec.rb" "~/projects/coderelax/innotex/innotex/app/models/job.rb" "~/projects/coderelax/innotex/innotex/app/views/quotations/_quantities_fields.html.erb" "~/projects/coderelax/innotex/innotex/app/javascript/controllers/nested_form_controller.js" "~/projects/coderelax/innotex/innotex/app/models/quantity.rb" "~/projects/coderelax/innotex/innotex/app/controllers/quantities_controller.rb" "~/projects/coderelax/innotex/innotex/app/javascript/controllers/quotations_controller.js" "~/projects/coderelax/innotex/innotex/app/views/orders/_form.html.erb" "~/projects/coderelax/innotex/innotex/db/migrate/20201001195609_add_role_to_users.rb" "~/projects/coderelax/innotex/innotex/app/controllers/orders_controller.rb" "~/projects/fl/technical-interview-ruby/player.rb" "~/projects/fl/technical-interview-ruby/board.rb" "~/projects/fl/technical-interview-ruby/tic_tac_toe.rb" "~/projects/fl/Ruby code review files for candidates/task.md" "~/projects/fl/Ruby code review files for candidates/readme.md" "~/projects/fl/futurelearn/app/controllers/microcredentials_controller.rb" "~/projects/fl/futurelearn/spec/controllers/courses_controller_spec.rb" "~/projects/fl/futurelearn/app/views/courses/show.html.haml" "~/projects/fl/futurelearn/app/views/courses/_invited_upgraded_access_benefits.html.haml" "~/projects/coderelax/innotex/innotex/app/helpers/orders_helper.rb" #("~/projects/coderelax/innotex/innotex/app/models/order.rb" 1 56 (match-part "/Users/guto/projects/coderelax/innotex/innotex/app/models/order.rb")) "~/projects/coderelax/innotex/innotex/app/views/orders/show.html.erb" "~/projects/fl/futurelearn/app/controllers/concerns/google_tag_manager.rb" "~/projects/coderelax/innotex/innotex/db/migrate/20201124165908_add_client_reference_quotations.rb" "~/projects/coderelax/innotex/innotex/app/views/quotations/confirmation.html.erb" "~/projects/coderelax/innotex/innotex/app/models/address.rb" "~/projects/fl/futurelearn/.bundle/bundler/gems/ahoy-a961d654042a/lib/ahoy/tracker.rb" "~/projects/fl/futurelearn/app/models/course.rb" "~/projects/fl/futurelearn/app/models/program.rb" "~/projects/fl/futurelearn/app/controllers/purchases_controller.rb" "~/projects/fl/futurelearn/app/models/expert_track_subscription.rb" "~/projects/fl/futurelearn/app/models/user.rb" "~/projects/coderelax/innotex/innotex/app/controllers/jobs_controller.rb" "~/projects/coderelax/innotex/innotex/db/migrate/20201129222611_create_quantities.rb" "~/projects/coderelax/innotex/innotex/db/migrate/20201202215259_rename_unit_price_column.rb" "~/projects/fl/fligo/cmd/app.go" "~/projects/fl/fligo/cmd/aws.go" "~/projects/fl/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/ExpertTrackAboutSection/index.test.tsx" "~/projects/fl/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/factories/MetaData.ts" "~/projects/fl/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/types.ts" #("~/projects/fl/futurelearn/spec/presenters/course_descriptions/react_presenter_spec.rb" 1 85 (match-part "/Users/guto/projects/fl/futurelearn/spec/presenters/course_descriptions/react_presenter_spec.rb")) #("~/projects/fl/futurelearn/app/presenters/course_descriptions/react_presenter.rb" 1 79 (match-part "/Users/guto/projects/fl/futurelearn/app/presenters/course_descriptions/react_presenter.rb")) "~/projects/fl/futurelearn/spec/views/courses/show.html.haml_spec.rb" "~/projects/fl/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/ExpertTrackJoinSection/index.test.tsx" "~/projects/fl/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/ExpertTrackJoinSection/index.tsx" "~/projects/fl/futurelearn/app/javascript/components/Pages/Programs/Shared/SyllabusSection/factories/CourseRun.ts"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 208
-  "/Users/guto/projects/futurelearn/.env.development"
-  ".env.development"
-  'fundamental-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode)
-  24
-  '(24 t)
+  "/Users/guto/projects/coderelax/innotex/innotex/app/controllers/quotations_controller.rb"
+  "quotations_controller.rb"
+  'enh-ruby-mode
+  '(abbrev-mode eldoc-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-ff-cache-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode guto-bindings-minor-mode rspec-verifiable-mode inf-ruby-minor-mode robe-mode rainbow-delimiters-mode guru-mode yard-mode)
+  322
+  '(371 t)
   nil
   nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 24223 18584 734492 0) (buffer-file-coding-system . utf-8-unix))
+  '((indent-tabs-mode) (buffer-display-time 24535 58653 936881 0) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (2587 2644 2561 2644 2546))))
+
+(desktop-create-buffer 208
+  "/Users/guto/projects/coderelax/innotex/innotex/app/views/quotations/show.html.erb"
+  "show.html.erb"
+  'web-mode
+  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-ff-cache-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode guto-bindings-minor-mode rainbow-delimiters-mode)
+  1188
+  '(1438 nil)
+  nil
+  nil
+  '((buffer-display-time 24535 57561 641381 0) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (1183 1451 813 822 746 847 37 751 1 1451))))
+
+(desktop-create-buffer 208
+  "/Users/guto/projects/coderelax/innotex/innotex/app/models/ability.rb"
+  "ability.rb"
+  'enh-ruby-mode
+  '(abbrev-mode eldoc-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-ff-cache-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode guto-bindings-minor-mode rspec-verifiable-mode inf-ruby-minor-mode robe-mode rainbow-delimiters-mode guru-mode yard-mode)
+  314
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 24535 57561 641382 0) (buffer-file-coding-system . undecided-unix))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
-  "/Users/guto/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/PageHeader/index.tsx"
-  "index.tsx"
-  'web-mode
-  '(abbrev-mode eldoc-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode tide-mode smerge-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  3105
-  '(2912 t)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 24223 3091 525098 0) (buffer-file-coding-system . utf-8-unix) (case-fold-search . t))
-  '((mark-ring (920 790 4851 1))))
-
-(desktop-create-buffer 208
-  "/Users/guto/projects/futurelearn/app/views/courses/show.html.haml"
+  "/Users/guto/projects/fl/futurelearn/app/views/courses/show.html.haml"
   "show.html.haml"
   'haml-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smerge-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  8896
-  '(1280 t)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 24223 2834 462787 0) (buffer-file-coding-system . utf-8-unix))
-  '((mark-ring (8931 1280))))
-
-(desktop-create-buffer 208
-  "/Users/guto/projects/futurelearn/spec/views/courses/show.html.haml_spec.rb"
-  "show.html.haml_spec.rb"
-  'enh-ruby-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode smerge-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  29356
-  '(2273 t)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 24223 2778 406375 0) (buffer-file-coding-system . utf-8-unix))
-  '((mark-ring (2273 2273))))
-
-(desktop-create-buffer 208
-  nil
-  "PageHeader"
-  'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode global-whitespace-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  751
-  '(nil nil)
-  t
-  '("/Users/guto/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/PageHeader/")
-  '((buffer-display-time 24223 2656 427010 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/projects/futurelearn/app/views/courses/_yotpo_course_reviews.html.haml"
-  "_yotpo_course_reviews.html.haml"
-  'haml-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  206
-  '(1 t)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 24223 2314 637339 0) (buffer-file-coding-system . utf-8-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  nil
-  "courses"
-  'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode global-whitespace-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  250
-  '(nil nil)
-  t
-  '("/Users/guto/projects/futurelearn/app/views/courses/")
-  '((buffer-display-time 24223 1933 75001 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/PageHeader/index.test.tsx"
-  "index.test.tsx"
-  'web-mode
-  '(abbrev-mode eldoc-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode tide-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  1522
-  '(238 t)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 24222 65531 149251 0) (buffer-file-coding-system . utf-8-unix) (case-fold-search . t))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/ReviewsWidget/index.tsx"
-  "index.tsx"
-  'web-mode
-  '(abbrev-mode eldoc-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode tide-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  591
-  '(444 nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 24222 65531 149280 0) (buffer-file-coding-system . utf-8-unix) (case-fold-search . t))
-  '((mark-ring (614 498 467 477 444 373 1 492))))
-
-(desktop-create-buffer 208
-  nil
-  "ReviewsWidget"
-  'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode global-whitespace-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  352
-  '(nil nil)
-  t
-  '("/Users/guto/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/ReviewsWidget/")
-  '((buffer-display-time 24222 64373 815732 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  nil
-  "CourseDescriptionPage"
-  'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode global-whitespace-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  502
-  '(nil nil)
-  t
-  '("/Users/guto/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/")
-  '((buffer-display-time 24222 64369 173600 0))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/Users/guto/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/ReviewsWidget/MainWidget/index.tsx"
-  "index.tsx"
-  'web-mode
-  '(abbrev-mode eldoc-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode tide-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  388
-  '(338 nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 24222 62918 234300 0) (buffer-file-coding-system . utf-8-unix) (case-fold-search . t))
-  '((mark-ring (338 1 338))))
-
-(desktop-create-buffer 208
-  "/Users/guto/projects/futurelearn/app/javascript/components/Pages/CourseDescriptionPage/YotpoReviews/index.tsx"
-  "index.tsx"
-  'web-mode
-  '(abbrev-mode eldoc-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode tide-mode magit-file-mode smooth-scroll-mode smart-tab-mode guru-mode rainbow-delimiters-mode)
-  326
+  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-ff-cache-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode guto-bindings-minor-mode rainbow-delimiters-mode guru-mode)
+  508
   '(nil nil)
   nil
   nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 24222 61741 481289 0) (buffer-file-coding-system . utf-8-unix))
+  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 24535 56832 890113 0) (buffer-file-coding-system . utf-8-unix))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   nil
   "futurelearn"
   'dired-mode
-  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode global-whitespace-mode editorconfig-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode diff-hl-dired-mode)
-  790
+  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode global-whitespace-mode editorconfig-mode helm-ff-cache-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode guto-bindings-minor-mode diff-hl-dired-mode)
+  604
   '(nil nil)
   t
-  '("/Users/guto/projects/futurelearn/")
-  '((buffer-display-time 24222 61119 273239 0))
+  '("/Users/guto/projects/fl/futurelearn/")
+  '((buffer-display-time 24535 56677 898801 0))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/projects/coderelax/innotex/innotex/app/javascript/stylesheets/main.scss"
+  "main.scss"
+  'scss-mode
+  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-ff-cache-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode guto-bindings-minor-mode prettier-mode rainbow-delimiters-mode guru-mode rainbow-mode)
+  856
+  '(904 nil)
+  nil
+  nil
+  '((tab-width . 2) (indent-tabs-mode) (buffer-display-time 24535 56416 554961 0) (buffer-file-coding-system . undecided-unix) (fill-column . 80))
+  '((mark-ring (714 683 655 333 1 2643 1565 491))))
+
+(desktop-create-buffer 208
+  "/Users/guto/projects/coderelax/innotex/innotex/app/views/quotations/_comment_form.html.erb"
+  "_comment_form.html.erb"
+  'web-mode
+  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-ff-cache-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode guto-bindings-minor-mode rainbow-delimiters-mode)
+  502
+  '(314 nil)
+  nil
+  nil
+  '((buffer-display-time 24535 56220 797244 0) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (314 108 152 530 1))))
+
+(desktop-create-buffer 208
+  "/Users/guto/projects/coderelax/innotex/innotex/app/views/quotations/_comment.html.erb"
+  "_comment.html.erb"
+  'web-mode
+  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-ff-cache-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode guto-bindings-minor-mode rainbow-delimiters-mode)
+  142
+  '(106 nil)
+  nil
+  nil
+  '((buffer-display-time 24535 56073 525909 0) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (145 184 92 11))))
+
+(desktop-create-buffer 208
+  "/Users/guto/projects/coderelax/innotex/innotex/app/views/quotations/_job.html.erb"
+  "_job.html.erb"
+  'web-mode
+  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-ff-cache-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode guto-bindings-minor-mode rainbow-delimiters-mode)
+  1984
+  '(1845 t)
+  nil
+  nil
+  '((buffer-display-time 24535 55459 776594 0) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (1847 2317 328 322 160 151 82 1 756))))
+
+(desktop-create-buffer 208
+  "/Users/guto/projects/coderelax/innotex/innotex/app/models/comment.rb"
+  "comment.rb"
+  'enh-ruby-mode
+  '(abbrev-mode eldoc-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-ff-cache-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode guto-bindings-minor-mode rspec-verifiable-mode inf-ruby-minor-mode robe-mode rainbow-delimiters-mode guru-mode yard-mode)
+  99
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 24535 54966 42030 0) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/projects/coderelax/innotex/innotex/app/views/quotations/_form.html.erb"
+  "_form.html.erb"
+  'web-mode
+  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-ff-cache-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode guto-bindings-minor-mode rainbow-delimiters-mode)
+  2332
+  '(2314 nil)
+  nil
+  nil
+  '((buffer-display-time 24535 52788 604217 0) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (393 471))))
+
+(desktop-create-buffer 208
+  "/Users/guto/projects/coderelax/innotex/innotex/config/routes.rb"
+  "routes.rb"
+  'enh-ruby-mode
+  '(abbrev-mode eldoc-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-ff-cache-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode guto-bindings-minor-mode rspec-verifiable-mode inf-ruby-minor-mode robe-mode rainbow-delimiters-mode guru-mode yard-mode)
+  195
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 24535 52432 188562 0) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/projects/coderelax/innotex/innotex/app/models/quotation.rb"
+  "quotation.rb"
+  'enh-ruby-mode
+  '(abbrev-mode eldoc-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-ff-cache-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode guto-bindings-minor-mode rspec-verifiable-mode inf-ruby-minor-mode robe-mode rainbow-delimiters-mode guru-mode yard-mode)
+  198
+  '(776 t)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 24535 52062 521234 0) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/projects/coderelax/innotex/innotex/app/models/user.rb"
+  "user.rb"
+  'enh-ruby-mode
+  '(abbrev-mode eldoc-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-ff-cache-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode guto-bindings-minor-mode rspec-verifiable-mode inf-ruby-minor-mode robe-mode rainbow-delimiters-mode guru-mode yard-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 24535 37876 678571 0) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/guto/projects/coderelax/innotex/innotex/db/migrate/20201214163221_create_comments.rb"
+  "20201214163221_create_comments.rb"
+  'enh-ruby-mode
+  '(abbrev-mode eldoc-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode global-whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-ff-cache-mode helm-mode company-mode hl-todo-mode flycheck-mode TeX-PDF-mode yas-minor-mode override-global-mode magit-file-mode smooth-scroll-mode guto-bindings-minor-mode rspec-verifiable-mode inf-ruby-minor-mode robe-mode rainbow-delimiters-mode guru-mode yard-mode)
+  176
+  '(100 t)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 24535 52056 43167 0) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "innotex"
+  'dired-mode
+  '(abbrev-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode global-whitespace-mode editorconfig-mode helm-ff-cache-mode helm-mode company-mode TeX-PDF-mode yas-minor-mode override-global-mode smooth-scroll-mode guto-bindings-minor-mode diff-hl-dired-mode)
+  311
+  '(nil nil)
+  t
+  '("/Users/guto/projects/coderelax/innotex/innotex/")
+  '((buffer-display-time 24535 37249 723667 0))
   '((mark-ring nil)))
 

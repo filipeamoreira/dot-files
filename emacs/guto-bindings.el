@@ -148,11 +148,18 @@
 
     (global-set-key (kbd "C-c a") 'avy-goto-word-or-subword-1)
     (global-set-key (kbd "M-g M-g") 'avy-goto-line)
-    (global-set-key (kbd "M-g g") 'avy-goto-line))
-  )
+    (global-set-key (kbd "M-g g") 'avy-goto-line)
+    (global-set-key (kbd "M-SPC") 'cycle-spacing)
+    ;; https://karthinks.com/software/batteries-included-with-emacs/
+    (global-set-key (kbd "M-u") 'upcase-dwim)
+    (global-set-key (kbd "M-l") 'downcase-dwim)
+    (global-set-key (kbd "M-c") 'capitalize-dwim)
+    (global-set-key (kbd "C-c t") 'vterm-other-window)
+
+    ))
 
 (define-minor-mode guto-bindings-minor-mode
-  "A minor mode with my personal key bindings"
+  "A minor modep with my personal key bindings"
   :init-value t
   :lighter "guto-bindings")
 

@@ -6,6 +6,9 @@
    ("org"         . "https://orgmode.org/elpa/")
    ("gnu"         . "https://elpa.gnu.org/packages/")))
 
+;; https://www.reddit.com/r/emacs/comments/aug9in/failed_to_verify_signature_archivecontentssig/eh81iuz/
+(setq package-check-signature 'nil)
+
 ;; Set default theme
 (setq solarized-use-variable-pitch nil);; Don't change the font for some headings and titles
 (setq solarized-scale-org-headlines nil);; Don't change size of org-mode headlines (but keep other size-changes)
@@ -13,11 +16,11 @@
 (setq prelude-theme 'solarized-dark)
 
 ;; Fonts
-(setq default-frame-alist '((font . "Source Code Pro-20")))
-(set-frame-font "Source Code Pro-20")
-(set-face-attribute 'default nil :font "Source Code Pro-20")
-(set-face-attribute 'fixed-pitch nil :font "Source Code Pro-20")
-(set-face-attribute 'variable-pitch nil :font "Source Sans Pro-20")
+(setq default-frame-alist '((font . "Source Code Pro-16")))
+(set-frame-font "Source Code Pro-16")
+(set-face-attribute 'default nil :font "Source Code Pro-16")
+(set-face-attribute 'fixed-pitch nil :font "Source Code Pro-16")
+(set-face-attribute 'variable-pitch nil :font "Source Sans 3 VF-16")
 (set-face-attribute 'hebrew "SBL Hebrew")
 (set-face-attribute 'greek "SBL Greek")
 
