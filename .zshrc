@@ -49,7 +49,12 @@ alias emacs='/usr/local/opt/emacs/bin/emacsclient -c --no-wait'
 
 # Docker setup
 # https://github.com/docker/for-mac/issues/1948
-autoload -Uz compinit; compinit
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
 
 # https://github.com/junegunn/fzf
 # command-line fuzzy finder
@@ -104,3 +109,56 @@ if type brew &>/dev/null; then
   compinit
 fi
 
+# source: https://starship.rs/
+# eval "$(starship init zsh)"
+
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=239"
+
+youtube-dl_video_and_audio_best_no_mkv_merge () {
+  video_type=$(youtube-dl -F "$@" | grep "video only" | awk '{print $2}' | tail -n 1)
+  case $video_type in
+    mp4)
+      youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]' "$@";;
+    webm)
+      youtube-dl -f 'bestvideo[ext=webm]+bestaudio[ext=webm]' "$@";;
+    *)
+      echo "new best videoformat detected, please check it out! -> aborted";;
+  esac
+}
+
+## vterm configuration: https://github.com/akermu/emacs-libvterm
+vterm_printf(){
+    if [ -n "$TMUX" ]; then
+        # Tell tmux to pass the escape sequences through
+        # (Source: http://permalink.gmane.org/gmane.comp.terminal-emulators.tmux.user/1324)
+        printf "\ePtmux;\e\e]%s\007\e\\" "$1"
+    elif [ "${TERM%%-*}" = "screen" ]; then
+        # GNU screen (screen, screen-256color, screen-256color-bce)
+        printf "\eP\e]%s\007\e\\" "$1"
+ 1   else
+        printf "\e]%s\e\\" "$1"
+    fi
+}
+
+if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
+    alias clear='vterm_printf "51;Evterm-clear-scrollback";tput clear'
+fi
+
+autoload -U add-zsh-hook
+add-zsh-hook -Uz chpwd (){ print -Pn "\e]2;%m:%2~\a" }
+
+vterm_prompt_end() {
+    vterm_printf "51;A$(whoami)@$(hostname):$(pwd)";
+}
+setopt PROMPT_SUBST
+PROMPT=$PROMPT'%{$(vterm_prompt_end)%}'
+
+vterm_cmd() {
+    local vterm_elisp
+    vterm_elisp=""
+    while [ $# -gt 0 ]; do
+        vterm_elisp="$vterm_elisp""$(printf '"%s" ' "$(printf "%s" "$1" | sed -e 's|\\|\\\\|g' -e 's|"|\\"|g')")"
+        shift
+    done
+    vterm_printf "51;E$vterm_elisp"
+}

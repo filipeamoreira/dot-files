@@ -40,3 +40,6 @@ PATH="$HOME/.asdf/shims:$PATH"
 # brew info openssl
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
+
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=239"
+if [ -e /Users/guto/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/guto/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

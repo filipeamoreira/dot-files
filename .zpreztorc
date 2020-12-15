@@ -40,8 +40,8 @@ zstyle ':prezto:load' pmodule \
   'osx' \
   'ruby' \
   'ssh' \
-  'docker'
-
+  'docker' \
+  'autosuggestions'
 #
 # Editor
 #
