@@ -162,3 +162,6 @@ vterm_cmd() {
     done
     vterm_printf "51;E$vterm_elisp"
 }
+
+# Needed to only install `brew install mysql-client` without the need to have a full Mysql installation locally
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"

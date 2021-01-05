@@ -795,5 +795,7 @@
 
 (global-set-key (kbd "C-c t") 'vterm-other-window)
 
+(setq garbage-collection-messages t)
+
 (provide 'guto)
 ;;; guto.el ends here
