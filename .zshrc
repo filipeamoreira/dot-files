@@ -49,6 +49,7 @@ alias emacs='/usr/local/opt/emacs/bin/emacsclient -c --no-wait'
 
 # Docker setup
 # https://github.com/docker/for-mac/issues/1948
+# homebrew shell completion
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
@@ -60,23 +61,27 @@ fi
 # command-line fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# FZF config source: https://github.com/silvanocerza/dotfiles/blob/master/zsh/zshrc#L44-L55
-# Uses fd as default command showing also hidden files
-FZF_DEFAULT_COMMAND="fd --hidden"
+# Setting fd as the default source for fzf
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 # ctrl+o opens Visual Studio Code on current folder or file
 FZF_DEFAULT_OPTS="--bind='ctrl-o:execute-silent(code {})+abort'"
 
-# If current selection is a text file shows its content,
-# if it's a directory shows its content, the rest is ignored
-FZF_CTRL_T_OPTS="--preview-window wrap --preview '
-if [[ -f {} ]]; then
-    file --mime {} | grep -q \"text\/.*;\" && cat {} || (tput setaf 1; file --mime {})
-elif [[ -d {} ]]; then
-    ls -ls
-else;
-    tput setaf 1; echo YOU ARE NOT SUPPOSED TO SEE THIS!
-fi'"
+# To apply the command to CTRL-T as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# Use fd (https://github.com/sharkdp/fd) instead of the default find
+# command for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}
 
 # autojump
 #   Use `j`
