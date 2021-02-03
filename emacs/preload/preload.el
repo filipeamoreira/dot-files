@@ -16,11 +16,11 @@
 (setq prelude-theme 'solarized-dark)
 
 ;; Fonts
-(setq default-frame-alist '((font . "Source Code Pro-16")))
-(set-frame-font "Source Code Pro-16")
-(set-face-attribute 'default nil :font "Source Code Pro-16")
-(set-face-attribute 'fixed-pitch nil :font "Source Code Pro-16")
-(set-face-attribute 'variable-pitch nil :font "Source Sans 3 VF-16")
+(setq default-frame-alist '((font . "Source Code Pro-18")))
+(set-frame-font "Source Code Pro-18")
+(set-face-attribute 'default nil :font "Source Code Pro-18")
+(set-face-attribute 'fixed-pitch nil :font "Source Code Pro-18")
+(set-face-attribute 'variable-pitch nil :font "Source Sans 3 VF-18")
 (set-face-attribute 'hebrew "SBL Hebrew")
 (set-face-attribute 'greek "SBL Greek")
 
