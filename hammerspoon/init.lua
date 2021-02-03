@@ -13,14 +13,13 @@ hs.grid.setMargins({0, 0})
 -- Shortcut to commonly used applications
 hs.hotkey.bind(hyper, 'E', function () hs.application.launchOrFocus("Emacs") end)
 hs.hotkey.bind(hyper, 'T', function () hs.application.launchOrFocus("Alacritty") end)
+hs.hotkey.bind(hyper, 'A', function () hs.application.launchOrFocus("Firefox") end)
 hs.hotkey.bind(hyper, 'B', function () hs.application.launchOrFocus("Firefox Developer Edition") end)
+hs.hotkey.bind(hyper, 'N', function () hs.application.launchOrFocus("Firefox Nightly") end)
 hs.hotkey.bind(hyper, 'O', function () hs.application.launchOrFocus("Chromium") end)
-hs.hotkey.bind(hyper, 'A', function () hs.application.launchOrFocus("Google Chrome Canary") end)
 hs.hotkey.bind(hyper, 'C', function () hs.application.launchOrFocus("Google Chrome") end)
 hs.hotkey.bind(hyper, 'K', function () hs.application.launchOrFocus("Slack") end)
--- hs.hotkey.bind(hyper, 'M', function () hs.application.launchOrFocus("Thunderbird") end)
-hs.hotkey.bind(hyper, 'N', function () hs.application.launchOrFocus("Firefox Nightly") end)
-hs.hotkey.bind(hyper, 'V', function () hs.application.launchOrFocus("Visual Studio Code - Insiders") end)
+hs.hotkey.bind(hyper, 'V', function () hs.application.launchOrFocus("VSCodium") end)
 
 
 -- Notify the config has been loaded
