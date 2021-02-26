@@ -4,3 +4,6 @@ emacs-starter-kit
 .bundle
 /emacs/persistence/
 /.config/karabiner/automatic_backups/
+/emacs/elpa/**/**
+/emacs/var/**/**
+/emacs/straight/**/**
