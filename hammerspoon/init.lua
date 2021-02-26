@@ -21,6 +21,5 @@ hs.hotkey.bind(hyper, 'C', function () hs.application.launchOrFocus("Google Chro
 hs.hotkey.bind(hyper, 'K', function () hs.application.launchOrFocus("Slack") end)
 hs.hotkey.bind(hyper, 'V', function () hs.application.launchOrFocus("VSCodium") end)
 
-
 -- Notify the config has been loaded
 hs.alert.show('Hammerspoon config loaded')

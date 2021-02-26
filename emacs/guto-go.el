@@ -28,3 +28,9 @@
   :ensure t
   :commands yas-minor-mode
   :hook (go-mode . yas-minor-mode))
+
+;; Disable whitespace minor mode in go mode
+(add-hook 'go-mode-hook
+          (lambda ()
+            (add-hook 'before-save-hook 'gofmt-before-save)
+            (setq whitespace-style '(face empty trailing lines-tail))))

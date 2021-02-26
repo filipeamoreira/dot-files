@@ -120,6 +120,7 @@
     ;; smart-tab ;; broken on 20200908
     smartparens
     smooth-scroll
+    shackle
     shell-pop
     solarized-theme
     speed-type
@@ -171,7 +172,7 @@
 ;; Prettier global setup
 ;; https://github.com/jscheid/prettier.el
 
-(add-hook 'after-init-hook #'global-prettier-mode)
+;; (add-hook 'after-init-hook #'global-prettier-mode)
 
 ;; (dir-locals-set-class-variables 'prettier-js
 ;;                                 '((js-mode . ((eval . (prettier-mode t))))
@@ -179,11 +180,11 @@
 
 ;; (dir-locals-set-directory-class "/Users/guto/projects/fl/futurelearn/" 'prettier-js)
 
-(setq prettier-enabled-parsers '(css
-                                 json
-                                 scss
-                                 toml
-                                 typescript))
+;; (setq prettier-enabled-parsers '(css
+;;                                  json
+;;                                  scss
+;;                                  toml
+;;                                  typescript))
 
 ;; (dir-locals-set-class-variables 'prettier-js
 ;;                                 '((typescript . ((eval . (prettier-mode t))))
@@ -211,6 +212,11 @@
   ;; (add-hook 'web-mode-hook #'(lambda ()
   ;;                              (enable-minor-mode
   ;;                               '("\\.jsx?\\'" . prettier-js-mode)))))
+
+;; https://github.com/raxod502/apheleia
+;; Code formatter tooling
+(straight-use-package '(apheleia :host github :repo "raxod502/apheleia"))
+;; (apheleia-global-mode +1)
 
 ;; github.com/akermu/emacs-libvterm
 (use-package vterm
@@ -762,8 +768,10 @@
  '(markdown-command "/usr/local/bin/pandoc"))
 
 ;; Disable whitespace cleanup on save
-;; (setq prelude-clean-whitespace-on-save nil)
-;; (setq prelude-whitespace nil)
+(setq prelude-clean-whitespace-on-save nil)
+(setq prelude-whitespace nil)
+(setq prelude-format-on-save nil)
+;; ((lambda nil (run-hooks 'prelude-prog-mode-hook)) prelude-turn-off-whitespace)
 
 ;; (whitespace-mode +1)
 
