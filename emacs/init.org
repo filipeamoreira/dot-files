@@ -6,59 +6,15 @@
 #+LATEX_HEADER: \usepackage[utf8]{inputenc}
 #+PROPERTY: header-args :tangle yes
 
-* About
 
-  This is an Emacs configuration file written in [[http://orgmode.org][Org mode]]. It is an attempt
-  to keep my =~/.emacs.d= tidy, but still be able to keep it all in one
-  file. I aim to briefly explain all my configurations as I go along!
+* Initial boostrapping 
+** Meta Emacs org-mode configuration
 
-  I would not recommend using this configuration /as-is/, because it
-  probably contains a lot you don't really need. I do, however, hope people
-  find some golden nuggets that they can smuggle into their own configs.
+Changes are made directly to =init.org= and are replicated automatically to =init.el=. 
+The current =init.el= file does the bootstrapping of the configuration. This files will be changed, to reflect the actual configuration from =init.org= but these changes should not be tracked on git.
 
-  If you really do want to try this config out, this is how I'd go about it:
-
-  Clone the repo.
-  #+BEGIN_SRC sh :tangle no
-  git clone https://github.com/larstvei/dot-emacs
-  #+END_SRC
-
-  Backup your old =~/.emacs.d= (if necessary).
-  #+BEGIN_SRC sh :tangle no
-  mv ~/.emacs.d ~/.emacs.d-bak
-  #+END_SRC
-
-  Backup your old =~/.emacs=-file (if necessary).
-  #+BEGIN_SRC sh :tangle no
-  mv ~/.emacs ~/.emacs-bak
-  #+END_SRC
-
-  And finally
-  #+BEGIN_SRC sh :tangle no
-  mv dot-emacs ~/.emacs.d
-  #+END_SRC
-
-  On first run it should install a bunch of packages (this might take a
-  while), and you might have to restart your Emacs the first time. If you
-  experience bugs, please let me know!
-* Configurations
-** Meta
-
-   All changes to the configuration should be done in =init.org=, *not* in
-   =init.el=. Any changes in the =init.el= will be overwritten by saving
-   =init.org=. The =init.el= in this repo should not be tracked by git, and
-   is replaced the first time Emacs is started (assuming it has been renamed
-   to =~/.emacs.d=).
-
-   Emacs can't load =.org=-files directly, but =org-mode= provides functions
-   to extract the code blocks and write them to a file. There are multiple
-   ways of handling this; like suggested by [[http://emacs.stackexchange.com/questions/3143/can-i-use-org-mode-to-structure-my-emacs-or-other-el-configuration-file][this StackOverflow post]], one
-   could just use =org-babel-load-file=, but I had problems with
-   byte-compilation. Previously I tracked both the =org.=- and =el.=-files,
-   but the git commits got a little messy. So here is a new approach.
-
-   When this configuration is loaded for the first time, the ~init.el~ is
-   the file that is loaded. It looks like this:
+When this configuration is loaded for the first time, the ~init.el~ is
+the file that is loaded. It looks like this:
 
    #+BEGIN_SRC emacs-lisp :tangle no
    ;; This file replaces itself with the actual configuration at first run.
@@ -96,8 +52,12 @@
    header. The first line of the configuration is as follows:
 
    #+BEGIN_SRC emacs-lisp
-   ;;; -*- lexical-binding: t -*-
+	  ;;; -*- lexical-binding: t -*-
    #+END_SRC
+
+   #+begin_src emacs-lisp
+   (global-auto-revert-mode 1)
+   #+end_src
 
    The =init.el= should (after the first run) mirror the source blocks in
    the =init.org=. We can use =C-c C-v t= to run =org-babel-tangle=, which
@@ -109,17 +69,30 @@
    =org=-document after changes.
 
    #+BEGIN_SRC emacs-lisp
-   (defun tangle-init ()
-     "If the current buffer is 'init.org' the code-blocks are
-   tangled, and the tangled file is compiled."
-     (when (equal (buffer-file-name)
-                  (expand-file-name (concat user-emacs-directory "init.org")))
-       ;; Avoid running hooks when tangling.
-       (let ((prog-mode-hook nil))
-         (org-babel-tangle)
-         (byte-compile-file (concat user-emacs-directory "init.el")))))
+     (defun guto/tangle-init ()
+       "If the current buffer is 'init.org' the code-blocks are
+		     tangled, and the tangled file is compiled."
+       (interactive)
+       (when (equal (buffer-name) "init.org")
+	 (org-babel-tangle)
+	 (byte-compile-file (concat user-emacs-directory "init.el"))
+	 (message "init.org file tangled into init.el")
+	 )
+       )
 
-   (add-hook 'after-save-hook 'tangle-init)
+	;; (when (equal (buffer-name) "init.org")
+     ;;      ;; Avoid running hooks when tangling.
+     ;;      (;;let ((prog-mode-hook nil))
+     ;;        (org-babel-tangle)
+     ;;        (byte-compile-file (concat user-emacs-directory "init.el"))
+     ;;        (message "init.org file tangled into init.el")
+
+     ;;        )
+     ;; (message "else block of 'when call")
+
+     (add-hook 'org-mode-hook 
+	       (lambda () 
+		 (add-hook 'after-save-hook 'guto/tangle-init nil 'make-it-local)))
    #+END_SRC
 
    I'd like to keep a few settings private, so we load a =private.el= if it
@@ -149,6 +122,9 @@
    #+END_SRC
 
 * Welcome!
+
+This is an Emacs configuration built with literate programming by using Org mode code 
+blocks as the source of the Emacs configuration. This is based on the [https://github.com/larstvei/dot-emacs](Lars Tveito's emacs configuration).
 
 The following variables are used to tweak some of the configuration pieces for use in the live streams so you might need to adjust them for your local machine if you try to use this configuration directly.
 
@@ -532,14 +508,14 @@ This is an example of using [[https://github.com/abo-abo/hydra][Hydra]] to desig
 
 #+begin_src emacs-lisp
 
-  (use-package hydra
-    :defer t)
+  ;;(use-package hydra
+  ;;  :defer t)
 
-  (defhydra hydra-text-scale (:timeout 4)
-    "scale text"
-    ("j" text-scale-increase "in")
-    ("k" text-scale-decrease "out")
-    ("f" nil "finished" :exit t))
+  ;;(defhydra hydra-text-scale (:timeout 4)
+  ;;  "scale text"
+  ;;  ("j" text-scale-increase "in")
+  ;;  ("k" text-scale-decrease "out")
+  ;;  ("f" nil "finished" :exit t))
 
 ;;  (guto/leader-keys
 ;;    "ts" '(hydra-text-scale/body :which-key "scale text"))
@@ -789,25 +765,6 @@ You can add more =src= block templates below by copying one of the lines and cha
 
 #+end_src
 
-** Auto-tangle Configuration Files
-
-This snippet adds a hook to =org-mode= buffers so that =guto/org-babel-tangle-config= gets executed each time such a buffer gets saved.  This function checks to see if the file being saved is the emacs.org file you're looking at right now, and if so, automatically exports the configuration here to the associated output files.
-
-#+begin_src emacs-lisp
-
-  ;; Automatically tangle our emacs.org config file when we save it
-  ;;(defun guto/org-babel-tangle-config ()
-    ;;(interactive)
-  ;;  (when (string-equal (file-name-directory (buffer-file-name))
-  ;;                      (expand-file-name user-emacs-directory))
-      ;; Dynamic scoping to the rescue
-   ;;   (let ((org-confirm-babel-evaluate nil))
-   ;;     (org-babel-tangle))))
-
-  ;;(add-hook 'org-mode-hook (lambda () (add-hook 'after-save-hook #'guto/org-babel-tangle-config)))
-
-#+end_src
-
 * Development
 ** Languages
 
@@ -885,29 +842,29 @@ Try these commands with =M-x=:
 
 #+end_src
 
-*** Debugging with dap-mode
+*** TODO Debugging with dap-mode
 
 [[https://emacs-lsp.github.io/dap-mode/][dap-mode]] is an excellent package for bringing rich debugging capabilities to Emacs via the [[https://microsoft.github.io/debug-adapter-protocol/][Debug Adapter Protocol]].  You should check out the [[https://emacs-lsp.github.io/dap-mode/page/configuration/][configuration docs]] to learn how to configure the debugger for your language.  Also make sure to check out the documentation for the debug adapter to see what configuration parameters are available to use for your debug templates!
 
 #+begin_src emacs-lisp
 
-  (use-package dap-mode
+  ;;(use-package dap-mode
     ;; Uncomment the config below if you want all UI panes to be hidden by default!
     ;; :custom
     ;; (lsp-enable-dap-auto-configure nil)
     ;; :config
     ;; (dap-ui-mode 1)
-    :commands dap-debug
-    :config
+  ;;  :commands dap-debug
+  ;;  :config
     ;; Set up Node debugging
-    (require 'dap-node)
-    (dap-node-setup) ;; Automatically installs Node debug adapter if needed
+  ;;  (require 'dap-node)
+  ;;  (dap-node-setup) ;; Automatically installs Node debug adapter if needed
 
     ;; Bind `C-c l d` to `dap-hydra` for easy access
-    (general-define-key
-      :keymaps 'lsp-mode-map
-      :prefix lsp-keymap-prefix
-      "d" '(dap-hydra t :wk "debugger")))
+  ;;  (general-define-key
+  ;;    :keymaps 'lsp-mode-map
+  ;;    :prefix lsp-keymap-prefix
+  ;;    "d" '(dap-hydra t :wk "debugger")))
 
 #+end_src
 
@@ -1276,14 +1233,14 @@ For more thoughts on Eshell, check out these articles by Pierre Neidhardt:
     (add-to-list 'eshell-output-filter-functions 'eshell-truncate-buffer)
 
     ;; Bind some useful keys for evil-mode
-    (evil-define-key '(normal insert visual) eshell-mode-map (kbd "C-r") 'counsel-esh-history)
-    (evil-define-key '(normal insert visual) eshell-mode-map (kbd "<home>") 'eshell-bol)
-    (evil-normalize-keymaps)
+    ;;(evil-define-key '(normal insert visual) eshell-mode-map (kbd "C-r") 'counsel-esh-history)
+    ;;(evil-define-key '(normal insert visual) eshell-mode-map (kbd "<home>") 'eshell-bol)
+    ;;(evil-normalize-keymaps)
 
     (setq eshell-history-size         10000
-          eshell-buffer-maximum-lines 10000
-          eshell-hist-ignoredups t
-          eshell-scroll-to-bottom-on-input t))
+	  eshell-buffer-maximum-lines 10000
+	  eshell-hist-ignoredups t
+	  eshell-scroll-to-bottom-on-input t))
 
   (use-package eshell-git-prompt
     :after eshell)
