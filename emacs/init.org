@@ -169,9 +169,17 @@ Emacs has a built in package manager but it doesn't make it easy to automaticall
   ;; Initialize package sources
   (require 'package)
 
-  (setq package-archives '(("melpa" . "https://melpa.org/packages/")
-                           ("org" . "https://orgmode.org/elpa/")
-                           ("elpa" . "https://elpa.gnu.org/packages/")))
+;; using Github based mirros: https://github.com/d12frosted/elpa-mirror
+(setq package-archives
+      '(("melpa" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/melpa/")
+        ("org"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/org/")
+        ("gnu"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/gnu/")))
+
+
+;;(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+;;                           ("org" . "https://orgmode.org/elpa/")
+;;                           ;;("elpa" . "https://elpa.gnu.org/packages/")
+;;                                                      ))
 
   (package-initialize)
   (unless package-archive-contents
@@ -1001,6 +1009,21 @@ You can use the pyvenv package to use =virtualenv= environments in Emacs.  The =
     (pyvenv-mode 1))
 
 #+end_src
+
+*** Ruby
+
+#+begin_src emacs-lisp
+(use-package enh-ruby-mode
+  :mode
+  (("\\.rb\\'" . ruby-mode)))
+
+(use-package robe
+  :config
+  (push 'company-robe company-backends))
+
+(use-package rinari)
+#+end_src
+
 
 ** Company Mode
 
