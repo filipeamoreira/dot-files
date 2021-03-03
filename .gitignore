@@ -7,3 +7,4 @@ emacs-starter-kit
 /emacs/elpa/**/**
 /emacs/var/**/**
 /emacs/straight/**/**
+/emacs/init.elc
