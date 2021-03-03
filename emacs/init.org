@@ -6,7 +6,6 @@
 #+LATEX_HEADER: \usepackage[utf8]{inputenc}
 #+PROPERTY: header-args :tangle yes
 
-
 * Initial boostrapping 
 ** Meta Emacs org-mode configuration
 
@@ -773,11 +772,9 @@ You can add more =src= block templates below by copying one of the lines and cha
 
 #+end_src
 
-* Development
-** Languages
+* Languages
 
-*** IDE Features with lsp-mode
-
+** IDE Features with lsp-mode
 **** lsp-mode
 
 We use the excellent [[https://emacs-lsp.github.io/lsp-mode/][lsp-mode]] to enable IDE-like functionality for many different programming languages via "language servers" that speak the [[https://microsoft.github.io/language-server-protocol/][Language Server Protocol]].  Before trying to set up =lsp-mode= for a particular language, check out the [[https://emacs-lsp.github.io/lsp-mode/page/languages/][documentation for your language]] so that you can learn which language servers are available and how to install them.
@@ -876,7 +873,7 @@ Try these commands with =M-x=:
 
 #+end_src
 
-*** TypeScript
+** TypeScript
 
 This is a basic configuration for the TypeScript language so that =.ts= files activate =typescript-mode= when opened.  We're also adding a hook to =typescript-mode-hook= to call =lsp-deferred= so that we activate =lsp-mode= to get LSP features every time we edit TypeScript code.
 
@@ -900,22 +897,8 @@ This is a basic configuration for the TypeScript language so that =.ts= files ac
     (setq flycheck-check-syntax-automatically '(save mode-enabled))
     (eldoc-mode +1)
     (tide-hl-identifier-mode +1)
-    (company-mode +1))
-
-  (use-package company
-    :ensure t
-    :config
-    (setq company-show-numbers t)
-    (setq company-tooltip-align-annotations t)
-    (setq company-tooltip-flip-when-above t)
-    (global-company-mode))
-
-  (use-package company-quickhelp
-    :ensure t
-    :init
-    (company-quickhelp-mode 1)
-    (use-package pos-tip
-      :ensure t))
+    ;;(company-mode +1)
+)
 
   (use-package web-mode
     :ensure t
@@ -969,7 +952,7 @@ npm install -g typescript-language-server typescript
 
 This will install the [[https://github.com/theia-ide/typescript-language-server][typescript-language-server]] and the TypeScript compiler package.
 
-*** Python
+** Python
 
 We use =lsp-mode= and =dap-mode= to provide a more complete development environment for Python in Emacs.  Check out [[https://emacs-lsp.github.io/lsp-mode/page/lsp-pyls/][the =pyls= configuration]] in the =lsp-mode= documentation for more details.
 
@@ -992,9 +975,10 @@ There are a number of other language servers for Python so if you find that =pyl
     ;; NOTE: Set these if Python 3 is called "python3" on your system!
     ;; (python-shell-interpreter "python3")
     ;; (dap-python-executable "python3")
-    (dap-python-debugger 'debugpy)
-    :config
-    (require 'dap-python))
+    ;;(dap-python-debugger 'debugpy)
+    ;;:config
+    ;;(require 'dap-python)
+)
 
 
 #+end_src
@@ -1023,8 +1007,12 @@ You can use the pyvenv package to use =virtualenv= environments in Emacs.  The =
 
 (use-package rinari)
 #+end_src
+** YAML
 
-
+#+begin_src emacs-lisp
+(use-package yaml-mode)
+#+end_src
+* Development
 ** Company Mode
 
 [[http://company-mode.github.io/][Company Mode]] provides a nicer in-buffer completion interface than =completion-at-point= which is more reminiscent of what you would expect from an IDE.  We add a simple configuration to make the keybindings a little more useful (=TAB= now completes the selection and initiates completion at the current location if needed).
@@ -1041,11 +1029,21 @@ We also use [[https://github.com/sebastiencs/company-box][company-box]] to furth
           (:map lsp-mode-map
            ("<tab>" . company-indent-or-complete-common))
     :custom
-    (company-minimum-prefix-length 1)
-    (company-idle-delay 0.0))
+    (company-minimum-prefix-length 2)
+    (company-idle-delay 0.5)
+    (company-show-numbers t)
+    (company-tooltip-align-annotations t)
+    (company-tooltip-flip-when-above t))
 
   (use-package company-box
     :hook (company-mode . company-box-mode))
+
+  (use-package company-quickhelp
+    :ensure t
+    :init
+    (company-quickhelp-mode 1)
+    (use-package pos-tip
+      :ensure t))
 
 #+end_src
 
