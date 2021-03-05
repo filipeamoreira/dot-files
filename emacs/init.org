@@ -165,33 +165,45 @@ Emacs has a built in package manager but it doesn't make it easy to automaticall
 
 #+begin_src emacs-lisp
 
-  ;; Initialize package sources
-  (require 'package)
+        ;; Initialize package sources
+        (require 'package)
 
-;; using Github based mirros: https://github.com/d12frosted/elpa-mirror
-(setq package-archives
-      '(("melpa" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/melpa/")
-        ("org"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/org/")
-        ("gnu"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/gnu/")))
+      ;; using Github based mirros: https://github.com/d12frosted/elpa-mirror
+      (setq package-archives
+            '(("melpa" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/melpa/")
+              ("org"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/org/")
+              ("gnu"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/gnu/")))
 
 
-;;(setq package-archives '(("melpa" . "https://melpa.org/packages/")
-;;                           ("org" . "https://orgmode.org/elpa/")
-;;                           ;;("elpa" . "https://elpa.gnu.org/packages/")
-;;                                                      ))
+      ;; (setq package-archives
+      ;;       '(("melpa" . "https://melpa.org/packages/")
+      ;;         ("org"   . "https://orgmode.org/elpa/")
+      ;;         ("elpa"  . "https://elpa.gnu.org/packages/")))
 
-  (package-initialize)
-  (unless package-archive-contents
-    (package-refresh-contents))
+         (package-initialize)
 
-    ;; Initialize use-package on non-Linux platforms
-  (unless (package-installed-p 'use-package)
-    (straight-use-package 'use-package))
+        (unless package-archive-contents
+          (package-refresh-contents))
 
-  (require 'use-package)
-  (setq use-package-always-ensure t)
-  ;; (setq straight-use-package-by-default t) ;; this defaults to using straight.el to install files
+          ;; Initialize use-package on non-Linux platforms
+        (unless (package-installed-p 'use-package)
+          (straight-use-package 'use-package))
 
+        (require 'use-package)
+        (setq use-package-always-ensure t)
+        ;; (setq straight-use-package-by-default t) ;; this defaults to using straight.el to install files
+
+  (use-package exec-path-from-shell
+    :ensure t
+    :if (memq window-system '(mac ns))
+    :config
+    (setq exec-path-from-shell-arguments '("-l"))
+    (exec-path-from-shell-initialize)
+    (exec-path-from-shell-copy-envs
+     '("GOPATH" "GO111MODULE" "GOPROXY"
+       "NPMBIN" "LC_ALL" "LANG" "LC_TYPE"
+       "SSH_AGENT_PID" "SSH_AUTH_SOCK" "SHELL"
+       "JAVA_HOME")))
 #+end_src
 
 ** Automatic Package Updates
@@ -305,34 +317,34 @@ This section configures basic UI settings that remove unneeded elements to make 
 
 #+begin_src emacs-lisp
 
-  (setq inhibit-startup-message t)
+   (setq inhibit-startup-message t)
 
-  (scroll-bar-mode -1)        ; Disable visible scrollbar
-  (tool-bar-mode -1)          ; Disable the toolbar
-  (tooltip-mode -1)           ; Disable tooltips
-  (set-fringe-mode 10)        ; Give some breathing room
+   (scroll-bar-mode -1)        ; Disable visible scrollbar
+   (tool-bar-mode -1)          ; Disable the toolbar
+   (tooltip-mode -1)           ; Disable tooltips
+   (set-fringe-mode 10)        ; Give some breathing room
 
-  (menu-bar-mode -1)            ; Disable the menu bar
+   (menu-bar-mode -1)            ; Disable the menu bar
 
-  ;; Set up the visible bell
+   ;; Set up the visible bell
   (setq visible-bell t)
 
-  (column-number-mode)
-  (global-display-line-numbers-mode t)
+   (column-number-mode)
+   (global-display-line-numbers-mode t)
 
-  ;; Set frame transparency
-  ;; (set-frame-parameter (selected-frame) 'alpha guto/frame-transparency)
-  ;; (add-to-list 'default-frame-alist `(alpha . ,guto/frame-transparency))
-  (set-frame-parameter (selected-frame) 'fullscreen 'maximized)
-  (add-to-list 'default-frame-alist '(fullscreen . maximized))
+   ;; Set frame transparency
+   ;; (set-frame-parameter (selected-frame) 'alpha guto/frame-transparency)
+   ;; (add-to-list 'default-frame-alist `(alpha . ,guto/frame-transparency))
+   (set-frame-parameter (selected-frame) 'fullscreen 'maximized)
+   (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-  ;; Disable line numbers for some modes
-  (dolist (mode '(org-mode-hook
-                  term-mode-hook
-                  shell-mode-hook
-                  treemacs-mode-hook
-                  eshell-mode-hook))
-    (add-hook mode (lambda () (display-line-numbers-mode 0))))
+   ;; Disable line numbers for some modes
+   (dolist (mode '(org-mode-hook
+                   term-mode-hook
+                   shell-mode-hook
+                   treemacs-mode-hook
+                   eshell-mode-hook))
+     (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 #+end_src
 
@@ -342,44 +354,61 @@ These are my changes to the default keybidings for emacs.
 
 #+begin_src emacs-lisp
 
-;; Make ESC quit prompts
-(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+  ;; Make ESC quit prompts
+  (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
-(defun guto/eval-and-replace ()
-  "Replace the preceding sexp with its value."
-  (interactive)
-  (backward-kill-sexp)
-  (prin1 (eval (read (current-kill 0)))
-         (current-buffer)))
+  (defun guto/eval-and-replace ()
+    "Replace the preceding sexp with its value."
+    (interactive)
+    (backward-kill-sexp)
+    (prin1 (eval (read (current-kill 0)))
+           (current-buffer)))
 
-;; Should be able to eval-and-replace anywhere.
-(global-set-key (kbd "C-c e") 'guto/eval-and-replace)
+  ;; Should be able to eval-and-replace anywhere.
+  (global-set-key (kbd "C-c e") 'guto/eval-and-replace)
 
-;; Maps Ctrl-z to undo
-(global-set-key (kbd "C-z") 'undo)
+  ;; Maps Ctrl-z to undo
+  (global-set-key (kbd "C-z") 'undo)
 
-;; Maps Ctrl-x-m to M-x
-(global-set-key "\C-x\C-m" 'execute-extended-command)
-(global-set-key "\C-c\C-m" 'execute-extended-command)
+  ;; Maps Ctrl-x-m to M-x
+  (global-set-key "\C-x\C-m" 'execute-extended-command)
+  (global-set-key "\C-c\C-m" 'execute-extended-command)
 
-;; Maps Ctrl-c Ctrl-k to kill-region
-(global-set-key "\C-x\C-k" 'kill-region)
-(global-set-key "\C-c\C-k" 'kill-region)
+  ;; Maps Ctrl-c Ctrl-k to kill-region
+  (global-set-key "\C-x\C-k" 'kill-region)
+  (global-set-key "\C-c\C-k" 'kill-region)
 
-;; Maps Ctrl-w to kill backward word or kill region
-(global-set-key "\C-w"
-(lambda (arg)
-(interactive "p")
-(cond ((region-active-p) (kill-region (region-beginning) (region-end)))
-(t (backward-kill-word arg)))))
+  ;; Maps Ctrl-w to kill backward word or kill region
+  (global-set-key "\C-w"
+                  (lambda (arg)
+                    (interactive "p")
+                    (cond ((region-active-p) (kill-region (region-beginning) (region-end)))
+                          (t (backward-kill-word arg)))))
 
-(global-set-key (kbd "C-c /") 'comment-or-uncomment-region)
+  (global-set-key (kbd "C-c /") 'comment-or-uncomment-region)
 
-;; Window switching. (C-x o goes to the next window)
-(windmove-default-keybindings) ;; Shift+direction
-(global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1))) ;; back one
-(global-set-key (kbd "C-x C-o") (lambda () (interactive) (other-window 2))) ;; forward two
+  ;; Window switching. (C-x o goes to the next window)
+  ;;(use-package switch-window
+  ;;  :config
+  ;;  (global-set-key (kbd "C-x o") 'switch-window))
 
+  (use-package ace-window
+    :config
+    (global-set-key (kbd "M-o") 'ace-window)
+    (global-set-key (kbd "C-x o") 'ace-window))
+
+
+
+  ;;(windmove-default-keybindings) ;; Shift+direction
+  ;;(global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1))) ;; back one
+  ;;(global-set-key (kbd "C-x C-o") (lambda () (interactive) (other-window 2))) ;; forward two
+
+  ;; Replace region with yank
+  (delete-selection-mode t)
+
+  ;; Disable transient mark mode
+  ;; Use C-<SPC> C-<SPC> to temporally activate it.
+  (setq transient-mark-mode nil)
 #+end_src
 
 * UI Configuration
@@ -968,17 +997,17 @@ There are a number of other language servers for Python so if you find that =pyl
 
 #+begin_src emacs-lisp
 
-  (use-package python-mode
-    :ensure t
-    :hook (python-mode . lsp-deferred)
-    :custom
+;;  (use-package python-mode
+;;    :ensure t
+;;    :hook (python-mode . lsp-deferred)
+;;    :custom
     ;; NOTE: Set these if Python 3 is called "python3" on your system!
     ;; (python-shell-interpreter "python3")
     ;; (dap-python-executable "python3")
     ;;(dap-python-debugger 'debugpy)
     ;;:config
     ;;(require 'dap-python)
-)
+;;)
 
 
 #+end_src
@@ -987,25 +1016,40 @@ You can use the pyvenv package to use =virtualenv= environments in Emacs.  The =
 
 #+begin_src emacs-lisp
 
-  (use-package pyvenv
-    :after python-mode
-    :config
-    (pyvenv-mode 1))
+;;  (use-package pyvenv
+;;    :after python-mode
+;;    :config
+;;    (pyvenv-mode 1))
 
 #+end_src
 
 *** Ruby
 
 #+begin_src emacs-lisp
-(use-package enh-ruby-mode
-  :mode
-  (("\\.rb\\'" . ruby-mode)))
+    (use-package enh-ruby-mode
+      :mode
+      (("\\.rb\\'" . ruby-mode)))
 
-(use-package robe
-  :config
-  (push 'company-robe company-backends))
+    (use-package robe
+      :hook (enh-ruby-mode)
+      :after company
+      :config
+      (add-to-list 'company-backends 'company-robe))
 
-(use-package rinari)
+  (eval-after-load 'company
+    '(push 'company-robe company-backends))
+
+    (use-package rinari
+      :hook (ruby-mode))
+
+    (use-package enh-ruby-mode
+      :hook (ruby-mode))
+
+  (use-package inf-ruby
+    :hook (enh-ruby-mode))
+
+  (use-package projectile-rails)
+
 #+end_src
 ** YAML
 
@@ -1023,7 +1067,8 @@ We also use [[https://github.com/sebastiencs/company-box][company-box]] to furth
 
   (use-package company
     :after lsp-mode
-    :hook (lsp-mode . company-mode)
+    :hook ((lsp-mode . company-mode)
+           (lsp-mode . ruby-mode))
     :bind (:map company-active-map
            ("<tab>" . company-complete-selection))
           (:map lsp-mode-map
@@ -1195,12 +1240,12 @@ Make sure that you have the [[https://github.com/akermu/emacs-libvterm/#requirem
 
 #+begin_src emacs-lisp
 
-  (use-package vterm
-    :commands vterm
-    :config
-    (setq term-prompt-regexp "^[^#$%>\n]*[#$%>] *")  ;; Set this to match your custom shell prompt
-    ;;(setq vterm-shell "zsh")                       ;; Set this to customize the shell to launch
-    (setq vterm-max-scrollback 10000))
+ ;; (use-package vterm
+ ;;   :commands vterm
+ ;;   :config
+ ;;   (setq term-prompt-regexp "^[^#$%>\n]*[#$%>] *")  ;; Set this to match your custom shell prompt
+ ;;   ;;(setq vterm-shell "zsh")                       ;; Set this to customize the shell to launch
+ ;;   (setq vterm-max-scrollback 10000))
 
 #+end_src
 
@@ -1351,7 +1396,7 @@ Dired is a built-in file manager for Emacs that does some pretty amazing things!
     :ensure nil
     :commands (dired dired-jump)
     :bind (("C-x C-j" . dired-jump))
-    :custom ((dired-listing-switches "-agho --group-directories-first"))
+    ;;:custom ((dired-listing-switches "-agho --group-directories-first"))
     :config )
 
   (use-package dired-single
