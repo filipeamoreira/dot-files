@@ -86,13 +86,10 @@ _fzf_compgen_dir() {
 # autojump
 #   Use `j`
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-# asdf
-
-. $HOME/.asdf/asdf.sh
 
 # Prepend programming language binaries via ASDF shims
-PATH="$HOME/.asdf/bin:$PATH"
-PATH="$HOME/.asdf/shims:$PATH"
+# PATH="$HOME/.asdf/bin:$PATH"
+# PATH="$HOME/.asdf/shims:$PATH"
 # append completions to fpath
 #fpath=(${ASDF_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
@@ -169,19 +166,15 @@ vterm_cmd() {
 }
 
 # Needed to only install `brew install mysql-client` without the need to have a full Mysql installation locally
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+# export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
 # Erlang docs on iex
 export KERL_BUILD_DOCS="yes"
 
-# React Native Java setup
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
+# asdf
+. $HOME/.asdf/asdf.sh
 
 # asdf java
 . ~/.asdf/plugins/java/set-java-home.zsh
 # export JAVA_HOME="$( cd -P "$(dirname  $(dirname $(asdf which java) ))" && pwd )"
+
