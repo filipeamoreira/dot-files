@@ -132,8 +132,8 @@ The following variables are used to tweak some of the configuration pieces for u
   ;;       in Emacs and init.el will be generated automatically!
 
   ;; You will most likely need to adjust this font size for your system!
-  (defvar guto/default-font-size 220)
-  (defvar guto/default-variable-font-size 220)
+  (defvar guto/default-font-size 210)
+  (defvar guto/default-variable-font-size 210)
 
   ;; Make frame transparency overridable
   (defvar guto/frame-transparency '(90 . 90))
@@ -395,9 +395,8 @@ These are my changes to the default keybidings for emacs.
   (use-package ace-window
     :config
     (global-set-key (kbd "M-o") 'ace-window)
-    (global-set-key (kbd "C-x o") 'ace-window))
-
-
+    (global-set-key (kbd "C-x o") 'ace-window)
+    (global-set-key (kbd "C-c s") 'ace-swap-window))
 
   ;;(windmove-default-keybindings) ;; Shift+direction
   ;;(global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1))) ;; back one
