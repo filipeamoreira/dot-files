@@ -262,10 +262,13 @@ To install the fonts:
 * Color Theme
 
 #+begin_src emacs-lisp
+  ;; https://protesilaos.com/modus-themes/
+  ;;(use-package modus-themes
+  ;;  :init (load-theme 'modus-vivendi))
 
   ;; Solarized theme
   (use-package solarized-theme
-  :init (load-theme 'solarized-dark t))
+    :init (load-theme 'solarized-dark t))
 
 #+end_src
 * Startup Performance
@@ -317,35 +320,44 @@ This section configures basic UI settings that remove unneeded elements to make 
 
 #+begin_src emacs-lisp
 
-   (setq inhibit-startup-message t)
+  (setq inhibit-startup-message t)
 
-   (scroll-bar-mode -1)        ; Disable visible scrollbar
-   (tool-bar-mode -1)          ; Disable the toolbar
-   (tooltip-mode -1)           ; Disable tooltips
-   (set-fringe-mode 10)        ; Give some breathing room
+  (scroll-bar-mode -1)        ; Disable visible scrollbar
+  (tool-bar-mode -1)          ; Disable the toolbar
+  (tooltip-mode -1)           ; Disable tooltips
+  (set-fringe-mode 10)        ; Give some breathing room
+  ;; (menu-bar-mode -1)          ; Disable the menu bar
 
-   (menu-bar-mode -1)            ; Disable the menu bar
+  (setq-default cursor-type 'bar) ; change cursor type
 
-   ;; Set up the visible bell
+  ;; Set up the visible bell
   (setq visible-bell t)
 
-   (column-number-mode)
-   (global-display-line-numbers-mode t)
+  (column-number-mode)
+  (global-display-line-numbers-mode t)
 
-   ;; Set frame transparency
-   ;; (set-frame-parameter (selected-frame) 'alpha guto/frame-transparency)
-   ;; (add-to-list 'default-frame-alist `(alpha . ,guto/frame-transparency))
-   (set-frame-parameter (selected-frame) 'fullscreen 'maximized)
-   (add-to-list 'default-frame-alist '(fullscreen . maximized))
+  ;; Set frame transparency
+  ;; (set-frame-parameter (selected-frame) 'alpha guto/frame-transparency)
+  ;; (add-to-list 'default-frame-alist `(alpha . ,guto/frame-transparency))
+  (set-frame-parameter (selected-frame) 'fullscreen 'maximized)
+  (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-   ;; Disable line numbers for some modes
-   (dolist (mode '(org-mode-hook
-                   term-mode-hook
-                   shell-mode-hook
-                   treemacs-mode-hook
-                   eshell-mode-hook))
-     (add-hook mode (lambda () (display-line-numbers-mode 0))))
+  ;; Disable line numbers for some modes
+  (dolist (mode '(org-mode-hook
+                  term-mode-hook
+                  shell-mode-hook
+                  treemacs-mode-hook
+                  eshell-mode-hook))
+    (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
+#+end_src
+
+** Matching parens
+
+#+begin_src emacs-lisp
+  (setq show-paren-delay 0)      ; how long to wait?
+  (show-paren-mode t)            ; turn paren-mode on
+  (setq show-paren-style 'mixed) ; alternatives are 'parenthesis' and 'mixed'
 #+end_src
 
 * Keybinding Configuration
@@ -397,10 +409,6 @@ These are my changes to the default keybidings for emacs.
     (global-set-key (kbd "M-o") 'ace-window)
     (global-set-key (kbd "C-x o") 'ace-window)
     (global-set-key (kbd "C-c s") 'ace-swap-window))
-
-  ;;(windmove-default-keybindings) ;; Shift+direction
-  ;;(global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1))) ;; back one
-  ;;(global-set-key (kbd "C-x C-o") (lambda () (interactive) (other-window 2))) ;; forward two
 
   ;; Replace region with yank
   (delete-selection-mode t)
@@ -616,8 +624,8 @@ This section contains the basic configuration for =org-mode= plus the configurat
     :commands (org-capture org-agenda)
     :hook (org-mode . guto/org-mode-setup)
     :config
+    (setq org-startup-folded 'content)
     (setq org-ellipsis " ▾")
-
     (setq org-agenda-start-with-log-mode t)
     (setq org-log-done 'time)
     (setq org-log-into-drawer t)
@@ -736,6 +744,9 @@ This section contains the basic configuration for =org-mode= plus the configurat
     (guto/org-font-setup))
 
 #+end_src
+
+#+RESULTS:
+| #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | org-tempo-setup | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes | guto/org-mode-visual-fill | org-bullets-mode | guto/org-mode-setup | #[0 \300\301!\207 [display-line-numbers-mode 0] 2] | #[0 \300\301\302\303\304$\207 [add-hook after-save-hook guto/tangle-init nil make-it-local] 5] |
 
 *** Nicer Heading Bullets
 
@@ -901,22 +912,27 @@ Try these commands with =M-x=:
 
 #+end_src
 
+** Electric pair mode
+
+#+begin_src emacs-lisp
+  (electric-pair-mode)
+#+end_src
+
 ** TypeScript
 
 This is a basic configuration for the TypeScript language so that =.ts= files activate =typescript-mode= when opened.  We're also adding a hook to =typescript-mode-hook= to call =lsp-deferred= so that we activate =lsp-mode= to get LSP features every time we edit TypeScript code.
 
 #+begin_src emacs-lisp
-
   (use-package typescript-mode
-      :mode "\\.ts\\'"
-      :hook (typescript-mode . lsp-deferred)
-     :config
-      (setq typescript-indent-level 2))
+    :mode "\\.ts\\'"
+    :hook (typescript-mode . lsp-deferred)
+    :config
+    (setq typescript-indent-level 2))
 
   (use-package flycheck
-      :ensure t
+    :ensure t
     :config
-   (add-hook 'typescript-mode-hook 'flycheck-mode))
+    (add-hook 'typescript-mode-hook 'flycheck-mode))
 
   (defun setup-tide-mode ()
     (interactive)
@@ -925,14 +941,15 @@ This is a basic configuration for the TypeScript language so that =.ts= files ac
     (setq flycheck-check-syntax-automatically '(save mode-enabled))
     (eldoc-mode +1)
     (tide-hl-identifier-mode +1)
-    ;;(company-mode +1)
-)
+    (company-mode +1))
 
   (use-package web-mode
     :ensure t
     :mode (("\\.html?\\'" . web-mode)
            ("\\.tsx\\'" . web-mode)
-           ("\\.jsx\\'" . web-mode))
+           ("\\.jsx\\'" . web-mode)
+           ("\\.js\\'" . web-mode)
+           ("\\.ts\\'" . web-mode))
     :config
     (setq web-mode-markup-indent-offset 2
           web-mode-css-indent-offset 2
@@ -943,12 +960,14 @@ This is a basic configuration for the TypeScript language so that =.ts= files ac
           web-mode-enable-css-colorization t
           web-mode-enable-auto-pairing t
           web-mode-enable-comment-keywords t
-          web-mode-enable-current-element-highlight t
-          )
+          web-mode-enable-current-element-highlight t)
     (add-hook 'web-mode-hook
               (lambda ()
-                (when (string-equal "tsx" (file-name-extension buffer-file-name))
-                  (setup-tide-mode))))
+                (if (or
+                     (string-equal "tsx" (file-name-extension buffer-file-name))
+                     (string-equal "ts" (file-name-extension buffer-file-name)))
+                    (setup-tide-mode))))
+
     (flycheck-add-mode 'typescript-tslint 'web-mode))
 
   (use-package typescript-mode
@@ -958,15 +977,13 @@ This is a basic configuration for the TypeScript language so that =.ts= files ac
     (setq typescript-indent-level 2)
     (add-hook 'typescript-mode #'subword-mode))
 
-   (use-package tide
-     :init
-     :ensure t
-     :after (typescript-mode company flycheck)
-     :hook ((typescript-mode . tide-setup)
-            (typescript-mode . tide-hl-identifier-mode)
-     ))
-
-
+  (use-package tide
+    :init
+    :ensure t
+    :after (typescript-mode company flycheck)
+    :hook ((typescript-mode . tide-setup)
+           (typescript-mode . tide-hl-identifier-mode)
+           ))
 #+end_src
 
 
@@ -1433,6 +1450,19 @@ This is an example of configuring another non-Emacs application using org-mode. 
 
   value=<<the-value()>>
 
+#+end_src
+
+* TODO Elfeed
+
+#+begin_src emacs-lisp
+(use-package elfeed
+  :defer t
+  :bind ("C-x w" . elfeed)
+  :init (setf url-queue-timeout 30)
+  :config
+  (require 'feed-setup)
+  (push "-k" elfeed-curl-extra-arguments)
+  (setf bookmark-default-file (locate-user-emacs-file "local/bookmarks")))
 #+end_src
 
 * Runtime Performance
