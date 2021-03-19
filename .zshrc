@@ -40,6 +40,9 @@ alias dc='docker-compose'
 alias e='TERM=screen-16color /usr/local/opt/emacs/bin/emacsclient --tty -nw'
 alias emacs='/usr/local/opt/emacs/bin/emacsclient -c --no-wait'
 
+alias vpn-on="echo 'Application("Tunnelblick").connect("FL-VPN")' | osascript -l JavaScript"
+alias vpn-off="echo 'Application("Tunnelblick").disconnect("FL-VPN")' | osascript -l JavaScript"
+
 # test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
 # TODO: Fix this: https://github.com/NixOS/nix/issues/2925
