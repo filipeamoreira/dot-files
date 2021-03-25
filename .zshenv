@@ -34,6 +34,8 @@ export JAVA_HOME="/Users/guto/Library/Application Support/JetBrains/Toolbox/apps
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 
+export DOTNET_CLI_TELEMETRY_OPTOUT=true
+
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=239"
 
 if [ -e /Users/guto/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/guto/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
