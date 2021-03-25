@@ -865,8 +865,10 @@ This package is built on the [[https://github.com/Alexander-Miller/treemacs][tre
 
 #+begin_src emacs-lisp
 
-  (use-package lsp-treemacs
-    :after lsp)
+        (use-package lsp-treemacs
+          :after lsp
+          :commands lsp-treemacs-errors-list
+          )
 
 #+end_src
 
@@ -884,6 +886,12 @@ Try these commands with =M-x=:
   (use-package lsp-ivy
     :after lsp)
 
+#+end_src
+
+**** helm-lsp
+
+#+begin_src emacs-lisp
+(use-package helm-lsp :commands helm-lsp-workspace-symbol)
 #+end_src
 
 *** TODO Debugging with dap-mode
@@ -923,18 +931,7 @@ Try these commands with =M-x=:
 This is a basic configuration for the TypeScript language so that =.ts= files activate =typescript-mode= when opened.  We're also adding a hook to =typescript-mode-hook= to call =lsp-deferred= so that we activate =lsp-mode= to get LSP features every time we edit TypeScript code.
 
 #+begin_src emacs-lisp
-  (use-package typescript-mode
-    :mode "\\.ts\\'"
-    :hook (typescript-mode . lsp-deferred)
-    :config
-    (setq typescript-indent-level 2))
-
-  (use-package flycheck
-    :ensure t
-    :config
-    (add-hook 'typescript-mode-hook 'flycheck-mode))
-
-  (defun setup-tide-mode ()
+  (defun guto/setup-tide-mode ()
     (interactive)
     (tide-setup)
     (flycheck-mode +1)
@@ -943,11 +940,41 @@ This is a basic configuration for the TypeScript language so that =.ts= files ac
     (tide-hl-identifier-mode +1)
     (company-mode +1))
 
+  (defun guto/set-local-eslint ()
+    "Use local node_modules."
+    (add-node-modules-path)
+    (setq-local flycheck-javascript-eslint-executable (executable-find "eslint")))
+
+  (use-package tide
+    :ensure 
+    :config
+    (flycheck-add-next-checker 'tsx-tide 'javascript-eslint)
+    :after (web-mode company flycheck)
+    :hook (web-mode . guto/setup-tide-setup))
+
+  (use-package typescript-mode
+    :ensure t
+    :mode "\\.ts\\'"
+    :hook (typescript-mode . lsp-deferred)
+    :config
+    (setq typescript-indent-level 2)
+    (add-hook 'typescript-mode #'subword-mode))
+
+  (use-package flycheck
+    :ensure t
+    :hook (web-mode . guto/set-local-eslint)
+    :init
+    (setq flycheck-python-flake8-executable (executable-find "flake8"))
+    (setq flycheck-python-pycompile-executable (executable-find "python3"))
+    :config
+    (flycheck-add-mode 'javascript-eslint 'web-mode)
+    (setq flycheck-check-syntax-automatically '(mode-enabled save))
+    (global-flycheck-mode 1))
+
   (use-package web-mode
     :ensure t
     :mode (("\\.html?\\'" . web-mode)
-           ("\\.tsx\\'" . web-mode)
-           ("\\.jsx\\'" . web-mode)
+           ("\\.[jt]sx?\\'" . web-mode)
            ("\\.js\\'" . web-mode)
            ("\\.ts\\'" . web-mode))
     :config
@@ -956,34 +983,21 @@ This is a basic configuration for the TypeScript language so that =.ts= files ac
           web-mode-code-indent-offset 2
           web-mode-block-padding 2
           web-mode-comment-style 2
-
           web-mode-enable-css-colorization t
           web-mode-enable-auto-pairing t
           web-mode-enable-comment-keywords t
           web-mode-enable-current-element-highlight t)
+
     (add-hook 'web-mode-hook
               (lambda ()
                 (if (or
                      (string-equal "tsx" (file-name-extension buffer-file-name))
                      (string-equal "ts" (file-name-extension buffer-file-name)))
-                    (setup-tide-mode))))
+                    (guto/setup-tide-mode)))))
 
-    (flycheck-add-mode 'typescript-tslint 'web-mode))
+  (use-package add-node-modules-path
+    :ensure t)
 
-  (use-package typescript-mode
-    :ensure t
-    :hook (typescript-mode . lsp-deferred)
-    :config
-    (setq typescript-indent-level 2)
-    (add-hook 'typescript-mode #'subword-mode))
-
-  (use-package tide
-    :init
-    :ensure t
-    :after (typescript-mode company flycheck)
-    :hook ((typescript-mode . tide-setup)
-           (typescript-mode . tide-hl-identifier-mode)
-           ))
 #+end_src
 
 
@@ -1072,6 +1086,80 @@ You can use the pyvenv package to use =virtualenv= environments in Emacs.  The =
 #+begin_src emacs-lisp
 (use-package yaml-mode)
 #+end_src
+** Rust
+
+#+begin_src emacs-lisp
+  ;; (use-package toml-mode)
+
+  ;; (use-package rust-mode
+  ;;   :hook (rust-mode . lsp))
+
+  ;; ;; Add keybindings for interacting with Cargo
+  ;; (use-package cargo
+  ;;   :hook (rust-mode . cargo-minor-mode))
+
+  ;; (use-package flycheck-rust
+  ;;   :config (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
+
+  ;; rust-mode
+  ;; https://github.com/rust-lang/rust-mode
+
+  (use-package rust-mode
+    :bind ( :map rust-mode-map
+                 (("C-c C-t" . racer-describe)
+                  ([?\t] .  company-indent-or-complete-common)))
+    :config
+    (progn
+      ;; add flycheck support for rust (reads in cargo stuff)
+      ;; https://github.com/flycheck/flycheck-rust
+      (use-package flycheck-rust)
+
+      ;; cargo-mode for all the cargo related operations
+      ;; https://github.com/kwrooijen/cargo.el
+      (use-package cargo
+        :hook (rust-mode . cargo-minor-mode)
+        :bind
+        ("C-c C-c C-n" . cargo-process-new)) ;; global binding
+
+      ;;; separedit ;; via https://github.com/twlz0ne/separedit.el
+      (use-package separedit
+        :straight (separedit :type git :host github :repo "idcrook/separedit.el")
+        :config
+        (progn
+          (define-key prog-mode-map (kbd "C-c '") #'separedit)
+          (setq separedit-default-mode 'markdown-mode)))
+
+
+      ;;; racer-mode for getting IDE like features for rust-mode
+      ;; https://github.com/racer-rust/emacs-racer
+      (use-package racer
+        :hook (rust-mode . racer-mode)
+        :config
+        (progn
+          ;; package does this by default ;; set racer rust source path environment variable
+          ;; (setq racer-rust-src-path (getenv "RUST_SRC_PATH"))
+          (defun my-racer-mode-hook ()
+            (set (make-local-variable 'company-backends)
+                 '((company-capf company-files)))
+            (setq company-minimum-prefix-length 1)
+            (setq indent-tabs-mode nil))
+
+          (add-hook 'racer-mode-hook 'my-racer-mode-hook)
+
+          ;; enable company and eldoc minor modes in rust-mode (racer-mode)
+          (add-hook 'racer-mode-hook #'company-mode)
+          (add-hook 'racer-mode-hook #'eldoc-mode)))
+
+      (add-hook 'rust-mode-hook 'flycheck-mode)
+      (add-hook 'flycheck-mode-hook 'flycheck-rust-setup)
+
+      ;; format rust buffers on save using rustfmt
+      (add-hook 'before-save-hook
+                (lambda ()
+                  (when (eq major-mode 'rust-mode)
+                    (rust-format-buffer))))))
+#+end_src
+
 * Development
 ** Company Mode
 
@@ -1083,8 +1171,10 @@ We also use [[https://github.com/sebastiencs/company-box][company-box]] to furth
 
   (use-package company
     :after lsp-mode
-    :hook ((lsp-mode . company-mode)
-           (lsp-mode . ruby-mode))
+    :hook (
+           (lsp-mode . company-mode)
+           (lsp-mode . ruby-mode)
+           (prog-mode . company-mode))
     :bind (:map company-active-map
            ("<tab>" . company-complete-selection))
           (:map lsp-mode-map
@@ -1107,7 +1197,6 @@ We also use [[https://github.com/sebastiencs/company-box][company-box]] to furth
       :ensure t))
 
 #+end_src
-
 ** Projectile
 
 [[https://projectile.mx/][Projectile]] is a project management library for Emacs which makes it a lot easier to navigate around code projects for various languages.  Many packages integrate with Projectile so it's a good idea to have it installed even if you don't use its commands directly.
@@ -1203,6 +1292,28 @@ This is the `prettier.el` setup (https://github.com/jscheid/prettier.el)
   :config
   (global-prettier-mode)
 )
+#+end_src
+
+** Smartparens
+
+#+begin_src emacs-lisp
+  (use-package smartparens
+    :ensure t
+    :diminish smartparens-mode
+    :init
+    (bind-key "C-M-f" #'sp-forward-sexp smartparens-mode-map)
+    (bind-key "C-M-b" #'sp-backward-sexp smartparens-mode-map)
+    (bind-key "C-)" #'sp-forward-slurp-sexp smartparens-mode-map)
+    (bind-key "C-(" #'sp-backward-slurp-sexp smartparens-mode-map)
+    (bind-key "M-)" #'sp-forward-barf-sexp smartparens-mode-map)
+    (bind-key "M-(" #'sp-backward-barf-sexp smartparens-mode-map)
+    (bind-key "C-S-s" #'sp-splice-sexp)
+    (bind-key "C-M-<backspace>" #'backward-kill-sexp)
+    (bind-key "C-M-S-<SPC>" (lambda () (interactive) (mark-sexp -1)))
+      :config
+    (smartparens-global-mode t)
+    ;; (sp-pair "'" nil :actions :rem) ;; disable specific pairs
+    (setq sp-highlight-pair-overlay nil))
 #+end_src
 
 * Terminals
