@@ -950,7 +950,7 @@ This is a basic configuration for the TypeScript language so that =.ts= files ac
     :config
     (flycheck-add-next-checker 'tsx-tide 'javascript-eslint)
     :after (web-mode company flycheck)
-    :hook (web-mode . guto/setup-tide-setup))
+    :hook (web-mode . guto/setup-tide-mode))
 
   (use-package typescript-mode
     :ensure t
