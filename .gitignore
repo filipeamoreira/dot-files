@@ -1,10 +1,12 @@
-emacs-starter-kit
 .DS_Store
 .zeus.sock
 .bundle
 /emacs/persistence/
 /.config/karabiner/automatic_backups/
+/.config/configstore/update-notifier*
 /emacs/elpa/**/**
 /emacs/var/**/**
 /emacs/straight/**/**
 /emacs/init.elc
+emacs/forge-database.sqlite
+emacs/.last-package-update-day
