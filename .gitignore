@@ -9,4 +9,8 @@
 /emacs/straight/**/**
 /emacs/init.elc
 emacs/forge-database.sqlite
-emacs/.last-package-update-day
+/emacs/.last-package-update-day
+/.config/configstore/update-notifier-npm.json
+/.config/configstore/update-notifier-git-mob.json
+/.config/yarn/**
+/emacs/async-bytecomp.log
