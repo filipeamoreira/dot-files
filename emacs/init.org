@@ -624,7 +624,7 @@ This section contains the basic configuration for =org-mode= plus the configurat
     :commands (org-capture org-agenda)
     :hook (org-mode . guto/org-mode-setup)
     :config
-    (setq org-startup-folded 'content)
+    (setq org-startup-folded t)
     (setq org-ellipsis " ▾")
     (setq org-agenda-start-with-log-mode t)
     (setq org-log-done 'time)
