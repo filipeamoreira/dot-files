@@ -314,8 +314,18 @@ To install the fonts:
 
 * General configuration
 #+begin_src emacs-lisp
-;; Change all questions prompts to accept y or n
-(fset 'yes-or-no-p 'y-or-n-p)
+  ;; Change all questions prompts to accept y or n
+  (fset 'yes-or-no-p 'y-or-n-p)
+
+#+end_src
+
+** Native compilation settings
+
+
+#+begin_src emacs-lisp
+  ;; Disable logging
+  (setq comp-async-report-warnings-errors nil)
+
 #+end_src
 
 * Keep Folders Clean
