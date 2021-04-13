@@ -363,8 +363,9 @@ This section configures basic UI settings that remove unneeded elements to make 
 
   (setq-default cursor-type 'bar) ; change cursor type
 
-  ;; Set up the visible bell
-  (setq visible-bell t)
+  ;; Disable visual bell
+  (setq visible-bell       nil)
+  (setq ring-bell-function #'ignore)
 
   (column-number-mode)
   (global-display-line-numbers-mode t)
