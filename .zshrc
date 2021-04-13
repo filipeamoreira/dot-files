@@ -37,8 +37,11 @@ alias d='docker'
 alias dc='docker-compose'
 
 # Emacs aliases
-alias e='TERM=screen-16color /usr/local/opt/emacs/bin/emacsclient --tty -nw'
-alias emacs='/usr/local/opt/emacs/bin/emacsclient -c --no-wait'
+export EMACS="/Applications/Emacs.app/Contents/MacOS/Emacs"
+alias emacs="$EMACS -nw"
+alias emacsclient="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
+alias ec=emacsclient -n
+alias ecc=emacsclient -cn
 
 alias vpn-on="echo 'Application("Tunnelblick").connect("FL-VPN")' | osascript -l JavaScript"
 alias vpn-off="echo 'Application("Tunnelblick").disconnect("FL-VPN")' | osascript -l JavaScript"
