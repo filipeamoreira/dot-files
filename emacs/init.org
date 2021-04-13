@@ -256,8 +256,31 @@ To install the fonts:
   (set-face-attribute 'variable-pitch nil :font "Cantarell" :height guto/default-variable-font-size :weight 'regular)
 
   ;; Enable ligature support
+  ;; emacs-mac has native support
   (if (fboundp 'mac-auto-operator-composition-mode)
-      (mac-auto-operator-composition-mode))
+      (mac-auto-operator-composition-mode)
+    (guto/setup-ligature-support))
+
+  ;; For other versions
+  (use-package ligature
+    :straight (ligature :type git :host github :repo "mickeynp/ligature.el")
+    :config
+    ;; Enable the "www" ligature in every possible major mode
+    (ligature-set-ligatures 't '("www"))
+    ;; Enable ligatures in programming modes
+    (ligature-set-ligatures 'prog-mode '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\" "{-" "::"
+                                         ":::" ":=" "!!" "!=" "!==" "-}" "----" "-->" "->" "->>"
+                                         "-<" "-<<" "-~" "#{" "#[" "##" "###" "####" "#(" "#?" "#_"
+                                         "#_(" ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*" "/**"
+                                         "/=" "/==" "/>" "//" "///" "&&" "||" "||=" "|=" "|>" "^=" "$>"
+                                         "++" "+++" "+>" "=:=" "==" "===" "==>" "=>" "=>>" "<="
+                                         "=<<" "=/=" ">-" ">=" ">=>" ">>" ">>-" ">>=" ">>>" "<*"
+                                         "<*>" "<|" "<|>" "<$" "<$>" "<!--" "<-" "<--" "<->" "<+"
+                                         "<+>" "<=" "<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<"
+                                         "<~" "<~~" "</" "</>" "~@" "~-" "~>" "~~" "~~>" "%%"))
+    ;; Enables ligature checks globally in all buffers. You can also do it
+    ;; per mode with `ligature-mode'.
+    (global-ligature-mode t))
 #+end_src
 * Color Theme
 
