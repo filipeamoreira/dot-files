@@ -14,3 +14,4 @@ emacs/forge-database.sqlite
 /.config/configstore/update-notifier-git-mob.json
 /.config/yarn/**
 /emacs/async-bytecomp.log
+emacs/eln-cache/
