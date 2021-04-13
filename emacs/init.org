@@ -450,6 +450,12 @@ These are my changes to the default keybidings for emacs.
   ;; Disable transient mark mode
   ;; Use C-<SPC> C-<SPC> to temporally activate it.
   (setq transient-mark-mode nil)
+
+  ;; Set Meta key to command on Mac
+  (setq mac-option-key-is-meta nil)
+  (setq mac-command-key-is-meta t)
+  (setq mac-command-modifier 'meta)
+  (setq mac-option-modifier nil)
 #+end_src
 
 * UI Configuration
