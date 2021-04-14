@@ -239,48 +239,47 @@ To install the fonts:
 
 #+begin_src emacs-lisp
 
-  ;; Based on Source Sans/Code Pro font
-  ;;(set-face-attribute 'default nil :font "Source Code Pro" :height guto/default-font-size)
-  ;; Set the fixed pitch face
-  ;;(set-face-attribute 'fixed-pitch nil :font "Source Code Pro" :height guto/default-font-size)
-  ;; Set the variable pitch face
-  ;;(set-face-attribute 'variable-pitch nil :font "Source Sans 3 VF" :height guto/default-variable-font-size :weight 'regular)
+    ;; Based on Source Sans/Code Pro font
+    ;;(set-face-attribute 'default nil :font "Source Code Pro" :height guto/default-font-size)
+    ;; Set the fixed pitch face
+    ;;(set-face-attribute 'fixed-pitch nil :font "Source Code Pro" :height guto/default-font-size)
+    ;; Set the variable pitch face
+    ;;(set-face-attribute 'variable-pitch nil :font "Source Sans 3 VF" :height guto/default-variable-font-size :weight 'regular)
 
-  ;; Based on Fira and Cantarell
+    ;; Based on Fira and Cantarell
 
-  ;; Set the default font face
-  (set-face-attribute 'default nil :font "Fira Code" :height guto/default-font-size)
-  ;; Set the fixed pitch face
-  (set-face-attribute 'fixed-pitch nil :font "Fira Code" :height guto/default-font-size)
-  ;; Set the variable pitch face
-  (set-face-attribute 'variable-pitch nil :font "Cantarell" :height guto/default-variable-font-size :weight 'regular)
+    ;; Set the default font face
+    (set-face-attribute 'default nil :font "Fira Code" :height guto/default-font-size)
+    ;; Set the fixed pitch face
+    (set-face-attribute 'fixed-pitch nil :font "Fira Code" :height guto/default-font-size)
+    ;; Set the variable pitch face
+    (set-face-attribute 'variable-pitch nil :font "Cantarell" :height guto/default-variable-font-size :weight 'regular)
 
-  ;; Enable ligature support
-  ;; emacs-mac has native support
-  (if (fboundp 'mac-auto-operator-composition-mode)
-      (mac-auto-operator-composition-mode)
-    (guto/setup-ligature-support))
+    ;; Enable ligature support
+    ;; emacs-mac has native support
+    (if (fboundp 'mac-auto-operator-composition-mode)
+	(mac-auto-operator-composition-mode))
 
-  ;; For other versions
-  (use-package ligature
-    :straight (ligature :type git :host github :repo "mickeynp/ligature.el")
-    :config
-    ;; Enable the "www" ligature in every possible major mode
-    (ligature-set-ligatures 't '("www"))
-    ;; Enable ligatures in programming modes
-    (ligature-set-ligatures 'prog-mode '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\" "{-" "::"
-                                         ":::" ":=" "!!" "!=" "!==" "-}" "----" "-->" "->" "->>"
-                                         "-<" "-<<" "-~" "#{" "#[" "##" "###" "####" "#(" "#?" "#_"
-                                         "#_(" ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*" "/**"
-                                         "/=" "/==" "/>" "//" "///" "&&" "||" "||=" "|=" "|>" "^=" "$>"
-                                         "++" "+++" "+>" "=:=" "==" "===" "==>" "=>" "=>>" "<="
-                                         "=<<" "=/=" ">-" ">=" ">=>" ">>" ">>-" ">>=" ">>>" "<*"
-                                         "<*>" "<|" "<|>" "<$" "<$>" "<!--" "<-" "<--" "<->" "<+"
-                                         "<+>" "<=" "<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<"
-                                         "<~" "<~~" "</" "</>" "~@" "~-" "~>" "~~" "~~>" "%%"))
-    ;; Enables ligature checks globally in all buffers. You can also do it
-    ;; per mode with `ligature-mode'.
-    (global-ligature-mode t))
+    ;; For other versions
+    (use-package ligature
+      :straight (ligature :type git :host github :repo "mickeynp/ligature.el")
+      :config
+      ;; Enable the "www" ligature in every possible major mode
+      (ligature-set-ligatures 't '("www"))
+      ;; Enable ligatures in programming modes
+      (ligature-set-ligatures 'prog-mode '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\" "{-" "::"
+					   ":::" ":=" "!!" "!=" "!==" "-}" "----" "-->" "->" "->>"
+					   "-<" "-<<" "-~" "#{" "#[" "##" "###" "####" "#(" "#?" "#_"
+					   "#_(" ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*" "/**"
+					   "/=" "/==" "/>" "//" "///" "&&" "||" "||=" "|=" "|>" "^=" "$>"
+					   "++" "+++" "+>" "=:=" "==" "===" "==>" "=>" "=>>" "<="
+					   "=<<" "=/=" ">-" ">=" ">=>" ">>" ">>-" ">>=" ">>>" "<*"
+					   "<*>" "<|" "<|>" "<$" "<$>" "<!--" "<-" "<--" "<->" "<+"
+					   "<+>" "<=" "<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<"
+					   "<~" "<~~" "</" "</>" "~@" "~-" "~>" "~~" "~~>" "%%"))
+      ;; Enables ligature checks globally in all buffers. You can also do it
+      ;; per mode with `ligature-mode'.
+      (global-ligature-mode t))
 #+end_src
 * Color Theme
 
@@ -504,34 +503,69 @@ These are my changes to the default keybidings for emacs.
 ** Helm
 
 #+begin_src emacs-lisp
-(use-package helm
-:straight t
-:config
-(require 'helm-config)
-(setq helm-input-idle-delay                 0.01
-      helm-reuse-last-window-split-state    t
-      helm-split-window-in-side-p           t
-      helm-buffers-fuzzy-matching           t
-      helm-move-to-line-cycle-in-source     t
-      helm-ff-search-library-in-sexp        t
-      helm-ff-file-name-history-use-recentf t)
-(progn
-(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
-(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
-(define-key helm-map (kbd "C-z")  'helm-select-action)))
+  ;; (use-package helm
+  ;;   :straight t
+  ;;   :config
+  ;;   (require 'helm-config)
+  ;;   (setq helm-input-idle-delay                 0.01
+  ;; 	helm-reuse-last-window-split-state    t
+  ;; 	helm-split-window-in-side-p           t
+  ;; 	helm-buffers-fuzzy-matching           t
+  ;; 	helm-move-to-line-cycle-in-source     t
+  ;; 	helm-ff-search-library-in-sexp        t
+  ;; 	helm-ff-file-name-history-use-recentf t)
+  ;;   (progn
+  ;;     (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
+  ;;     (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
+  ;;     (define-key helm-map (kbd "C-z")  'helm-select-action)
+  ;;     (define-key helm-command-map (kbd "o")     'helm-occur)
+  ;;     (define-key helm-command-map (kbd "g")     'helm-do-grep)
+  ;;     (define-key helm-command-map (kbd "C-c w") 'helm-wikipedia-suggest)
+  ;;     (define-key helm-command-map (kbd "SPC")   'helm-all-mark-rings)))
 
-;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
-;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
-;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
-(global-set-key (kbd "C-c h") 'helm-command-prefix)
-(global-unset-key (kbd "C-x c"))
-(define-key helm-command-map (kbd "o")     'helm-occur)
-(define-key helm-command-map (kbd "g")     'helm-do-grep)
-(define-key helm-command-map (kbd "C-c w") 'helm-wikipedia-suggest)
-(define-key helm-command-map (kbd "SPC")   'helm-all-mark-rings)
+  ;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
+  ;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
+  ;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
+  ;; (global-set-key (kbd "C-c h") 'helm-command-prefix)
+  ;; (global-unset-key (kbd "C-x c"))
 
-(helm-mode 1)
+  ;; (helm-mode 1)
 
+
+  (global-unset-key (kbd "C-x c"))
+
+  (use-package helm
+    ;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
+    ;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
+    ;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
+    :straight t
+    :demand t
+    :bind (
+           ("C-c h" . helm-command-prefix)
+           ("M-x" . helm-M-x)
+           ("C-c h o" . helm-occur)
+           ("M-y" . helm-show-kill-ring)
+           ("C-x C-f" . helm-find-files)
+           ("C-x b" . helm-mini)
+           :map helm-map
+           ("<tab>" . helm-execute-persistent-action) ; rebind tab to run persistent action
+           ("C-i" . helm-execute-persistent-action) ; make TAB works in terminal
+           ("C-z" . helm-select-action) ; list actions using C-z
+           :map helm-command-map
+           ("o" . helm-occur)
+           ("g" . helm-do-grep)
+           ("C-c w" . helm-wikipedia-suggest)
+           ("SPC" . helm-all-mark-rings))
+    :init
+    (setq helm-input-idle-delay                 0.01
+          helm-reuse-last-window-split-state    t
+          helm-split-window-in-side-p           t
+          helm-buffers-fuzzy-matching           t
+          helm-move-to-line-cycle-in-source     t
+          helm-ff-search-library-in-sexp        t
+          helm-ff-file-name-history-use-recentf t)
+    (require 'helm-config)
+    (helm-mode 1))
 #+end_src
 
 Use helm everywhere
