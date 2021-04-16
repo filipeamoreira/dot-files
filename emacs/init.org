@@ -1129,33 +1129,44 @@ You can use the pyvenv package to use =virtualenv= environments in Emacs.  The =
 
 #+end_src
 
-*** Ruby
+** Ruby
 
 #+begin_src emacs-lisp
-    (use-package enh-ruby-mode
-      :mode
-      (("\\.rb\\'" . ruby-mode)))
+  ;; (use-package enh-ruby-mode
+  ;;   :mode
+  ;;   (("\\(?:\\.rb\\|ru\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\)file\\)\\'" . enh-ruby-mode)))
 
-    (use-package robe
-      :hook (enh-ruby-mode)
-      :after company
-      :config
-      (add-to-list 'company-backends 'company-robe))
+  ;; (use-package robe
+  ;;   :hook (enh-ruby-mode)
+  ;;   :after company
+  ;;   :config
+  ;;   (add-to-list 'company-backends 'company-robe))
 
-  (eval-after-load 'company
-    '(push 'company-robe company-backends))
+  ;; (eval-after-load 'company
+  ;;   '(push 'company-robe company-backends))
 
-    (use-package rinari
-      :hook (ruby-mode))
+  ;; (use-package rinari
+  ;;   :hook (enh-ruby-mode))
 
-    (use-package enh-ruby-mode
-      :hook (ruby-mode))
-
-  (use-package inf-ruby
-    :hook (enh-ruby-mode))
+  ;; (use-package inf-ruby
+  ;;   :hook (enh-ruby-mode))
 
   (use-package projectile-rails)
 
+
+  (use-package ruby-mode
+    :ensure nil
+    :after lsp-mode
+    :hook ((ruby-mode . lsp-deferred))
+    :custom
+    (ruby-insert-encoding-magic-comment nil "Not needed in Ruby 2")
+    :ensure-system-package (solargraph . "gem install --user-install solargraph"))
+
+  (use-package inf-ruby)
+
+  (use-package ruby-test-mode
+    :after ruby-mode
+    :diminish ruby-test-mode)
 #+end_src
 ** YAML
 
