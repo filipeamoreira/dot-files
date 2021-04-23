@@ -1,3 +1,4 @@
+
 #+TITLE: Emacs configuration file
 #+AUTHOR: Filipe Moreira
 #+BABEL: :cache yes
@@ -17,7 +18,6 @@ the file that is loaded. It looks like this:
 
    #+BEGIN_SRC emacs-lisp :tangle no
    ;; This file replaces itself with the actual configuration at first run.
-
    ;; We can't tangle without org!
    (require 'org)
    ;; Open the configuration
@@ -114,10 +114,11 @@ the file that is loaded. It looks like this:
    number, and restore the default value after initialization.
 
    #+BEGIN_SRC emacs-lisp
-   (let ((old-gc-treshold gc-cons-threshold))
-     (setq gc-cons-threshold most-positive-fixnum)
-     (add-hook 'after-init-hook
-               (lambda () (setq gc-cons-threshold old-gc-treshold))))
+     (setq gc-cons-threshold (* 2 100000000))
+     ;; (let ((old-gc-treshold gc-cons-threshold))
+     ;; (setq gc-cons-threshold most-positive-fixnum)
+     ;; (add-hook 'after-init-hook
+     ;; (lambda () (setq gc-cons-threshold old-gc-treshold))))
    #+END_SRC
 
 * Welcome!
@@ -164,34 +165,32 @@ Emacs has a built in package manager but it doesn't make it easy to automaticall
 ** `use_package` setup
 
 #+begin_src emacs-lisp
+  ;; Initialize package sources
+  (require 'package)
 
-        ;; Initialize package sources
-        (require 'package)
+  ;; using Github based mirros: https://github.com/d12frosted/elpa-mirror
+  (setq package-archives
+        '(("melpa" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/melpa/")
+          ("org"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/org/")
+          ("gnu"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/gnu/")))
 
-      ;; using Github based mirros: https://github.com/d12frosted/elpa-mirror
-      (setq package-archives
-            '(("melpa" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/melpa/")
-              ("org"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/org/")
-              ("gnu"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/gnu/")))
+  ;; (setq package-archives
+  ;;       '(("melpa" . "https://melpa.org/packages/")
+  ;;         ("org"   . "https://orgmode.org/elpa/")
+  ;;         ("elpa"  . "https://elpa.gnu.org/packages/")))
 
+  (package-initialize)
 
-      ;; (setq package-archives
-      ;;       '(("melpa" . "https://melpa.org/packages/")
-      ;;         ("org"   . "https://orgmode.org/elpa/")
-      ;;         ("elpa"  . "https://elpa.gnu.org/packages/")))
+  (unless package-archive-contents
+    (package-refresh-contents))
 
-         (package-initialize)
+  ;; Initialize use-package on non-Linux platforms
+  (unless (package-installed-p 'use-package)
+    (straight-use-package 'use-package))
 
-        (unless package-archive-contents
-          (package-refresh-contents))
-
-          ;; Initialize use-package on non-Linux platforms
-        (unless (package-installed-p 'use-package)
-          (straight-use-package 'use-package))
-
-        (require 'use-package)
-        (setq use-package-always-ensure t)
-        ;; (setq straight-use-package-by-default t) ;; this defaults to using straight.el to install files
+  (require 'use-package)
+  (setq use-package-always-ensure t)
+  ;; (setq straight-use-package-by-default t) ;; this defaults to using straight.el to install files
 
   (use-package exec-path-from-shell
     :ensure t
@@ -199,11 +198,13 @@ Emacs has a built in package manager but it doesn't make it easy to automaticall
     :config
     (setq exec-path-from-shell-arguments '("-l"))
     (exec-path-from-shell-initialize)
-    (exec-path-from-shell-copy-envs
-     '("GOPATH" "GO111MODULE" "GOPROXY"
-       "NPMBIN" "LC_ALL" "LANG" "LC_TYPE"
-       "SSH_AGENT_PID" "SSH_AUTH_SOCK" "SHELL"
-       "JAVA_HOME")))
+    (exec-path-from-shell-copy-env "PATH")
+    ;; (exec-path-from-shell-copy-envs
+    ;;  '("PATH" "GOPATH" "GO111MODULE" "GOPROXY"
+    ;;    "NPMBIN" "LC_ALL" "LANG" "LC_TYPE"
+    ;;    "SSH_AGENT_PID" "SSH_AUTH_SOCK" "SHELL"
+    ;;    "JAVA_HOME"))
+    )
 #+end_src
 
 ** Automatic Package Updates
@@ -476,12 +477,19 @@ These are my changes to the default keybidings for emacs.
 *NOTE:* The first time you load your configuration on a new machine, you'll need to run `M-x all-the-icons-install-fonts` so that mode line icons display correctly.
 
 #+begin_src emacs-lisp
+  (use-package all-the-icons)
 
-(use-package all-the-icons)
+  (use-package doom-modeline
+    :ensure t
+    :init (doom-modeline-mode 1)
+    :custom (
+             (doom-modeline-height 15)
+             (doom-modeline-project-detection 'project)
+             (doom-modeline-buffer-file-name 'relative-to-project)
+             (doom-modeline-enable-word-count nil)
+             (doom-modeline-env-version t)
+             (inhibit-compacting-font-caches t)))
 
-(use-package doom-modeline
-  :init (doom-modeline-mode 1)
-  :custom ((doom-modeline-height 15)))
 
 #+end_src
 
@@ -559,7 +567,7 @@ These are my changes to the default keybidings for emacs.
     :init
     (setq helm-input-idle-delay                 0.01
           helm-reuse-last-window-split-state    t
-          helm-split-window-in-side-p           t
+          helm-split-window-inside-p           t
           helm-buffers-fuzzy-matching           t
           helm-move-to-line-cycle-in-source     t
           helm-ff-search-library-in-sexp        t
@@ -925,47 +933,10 @@ The =which-key= integration adds helpful descriptions of the various keys so you
 
 #+end_src
 
-**** lsp-treemacs
-
-[[https://github.com/emacs-lsp/lsp-treemacs][lsp-treemacs]] provides nice tree views for different aspects of your code like symbols in a file, references of a symbol, or diagnostic messages (errors and warnings) that are found in your code.
-
-Try these commands with =M-x=:
-
-- =lsp-treemacs-symbols= - Show a tree view of the symbols in the current file
-- =lsp-treemacs-references= - Show a tree view for the references of the symbol under the cursor
-- =lsp-treemacs-error-list= - Show a tree view for the diagnostic messages in the project
-
-This package is built on the [[https://github.com/Alexander-Miller/treemacs][treemacs]] package which might be of some interest to you if you like to have a file browser at the left side of your screen in your editor.
-
-#+begin_src emacs-lisp
-
-        (use-package lsp-treemacs
-          :after lsp
-          :commands lsp-treemacs-errors-list
-          )
-
-#+end_src
-
-**** lsp-ivy
-
-[[https://github.com/emacs-lsp/lsp-ivy][lsp-ivy]] integrates Ivy with =lsp-mode= to make it easy to search for things by name in your code.  When you run these commands, a prompt will appear in the minibuffer allowing you to type part of the name of a symbol in your code.  Results will be populated in the minibuffer so that you can find what you're looking for and jump to that location in the code upon selecting the result.
-
-Try these commands with =M-x=:
-
-- =lsp-ivy-workspace-symbol= - Search for a symbol name in the current project workspace
-- =lsp-ivy-global-workspace-symbol= - Search for a symbol name in all active project workspaces
-
-#+begin_src emacs-lisp
-
-  (use-package lsp-ivy
-    :after lsp)
-
-#+end_src
-
 **** helm-lsp
 
 #+begin_src emacs-lisp
-(use-package helm-lsp :commands helm-lsp-workspace-symbol)
+  (use-package helm-lsp :commands helm-lsp-workspace-symbol)
 #+end_src
 
 *** TODO Debugging with dap-mode
@@ -973,6 +944,8 @@ Try these commands with =M-x=:
 [[https://emacs-lsp.github.io/dap-mode/][dap-mode]] is an excellent package for bringing rich debugging capabilities to Emacs via the [[https://microsoft.github.io/debug-adapter-protocol/][Debug Adapter Protocol]].  You should check out the [[https://emacs-lsp.github.io/dap-mode/page/configuration/][configuration docs]] to learn how to configure the debugger for your language.  Also make sure to check out the documentation for the debug adapter to see what configuration parameters are available to use for your debug templates!
 
 #+begin_src emacs-lisp
+
+(use-package dap-mode)
 
   ;;(use-package dap-mode
     ;; Uncomment the config below if you want all UI panes to be hidden by default!
@@ -992,6 +965,12 @@ Try these commands with =M-x=:
   ;;    :prefix lsp-keymap-prefix
   ;;    "d" '(dap-hydra t :wk "debugger")))
 
+#+end_src
+
+*** Yasnippet
+
+#+begin_src emacs-lisp
+  (use-package yasnippet)
 #+end_src
 
 ** Electric pair mode
@@ -1077,58 +1056,6 @@ This is a basic configuration for the TypeScript language so that =.ts= files ac
 #+end_src
 
 
-*Important note!*  For =lsp-mode= to work with TypeScript (and JavaScript) you will need to install a language server on your machine.  If you have Node.js installed, the easiest way to do that is by running the following command:
-
-#+begin_src shell :tangle no
-
-npm install -g typescript-language-server typescript
-
-#+end_src
-
-This will install the [[https://github.com/theia-ide/typescript-language-server][typescript-language-server]] and the TypeScript compiler package.
-
-** Python
-
-We use =lsp-mode= and =dap-mode= to provide a more complete development environment for Python in Emacs.  Check out [[https://emacs-lsp.github.io/lsp-mode/page/lsp-pyls/][the =pyls= configuration]] in the =lsp-mode= documentation for more details.
-
-Make sure you have the =pyls= language server installed before trying =lsp-mode=!
-
-#+begin_src sh :tangle no
-
-pip install --user "python-language-server[all]"
-
-#+end_src
-
-There are a number of other language servers for Python so if you find that =pyls= doesn't work for you, consult the =lsp-mode= [[https://emacs-lsp.github.io/lsp-mode/page/languages/][language configuration documentation]] to try the others!
-
-#+begin_src emacs-lisp
-
-;;  (use-package python-mode
-;;    :ensure t
-;;    :hook (python-mode . lsp-deferred)
-;;    :custom
-    ;; NOTE: Set these if Python 3 is called "python3" on your system!
-    ;; (python-shell-interpreter "python3")
-    ;; (dap-python-executable "python3")
-    ;;(dap-python-debugger 'debugpy)
-    ;;:config
-    ;;(require 'dap-python)
-;;)
-
-
-#+end_src
-
-You can use the pyvenv package to use =virtualenv= environments in Emacs.  The =pyvenv-activate= command should configure Emacs to cause =lsp-mode= and =dap-mode= to use the virtual environment when they are loaded, just select the path to your virtual environment before loading your project.
-
-#+begin_src emacs-lisp
-
-;;  (use-package pyvenv
-;;    :after python-mode
-;;    :config
-;;    (pyvenv-mode 1))
-
-#+end_src
-
 ** Ruby
 
 #+begin_src emacs-lisp
@@ -1151,22 +1078,33 @@ You can use the pyvenv package to use =virtualenv= environments in Emacs.  The =
   ;; (use-package inf-ruby
   ;;   :hook (enh-ruby-mode))
 
-  (use-package projectile-rails)
+  ;; (use-package projectile-rails)
 
+  ;; LSP mode
+
+  (use-package ruby-electric
+    :after ruby-mode
+    :hook (ruby-mode . ruby-electric-mode))
+
+  (defun guto/ruby-mode-hook ()
+    (require 'inf-ruby)
+    ;; (require 'ruby-electric)
+    ;; (electric-pair-mode t)
+    )
 
   (use-package ruby-mode
-    :ensure nil
     :after lsp-mode
-    :hook ((ruby-mode . lsp-deferred))
-    :custom
-    (ruby-insert-encoding-magic-comment nil "Not needed in Ruby 2")
-    :ensure-system-package (solargraph . "gem install --user-install solargraph"))
+    :mode "\\.rb\\'"
+    :interpreter "ruby"
+    :config
+    (add-hook 'ruby-mode-hook 'guto/ruby-mode-hook))
 
-  (use-package inf-ruby)
+  ;; (use-package inf-ruby)
 
-  (use-package ruby-test-mode
-    :after ruby-mode
-    :diminish ruby-test-mode)
+  ;; (use-package ruby-test-mode
+  ;; :after ruby-mode
+  ;; :diminish ruby-test-mode)
+
 #+end_src
 ** YAML
 
@@ -1215,7 +1153,6 @@ You can use the pyvenv package to use =virtualenv= environments in Emacs.  The =
         (progn
           (define-key prog-mode-map (kbd "C-c '") #'separedit)
           (setq separedit-default-mode 'markdown-mode)))
-
 
       ;;; racer-mode for getting IDE like features for rust-mode
       ;; https://github.com/racer-rust/emacs-racer
@@ -1313,17 +1250,20 @@ We also use [[https://github.com/sebastiencs/company-box][company-box]] to furth
 [[https://magit.vc/][Magit]] is the best Git interface I've ever used.  Common Git operations are easy to execute quickly using Magit's command panel system.
 
 #+begin_src emacs-lisp
-
   (use-package magit
     :commands magit-status
     :custom
-    (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
+    (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1)
+    (magit-refresh-status-buffer nil)
+    (auto-revert-buffer-list-filter 'magit-auto-revert-repository-buffer-p)
+    (magit-git-executable "/usr/local/bin/git"))
 
   ;; NOTE: Make sure to configure a GitHub token before using this package!
   ;; - https://magit.vc/manual/forge/Token-Creation.html#Token-Creation
   ;; - https://magit.vc/manual/ghub/Getting-Started.html#Getting-Started
-  (use-package forge
-    :after magit)
+
+  ;;(use-package forge
+  ;;  :after magit)
 
 #+end_src
 
@@ -1373,12 +1313,12 @@ NOTE: Unstable for the moment
 This is the `prettier.el` setup (https://github.com/jscheid/prettier.el)
 
 #+begin_src emacs-lisp
-(use-package prettier
-  :straight t
-  :ensure t
-  :config
-  (global-prettier-mode)
-)
+  (use-package prettier
+    :straight t
+    :ensure t
+    :config
+    (global-prettier-mode))
+
 #+end_src
 
 ** Smartparens
@@ -1653,14 +1593,14 @@ This is an example of configuring another non-Emacs application using org-mode. 
 * TODO Elfeed
 
 #+begin_src emacs-lisp
-(use-package elfeed
-  :defer t
-  :bind ("C-x w" . elfeed)
-  :init (setf url-queue-timeout 30)
-  :config
-  (require 'feed-setup)
-  (push "-k" elfeed-curl-extra-arguments)
-  (setf bookmark-default-file (locate-user-emacs-file "local/bookmarks")))
+  ;; (use-package elfeed
+  ;;   :defer t
+  ;;   :bind ("C-x w" . elfeed)
+  ;;   :init (setf url-queue-timeout 30)
+  ;;   :config
+  ;;   (require 'feed-setup)
+  ;;   (push "-k" elfeed-curl-extra-arguments)
+  ;;   (setf bookmark-default-file (locate-user-emacs-file "local/bookmarks")))
 #+end_src
 
 * Runtime Performance
@@ -1669,7 +1609,11 @@ Dial the GC threshold back down so that garbage collection happens more frequent
 
 #+begin_src emacs-lisp
 
-  ;; Make gc pauses faster by decreasing the threshold.
-  (setq gc-cons-threshold (* 2 1000 1000))
+      ;; Make gc pauses faster by decreasing the threshold.
+  (setq gc-cons-threshold (* 2 100000000))
+
+  ;; Increase the amount of data which Emacs reads from the process
+  ;; source: https://emacs-lsp.github.io/lsp-mode/page/performance/
+    (setq read-process-output-max (* 1024 1024)) ;; 1mb
 
 #+end_src
