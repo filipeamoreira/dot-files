@@ -17,8 +17,8 @@ fi
 # Editors
 #
 
-export EDITOR='TERM=screen-16color /usr/local/opt/emacs-mac/bin/bin/emacsclient --tty -nw'
-export VISUAL='TERM=screen-16color /usr/local/opt/emacs-mac/bin/emacsclient --tty -nw'
+export EDITOR='emacsclient'
+export VISUAL=$EDITOR
 export PAGER='less'
 
 #
