@@ -1,4 +1,3 @@
-
 #+TITLE: Emacs configuration file
 #+AUTHOR: Filipe Moreira
 #+BABEL: :cache yes
@@ -70,28 +69,17 @@ the file that is loaded. It looks like this:
    #+BEGIN_SRC emacs-lisp
      (defun guto/tangle-init ()
        "If the current buffer is 'init.org' the code-blocks are
-		     tangled, and the tangled file is compiled."
+                     tangled, and the tangled file is compiled."
        (interactive)
        (when (equal (buffer-name) "init.org")
-	 (org-babel-tangle)
-	 (byte-compile-file (concat user-emacs-directory "init.el"))
-	 (message "init.org file tangled into init.el")
-	 )
-       )
-
-	;; (when (equal (buffer-name) "init.org")
-     ;;      ;; Avoid running hooks when tangling.
-     ;;      (;;let ((prog-mode-hook nil))
-     ;;        (org-babel-tangle)
-     ;;        (byte-compile-file (concat user-emacs-directory "init.el"))
-     ;;        (message "init.org file tangled into init.el")
-
-     ;;        )
-     ;; (message "else block of 'when call")
+         (org-babel-tangle)
+         (load-file (concat user-emacs-directory "init.el"))
+         (byte-compile-file (concat user-emacs-directory "init.el"))
+         (message "init.org file tangled into init.el")))
 
      (add-hook 'org-mode-hook 
-	       (lambda () 
-		 (add-hook 'after-save-hook 'guto/tangle-init nil 'make-it-local)))
+               (lambda () 
+                 (add-hook 'after-save-hook 'guto/tangle-init nil 'make-it-local)))
    #+END_SRC
 
    I'd like to keep a few settings private, so we load a =private.el= if it
@@ -114,7 +102,7 @@ the file that is loaded. It looks like this:
    number, and restore the default value after initialization.
 
    #+BEGIN_SRC emacs-lisp
-     (setq gc-cons-threshold (* 2 100000000))
+     ;; (setq gc-cons-threshold (* 2 100000000))
      ;; (let ((old-gc-treshold gc-cons-threshold))
      ;; (setq gc-cons-threshold most-positive-fixnum)
      ;; (add-hook 'after-init-hook
@@ -293,6 +281,13 @@ To install the fonts:
   (use-package solarized-theme
     :init (load-theme 'solarized-dark t))
 
+#+end_src
+** Emoji support
+
+#+begin_src emacs-lisp
+;; Call `emojify-apropos-emoji` or `emojify-insert-emoji`
+(use-package emojify
+  :hook (after-init . global-emojify-mode))
 #+end_src
 * Startup Performance
 
@@ -647,6 +642,14 @@ This is an example of using [[https://github.com/abo-abo/hydra][Hydra]] to desig
 
 #+end_src
 
+** Misc
+
+#+begin_src emacs-elisp
+
+(split-window-horizontally)
+
+#+end_src
+
 * Org Mode
 
 [[https://orgmode.org/][Org Mode]] is one of the hallmark features of Emacs.  It is a rich document editor, project planner, task and time tracker, blogging engine, and literate coding utility all wrapped up in one package.
@@ -979,6 +982,40 @@ The =which-key= integration adds helpful descriptions of the various keys so you
   (electric-pair-mode)
 #+end_src
 
+** Web mode
+
+#+begin_src emacs-lisp
+  ;; C-c C-n - jump between start/end tags
+  ;; C-c C-f - fold code block
+  ;; C-c C-s - code insertion
+  ;; C-c C-m - clever text selection
+  ;; C-c C-i - indent entire buffer
+
+  (use-package web-mode
+    :ensure t
+    :mode (("\\.html?\\'" . web-mode)
+           ("\\.[jt]sx?\\'" . web-mode)
+           ("\\.[jt]s?\\'" . web-mode)
+           ("\\.erb?\\'" . web-mode))
+    :config
+    (setq web-mode-markup-indent-offset 2
+          web-mode-css-indent-offset 2
+          web-mode-code-indent-offset 2
+          web-mode-block-padding 2
+          web-mode-comment-style 2
+          web-mode-enable-css-colorization t
+          web-mode-enable-auto-pairing t
+          web-mode-enable-comment-keywords t
+          web-mode-enable-current-element-highlight t)
+
+    (add-hook 'web-mode-hook
+              (lambda ()
+                (if (or
+                     (string-equal "tsx" (file-name-extension buffer-file-name))
+                     (string-equal "ts" (file-name-extension buffer-file-name)))
+                    (guto/setup-tide-mode)))))
+#+end_src
+
 ** TypeScript
 
 This is a basic configuration for the TypeScript language so that =.ts= files activate =typescript-mode= when opened.  We're also adding a hook to =typescript-mode-hook= to call =lsp-deferred= so that we activate =lsp-mode= to get LSP features every time we edit TypeScript code.
@@ -1026,35 +1063,9 @@ This is a basic configuration for the TypeScript language so that =.ts= files ac
     (setq flycheck-check-syntax-automatically '(mode-enabled save))
     (global-flycheck-mode 1))
 
-  (use-package web-mode
-    :ensure t
-    :mode (("\\.html?\\'" . web-mode)
-           ("\\.[jt]sx?\\'" . web-mode)
-           ("\\.js\\'" . web-mode)
-           ("\\.ts\\'" . web-mode))
-    :config
-    (setq web-mode-markup-indent-offset 2
-          web-mode-css-indent-offset 2
-          web-mode-code-indent-offset 2
-          web-mode-block-padding 2
-          web-mode-comment-style 2
-          web-mode-enable-css-colorization t
-          web-mode-enable-auto-pairing t
-          web-mode-enable-comment-keywords t
-          web-mode-enable-current-element-highlight t)
-
-    (add-hook 'web-mode-hook
-              (lambda ()
-                (if (or
-                     (string-equal "tsx" (file-name-extension buffer-file-name))
-                     (string-equal "ts" (file-name-extension buffer-file-name)))
-                    (guto/setup-tide-mode)))))
-
   (use-package add-node-modules-path
     :ensure t)
-
 #+end_src
-
 
 ** Ruby
 
@@ -1182,6 +1193,11 @@ This is a basic configuration for the TypeScript language so that =.ts= files ac
                 (lambda ()
                   (when (eq major-mode 'rust-mode)
                     (rust-format-buffer))))))
+#+end_src
+** JSON
+
+#+begin_src emacs-lisp
+(use-package json-mode)
 #+end_src
 
 * Development
@@ -1610,7 +1626,7 @@ Dial the GC threshold back down so that garbage collection happens more frequent
 #+begin_src emacs-lisp
 
       ;; Make gc pauses faster by decreasing the threshold.
-  (setq gc-cons-threshold (* 2 100000000))
+  ;; (setq gc-cons-threshold (* 2 100000000))
 
   ;; Increase the amount of data which Emacs reads from the process
   ;; source: https://emacs-lsp.github.io/lsp-mode/page/performance/
