@@ -1,0 +1,1 @@
+(split-window-horizontally)
