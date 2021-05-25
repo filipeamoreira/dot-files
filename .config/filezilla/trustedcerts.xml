@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FileZilla3 version="3.54.1" platform="mac">
+	<FtpSessionResumption>
+		<Entry Host="138.68.138.82" Port="21">true</Entry>
+		<Entry Host="myprop.coderelax.com" Port="21">true</Entry>
+	</FtpSessionResumption>
+</FileZilla3>
