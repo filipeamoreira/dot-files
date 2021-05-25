@@ -177,10 +177,18 @@ vterm_cmd() {
 # Erlang docs on iex
 export KERL_BUILD_DOCS="yes"
 
+# direnv
+eval "$(asdf exec direnv hook zsh)"
+
+# A shortcut for asdf managed direnv.
+direnv() { asdf exec direnv "$@"; }
+
 # asdf
 . $HOME/.asdf/asdf.sh
 
 # asdf java
 . ~/.asdf/plugins/java/set-java-home.zsh
 # export JAVA_HOME="$( cd -P "$(dirname  $(dirname $(asdf which java) ))" && pwd )"
+
+
 
