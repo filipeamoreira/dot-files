@@ -15,3 +15,11 @@ emacs/forge-database.sqlite
 /.config/yarn/**
 /emacs/async-bytecomp.log
 emacs/eln-cache/
+.config/emacs/eln-cache/**/**
+.config/emacs/var/**/**
+.config/emacs/straight/**/**
+.config/emacs/elpa/**/**
+.config/emacs/.last-package-update-day
+.config/emacs/init.elc
+.config/zsh/.zcompdump*
+.config/zsh/.zsh_history
