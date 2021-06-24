@@ -46,23 +46,6 @@ alias ecc=emacsclient -cn
 alias vpn-on="echo 'Application("Tunnelblick").connect("FL-VPN")' | osascript -l JavaScript"
 alias vpn-off="echo 'Application("Tunnelblick").disconnect("FL-VPN")' | osascript -l JavaScript"
 
-# test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
-
-# TODO: Fix this: https://github.com/NixOS/nix/issues/2925
-# . /Users/guto/.nix-profile/etc/profile.d/nix.sh
-# Nix is setting SSL_CERT_FILE and this breaks homebrew
-# unset SSL_CERT_FILE
-
-# Docker setup
-# https://github.com/docker/for-mac/issues/1948
-# homebrew shell completion
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-
-  autoload -Uz compinit
-  compinit
-fi
-
 # https://github.com/junegunn/fzf
 # command-line fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -93,21 +76,8 @@ _fzf_compgen_dir() {
 #   Use `j`
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-# Prepend programming language binaries via ASDF shims
-# PATH="$HOME/.asdf/bin:$PATH"
-# PATH="$HOME/.asdf/shims:$PATH"
-# append completions to fpath
-#fpath=(${ASDF_DIR}/completions $fpath)
-# initialise completions with ZSH's compinit
-#autoload -Uz compinit
-#compinit
-
-# OPAM configuration
-. /Users/guto/.asdf/installs/ocaml/4.06.1/opam-init/init.zsh > /dev/null 2> /dev/null || true
 # Load functions
 source ~/.functions.sh
-
-# source /Users/guto/Library/Preferences/org.dystroy.broot/launcher/bash/br
 
 # source: https://docs.brew.sh/Shell-Completion
 if type brew &>/dev/null; then
@@ -116,9 +86,6 @@ if type brew &>/dev/null; then
   autoload -Uz compinit
   compinit
 fi
-
-# source: https://starship.rs/
-# eval "$(starship init zsh)"
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=239"
 
@@ -171,24 +138,24 @@ vterm_cmd() {
     vterm_printf "51;E$vterm_elisp"
 }
 
-# Needed to only install `brew install mysql-client` without the need to have a full Mysql installation locally
-# export PATH="/usr/local/opt/mysql-client/bin:$PATH"
-
 # Erlang docs on iex
 export KERL_BUILD_DOCS="yes"
-
-# direnv
-eval "$(asdf exec direnv hook zsh)"
-
-# A shortcut for asdf managed direnv.
-direnv() { asdf exec direnv "$@"; }
 
 # asdf
 . $HOME/.asdf/asdf.sh
 
 # asdf java
-. ~/.asdf/plugins/java/set-java-home.zsh
+# FIXME: Broken and not being used at the moment
+# . ~/.asdf/plugins/java/set-java-home.zsh
 # export JAVA_HOME="$( cd -P "$(dirname  $(dirname $(asdf which java) ))" && pwd )"
 
+# direnv
+# FIXME: Disabled as it was messing with the PATH
+eval "$(asdf exec direnv hook zsh)"
 
+# A shortcut for asdf managed direnv.
+direnv() { asdf exec direnv "$@"; }
+
+# Single export PATH call
+export PATH="/usr/local/opt/openjdk@8/bin:/usr/local/opt/coreutils/libexec/gnubin:$HOME/.cargo/bin:$HOME/.asdf/bin:$HOME/.asdf/shims:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/emulator:$PATH:$ANDROID_HOME/tools:$PATH:$ANDROID_HOME/tools/bin:$PATH:$ANDROID_HOME/platform-tools:/usr/local/opt/mysql-client/bin"
 

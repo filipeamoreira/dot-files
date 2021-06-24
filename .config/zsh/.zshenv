@@ -26,13 +26,14 @@ export TEXMFHOME="$HOME/texmf/"
 export GPGKEY=C535A26E
 
 # React Native Java setup
+export CPPFLAGS="-I/usr/local/opt/openjdk@8/include"
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
 # export JAVA_HOME="/Users/guto/Library/Application Support/JetBrains/Toolbox/apps/AndroidStudio/ch-0/201.7042882/Android Studio.app/Contents/jre/jdk/Contents/Home"
 
 # brew info openssl
-export LDFLAGS="-L/usr/local/opt/openssl/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl/include"
+# export LDFLAGS="-L/usr/local/opt/openssl/lib"
+# export CPPFLAGS="-I/usr/local/opt/openssl/include"
 
 export DOTNET_CLI_TELEMETRY_OPTOUT=true
 
@@ -40,5 +41,3 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=239"
 
 if [ -e /Users/guto/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/guto/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
-# Single export PATH call
-export PATH="/usr/local/opt/texinfo/bin:$HOME/.asdf/bin:$HOME/.asdf/shims:$ANDROID_HOME/emulator:$PATH:$ANDROID_HOME/tools:$PATH:$ANDROID_HOME/tools/bin:$PATH:$ANDROID_HOME/platform-tools:/usr/local/opt/mysql-client/bin"
