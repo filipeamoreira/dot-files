@@ -371,6 +371,11 @@ This section configures basic UI settings that remove unneeded elements to make 
   (set-frame-parameter (selected-frame) 'fullscreen 'maximized)
   (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
+  (defun guto/full-screen ()
+    "Set window to full screen."
+    (interactive)
+    (set-frame-parameter (selected-frame) 'fullscreen 'maximized))
+
   ;; Disable line numbers for some modes
   (dolist (mode '(org-mode-hook
                   term-mode-hook
