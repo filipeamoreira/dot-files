@@ -150,7 +150,6 @@ export KERL_BUILD_DOCS="yes"
 # export JAVA_HOME="$( cd -P "$(dirname  $(dirname $(asdf which java) ))" && pwd )"
 
 # direnv
-# FIXME: Disabled as it was messing with the PATH
 eval "$(asdf exec direnv hook zsh)"
 
 # A shortcut for asdf managed direnv.
