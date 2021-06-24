@@ -28,7 +28,7 @@
 [core]
 	quotepath = false
 	filemode = true
-	excludesfile = /Users/guto/.gitignore
+	excludesfile = /Users/guto/.config/git/gitignore_global
 	autocrlf = input
 	symlinks = true
 [alias]
