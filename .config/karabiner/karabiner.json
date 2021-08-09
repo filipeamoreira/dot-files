@@ -18,9 +18,9 @@
                     {
                         "manipulators": [
                             {
-                                "description": "Change right option to hyper",
+                                "description": "Change right command to hyper",
                                 "from": {
-                                    "key_code": "right_option",
+                                    "key_code": "right_command",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -33,7 +33,7 @@
                                         "modifiers": [
                                             "right_command",
                                             "right_control",
-                                            "left_option"
+                                            "right_option"
                                         ]
                                     }
                                 ],
