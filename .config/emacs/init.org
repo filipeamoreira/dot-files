@@ -895,6 +895,8 @@ Org Mode's [[https://orgmode.org/manual/Structure-Templates.html][structure temp
 
 You can add more =src= block templates below by copying one of the lines and changing the two strings at the end, the first to be the template name and the second to contain the name of the language [[https://orgmode.org/worg/org-contrib/babel/languages.html][as it is known by Org Babel]].
 
+Call =org-insert-structure-template= to insert structured templates.
+
 #+begin_src emacs-lisp
 
   (with-eval-after-load 'org
@@ -903,7 +905,8 @@ You can add more =src= block templates below by copying one of the lines and cha
 
     (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
     (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
-    (add-to-list 'org-structure-template-alist '("py" . "src python")))
+    (add-to-list 'org-structure-template-alist '("py" . "src python"))
+    (add-to-list 'org-structure-template-alist '("rb" . "src ruby")))
 
 #+end_src
 
