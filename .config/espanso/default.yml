@@ -7,3 +7,10 @@ matches:
         type: date
         params:
           format: "%Y%m%d"
+  - trigger: ";t"
+    replace: "{{mydatetime}}"
+    vars:
+      - name: mydatetime
+        type: date
+        params:
+          format: "%Y%m%d%H%M"
