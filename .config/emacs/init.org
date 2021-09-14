@@ -189,7 +189,7 @@ Emacs has a built in package manager but it doesn't make it easy to automaticall
     :ensure t
     :if (memq window-system '(mac ns))
     :config
-    (setq exec-path-from-shell-arguments '("-l"))
+    ;;(setq exec-path-from-shell-arguments '("-l"))
     (exec-path-from-shell-initialize)
     (exec-path-from-shell-copy-env "PATH")
     ;; (exec-path-from-shell-copy-envs
