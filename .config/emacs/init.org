@@ -484,35 +484,6 @@ These are my changes to the default keybidings for emacs.
 ** Helm
 
 #+begin_src emacs-lisp
-  ;; (use-package helm
-  ;;   :straight t
-  ;;   :config
-  ;;   (require 'helm-config)
-  ;;   (setq helm-input-idle-delay                 0.01
-  ;; 	helm-reuse-last-window-split-state    t
-  ;; 	helm-split-window-in-side-p           t
-  ;; 	helm-buffers-fuzzy-matching           t
-  ;; 	helm-move-to-line-cycle-in-source     t
-  ;; 	helm-ff-search-library-in-sexp        t
-  ;; 	helm-ff-file-name-history-use-recentf t)
-  ;;   (progn
-  ;;     (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
-  ;;     (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
-  ;;     (define-key helm-map (kbd "C-z")  'helm-select-action)
-  ;;     (define-key helm-command-map (kbd "o")     'helm-occur)
-  ;;     (define-key helm-command-map (kbd "g")     'helm-do-grep)
-  ;;     (define-key helm-command-map (kbd "C-c w") 'helm-wikipedia-suggest)
-  ;;     (define-key helm-command-map (kbd "SPC")   'helm-all-mark-rings)))
-
-  ;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
-  ;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
-  ;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
-  ;; (global-set-key (kbd "C-c h") 'helm-command-prefix)
-  ;; (global-unset-key (kbd "C-x c"))
-
-  ;; (helm-mode 1)
-
-
   (global-unset-key (kbd "C-x c"))
 
   (use-package helm
@@ -520,31 +491,33 @@ These are my changes to the default keybidings for emacs.
     ;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
     ;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
     :straight t
-    :demand t
+    ;; :demand t
+
     :bind (
-           ("C-c h" . helm-command-prefix)
-           ("M-x" . helm-M-x)
-           ("C-c h o" . helm-occur)
-           ("M-y" . helm-show-kill-ring)
-           ("C-x C-f" . helm-find-files)
-           ("C-x b" . helm-mini)
-           :map helm-map
-           ("<tab>" . helm-execute-persistent-action) ; rebind tab to run persistent action
-           ("C-i" . helm-execute-persistent-action) ; make TAB works in terminal
-           ("C-z" . helm-select-action) ; list actions using C-z
-           :map helm-command-map
-           ("o" . helm-occur)
-           ("g" . helm-do-grep)
-           ("C-c w" . helm-wikipedia-suggest)
-           ("SPC" . helm-all-mark-rings))
+	   ("C-c h" . helm-command-prefix)
+	   ("M-x" . helm-M-x)
+	   ("C-x m" . helm-M-x)
+	   ("C-c h o" . helm-occur)
+	   ("M-y" . helm-show-kill-ring)
+	   ("C-x C-f" . helm-find-files)
+	   ("C-x b" . helm-mini)
+	   :map helm-map
+	   ("<tab>" . helm-execute-persistent-action) ; rebind tab to run persistent action
+	   ("C-i" . helm-execute-persistent-action) ; make TAB works in terminal
+	   ("C-z" . helm-select-action) ; list actions using C-z
+	   :map helm-command-map
+	   ("o" . helm-occur)
+	   ("g" . helm-do-grep)
+	   ("C-c w" . helm-wikipedia-suggest)
+	   ("SPC" . helm-all-mark-rings))
     :init
     (setq helm-input-idle-delay                 0.01
-          helm-reuse-last-window-split-state    t
-          helm-split-window-inside-p           t
-          helm-buffers-fuzzy-matching           t
-          helm-move-to-line-cycle-in-source     t
-          helm-ff-search-library-in-sexp        t
-          helm-ff-file-name-history-use-recentf t)
+	  helm-reuse-last-window-split-state    t
+	  helm-split-window-inside-p           t
+	  helm-buffers-fuzzy-matching           t
+	  helm-move-to-line-cycle-in-source     t
+	  helm-ff-search-library-in-sexp        t
+	  helm-ff-file-name-history-use-recentf t)
     (require 'helm-config)
     (helm-mode 1))
 #+end_src
