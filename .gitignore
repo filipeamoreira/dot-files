@@ -24,3 +24,5 @@ emacs/eln-cache/
 .config/zsh/.zsh_history
 .config/zsh/.zsh_sessions/**/**
 .config/emacs/async-bytecomp.log
+.config/filezilla/recentservers.xml
+.config/persistory/
