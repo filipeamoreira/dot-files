@@ -1023,6 +1023,28 @@ This is a basic configuration for the TypeScript language so that =.ts= files ac
 
 ** Ruby
 
+Robe is currently disabled because of this error: `Initialization fails with: "Autoloading file  /Users/guto/.config/emacs/elpa/robe-20210906.2250/robe.elc failed to define function robe"`
+#+begin_src emacs-lisp :tangle no
+  (use-package robe
+    :straight (robe :type git :host github :repo "dgutov/robe")
+    :hook (ruby-mode)
+    :after company
+    :config
+    (add-to-list 'company-backends 'company-robe))
+#+end_src
+
+Rinari is disabled for the moment
+#+begin_src emacs-lisp :tangle no
+  (use-package rinari
+    :hook (ruby-mode))
+#+end_src
+
+Inf-ruby is disabled for the moment
+#+begin_src emacs-lisp :tangle no
+  (use-package inf-ruby
+    :hook (ruby-mode))
+#+end_src
+
 #+begin_src emacs-lisp
   (use-package ruby-mode
     :after lsp-mode
@@ -1030,23 +1052,13 @@ This is a basic configuration for the TypeScript language so that =.ts= files ac
     (("\\(?:\\.rb\\|ru\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\)file\\)\\'" . ruby-mode))
     :interpreter "ruby")
 
-  (use-package robe
-    :hook (ruby-mode)
-    :after company
-    :config
-    (add-to-list 'company-backends 'company-robe))
-
-  (use-package rinari
-    :hook (ruby-mode))
-
-  (use-package projectile-rails)
+  (use-package projectile-rails
+  :config
+  (projectile-rails-global-mode))
 
   (use-package ruby-electric
     :after ruby-mode
     :hook (ruby-mode . ruby-electric-mode))
-
-  (use-package inf-ruby
-    :hook (ruby-mode))
 
   (use-package ruby-test-mode
     :after ruby-mode
