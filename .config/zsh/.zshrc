@@ -37,9 +37,9 @@ alias d='docker'
 alias dc='docker-compose'
 
 # Emacs aliases
-export EMACS="/Applications/Emacs.app/Contents/MacOS/Emacs"
+export EMACS="/usr/local/bin/emacs"
 alias emacs="$EMACS -nw"
-alias emacsclient="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
+alias emacsclient="/usr/local/bin/emacsclient"
 alias ec=emacsclient -n
 alias ecc=emacsclient -cn
 
