@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<FileZilla3 version="3.54.1" platform="mac">
+<FileZilla3 version="3.55.1" platform="mac">
 	<Settings>
 		<Setting name="Use Pasv mode">1</Setting>
 		<Setting name="Limit local ports">0</Setting>
@@ -110,8 +110,6 @@
 		<Setting name="Disable update footer">0</Setting>
 		<Setting name="Master password encryptor" />
 		<Setting name="Highest shown overlay id">0</Setting>
-		<Setting name="Greeting version">3.54.1</Setting>
-		<Setting name="Last automatic update version">3.54.1</Setting>
 		<Setting name="Prompt password save">0</Setting>
 		<Setting name="Already connected choice">1</Setting>
 		<Setting name="Queue column widths">180 60 180 80 60 150</Setting>
@@ -130,30 +128,41 @@
 		<Setting name="Remote filelist colwidths">295 75 80 100 80 85</Setting>
 		<Setting name="Splitter positions (v2)">247 -132 500000000 254 119 500000000</Setting>
 		<Setting name="Window position and size">1 0 25 1680 949 </Setting>
-		<Setting name="Last automatic update check">2021-09-16 16:46:34</Setting>
-		<Setting name="Update Check New Version" platform="mac">nightly 2021-09-16 https://filezilla-project.org/nightlies/2021-09-16/x86_64-apple-darwin18.2.0/FileZilla3.app.tar.bz2 14693037 sha512 a8c67b931dbf0dcd2d06e2254d6827cc95cacaf9e8e03c3573758eb1d324119f0c06d0339ce07218b3c355d1929f4779b041f84af5f42863292d686be62c11f9 sig:SSC+zDVAJmz5PmVj1CdObaBxlPDSXR0JOau3Cx9oieG5dnC4+YkKxGj5mITvRjEpX/taY0G5OLdhtDNZ1AfCBQ
-release 3.54.1 https://dl3.cdn.filezilla-project.org/FileZilla_3.54.1_macosx-x86.app.tar.bz2 14333468 sha512 d9aaa4a4850c184b106a7436b976f7c2fc5dae1908c6a0a80d424ae5198fce48f78bf59ade4608b38ada090872ad7634a0ef197c9c9592cfd38a107e0405d9b8 sig:2NJEKvNHH4kXkGoD+LzGOBO4/qUWXIoRrL+NuxA8kPKFFHXyzXXhOndb2x9i5Qc01Qggq72RCjRhCn9Akp+oBA
-</Setting>
 		<Setting name="Local filelist colwidths">243 80 120 120</Setting>
+		<Setting name="Remote filelist sortorder">0 3</Setting>
+		<Setting name="Greeting version">3.55.1</Setting>
 		<Setting name="Tab data" sensitive="1">
 			<Tabs>
-				<Tab connected="1" selected="1">
-					<Host>myprop.coderelax.com</Host>
+				<Tab selected="1">
+					<Host>ftp.asunolivan.com</Host>
 					<Port>21</Port>
 					<Protocol>0</Protocol>
 					<Type>0</Type>
-					<User>reapit</User>
-					<Pass encoding="base64">cmVhcGl0</Pass>
+					<User>asunoliv</User>
+					<Pass encoding="base64" />
 					<Logontype>1</Logontype>
 					<PasvMode>MODE_DEFAULT</PasvMode>
 					<EncodingType>Auto</EncodingType>
 					<BypassProxy>0</BypassProxy>
-					<Site></Site>
-					<RemotePath>1 0</RemotePath>
+					<Site />
+					<RemotePath />
 					<LocalPath>/Users/guto/projects/coderelax/myprop/blm-files/</LocalPath>
 				</Tab>
 			</Tabs>
 		</Setting>
-		<Setting name="Remote filelist sortorder">0 3</Setting>
+		<Setting name="Last automatic update check">2021-10-01 07:26:42</Setting>
+		<Setting name="Last automatic update version">3.55.1</Setting>
+		<Setting name="Update Check New Version" platform="mac">nightly 2021-10-01 https://filezilla-project.org/nightlies/2021-10-01/x86_64-apple-darwin18.2.0/FileZilla3.app.tar.bz2 14996974 sha512 2fcee87c95ca51d89d5088c03bccbe730afb0fd2c30de275de11cbe63e3e7391fb11c54b3f6200a59e599d613453465e0ad5600bcb1143d9cbfd5d8912c47bb9 sig:IJE5//2ZS2Xf5VIKFUs2bGUrMS+U04+smy9WIeqQaln7UnpPfn775dBGMckzAfXBpCX34J2sTCv8oD8lHPqWDg
+release 3.55.1 https://dl2.cdn.filezilla-project.org/FileZilla_3.55.1_macosx-x86.app.tar.bz2 14445609 sha512 ac3f837a6ab816bf4f999f8e5082bbdc399b7aeb36c67e0e5ad2f829bb30bbf35c31b427be8fe9613420ec81e12500c28c9a2768fac9612907c40a5487d1ae8c sig:bVuyTlm7pNdnG/LrAb81BYhCz/cFnm1SOEkZco589e7xLCiYDKpeI1Ra0C+HSKDRKPeOtvsd0TPN/rJZaQ1oCw
+beta 3.56.0-rc1 https://dl2.cdn.filezilla-project.org/FileZilla_3.56.0-rc1_macosx-x86.app.tar.bz2 14625648 sha512 882eea8a438c7e604278841a2e21e95c2722cf7e41dd83975dc9e60c394a05468d991976cfa66f630078294514c2c07de6f0bdf7b7f25e05b2ca1d090bd2400d sig:0WI9CXYJ+dN1PyH5UJrHBC0NGW5mtqht/Mgf8UjDggSJgcDsq9WC2yRdV2L8Zx4dDGPZidwz770D2CPVu441Bw
+
+3.56.0-rc1 (2021-09-29)
+
++ Right-clicking a queue tab header now opens the same context menu as right-clicking the correponding queue contents
++ By default, the minimum allowed TLS version is now TLS 1.2
++ Optionally, the systen trust store can be used for certificate verification
+- FTP: Fixed an issue with key file conversion
+- Fixed an issue loading servers not supporting session resumption from storage
+</Setting>
 	</Settings>
 </FileZilla3>
