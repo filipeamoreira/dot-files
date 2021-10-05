@@ -1024,52 +1024,33 @@ This is a basic configuration for the TypeScript language so that =.ts= files ac
 ** Ruby
 
 #+begin_src emacs-lisp
-  ;; (use-package enh-ruby-mode
-  ;;   :mode
-  ;;   (("\\(?:\\.rb\\|ru\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\)file\\)\\'" . enh-ruby-mode)))
+  (use-package ruby-mode
+    :after lsp-mode
+    :mode
+    (("\\(?:\\.rb\\|ru\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\)file\\)\\'" . ruby-mode))
+    :interpreter "ruby")
 
-  ;; (use-package robe
-  ;;   :hook (enh-ruby-mode)
-  ;;   :after company
-  ;;   :config
-  ;;   (add-to-list 'company-backends 'company-robe))
+  (use-package robe
+    :hook (ruby-mode)
+    :after company
+    :config
+    (add-to-list 'company-backends 'company-robe))
 
-  ;; (eval-after-load 'company
-  ;;   '(push 'company-robe company-backends))
+  (use-package rinari
+    :hook (ruby-mode))
 
-  ;; (use-package rinari
-  ;;   :hook (enh-ruby-mode))
-
-  ;; (use-package inf-ruby
-  ;;   :hook (enh-ruby-mode))
-
-  ;; (use-package projectile-rails)
-
-  ;; LSP mode
+  (use-package projectile-rails)
 
   (use-package ruby-electric
     :after ruby-mode
     :hook (ruby-mode . ruby-electric-mode))
 
-  (defun guto/ruby-mode-hook ()
-    (require 'inf-ruby)
-    ;; (require 'ruby-electric)
-    ;; (electric-pair-mode t)
-    )
+  (use-package inf-ruby
+    :hook (ruby-mode))
 
-  (use-package ruby-mode
-    :after lsp-mode
-    :mode "\\.rb\\'"
-    :interpreter "ruby"
-    :config
-    (add-hook 'ruby-mode-hook 'guto/ruby-mode-hook))
-
-  ;; (use-package inf-ruby)
-
-  ;; (use-package ruby-test-mode
-  ;; :after ruby-mode
-  ;; :diminish ruby-test-mode)
-
+  (use-package ruby-test-mode
+    :after ruby-mode
+    :diminish ruby-test-mode)
 #+end_src
 ** YAML
 
