@@ -256,11 +256,11 @@
 ;; Use C-<SPC> C-<SPC> to temporally activate it.
 (setq transient-mark-mode nil)
 
-;; Set Meta key to command on Mac
-(setq mac-option-key-is-meta nil)
-(setq mac-command-key-is-meta t)
-(setq mac-command-modifier 'meta)
-(setq mac-option-modifier nil)
+;; Set Meta key as Command and Super key as Option on a Mac
+(setq mac-command-modifier 'meta) 
+(setq mac-option-modifier 'super)
+(setq mac-control-modifier 'control) ; make Control key do Control
+(setq ns-function-modifier 'hyper)  ; make Fn key do Hyper
 
 (use-package command-log-mode
   :commands command-log-mode)
@@ -683,23 +683,13 @@
   (("\\(?:\\.rb\\|ru\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\)file\\)\\'" . ruby-mode))
   :interpreter "ruby")
 
-(use-package robe
-  :hook (ruby-mode)
-  :after company
-  :config
-  (add-to-list 'company-backends 'company-robe))
-
-(use-package rinari
-  :hook (ruby-mode))
-
-(use-package projectile-rails)
+(use-package projectile-rails
+:config
+(projectile-rails-global-mode))
 
 (use-package ruby-electric
   :after ruby-mode
   :hook (ruby-mode . ruby-electric-mode))
-
-(use-package inf-ruby
-  :hook (ruby-mode))
 
 (use-package ruby-test-mode
   :after ruby-mode
