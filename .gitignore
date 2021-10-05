@@ -26,3 +26,4 @@ emacs/eln-cache/
 .config/emacs/async-bytecomp.log
 .config/filezilla/recentservers.xml
 .config/persistory/
+.config/stripe/config.toml
