@@ -1264,23 +1264,37 @@ Adding newline character is still broken. Look into how to hook into this and fi
 A few options here. This is the apheleia setup
 NOTE: Unstable for the moment
 
-#+begin_src emacs-lisp
-;;(use-package apheleia
-;;  :straight (apheleia :type git :host github :repo "raxod502/apheleia")
-;;  :ensure t
-;;  :config
-;;  (apheleia-global-mode +1)
-;;)
+#+begin_src emacs-lisp :tangle no
+  (use-package apheleia
+   :straight (apheleia :type git :host github :repo "raxod502/apheleia")
+   :ensure t
+   :config
+   (apheleia-global-mode +1))
 #+end_src
 
 This is the `prettier.el` setup (https://github.com/jscheid/prettier.el)
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle no
   (use-package prettier
     :straight t
     :ensure t
     :config
     (global-prettier-mode))
+
+#+end_src
+
+This is the setup using `prettier.js`
+
+#+begin_src emacs-lisp
+  (defun guto/enable-minor-mode (my-extension)
+    "Enable minor mode if filename match the regexp.  MY-EXTENSION is a cons cell (regexp . minor-mode)."
+    (if (buffer-file-name)
+        (if (string-match (car my-extension) buffer-file-name)
+        (funcall (cdr my-extention)))))
+
+  (use-package prettier-js
+    :hook ((js2-mode . prettier-js-mode)
+           (web-mode . prettier-js-mode)))
 
 #+end_src
 
@@ -1533,7 +1547,6 @@ Dired is a built-in file manager for Emacs that does some pretty amazing things!
 #+end_src
 
 * Applications
-
 ** Some App
 
 This is an example of configuring another non-Emacs application using org-mode.  Not only do we write out the configuration at =.config/some-app/config=, we also compute the value that gets stored in this configuration from the Emacs Lisp block above it.
@@ -1579,4 +1592,12 @@ Dial the GC threshold back down so that garbage collection happens more frequent
   ;; source: https://emacs-lsp.github.io/lsp-mode/page/performance/
     (setq read-process-output-max (* 1024 1024)) ;; 1mb
 
+#+end_src
+
+* Prologue
+
+** Start emacs server
+
+#+begin_src emacs-lisp
+(server-start)
 #+end_src

@@ -841,18 +841,15 @@
       'ws-butler-mode)
   (editorconfig-mode 1))
 
-;;(use-package apheleia
-;;  :straight (apheleia :type git :host github :repo "raxod502/apheleia")
-;;  :ensure t
-;;  :config
-;;  (apheleia-global-mode +1)
-;;)
+(defun guto/enable-minor-mode (my-extension)
+  "Enable minor mode if filename match the regexp.  MY-EXTENSION is a cons cell (regexp . minor-mode)."
+  (if (buffer-file-name)
+      (if (string-match (car my-extension) buffer-file-name)
+      (funcall (cdr my-extention)))))
 
-(use-package prettier
-  :straight t
-  :ensure t
-  :config
-  (global-prettier-mode))
+(use-package prettier-js
+  :hook ((js2-mode . prettier-js-mode)
+         (web-mode . prettier-js-mode)))
 
 (use-package smartparens
   :ensure t
@@ -961,3 +958,5 @@
 ;; Increase the amount of data which Emacs reads from the process
 ;; source: https://emacs-lsp.github.io/lsp-mode/page/performance/
   (setq read-process-output-max (* 1024 1024)) ;; 1mb
+
+(server-start)
