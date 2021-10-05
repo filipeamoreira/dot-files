@@ -9,9 +9,9 @@
 /emacs/straight/**/**
 /emacs/init.elc
 emacs/forge-database.sqlite
-/emacs/.last-package-update-day
-/.config/configstore/update-notifier-npm.json
-/.config/configstore/update-notifier-git-mob.json
+.config/emacs/.last-package*
+.config/configstore/update-notifier-npm.json
+.config/configstore/update-notifier-git-mob.json
 /.config/yarn/**
 /emacs/async-bytecomp.log
 emacs/eln-cache/
@@ -19,7 +19,6 @@ emacs/eln-cache/
 .config/emacs/var/**/**
 .config/emacs/straight/**/**
 .config/emacs/elpa/**/**
-.config/emacs/.last-package-update-day
 .config/emacs/init.elc
 .config/zsh/.zcompdump*
 .config/zsh/.zsh_history
