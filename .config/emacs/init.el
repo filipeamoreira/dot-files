@@ -869,6 +869,17 @@
   ;; (sp-pair "'" nil :actions :rem) ;; disable specific pairs
   (setq sp-highlight-pair-overlay nil))
 
+(defun guto/copy-buffer-file-name ()
+    "Copy the full path to the current file in the minibuffer."
+    (interactive)
+    (let ((file-name (buffer-file-name)))
+      (if file-name
+          (progn
+            (kill-new file-name))
+        (error "Buffer not visiting a file"))))
+
+(global-set-key (kbd "C-c c") 'guto/copy-buffer-file-name)
+
 (use-package term
   :commands term
   :config
