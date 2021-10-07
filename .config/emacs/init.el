@@ -841,15 +841,22 @@
       'ws-butler-mode)
   (editorconfig-mode 1))
 
-(defun guto/enable-minor-mode (my-extension)
-  "Enable minor mode if filename match the regexp.  MY-EXTENSION is a cons cell (regexp . minor-mode)."
-  (if (buffer-file-name)
-      (if (string-match (car my-extension) buffer-file-name)
-      (funcall (cdr my-extention)))))
+(defun guto/enable-minor-mode (my-pair)
+      "Enable minor mode if filename match the regexp.  MY-PAIR is a cons cell (regexp . minor-mode)."
+      (if (buffer-file-name)
+          (if (string-match (car my-pair) buffer-file-name)
+          (funcall (cdr my-pair)))))
 
-(use-package prettier-js
-  :hook ((js2-mode . prettier-js-mode)
-         (web-mode . prettier-js-mode)))
+      (use-package prettier-js
+        :hook ((js2-mode . prettier-js-mode)))
+
+  (add-hook 'web-mode-hook #'(lambda ()
+                              (guto/enable-minor-mode
+                               '("\\.jsx?\\'" . prettier-js-mode))))
+
+(add-hook 'web-mode-hook #'(lambda ()
+                              (guto/enable-minor-mode
+                               '("\\.tsx?\\'" . prettier-js-mode))))
 
 (use-package smartparens
   :ensure t
