@@ -406,6 +406,10 @@ These are my changes to the default keybidings for emacs.
 
   (global-set-key (kbd "C-c /") 'comment-or-uncomment-region)
 
+  ;; Bind UK pound sign to alt/option-3
+  (define-key global-map (kbd "s-3") (lambda () (interactive) (insert "£")))
+
+
   ;; Window switching. (C-x o goes to the next window)
   ;;(use-package switch-window
   ;;  :config
