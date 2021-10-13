@@ -834,12 +834,17 @@
   :hook (prog-mode . rainbow-delimiters-mode))
 
 ;; (use-package editorconfig
-;;   :ensure t
-;;   :config
-;;   (setq editorconfig-trim-whitespaces-mode
-;;      'ws-butler-mode)
-;;   (editorconfig-mode 1))
+  ;;   :ensure t
+  ;;   :config
+  ;;   (setq editorconfig-trim-whitespaces-mode
+  ;;      'ws-butler-mode)
+  ;;   (editorconfig-mode 1))
 
+;; trims whitespace only on touched lines
+
+(use-package ws-butler
+  :straight (ws-butler :type git :host github :repo "lewang/ws-butler")
+  :ensure t)
 
 (use-package editorconfig
   :hook (prog-mode . editorconfig-mode)

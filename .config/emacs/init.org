@@ -1245,28 +1245,22 @@ We also use [[https://github.com/sebastiencs/company-box][company-box]] to furth
 
 #+end_src
 
-** ws-butler
-
-Adding newline character is still broken. Look into how to hook into this and fix it.
-#+begin_src emacs-lisp :tangle no
-;; trims whitespace only on touched lines
-(use-package ws-butler
-  :straight (ws-butler :type git :host github :repo "lewang/ws-butler")
-  :ensure t)
-
-#+end_src
 ** Editorconfig
 
 Adding newline character is still broken. Look into how to hook into this and fix it.
-
 #+begin_src emacs-lisp
-  ;; (use-package editorconfig
-  ;;   :ensure t
-  ;;   :config
-  ;;   (setq editorconfig-trim-whitespaces-mode
-  ;;      'ws-butler-mode)
-  ;;   (editorconfig-mode 1))
+    ;; (use-package editorconfig
+    ;;   :ensure t
+    ;;   :config
+    ;;   (setq editorconfig-trim-whitespaces-mode
+    ;;      'ws-butler-mode)
+    ;;   (editorconfig-mode 1))
 
+  ;; trims whitespace only on touched lines
+
+  (use-package ws-butler
+    :straight (ws-butler :type git :host github :repo "lewang/ws-butler")
+    :ensure t)
 
   (use-package editorconfig
     :hook (prog-mode . editorconfig-mode)
