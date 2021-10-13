@@ -833,12 +833,24 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
+;; (use-package editorconfig
+;;   :ensure t
+;;   :config
+;;   (setq editorconfig-trim-whitespaces-mode
+;;      'ws-butler-mode)
+;;   (editorconfig-mode 1))
+
+
 (use-package editorconfig
-  :ensure t
+  :hook (prog-mode . editorconfig-mode)
   :config
-  (setq editorconfig-trim-whitespaces-mode
-     'ws-butler-mode)
-  (editorconfig-mode 1))
+  (defun guto/editorconfig-disable-ws-butler-maybe-h (props)
+    "Disable `ws-butler-mode' if trim_trailing_whitespace is true."
+    (when (and (equal (gethash 'trim_trailing_whitespace props) "true")
+               (bound-and-true-p ws-butler-mode))
+      (ws-butler-mode -1)))
+  (add-hook 'editorconfig-after-apply-functions #'guto/editorconfig-disable-ws-butler-maybe-h)
+  (editorconfig-mode +1))
 
 (use-package prettier
   :ensure t
