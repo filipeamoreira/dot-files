@@ -772,6 +772,10 @@
 
 (use-package json-mode)
 
+(use-package groovy-mode)
+
+(use-package swift-mode)
+
 (use-package company
   :after lsp-mode
   :hook (
