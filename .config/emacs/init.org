@@ -1245,25 +1245,31 @@ We also use [[https://github.com/sebastiencs/company-box][company-box]] to furth
 
 #+end_src
 
-** Editorconfig
+** ws-butler
 
 Adding newline character is still broken. Look into how to hook into this and fix it.
-
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle no
 ;; trims whitespace only on touched lines
 (use-package ws-butler
   :straight (ws-butler :type git :host github :repo "lewang/ws-butler")
   :ensure t)
 
-(use-package editorconfig
-  :ensure t
-  :config
-  (setq editorconfig-trim-whitespaces-mode
-      'ws-butler-mode)
-  (editorconfig-mode 1))
 #+end_src
+** Editorconfig
 
+Adding newline character is still broken. Look into how to hook into this and fix it.
+
+#+begin_src emacs-lisp
+   (use-package editorconfig
+     :ensure t
+     :config
+     (setq editorconfig-trim-whitespaces-mode
+   	'ws-butler-mode)
+     (editorconfig-mode 1))
+#+end_src
 ** Prettier
+
+*** Apheleia
 
 A few options here. This is the apheleia setup
 NOTE: Unstable for the moment
@@ -1276,36 +1282,54 @@ NOTE: Unstable for the moment
    (apheleia-global-mode +1))
 #+end_src
 
+*** Prettier
+
 This is the `prettier.el` setup (https://github.com/jscheid/prettier.el)
 
-#+begin_src emacs-lisp :tangle no
-  (use-package prettier
-    :straight t
-    :ensure t
-    :config
-    (global-prettier-mode))
-
-#+end_src
-
-This is the setup using `prettier.js`
-
 #+begin_src emacs-lisp
-    (defun guto/enable-minor-mode (my-pair)
+  (use-package prettier
+    :ensure t
+    :hook (js2-mode json-mode))
+
+  (defun guto/enable-minor-mode (my-pair)
       "Enable minor mode if filename match the regexp.  MY-PAIR is a cons cell (regexp . minor-mode)."
       (if (buffer-file-name)
           (if (string-match (car my-pair) buffer-file-name)
-          (funcall (cdr my-pair)))))
-
-      (use-package prettier-js
-        :hook ((js2-mode . prettier-js-mode)))
+              (funcall (cdr my-pair)))))
 
   (add-hook 'web-mode-hook #'(lambda ()
-                              (guto/enable-minor-mode
-                               '("\\.jsx?\\'" . prettier-js-mode))))
+                               (guto/enable-minor-mode
+                                '("\\.jsx?\\'" . prettier-mode))))
+  (add-hook 'web-mode-hook #'(lambda ()
+                               (guto/enable-minor-mode
+                                '("\\.tsx?\\'" . prettier-mode))))
+  (add-hook 'json-mode-hook #'(lambda ()
+                                (guto/enable-minor-mode
+                                 '("\\.json?\\'" . prettier-mode))))
+#+end_src
 
-(add-hook 'web-mode-hook #'(lambda ()
-                              (guto/enable-minor-mode
-                               '("\\.tsx?\\'" . prettier-js-mode))))
+*** Prettier.js
+This is the setup using `prettier.js`
+
+#+begin_src emacs-lisp :tangle no
+  (defun guto/enable-minor-mode (my-pair)
+    "Enable minor mode if filename match the regexp.  MY-PAIR is a cons cell (regexp . minor-mode)."
+    (if (buffer-file-name)
+        (if (string-match (car my-pair) buffer-file-name)
+            (funcall (cdr my-pair)))))
+
+  (use-package prettier-js
+    :hook (js2-mode json-mode))
+
+  (add-hook 'web-mode-hook #'(lambda ()
+                               (guto/enable-minor-mode
+                                '("\\.jsx?\\'" . prettier-js-mode))))
+  (add-hook 'web-mode-hook #'(lambda ()
+                               (guto/enable-minor-mode
+                                '("\\.tsx?\\'" . prettier-js-mode))))
+  (add-hook 'json-mode-hook #'(lambda ()
+                                (guto/enable-minor-mode
+                                 '("\\.json?\\'" . prettier-js-mode))))
 
 #+end_src
 

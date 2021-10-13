@@ -833,34 +833,32 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
-;; trims whitespace only on touched lines
-(use-package ws-butler
-  :straight (ws-butler :type git :host github :repo "lewang/ws-butler")
-  :ensure t)
-
 (use-package editorconfig
   :ensure t
   :config
   (setq editorconfig-trim-whitespaces-mode
-      'ws-butler-mode)
+     'ws-butler-mode)
   (editorconfig-mode 1))
 
+(use-package prettier
+  :ensure t
+  :hook (js2-mode json-mode))
+
 (defun guto/enable-minor-mode (my-pair)
-      "Enable minor mode if filename match the regexp.  MY-PAIR is a cons cell (regexp . minor-mode)."
-      (if (buffer-file-name)
-          (if (string-match (car my-pair) buffer-file-name)
-          (funcall (cdr my-pair)))))
-
-      (use-package prettier-js
-        :hook ((js2-mode . prettier-js-mode)))
-
-  (add-hook 'web-mode-hook #'(lambda ()
-                              (guto/enable-minor-mode
-                               '("\\.jsx?\\'" . prettier-js-mode))))
+    "Enable minor mode if filename match the regexp.  MY-PAIR is a cons cell (regexp . minor-mode)."
+    (if (buffer-file-name)
+        (if (string-match (car my-pair) buffer-file-name)
+            (funcall (cdr my-pair)))))
 
 (add-hook 'web-mode-hook #'(lambda ()
+                             (guto/enable-minor-mode
+                              '("\\.jsx?\\'" . prettier-mode))))
+(add-hook 'web-mode-hook #'(lambda ()
+                             (guto/enable-minor-mode
+                              '("\\.tsx?\\'" . prettier-mode))))
+(add-hook 'json-mode-hook #'(lambda ()
                               (guto/enable-minor-mode
-                               '("\\.tsx?\\'" . prettier-js-mode))))
+                               '("\\.json?\\'" . prettier-mode))))
 
 (use-package smartparens
   :ensure t
