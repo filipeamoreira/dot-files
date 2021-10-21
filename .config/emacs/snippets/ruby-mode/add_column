@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: add_column(table_name, column_name, type, default:, null:, after:)
+# key: add_column                                                                                                                                                                                                                                                              
+# --
+add_column :${1:table_name}, :${2:column_name}, :${3:type$$(yas-auto-next(yas-choose-value'("binary" "boolean" "date" "datetime" "decimal" "float" "integer" "primary_key" "string" "text" "mediumtext" "time" "timestamp")))}${4:, default: ${5:default}}${6:, null: ${7:false}}${8:, after: :${9:column_name}}${10: if !column_exists(:$1, :$2)}$0

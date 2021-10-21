@@ -582,28 +582,6 @@
 
 (use-package helm-lsp :commands helm-lsp-workspace-symbol)
 
-(use-package dap-mode)
-
-  ;;(use-package dap-mode
-    ;; Uncomment the config below if you want all UI panes to be hidden by default!
-    ;; :custom
-    ;; (lsp-enable-dap-auto-configure nil)
-    ;; :config
-    ;; (dap-ui-mode 1)
-  ;;  :commands dap-debug
-  ;;  :config
-    ;; Set up Node debugging
-  ;;  (require 'dap-node)
-  ;;  (dap-node-setup) ;; Automatically installs Node debug adapter if needed
-
-    ;; Bind `C-c l d` to `dap-hydra` for easy access
-  ;;  (general-define-key
-  ;;    :keymaps 'lsp-mode-map
-  ;;    :prefix lsp-keymap-prefix
-  ;;    "d" '(dap-hydra t :wk "debugger")))
-
-(use-package yasnippet)
-
 (electric-pair-mode)
 
 ;; C-c C-n - jump between start/end tags
@@ -680,6 +658,12 @@
 
 (use-package add-node-modules-path
   :ensure t)
+
+(use-package robe
+  :straight (robe :type git :host github :repo "dgutov/robe")
+  :hook (ruby-mode)
+  :config
+(global-robe-mode))
 
 (use-package ruby-mode
   :after lsp-mode
@@ -899,6 +883,25 @@
   ;; (sp-pair "'" nil :actions :rem) ;; disable specific pairs
   (setq sp-highlight-pair-overlay nil))
 
+(use-package pdf-tools
+  :straight (:depth full)
+  :config
+  (pdf-tools-install :no-query)
+  ;; open pdfs scaled to fit page
+  (setq-default pdf-view-display-size 'fit-page)
+  ;; automatically annotate highlights
+  (setq pdf-annot-activate-created-annotations t)
+  ;; use normal isearch
+  (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward)
+  ;; turn off cua so copy works
+  (add-hook 'pdf-view-mode-hook (lambda () (cua-mode 0)))
+  ;; more fine-grained zooming
+  (setq pdf-view-resize-factor 1.1)
+  ;; keyboard shortcuts
+  (define-key pdf-view-mode-map (kbd "h") 'pdf-annot-add-highlight-markup-annotation)
+  (define-key pdf-view-mode-map (kbd "t") 'pdf-annot-add-text-annotation)
+  (define-key pdf-view-mode-map (kbd "D") 'pdf-annot-delete))
+
 (defun guto/copy-buffer-file-name ()
     "Copy the full path to the current file in the minibuffer."
     (interactive)
@@ -909,6 +912,13 @@
         (error "Buffer not visiting a file"))))
 
 (global-set-key (kbd "C-c c") 'guto/copy-buffer-file-name)
+
+;; `yas-describe-tables` show the available snippets for current mode
+;; `yas-visit-snippet-file` shows definition for snippet
+  (use-package yasnippet
+   :config (yas-global-mode 1))
+
+(use-package yasnippet-snippets)
 
 (use-package term
   :commands term

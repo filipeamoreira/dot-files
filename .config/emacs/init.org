@@ -855,9 +855,8 @@ Call =org-insert-structure-template= to insert structured templates.
 #+end_src
 
 * Languages
-
 ** IDE Features with lsp-mode
-**** lsp-mode
+*** lsp-mode
 
 We use the excellent [[https://emacs-lsp.github.io/lsp-mode/][lsp-mode]] to enable IDE-like functionality for many different programming languages via "language servers" that speak the [[https://microsoft.github.io/language-server-protocol/][Language Server Protocol]].  Before trying to set up =lsp-mode= for a particular language, check out the [[https://emacs-lsp.github.io/lsp-mode/page/languages/][documentation for your language]] so that you can learn which language servers are available and how to install them.
 
@@ -881,7 +880,7 @@ The =which-key= integration adds helpful descriptions of the various keys so you
 
 #+end_src
 
-**** lsp-ui
+*** lsp-ui
 
 [[https://emacs-lsp.github.io/lsp-ui/][lsp-ui]] is a set of UI enhancements built on top of =lsp-mode= which make Emacs feel even more like an IDE.  Check out the screenshots on the =lsp-ui= homepage (linked at the beginning of this paragraph) to see examples of what it can do.
 
@@ -894,7 +893,7 @@ The =which-key= integration adds helpful descriptions of the various keys so you
 
 #+end_src
 
-**** helm-lsp
+*** helm-lsp
 
 #+begin_src emacs-lisp
   (use-package helm-lsp :commands helm-lsp-workspace-symbol)
@@ -904,34 +903,25 @@ The =which-key= integration adds helpful descriptions of the various keys so you
 
 [[https://emacs-lsp.github.io/dap-mode/][dap-mode]] is an excellent package for bringing rich debugging capabilities to Emacs via the [[https://microsoft.github.io/debug-adapter-protocol/][Debug Adapter Protocol]].  You should check out the [[https://emacs-lsp.github.io/dap-mode/page/configuration/][configuration docs]] to learn how to configure the debugger for your language.  Also make sure to check out the documentation for the debug adapter to see what configuration parameters are available to use for your debug templates!
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle no
+  (use-package dap-mode
+      Uncomment the config below if you want all UI panes to be hidden by default!
+      :custom
+      (lsp-enable-dap-auto-configure nil)
+      :config
+      (dap-ui-mode 1)
+     :commands dap-debug
+     :config
+      Set up Node debugging
+     (require 'dap-node)
+     (dap-node-setup) ;; Automatically installs Node debug adapter if needed
 
-(use-package dap-mode)
+      Bind `C-c l d` to `dap-hydra` for easy access
+     (general-define-key
+       :keymaps 'lsp-mode-map
+       :prefix lsp-keymap-prefix
+       "d" '(dap-hydra t :wk "debugger")))
 
-  ;;(use-package dap-mode
-    ;; Uncomment the config below if you want all UI panes to be hidden by default!
-    ;; :custom
-    ;; (lsp-enable-dap-auto-configure nil)
-    ;; :config
-    ;; (dap-ui-mode 1)
-  ;;  :commands dap-debug
-  ;;  :config
-    ;; Set up Node debugging
-  ;;  (require 'dap-node)
-  ;;  (dap-node-setup) ;; Automatically installs Node debug adapter if needed
-
-    ;; Bind `C-c l d` to `dap-hydra` for easy access
-  ;;  (general-define-key
-  ;;    :keymaps 'lsp-mode-map
-  ;;    :prefix lsp-keymap-prefix
-  ;;    "d" '(dap-hydra t :wk "debugger")))
-
-#+end_src
-
-*** Yasnippet
-
-#+begin_src emacs-lisp
-  (use-package yasnippet)
 #+end_src
 
 ** Electric pair mode
@@ -1027,14 +1017,12 @@ This is a basic configuration for the TypeScript language so that =.ts= files ac
 
 ** Ruby
 
-Robe is currently disabled because of this error: `Initialization fails with: "Autoloading file  /Users/guto/.config/emacs/elpa/robe-20210906.2250/robe.elc failed to define function robe"`
-#+begin_src emacs-lisp :tangle no
+#+begin_src emacs-lisp
   (use-package robe
     :straight (robe :type git :host github :repo "dgutov/robe")
     :hook (ruby-mode)
-    :after company
     :config
-    (add-to-list 'company-backends 'company-robe))
+  (global-robe-mode))
 #+end_src
 
 Rinari is disabled for the moment
@@ -1371,6 +1359,30 @@ This is the setup using `prettier.js`
     (setq sp-highlight-pair-overlay nil))
 #+end_src
 
+** PDF tools
+
+#+begin_src emacs-lisp
+  (use-package pdf-tools
+    :straight (:depth full)
+    :config
+    (pdf-tools-install :no-query)
+    ;; open pdfs scaled to fit page
+    (setq-default pdf-view-display-size 'fit-page)
+    ;; automatically annotate highlights
+    (setq pdf-annot-activate-created-annotations t)
+    ;; use normal isearch
+    (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward)
+    ;; turn off cua so copy works
+    (add-hook 'pdf-view-mode-hook (lambda () (cua-mode 0)))
+    ;; more fine-grained zooming
+    (setq pdf-view-resize-factor 1.1)
+    ;; keyboard shortcuts
+    (define-key pdf-view-mode-map (kbd "h") 'pdf-annot-add-highlight-markup-annotation)
+    (define-key pdf-view-mode-map (kbd "t") 'pdf-annot-add-text-annotation)
+    (define-key pdf-view-mode-map (kbd "D") 'pdf-annot-delete))
+
+#+end_src
+
 ** Custom functions
 
 #+begin_src emacs-lisp
@@ -1384,6 +1396,19 @@ This is the setup using `prettier.js`
           (error "Buffer not visiting a file"))))
 
   (global-set-key (kbd "C-c c") 'guto/copy-buffer-file-name)
+#+end_src
+
+** Yanisppet
+
+#+begin_src emacs-lisp
+;; `yas-describe-tables` show the available snippets for current mode
+;; `yas-visit-snippet-file` shows definition for snippet
+  (use-package yasnippet
+   :config (yas-global-mode 1))
+#+end_src
+
+#+begin_src emacs-lisp
+(use-package yasnippet-snippets)
 #+end_src
 
 * Terminals
