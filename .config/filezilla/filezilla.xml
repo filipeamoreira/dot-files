@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<FileZilla3 version="3.55.1" platform="mac">
+<FileZilla3 version="3.56.0" platform="mac">
 	<Settings>
 		<Setting name="Use Pasv mode">1</Setting>
 		<Setting name="Limit local ports">0</Setting>
@@ -125,36 +125,19 @@
 		<Setting name="Always use default editor">0</Setting>
 		<Setting name="Timestamp in message log">1</Setting>
 		<Setting name="Local filelist sortorder">0 2</Setting>
-		<Setting name="Remote filelist colwidths">295 75 80 100 80 85</Setting>
 		<Setting name="Splitter positions (v2)">247 -132 500000000 254 119 500000000</Setting>
 		<Setting name="Window position and size">1 0 25 1680 949 </Setting>
 		<Setting name="Local filelist colwidths">243 80 120 120</Setting>
 		<Setting name="Remote filelist sortorder">0 3</Setting>
-		<Setting name="Greeting version">3.55.1</Setting>
-		<Setting name="Tab data" sensitive="1">
-			<Tabs>
-				<Tab selected="1">
-					<Host>ftp.asunolivan.com</Host>
-					<Port>21</Port>
-					<Protocol>0</Protocol>
-					<Type>0</Type>
-					<User>asunoliv</User>
-					<Pass encoding="base64" />
-					<Logontype>1</Logontype>
-					<PasvMode>MODE_DEFAULT</PasvMode>
-					<EncodingType>Auto</EncodingType>
-					<BypassProxy>0</BypassProxy>
-					<Site />
-					<RemotePath />
-					<LocalPath>/Users/guto/projects/coderelax/myprop/blm-files/</LocalPath>
-				</Tab>
-			</Tabs>
-		</Setting>
-		<Setting name="Last automatic update check">2021-10-01 07:26:42</Setting>
 		<Setting name="Last automatic update version">3.55.1</Setting>
-		<Setting name="Update Check New Version" platform="mac">nightly 2021-10-01 https://filezilla-project.org/nightlies/2021-10-01/x86_64-apple-darwin18.2.0/FileZilla3.app.tar.bz2 14996974 sha512 2fcee87c95ca51d89d5088c03bccbe730afb0fd2c30de275de11cbe63e3e7391fb11c54b3f6200a59e599d613453465e0ad5600bcb1143d9cbfd5d8912c47bb9 sig:IJE5//2ZS2Xf5VIKFUs2bGUrMS+U04+smy9WIeqQaln7UnpPfn775dBGMckzAfXBpCX34J2sTCv8oD8lHPqWDg
-release 3.55.1 https://dl2.cdn.filezilla-project.org/FileZilla_3.55.1_macosx-x86.app.tar.bz2 14445609 sha512 ac3f837a6ab816bf4f999f8e5082bbdc399b7aeb36c67e0e5ad2f829bb30bbf35c31b427be8fe9613420ec81e12500c28c9a2768fac9612907c40a5487d1ae8c sig:bVuyTlm7pNdnG/LrAb81BYhCz/cFnm1SOEkZco589e7xLCiYDKpeI1Ra0C+HSKDRKPeOtvsd0TPN/rJZaQ1oCw
-beta 3.56.0-rc1 https://dl2.cdn.filezilla-project.org/FileZilla_3.56.0-rc1_macosx-x86.app.tar.bz2 14625648 sha512 882eea8a438c7e604278841a2e21e95c2722cf7e41dd83975dc9e60c394a05468d991976cfa66f630078294514c2c07de6f0bdf7b7f25e05b2ca1d090bd2400d sig:0WI9CXYJ+dN1PyH5UJrHBC0NGW5mtqht/Mgf8UjDggSJgcDsq9WC2yRdV2L8Zx4dDGPZidwz770D2CPVu441Bw
+		<Setting name="Last automatic update check">2021-10-20 05:50:19</Setting>
+		<Setting name="Update Check New Version" platform="mac">nightly 2021-10-20 https://filezilla-project.org/nightlies/2021-10-20/x86_64-apple-darwin18.2.0/FileZilla3.app.tar.bz2 14956184 sha512 fe3f043d8c0ea731ac947bb34a8620c38a06219978813d68a860ea612af6b52f947cd7833da04abbab2c004b93353b47eae075d2c84b750d172ccb577e5bd9ca sig:jy9dX850EWNLTlqc50B0U4FPtHBfTxSKm33eKC3pSNe5o+Ae2zPzX79Sjc5utBfyLrMIpjjlH0W0vtzFggZkDw
+release 3.56.0 https://dl3.cdn.filezilla-project.org/FileZilla_3.56.0_macosx-x86.app.tar.bz2 14679136 sha512 69d5d5eabc1580d56d99651821395cd76adce12cd73f3642e5e0601407247d12b9baec9962d4cde741607716c87c33148b0ed729809acc82f6008a51ee23c95d sig:H8++Z1NQa/Per3KZ1FltlDStIXpHlvkgHSB7vZFCDYkFgvOg6YUeT5JsABf40jRFweZOMQ/n5c9djNfO9bKGAg
+
+3.56.0 (2021-10-11)
+
+- Updated to libfilezilla 0.34.0
+- Updated translations
 
 3.56.0-rc1 (2021-09-29)
 
@@ -164,5 +147,28 @@ beta 3.56.0-rc1 https://dl2.cdn.filezilla-project.org/FileZilla_3.56.0-rc1_macos
 - FTP: Fixed an issue with key file conversion
 - Fixed an issue loading servers not supporting session resumption from storage
 </Setting>
+		<Setting name="Minimum TLS Version">2</Setting>
+		<Setting name="Trust system trust store">0</Setting>
+		<Setting name="Greeting version">3.56.0</Setting>
+		<Setting name="Remote filelist colwidths">295 75 80 166 80 85</Setting>
+		<Setting name="Tab data" sensitive="1">
+			<Tabs>
+				<Tab connected="1" selected="1">
+					<Host>myprop.coderelax.com</Host>
+					<Port>21</Port>
+					<Protocol>0</Protocol>
+					<Type>0</Type>
+					<User>reapit</User>
+					<Pass encoding="base64">cmVhcGl0</Pass>
+					<Logontype>1</Logontype>
+					<PasvMode>MODE_DEFAULT</PasvMode>
+					<EncodingType>Auto</EncodingType>
+					<BypassProxy>0</BypassProxy>
+					<Site></Site>
+					<RemotePath>1 0</RemotePath>
+					<LocalPath>/Users/guto/projects/coderelax/myprop/blm-files/</LocalPath>
+				</Tab>
+			</Tabs>
+		</Setting>
 	</Settings>
 </FileZilla3>
