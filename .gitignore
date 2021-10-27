@@ -27,3 +27,4 @@ emacs/eln-cache/
 .config/filezilla/recentservers.xml
 .config/persistory/
 .config/stripe/config.toml
+.config/containers/**
