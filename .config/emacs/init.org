@@ -1235,6 +1235,11 @@ Inf-ruby is disabled for the moment
 #+begin_src emacs-lisp
 (use-package swift-mode)
 #+end_src
+** Haskell
+
+#+begin_src emacs-lisp
+(use-package haskell-mode)
+#+end_src
 
 * Development
 ** Company Mode
@@ -1705,7 +1710,6 @@ Dired is a built-in file manager for Emacs that does some pretty amazing things!
     :ensure nil
     :commands (dired dired-jump)
     :bind (("C-x C-j" . dired-jump))
-    ;;:custom ((dired-listing-switches "-agho --group-directories-first"))
     :config )
 
   (use-package dired-single
@@ -1721,7 +1725,6 @@ Dired is a built-in file manager for Emacs that does some pretty amazing things!
     ;;(add-to-list 'dired-open-functions #'dired-open-xdg t)
     (setq dired-open-extensions '(("png" . "feh")
                                   ("mkv" . "mpv"))))
-
 #+end_src
 
 * Applications
