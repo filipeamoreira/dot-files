@@ -768,7 +768,9 @@
 
 (use-package json-mode)
 
-(use-package groovy-mode)
+(use-package groovy-mode
+  :config
+  (setq groovy-indent-offset 4))
 
 (use-package swift-mode)
 

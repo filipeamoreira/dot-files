@@ -1244,7 +1244,9 @@ Inf-ruby is disabled for the moment
 ** Groovy
 
 #+begin_src emacs-lisp
-(use-package groovy-mode)
+  (use-package groovy-mode
+    :config
+    (setq groovy-indent-offset 4))
 #+end_src
 ** Swift
 
