@@ -9,7 +9,7 @@ scrolling:
   multiplier: 3
 font:
   normal:
-    family: Fira Code
+    family: IBM Plex Mono
   size: 24.0
   use_thin_strokes: true
 colors:

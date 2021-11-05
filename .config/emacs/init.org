@@ -176,12 +176,16 @@ You can also use =M-x auto-package-update-now= to update right now!
 #+end_src
 * Font Configuration
 
-I am using the [[https://github.com/tonsky/FiraCode][Fira Code]] and [[https://fonts.google.com/specimen/Cantarell][Cantarell]] fonts for this configuration
-which will more than likely need to be installed on your machine.
-Both can usually be found in the various Linux distro package managers
-or downloaded from the links above.
+Currently using IBM Plex Mono and Cantarell.
 
-To install the fonts:
+Good mono fonts:
+- Fira Code
+- IBM Plex Mono
+
+Good sans fonts:
+- Cantarell
+
+To install the fonts on mac use:
 
 1. `brew tap homebrew/cask-fonts && brew install --cask font-fira-code`
 2. `brew install svn`
@@ -199,9 +203,9 @@ To install the fonts:
     ;; Based on Fira and Cantarell
 
     ;; Set the default font face
-    (set-face-attribute 'default nil :font "Fira Code" :height guto/default-font-size)
+    (set-face-attribute 'default nil :font "IBM Plex Mono" :height guto/default-font-size)
     ;; Set the fixed pitch face
-    (set-face-attribute 'fixed-pitch nil :font "Fira Code" :height guto/default-font-size)
+    (set-face-attribute 'fixed-pitch nil :font "IBM Plex Mono" :height guto/default-font-size)
     ;; Set the variable pitch face
     (set-face-attribute 'variable-pitch nil :font "Cantarell" :height guto/default-variable-font-size :weight 'regular)
 
