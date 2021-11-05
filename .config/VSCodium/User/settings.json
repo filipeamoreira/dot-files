@@ -3,7 +3,7 @@
   "workbench.sideBar.location": "right",
   "terminal.integrated.cursorStyle": "line",
   "workbench.colorTheme": "Solarized Dark",
-  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontSize": 18,
   "terminal.integrated.fontFamily": "IBM Flex Mono",
   "sync.gist": "66618fba2c1085c40040431ad10ec5d2",
   "editor.suggestSelection": "first",
