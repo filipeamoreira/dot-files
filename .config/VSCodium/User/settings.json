@@ -1,0 +1,20 @@
+{
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.sideBar.location": "right",
+  "terminal.integrated.cursorStyle": "line",
+  "workbench.colorTheme": "Solarized Dark",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontFamily": "FiraCode-Retina",
+  "sync.gist": "66618fba2c1085c40040431ad10ec5d2",
+  "editor.suggestSelection": "first",
+  "editor.fontSize": 20,
+  "editor.fontWeight": "400",
+  "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'onum'",
+  "editor.fontFamily": "FiraCode-Retina",
+  "editor.minimap.enabled": false,
+  "explorer.openEditors.visible": 0,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.renderIndentGuides": true,
+  "editor.bracketPairColorization.enabled": true
+}
