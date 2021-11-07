@@ -1262,6 +1262,11 @@ Inf-ruby is disabled for the moment
 #+begin_src emacs-lisp
 (use-package haskell-mode)
 #+end_src
+** Nix
+
+#+begin_src emacs-lisp
+(use-package nix-mode)
+#+end_src
 
 * Development
 ** Company Mode

@@ -776,6 +776,8 @@
 
 (use-package haskell-mode)
 
+(use-package nix-mode)
+
 (use-package company
   :after lsp-mode
   :hook (
