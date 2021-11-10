@@ -13,4 +13,4 @@ matches:
       - name: mydatetime
         type: date
         params:
-          format: "%Y%m%d%H%M"
+          format: "%Y%m%d%H%M%S"
