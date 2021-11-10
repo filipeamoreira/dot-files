@@ -814,18 +814,13 @@
 
 (use-package magit
   :commands magit-status
+  :bind (("C-c g" . magit-status)
+         ("C-x f" . magit-status))
   :custom
   (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1)
   (magit-refresh-status-buffer nil)
   (auto-revert-buffer-list-filter 'magit-auto-revert-repository-buffer-p)
   (magit-git-executable "/usr/local/bin/git"))
-
-;; NOTE: Make sure to configure a GitHub token before using this package!
-;; - https://magit.vc/manual/forge/Token-Creation.html#Token-Creation
-;; - https://magit.vc/manual/ghub/Getting-Started.html#Getting-Started
-
-;;(use-package forge
-;;  :after magit)
 
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
