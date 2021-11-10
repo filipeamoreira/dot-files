@@ -73,19 +73,10 @@
   (auto-package-update-maybe)
   (auto-package-update-at-time "09:00"))
 
-;; Based on Source Sans/Code Pro font
-;;(set-face-attribute 'default nil :font "Source Code Pro" :height guto/default-font-size)
-;; Set the fixed pitch face
-;;(set-face-attribute 'fixed-pitch nil :font "Source Code Pro" :height guto/default-font-size)
-;; Set the variable pitch face
-;;(set-face-attribute 'variable-pitch nil :font "Source Sans 3 VF" :height guto/default-variable-font-size :weight 'regular)
-
-;; Based on Fira and Cantarell
-
 ;; Set the default font face
-(set-face-attribute 'default nil :font "IBM Plex Mono" :height guto/default-font-size)
+(set-face-attribute 'default nil :font "Fira Code" :height guto/default-font-size)
 ;; Set the fixed pitch face
-(set-face-attribute 'fixed-pitch nil :font "IBM Plex Mono" :height guto/default-font-size)
+(set-face-attribute 'fixed-pitch nil :font "Fira Code" :height guto/default-font-size)
 ;; Set the variable pitch face
 (set-face-attribute 'variable-pitch nil :font "Cantarell" :height guto/default-variable-font-size :weight 'regular)
 
