@@ -815,7 +815,9 @@
 (use-package magit
   :commands magit-status
   :bind (("C-c g" . magit-status)
-         ("C-x f" . magit-status))
+         ("C-x f" . magit-status)
+         ("C-x C-g" . magit-status)
+         ("C-x g" . magit-status))
   :custom
   (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1)
   (magit-refresh-status-buffer nil)
