@@ -30,8 +30,7 @@ export CPPFLAGS="-I/usr/local/opt/openjdk@8/include"
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export ANDROID_SDK=$HOME/Library/Android/sdk
 export ANDROID_NDK=$HOME/Library/Android/sdk/ndk/22.1.7171670
-export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
-# export JAVA_HOME="/Users/guto/Library/Application Support/JetBrains/Toolbox/apps/AndroidStudio/ch-0/201.7042882/Android Studio.app/Contents/jre/jdk/Contents/Home"
+export JAVA_HOME=/Applications/Android\ Studio.app/Contents/jre/Contents/Home/
 
 # brew info openssl
 # export LDFLAGS="-L/usr/local/opt/openssl/lib"
