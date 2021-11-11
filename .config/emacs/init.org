@@ -431,6 +431,12 @@ These are my changes to the default keybidings for emacs.
   (setq ns-function-modifier 'hyper)  ; make Fn key do Hyper
 #+end_src
 
+** Show key bindings on screen
+https://github.com/chuntaro/emacs-keypression
+#+begin_src emacs-lisp
+  (use-package keypression)
+#+end_src
+
 * UI Configuration
 ** Command Log Mode
 

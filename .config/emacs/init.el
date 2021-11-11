@@ -257,6 +257,8 @@
 (setq mac-control-modifier 'control) ; make Control key do Control
 (setq ns-function-modifier 'hyper)  ; make Fn key do Hyper
 
+(use-package keypression)
+
 (use-package command-log-mode
   :commands command-log-mode)
 
