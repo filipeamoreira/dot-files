@@ -156,5 +156,5 @@ eval "$(asdf exec direnv hook zsh)"
 direnv() { asdf exec direnv "$@"; }
 
 # Single export PATH call
-export PATH="/usr/local/opt/openjdk@8/bin:/usr/local/opt/coreutils/libexec/gnubin:$HOME/.cargo/bin:$HOME/.asdf/bin:$HOME/.asdf/shims:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/emulator:$PATH:$ANDROID_HOME/tools:$PATH:$ANDROID_HOME/tools/bin:$PATH:$ANDROID_HOME/platform-tools:/usr/local/opt/mysql-client/bin"
+export PATH="/usr/local/opt/openjdk@8/bin:/usr/local/opt/coreutils/libexec/gnubin:$HOME/.cargo/bin:$HOME/.asdf/bin:$HOME/.asdf/shims:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$PATH:$ANDROID_HOME/platform-tools:/usr/local/opt/mysql-client/bin:$HOME/bin/context/tex/texmf-osx-64/bin"
 
