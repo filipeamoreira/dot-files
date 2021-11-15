@@ -292,49 +292,42 @@
   ;; :demand t
 
   :bind (
-	 ("C-c h" . helm-command-prefix)
-	 ("M-x" . helm-M-x)
-	 ("C-x m" . helm-M-x)
-	 ("C-c h o" . helm-occur)
-	 ("M-y" . helm-show-kill-ring)
-	 ("C-x C-f" . helm-find-files)
-	 ("C-x b" . helm-mini)
-	 :map helm-map
-	 ("<tab>" . helm-execute-persistent-action) ; rebind tab to run persistent action
-	 ("C-i" . helm-execute-persistent-action) ; make TAB works in terminal
-	 ("C-z" . helm-select-action) ; list actions using C-z
-	 :map helm-command-map
-	 ("o" . helm-occur)
-	 ("g" . helm-do-grep)
-	 ("C-c w" . helm-wikipedia-suggest)
-	 ("SPC" . helm-all-mark-rings))
+         ("C-c h" . helm-command-prefix)
+         ("M-x" . helm-M-x)
+         ("C-c RET" . helm-M-x)
+         ("C-x m" . helm-M-x)
+         ("C-x RET" . helm-M-x)
+         ("C-x C-m" . helm-M-x)
+         ("C-c h o" . helm-occur)
+         ("M-y" . helm-show-kill-ring)
+         ("C-x C-f" . helm-find-files)
+         ("C-x b" . helm-mini)
+         ("C-x C-b" . helm-buffers-list)
+         ("C-h f" . helm-apropos)
+         ("C-h r" . helm-info-emacs)
+         ("C-h C-l" . helm-locate-library)
+         ("C-c f" . helm-recentf)
+         ("C-x d" . helm-find-files)
+         ("C-x C-d" . helm-find-files)
+         :map helm-map
+         ("<tab>" . helm-execute-persistent-action) ; rebind tab to run persistent action
+         ("C-i" . helm-execute-persistent-action) ; make TAB works in terminal
+         ("C-z" . helm-select-action) ; list actions using C-z
+         :map helm-command-map
+         ("o" . helm-occur)
+         ("g" . helm-do-grep)
+         ("C-c w" . helm-wikipedia-suggest)
+         ("SPC" . helm-all-mark-rings))
   :init
   (setq helm-input-idle-delay                 0.01
-	helm-reuse-last-window-split-state    t
-	helm-split-window-inside-p           t
-	helm-buffers-fuzzy-matching           t
-	helm-move-to-line-cycle-in-source     t
-	helm-ff-search-library-in-sexp        t
-	helm-ff-file-name-history-use-recentf t)
+        helm-reuse-last-window-split-state    t
+        helm-split-window-inside-p           t
+        helm-buffers-fuzzy-matching           t
+        helm-move-to-line-cycle-in-source     t
+        helm-ff-search-library-in-sexp        t
+        helm-ff-file-name-history-use-recentf t)
   (require 'helm-config)
   (helm-mode 1))
-
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-x C-m") 'helm-M-x)
-(global-set-key (kbd "M-y") 'helm-show-kill-ring)
-(global-set-key (kbd "C-x b") 'helm-mini)
-(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-h f") 'helm-apropos)
-(global-set-key (kbd "C-h r") 'helm-info-emacs)
-(global-set-key (kbd "C-h C-l") 'helm-locate-library)
-(global-set-key (kbd "C-c f") 'helm-recentf)
-(global-set-key (kbd "C-x d") 'helm-find-files)
-(global-set-key (kbd "C-x C-d") 'helm-find-files)
-(global-set-key (kbd "C-x RET") 'helm-M-x)
-;; (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
-;; (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
-;; (define-key helm-map (kbd "C-z")  'helm-select-action)
 
 ;; helm-ag
 (use-package helm-ag
