@@ -835,14 +835,15 @@ Call =org-insert-structure-template= to insert structured templates.
 
 #+begin_src emacs-lisp
 
-  (with-eval-after-load 'org
-    ;; This is needed as of Org 9.2
-    (require 'org-tempo)
+        (with-eval-after-load 'org
+          ;; This is needed as of Org 9.2
+          (require 'org-tempo)
 
-    (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
-    (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
-    (add-to-list 'org-structure-template-alist '("py" . "src python"))
-    (add-to-list 'org-structure-template-alist '("rb" . "src ruby")))
+          (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
+          (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+          (add-to-list 'org-structure-template-alist '("py" . "src python"))
+          (add-to-list 'org-structure-template-alist '("rb" . "src ruby"))
+          (add-to-list 'org-structure-template-alist '("hs" . "src haskell")))
 
 #+end_src
 
@@ -1249,6 +1250,20 @@ Inf-ruby is disabled for the moment
 
 #+begin_src emacs-lisp
 (use-package haskell-mode)
+#+end_src
+
+*** Dante
+
+Add a line starting with `-- >>>` and run `dante-eval-block` to evaluate code inside Emacs.
+
+#+begin_src emacs-lisp
+  (use-package dante
+    :ensure t
+    :after haskell-mode
+    :commands 'dante-mode
+    :init
+    (add-hook 'haskell-mode-hook 'flycheck-mode)
+    (add-hook 'haskell-mode-hook 'dante-mode))
 #+end_src
 ** Nix
 
