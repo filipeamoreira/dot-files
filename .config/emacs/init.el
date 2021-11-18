@@ -601,6 +601,12 @@
   :commands (treemacs)
   :after (lsp-mode))
 
+(use-package attrap
+  :ensure t
+  :bind (("C-x /" . attrap-attrap))) ;; use any binding of your choice
+
+(use-package direnv)
+
 (electric-pair-mode)
 
 ;; C-c C-n - jump between start/end tags

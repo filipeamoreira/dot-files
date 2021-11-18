@@ -1044,6 +1044,20 @@ This is a barebones configuration of LSP
 
 #+end_src
 
+*** direnv-mode
+
+*** attrap
+
+#+begin_src emacs-lisp
+(use-package attrap
+  :ensure t
+  :bind (("C-x /" . attrap-attrap))) ;; use any binding of your choice
+#+end_src
+
+#+begin_src emacs-lisp
+(use-package direnv)
+#+end_src
+
 ** Electric pair mode
 
 #+begin_src emacs-lisp
