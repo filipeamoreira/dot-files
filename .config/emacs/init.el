@@ -575,11 +575,31 @@
   (lsp-enable-which-key-integration t))
 
 (use-package lsp-ui
-  :hook (lsp-mode . lsp-ui-mode)
-  :custom
-  (lsp-ui-doc-position 'bottom))
+  :ensure t
+  :after (lsp-mode)
+  :bind (:map lsp-ui-mode-map
+              ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
+              ([remap xref-find-references] . lsp-ui-peek-find-references))
+  :init (setq lsp-ui-doc-delay 1.5
+              lsp-ui-doc-position 'bottom
+              lsp-ui-doc-max-width 100))
 
-(use-package helm-lsp :commands helm-lsp-workspace-symbol)
+(use-package helm-lsp
+  :ensure t
+  :after (lsp-mode)
+  :commands helm-lsp-workspace-symbol)
+
+(use-package lsp-treemacs
+  :after (lsp-mode treemacs)
+  :ensure t
+  :commands lsp-treemacs-errors-list
+  :bind (:map lsp-mode-map
+         ("M-9" . lsp-treemacs-errors-list)))
+
+(use-package treemacs
+  :ensure t
+  :commands (treemacs)
+  :after (lsp-mode))
 
 (electric-pair-mode)
 
@@ -772,6 +792,10 @@
   (add-hook 'haskell-mode-hook 'dante-mode))
 
 (use-package nix-mode)
+
+(use-package lsp-java 
+:ensure t
+:config (add-hook 'java-mode-hook 'lsp))
 
 (use-package company
   :after lsp-mode
