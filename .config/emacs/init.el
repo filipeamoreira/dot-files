@@ -562,17 +562,25 @@
   :config
   (org-roam-setup))
 
-(defun guto/lsp-mode-setup ()
-  (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
-  (lsp-headerline-breadcrumb-mode))
-
 (use-package lsp-mode
-  :commands (lsp lsp-deferred)
-  :hook (lsp-mode . guto/lsp-mode-setup)
-  :init
-  (setq lsp-keymap-prefix "C-c l")  ;; Or 'C-l', 's-l'
-  :config
-  (lsp-enable-which-key-integration t))
+  :ensure t
+  :hook (
+         (lsp-mode . lsp-enable-which-key-integration)
+         (java-mode . lsp-deferred)
+         ;; (ruby-mode . lsp-deferred)
+         )
+  :init (setq 
+         lsp-keymap-prefix "C-c l"              ; this is for which-key integration documentation, need to use lsp-mode-map
+         lsp-enable-file-watchers nil
+         read-process-output-max (* 1024 1024)  ; 1 mb
+         lsp-completion-provider :capf
+         lsp-idle-delay 0.500
+         )
+  :config 
+  (setq lsp-intelephense-multi-root nil) ; don't scan unnecessary projects
+  (with-eval-after-load 'lsp-intelephense
+    (setf (lsp--client-multi-root (gethash 'iph lsp-clients)) nil))
+  (define-key lsp-mode-map (kbd "C-c l") lsp-command-map))
 
 (use-package lsp-ui
   :ensure t
@@ -691,7 +699,7 @@
 (global-robe-mode))
 
 (use-package ruby-mode
-  :after lsp-mode
+  ;;:after lsp-mode
   :mode
   (("\\(?:\\.rb\\|ru\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\|Fast\\|Match\\|App\\)file\\)\\'" . ruby-mode))
   :interpreter "ruby")
@@ -758,13 +766,13 @@
       (progn
         ;; package does this by default ;; set racer rust source path environment variable
         ;; (setq racer-rust-src-path (getenv "RUST_SRC_PATH"))
-        (defun my-racer-mode-hook ()
+        (defun guto/my-racer-mode-hook ()
           (set (make-local-variable 'company-backends)
                '((company-capf company-files)))
           (setq company-minimum-prefix-length 1)
           (setq indent-tabs-mode nil))
 
-        (add-hook 'racer-mode-hook 'my-racer-mode-hook)
+        (add-hook 'racer-mode-hook 'guto/my-racer-mode-hook)
 
         ;; enable company and eldoc minor modes in rust-mode (racer-mode)
         (add-hook 'racer-mode-hook #'company-mode)
@@ -798,10 +806,6 @@
   (add-hook 'haskell-mode-hook 'dante-mode))
 
 (use-package nix-mode)
-
-(use-package lsp-java 
-:ensure t
-:config (add-hook 'java-mode-hook 'lsp))
 
 (use-package company
   :after lsp-mode
@@ -959,6 +963,15 @@
    :config (yas-global-mode 1))
 
 (use-package yasnippet-snippets)
+
+(defun guto/ansi-colorize-buffer ()
+  (let ((buffer-read-only nil))
+    (ansi-color-apply-on-region (point-min) (point-max))))
+
+(use-package ansi-color
+  :ensure t
+  :config
+  (add-hook 'compilation-filter-hook 'guto/ansi-colorize-buffer))
 
 (use-package term
   :commands term

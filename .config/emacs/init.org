@@ -864,7 +864,7 @@ Call =org-insert-structure-template= to insert structured templates.
 
 #+end_src
 * Languages
-** IDE Features with lsp-mode
+** LSP mode
 *** lsp-mode
 
 We use the excellent [[https://emacs-lsp.github.io/lsp-mode/][lsp-mode]] to enable IDE-like functionality for many different programming languages via "language servers" that speak the [[https://microsoft.github.io/language-server-protocol/][Language Server Protocol]].  Before trying to set up =lsp-mode= for a particular language, check out the [[https://emacs-lsp.github.io/lsp-mode/page/languages/][documentation for your language]] so that you can learn which language servers are available and how to install them.
@@ -874,18 +874,25 @@ The =lsp-keymap-prefix= setting enables you to define a prefix for where =lsp-mo
 The =which-key= integration adds helpful descriptions of the various keys so you should be able to learn a lot just by pressing =C-c l= in a =lsp-mode= buffer and trying different things that you find there.
 
 #+begin_src emacs-lisp
-
-  (defun guto/lsp-mode-setup ()
-    (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
-    (lsp-headerline-breadcrumb-mode))
-
   (use-package lsp-mode
-    :commands (lsp lsp-deferred)
-    :hook (lsp-mode . guto/lsp-mode-setup)
-    :init
-    (setq lsp-keymap-prefix "C-c l")  ;; Or 'C-l', 's-l'
-    :config
-    (lsp-enable-which-key-integration t))
+    :ensure t
+    :hook (
+           (lsp-mode . lsp-enable-which-key-integration)
+           (java-mode . lsp-deferred)
+           ;; (ruby-mode . lsp-deferred)
+           )
+    :init (setq 
+           lsp-keymap-prefix "C-c l"              ; this is for which-key integration documentation, need to use lsp-mode-map
+           lsp-enable-file-watchers nil
+           read-process-output-max (* 1024 1024)  ; 1 mb
+           lsp-completion-provider :capf
+           lsp-idle-delay 0.500
+           )
+    :config 
+    (setq lsp-intelephense-multi-root nil) ; don't scan unnecessary projects
+    (with-eval-after-load 'lsp-intelephense
+      (setf (lsp--client-multi-root (gethash 'iph lsp-clients)) nil))
+    (define-key lsp-mode-map (kbd "C-c l") lsp-command-map))
 
 #+end_src
 
@@ -1173,7 +1180,7 @@ Inf-ruby is disabled for the moment
 
 #+begin_src emacs-lisp
   (use-package ruby-mode
-    :after lsp-mode
+    ;;:after lsp-mode
     :mode
     (("\\(?:\\.rb\\|ru\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\|Fast\\|Match\\|App\\)file\\)\\'" . ruby-mode))
     :interpreter "ruby")
@@ -1246,13 +1253,13 @@ Inf-ruby is disabled for the moment
         (progn
           ;; package does this by default ;; set racer rust source path environment variable
           ;; (setq racer-rust-src-path (getenv "RUST_SRC_PATH"))
-          (defun my-racer-mode-hook ()
+          (defun guto/my-racer-mode-hook ()
             (set (make-local-variable 'company-backends)
                  '((company-capf company-files)))
             (setq company-minimum-prefix-length 1)
             (setq indent-tabs-mode nil))
 
-          (add-hook 'racer-mode-hook 'my-racer-mode-hook)
+          (add-hook 'racer-mode-hook 'guto/my-racer-mode-hook)
 
           ;; enable company and eldoc minor modes in rust-mode (racer-mode)
           (add-hook 'racer-mode-hook #'company-mode)
@@ -1310,10 +1317,11 @@ Add a line starting with `-- >>>` and run `dante-eval-block` to evaluate code in
 #+end_src
 ** Java
 
-#+begin_src emacs-lisp
-(use-package lsp-java 
-:ensure t
-:config (add-hook 'java-mode-hook 'lsp))
+#+begin_src emacs-lisp :tangle no
+  (use-package lsp-java 
+  :ensure t
+  ;; :config (add-hook 'java-mode-hook 'lsp)
+  )
 
 #+end_src
 
@@ -1377,7 +1385,6 @@ We also use [[https://github.com/sebastiencs/company-box][company-box]] to furth
     :config (counsel-projectile-mode))
 
 #+end_src
-
 ** Magit
 
 [[https://magit.vc/][Magit]] is the best Git interface I've ever used.  Common Git operations are easy to execute quickly using Magit's command panel system.
@@ -1584,6 +1591,19 @@ This is the setup using `prettier.js`
 
 #+begin_src emacs-lisp
 (use-package yasnippet-snippets)
+#+end_src
+
+** Disable ansimode on compilation
+
+#+begin_src emacs-lisp
+  (defun guto/ansi-colorize-buffer ()
+    (let ((buffer-read-only nil))
+      (ansi-color-apply-on-region (point-min) (point-max))))
+
+  (use-package ansi-color
+    :ensure t
+    :config
+    (add-hook 'compilation-filter-hook 'guto/ansi-colorize-buffer))
 #+end_src
 
 * Terminals
