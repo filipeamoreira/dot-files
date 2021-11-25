@@ -1,3 +1,4 @@
+# -*- org-src-preserve-indentation: t; org-edit-src-content: 0; -*-
 #+TITLE: Emacs configuration file
 #+AUTHOR: Filipe Moreira
 #+BABEL: :cache yes
