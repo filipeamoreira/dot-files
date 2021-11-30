@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<FileZilla3 version="3.56.0" platform="mac">
+<FileZilla3 version="3.56.2" platform="mac">
 	<Settings>
 		<Setting name="Use Pasv mode">1</Setting>
 		<Setting name="Limit local ports">0</Setting>
@@ -129,31 +129,27 @@
 		<Setting name="Window position and size">1 0 25 1680 949 </Setting>
 		<Setting name="Local filelist colwidths">243 80 120 120</Setting>
 		<Setting name="Remote filelist sortorder">0 3</Setting>
-		<Setting name="Last automatic update version">3.55.1</Setting>
-		<Setting name="Last automatic update check">2021-10-20 05:50:19</Setting>
-		<Setting name="Update Check New Version" platform="mac">nightly 2021-10-20 https://filezilla-project.org/nightlies/2021-10-20/x86_64-apple-darwin18.2.0/FileZilla3.app.tar.bz2 14956184 sha512 fe3f043d8c0ea731ac947bb34a8620c38a06219978813d68a860ea612af6b52f947cd7833da04abbab2c004b93353b47eae075d2c84b750d172ccb577e5bd9ca sig:jy9dX850EWNLTlqc50B0U4FPtHBfTxSKm33eKC3pSNe5o+Ae2zPzX79Sjc5utBfyLrMIpjjlH0W0vtzFggZkDw
-release 3.56.0 https://dl3.cdn.filezilla-project.org/FileZilla_3.56.0_macosx-x86.app.tar.bz2 14679136 sha512 69d5d5eabc1580d56d99651821395cd76adce12cd73f3642e5e0601407247d12b9baec9962d4cde741607716c87c33148b0ed729809acc82f6008a51ee23c95d sig:H8++Z1NQa/Per3KZ1FltlDStIXpHlvkgHSB7vZFCDYkFgvOg6YUeT5JsABf40jRFweZOMQ/n5c9djNfO9bKGAg
-
-3.56.0 (2021-10-11)
-
-- Updated to libfilezilla 0.34.0
-- Updated translations
-
-3.56.0-rc1 (2021-09-29)
-
-+ Right-clicking a queue tab header now opens the same context menu as right-clicking the correponding queue contents
-+ By default, the minimum allowed TLS version is now TLS 1.2
-+ Optionally, the systen trust store can be used for certificate verification
-- FTP: Fixed an issue with key file conversion
-- Fixed an issue loading servers not supporting session resumption from storage
-</Setting>
 		<Setting name="Minimum TLS Version">2</Setting>
 		<Setting name="Trust system trust store">0</Setting>
-		<Setting name="Greeting version">3.56.0</Setting>
 		<Setting name="Remote filelist colwidths">295 75 80 166 80 85</Setting>
+		<Setting name="Last automatic update check">2021-11-30 06:35:14</Setting>
+		<Setting name="Last automatic update version">3.56.0</Setting>
+		<Setting name="Update Check New Version" platform="mac">nightly 2021-11-30 https://filezilla-project.org/nightlies/2021-11-30/x86_64-apple-darwin18.2.0/FileZilla3.app.tar.bz2 14976652 sha512 c3df2dda235a1dcf2cf70b5407c832b59345ece67595769771a946b9cce1a212d34fae0b034016de63604d4c7ba86bcac5544a05d57aee195666e1050e5aa711 sig:WN72JVrUuicLzD3k7FdiMRULBR605v3A3bjxhNDYTQiPUU7WCoIh9YvRZaHykbzspoHaRDJBgifj73FKWdn7Dg
+release 3.56.2 https://dl2.cdn.filezilla-project.org/FileZilla_3.56.2_macosx-x86.app.tar.bz2 14676376 sha512 7bc9839a5900e125eefdf0e3a740895831d12135dc4c0ed281e59f9d2ef80c15071c948606986e8a0d7b54ffdaa452c164c8f423e47fd1104c490cfdb117ce0c sig:MnG6+ea6vAfuuubj8yEZZSUaG7z0mqxiPV/A4KLYqf9wkXcUanpsC5vSvIcUv72TsaPzl25XRUpFdthSAptaCQ
+
+3.56.2 (2021-10-27)
+
+- Fixed a potential crash after uploading
+
+3.56.1 (2021-10-26)
+
+- macOS Monterey: Opening the Site Manager on startup is now delayed a millisecond, otherwise the right mouse button would have stopped working
+- macOS: Fixed getting temporary directory
+- MSW: Updated to libfilezilla 0.34.1 to fix local directory contents returned by the system in oversized buffers containing nulls
+</Setting>
 		<Setting name="Tab data" sensitive="1">
 			<Tabs>
-				<Tab connected="1" selected="1">
+				<Tab selected="1">
 					<Host>myprop.coderelax.com</Host>
 					<Port>21</Port>
 					<Protocol>0</Protocol>
@@ -164,11 +160,12 @@ release 3.56.0 https://dl3.cdn.filezilla-project.org/FileZilla_3.56.0_macosx-x86
 					<PasvMode>MODE_DEFAULT</PasvMode>
 					<EncodingType>Auto</EncodingType>
 					<BypassProxy>0</BypassProxy>
-					<Site></Site>
+					<Site />
 					<RemotePath>1 0</RemotePath>
 					<LocalPath>/Users/guto/projects/coderelax/myprop/blm-files/</LocalPath>
 				</Tab>
 			</Tabs>
 		</Setting>
+		<Setting name="Greeting version">3.56.2</Setting>
 	</Settings>
 </FileZilla3>
