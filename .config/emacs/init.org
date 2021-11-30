@@ -183,6 +183,7 @@ Good mono fonts:
 - Fira Code
 - IBM Plex Mono
 - Source Code Pro
+- JetBrains Mono
 
 Good sans fonts:
 - Cantarell
@@ -196,9 +197,9 @@ To install the fonts on mac use:
 
 #+begin_src emacs-lisp
     ;; Set the default font face
-    (set-face-attribute 'default nil :font "Fira Code" :height guto/default-font-size)
+    (set-face-attribute 'default nil :font "JetBrains Mono" :height guto/default-font-size)
     ;; Set the fixed pitch face
-    (set-face-attribute 'fixed-pitch nil :font "Fira Code" :height guto/default-font-size)
+    (set-face-attribute 'fixed-pitch nil :font "JetBrains Mono" :height guto/default-font-size)
     ;; Set the variable pitch face
     (set-face-attribute 'variable-pitch nil :font "Cantarell" :height guto/default-variable-font-size :weight 'regular)
 
@@ -606,7 +607,7 @@ This is an example of using [[https://github.com/abo-abo/hydra][Hydra]] to desig
 
 The =guto/org-font-setup= function configures various text faces to tweak the sizes of headings and use variable width fonts in most cases so that it looks more like we're editing a document in =org-mode=.  We switch back to fixed width (monospace) fonts for code blocks and tables so that they display correctly.
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle no
 
   (defun guto/org-font-setup ()
     ;; Replace list hyphen with dot
@@ -623,7 +624,7 @@ The =guto/org-font-setup= function configures various text faces to tweak the si
                     (org-level-6 . 1.1)
                     (org-level-7 . 1.1)
                     (org-level-8 . 1.1)))
-      (set-face-attribute (car face) nil :font "Fira Code" :weight 'regular :height (cdr face)))
+      (set-face-attribute (car face) nil :font "JetBrains Mono" :weight 'regular :height (cdr face)))
 
     ;; Ensure that anything that should be fixed-pitch in Org files appears that way
     (set-face-attribute 'org-block nil    :foreground nil :inherit 'fixed-pitch)
@@ -646,6 +647,48 @@ The =guto/org-font-setup= function configures various text faces to tweak the si
 This section contains the basic configuration for =org-mode= plus the configuration for Org agendas and capture templates.  There's a lot to unpack in here so I'd recommend watching the videos for [[https://youtu.be/VcgjTEa0kU4][Part 5]] and [[https://youtu.be/PNE-mgkZ6HM][Part 6]] for a full explanation.
 
 #+begin_src emacs-lisp
+(defun guto/org-mode-setup ()
+    (org-indent-mode)
+    (variable-pitch-mode 1)
+    (visual-line-mode 1))
+
+(use-package org
+  :pin org
+  :hook (org-mode . guto/org-mode-setup)
+  :config
+    (setq org-startup-folded t)
+    (setq org-ellipsis " ▾")
+    (setq org-agenda-start-with-log-mode t)
+    (setq org-log-done 'time)
+    (setq org-log-into-drawer t)
+    ;; Using solarized theme and forcing fix-width fonts
+    (setq solarized-use-variable-pitch nil
+	  solarized-scale-org-headlines nil)
+    (setq org-todo-keywords
+      '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")
+        (sequence "BACKLOG(b)" "PLAN(p)" "READY(r)" "ACTIVE(a)" "REVIEW(v)" "WAIT(w@/!)" "HOLD(h)" "|" "COMPLETED(c)" "CANC(k@)")))
+    (setq org-tag-alist
+      '((:startgroup)
+         ; Put mutually exclusive tags here
+         (:endgroup)
+         ("@errand" . ?E)
+         ("@home" . ?H)
+         ("@work" . ?W)
+         ("agenda" . ?a)
+         ("planning" . ?p)
+         ("publish" . ?P)
+         ("batch" . ?b)
+         ("note" . ?n)
+         ("idea" . ?i)))
+    (define-key global-map (kbd "C-c j")
+      (lambda () (interactive) (org-capture nil "jj")))
+
+    ;;(guto/org-font-setup)
+
+    )
+#+end_src
+
+#+begin_src emacs-lisp :tangle no
 
   (defun guto/org-mode-setup ()
     (org-indent-mode)
@@ -663,10 +706,10 @@ This section contains the basic configuration for =org-mode= plus the configurat
     (setq org-log-done 'time)
     (setq org-log-into-drawer t)
 
-    (setq org-agenda-files
-          '("~/Projects/Code/emacs-from-scratch/OrgFiles/Tasks.org"
-            "~/Projects/Code/emacs-from-scratch/OrgFiles/Habits.org"
-            "~/Projects/Code/emacs-from-scratch/OrgFiles/Birthdays.org"))
+    ;; (setq org-agenda-files
+    ;;       '("~/Projects/Code/emacs-from-scratch/OrgFiles/Tasks.org"
+    ;;         "~/Projects/Code/emacs-from-scratch/OrgFiles/Habits.org"
+    ;;         "~/Projects/Code/emacs-from-scratch/OrgFiles/Birthdays.org"))
 
     (require 'org-habit)
     (add-to-list 'org-modules 'org-habit)
@@ -774,7 +817,8 @@ This section contains the basic configuration for =org-mode= plus the configurat
     (define-key global-map (kbd "C-c j")
       (lambda () (interactive) (org-capture nil "jj")))
 
-    (guto/org-font-setup))
+    ;;(guto/org-font-setup)
+    )
 
 #+end_src
 
