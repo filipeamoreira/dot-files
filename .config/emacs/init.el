@@ -106,13 +106,8 @@
       ;; per mode with `ligature-mode'.
       (global-ligature-mode t))
 
-  ;; https://protesilaos.com/modus-themes/
-  ;;(use-package modus-themes
-  ;;  :init (load-theme 'modus-vivendi))
-
-  ;; Solarized theme
-  (use-package solarized-theme
-    :init (load-theme 'solarized-dark t))
+(use-package dracula-theme
+:init (load-theme 'dracula t))
 
 ;; Call `emojify-apropos-emoji` or `emojify-insert-emoji`
 (use-package emojify
@@ -853,6 +848,10 @@
     :ensure t
     :config
     (add-hook 'compilation-filter-hook 'guto/ansi-colorize-buffer))
+
+(use-package docker)
+
+(use-package docker-compose-mode)
 
   (use-package term
     :commands term

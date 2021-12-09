@@ -231,7 +231,7 @@ To install the fonts on mac use:
 #+end_src
 * Color Theme
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle no
   ;; https://protesilaos.com/modus-themes/
   ;;(use-package modus-themes
   ;;  :init (load-theme 'modus-vivendi))
@@ -241,6 +241,12 @@ To install the fonts on mac use:
     :init (load-theme 'solarized-dark t))
 
 #+end_src
+
+#+begin_src emacs-lisp
+(use-package dracula-theme
+:init (load-theme 'dracula t))
+#+end_src
+
 ** Emoji support
 
 #+begin_src emacs-lisp
@@ -1649,6 +1655,18 @@ This is the setup using `prettier.js`
     :ensure t
     :config
     (add-hook 'compilation-filter-hook 'guto/ansi-colorize-buffer))
+#+end_src
+
+** Docker
+
+#+begin_src emacs-lisp
+(use-package docker)
+#+end_src
+
+** Docker compose
+
+#+begin_src emacs-lisp
+(use-package docker-compose-mode)
 #+end_src
 
 * Terminals
