@@ -251,11 +251,15 @@ To install the fonts on mac use:
 
 #+end_src
 ** Dracula
+https://draculatheme.com/
+
 #+begin_src emacs-lisp :tangle no
 (use-package dracula-theme
 :init (load-theme 'dracula t))
 #+end_src
+
 ** Nord
+https://www.nordtheme.com
 
 #+begin_src emacs-lisp
 (use-package nord-theme
