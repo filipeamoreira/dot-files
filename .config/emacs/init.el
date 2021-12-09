@@ -106,12 +106,12 @@
       ;; per mode with `ligature-mode'.
       (global-ligature-mode t))
 
-(use-package dracula-theme
-:init (load-theme 'dracula t))
-
 ;; Call `emojify-apropos-emoji` or `emojify-insert-emoji`
 (use-package emojify
   :hook (after-init . global-emojify-mode))
+
+(use-package nord-theme
+:init (load-theme 'nord t))
 
   ;; The default is 800 kilobytes.  Measured in bytes.
   (setq gc-cons-threshold (* 50 1000 1000))

@@ -231,6 +231,15 @@ To install the fonts on mac use:
 #+end_src
 * Color Theme
 
+
+** Emoji support
+
+#+begin_src emacs-lisp
+;; Call `emojify-apropos-emoji` or `emojify-insert-emoji`
+(use-package emojify
+  :hook (after-init . global-emojify-mode))
+#+end_src
+** Solarized
 #+begin_src emacs-lisp :tangle no
   ;; https://protesilaos.com/modus-themes/
   ;;(use-package modus-themes
@@ -241,19 +250,18 @@ To install the fonts on mac use:
     :init (load-theme 'solarized-dark t))
 
 #+end_src
-
-#+begin_src emacs-lisp
+** Dracula
+#+begin_src emacs-lisp :tangle no
 (use-package dracula-theme
 :init (load-theme 'dracula t))
 #+end_src
-
-** Emoji support
+** Nord
 
 #+begin_src emacs-lisp
-;; Call `emojify-apropos-emoji` or `emojify-insert-emoji`
-(use-package emojify
-  :hook (after-init . global-emojify-mode))
+(use-package nord-theme
+:init (load-theme 'nord t))
 #+end_src
+
 * Startup Performance
 
 #+begin_src emacs-lisp
