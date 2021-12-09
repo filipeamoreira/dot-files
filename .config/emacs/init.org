@@ -230,7 +230,7 @@ To install the fonts on mac use:
       (global-ligature-mode t))
 #+end_src
 * Color Theme
-
+Try out https://github.com/chriskempson/base16
 
 ** Emoji support
 
