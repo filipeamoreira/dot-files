@@ -1,4 +1,3 @@
-# -*- org-src-preserve-indentation: t; org-edit-src-content: 0; -*-
 #+TITLE: Emacs configuration file
 #+AUTHOR: Filipe Moreira
 #+BABEL: :cache yes
@@ -197,9 +196,9 @@ To install the fonts on mac use:
 
 #+begin_src emacs-lisp
     ;; Set the default font face
-    (set-face-attribute 'default nil :font "JetBrains Mono" :height guto/default-font-size)
+    (set-face-attribute 'default nil :font "Fira Code" :height guto/default-font-size)
     ;; Set the fixed pitch face
-    (set-face-attribute 'fixed-pitch nil :font "JetBrains Mono" :height guto/default-font-size)
+    (set-face-attribute 'fixed-pitch nil :font "Fira Code" :height guto/default-font-size)
     ;; Set the variable pitch face
     (set-face-attribute 'variable-pitch nil :font "Cantarell" :height guto/default-variable-font-size :weight 'regular)
 
@@ -253,7 +252,7 @@ Try out https://github.com/chriskempson/base16
 ** Dracula
 https://draculatheme.com/
 
-#+begin_src emacs-lisp :tangle no
+#+begin_src emacs-lisp
 (use-package dracula-theme
 :init (load-theme 'dracula t))
 #+end_src
@@ -261,9 +260,18 @@ https://draculatheme.com/
 ** Nord
 https://www.nordtheme.com
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle no
 (use-package nord-theme
 :init (load-theme 'nord t))
+#+end_src
+
+** Modus
+
+https://protesilaos.com/emacs/modus-themes
+
+#+begin_src emacs-lisp :tangle no
+(use-package modus-themes
+:init (load-theme 'modus-vivendi))
 #+end_src
 
 * Startup Performance
@@ -642,7 +650,7 @@ The =guto/org-font-setup= function configures various text faces to tweak the si
                     (org-level-6 . 1.1)
                     (org-level-7 . 1.1)
                     (org-level-8 . 1.1)))
-      (set-face-attribute (car face) nil :font "JetBrains Mono" :weight 'regular :height (cdr face)))
+      (set-face-attribute (car face) nil :font "Fira Code" :weight 'regular :height (cdr face)))
 
     ;; Ensure that anything that should be fixed-pitch in Org files appears that way
     (set-face-attribute 'org-block nil    :foreground nil :inherit 'fixed-pitch)
