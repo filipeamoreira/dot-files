@@ -1395,6 +1395,13 @@ Add a line starting with `-- >>>` and run `dante-eval-block` to evaluate code in
   )
 
 #+end_src
+** Golang
+
+#+begin_src emacs-lisp
+  (use-package go-mode
+    :config (setq tab-width 4)
+    )
+#+end_src
 
 * Development
 ** Company Mode

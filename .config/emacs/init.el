@@ -683,6 +683,8 @@
 
 (use-package nix-mode)
 
+(use-package go-mode)
+
 (use-package company
   :after lsp-mode
   :hook (
