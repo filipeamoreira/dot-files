@@ -128,6 +128,9 @@ Emacs has a built in package manager but it doesn't make it easy to automaticall
   ;;         ("org"   . "https://orgmode.org/elpa/")
   ;;         ("elpa"  . "https://elpa.gnu.org/packages/")))
 
+;; Disable package signature
+(setq package-check-signature nil)
+
   (package-initialize)
 
   (unless package-archive-contents

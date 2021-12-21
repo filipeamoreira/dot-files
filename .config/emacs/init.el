@@ -24,45 +24,48 @@
   (load bootstrap-file nil 'nomessage))
 
 ;; Initialize package sources
-(require 'package)
+  (require 'package)
 
-;; using Github based mirros: https://github.com/d12frosted/elpa-mirror
-(setq package-archives
-      '(("melpa" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/melpa/")
-        ("org"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/org/")
-        ("gnu"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/gnu/")))
+  ;; using Github based mirros: https://github.com/d12frosted/elpa-mirror
+  (setq package-archives
+        '(("melpa" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/melpa/")
+          ("org"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/org/")
+          ("gnu"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/gnu/")))
 
-;; (setq package-archives
-;;       '(("melpa" . "https://melpa.org/packages/")
-;;         ("org"   . "https://orgmode.org/elpa/")
-;;         ("elpa"  . "https://elpa.gnu.org/packages/")))
+  ;; (setq package-archives
+  ;;       '(("melpa" . "https://melpa.org/packages/")
+  ;;         ("org"   . "https://orgmode.org/elpa/")
+  ;;         ("elpa"  . "https://elpa.gnu.org/packages/")))
 
-(package-initialize)
+;; Disable package signature
+(setq package-check-signature nil)
 
-(unless package-archive-contents
-  (package-refresh-contents))
+  (package-initialize)
 
-;; Initialize use-package on non-Linux platforms
-(unless (package-installed-p 'use-package)
-  (straight-use-package 'use-package))
+  (unless package-archive-contents
+    (package-refresh-contents))
 
-(require 'use-package)
-(setq use-package-always-ensure t)
-;; (setq straight-use-package-by-default t) ;; this defaults to using straight.el to install files
+  ;; Initialize use-package on non-Linux platforms
+  (unless (package-installed-p 'use-package)
+    (straight-use-package 'use-package))
 
-(use-package exec-path-from-shell
-  :ensure t
-  :if (memq window-system '(mac ns))
-  :config
-  ;;(setq exec-path-from-shell-arguments '("-l"))
-  (exec-path-from-shell-initialize)
-  (exec-path-from-shell-copy-env "PATH")
-  ;; (exec-path-from-shell-copy-envs
-  ;;  '("PATH" "GOPATH" "GO111MODULE" "GOPROXY"
-  ;;    "NPMBIN" "LC_ALL" "LANG" "LC_TYPE"
-  ;;    "SSH_AGENT_PID" "SSH_AUTH_SOCK" "SHELL"
-  ;;    "JAVA_HOME"))
-  )
+  (require 'use-package)
+  (setq use-package-always-ensure t)
+  ;; (setq straight-use-package-by-default t) ;; this defaults to using straight.el to install files
+
+  (use-package exec-path-from-shell
+    :ensure t
+    :if (memq window-system '(mac ns))
+    :config
+    ;;(setq exec-path-from-shell-arguments '("-l"))
+    (exec-path-from-shell-initialize)
+    (exec-path-from-shell-copy-env "PATH")
+    ;; (exec-path-from-shell-copy-envs
+    ;;  '("PATH" "GOPATH" "GO111MODULE" "GOPROXY"
+    ;;    "NPMBIN" "LC_ALL" "LANG" "LC_TYPE"
+    ;;    "SSH_AGENT_PID" "SSH_AUTH_SOCK" "SHELL"
+    ;;    "JAVA_HOME"))
+    )
 
 (use-package auto-package-update
   :custom
