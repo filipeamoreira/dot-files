@@ -111,52 +111,51 @@ Emacs has a built in package manager but it doesn't make it easy to automaticall
   (load bootstrap-file nil 'nomessage))
 #+end_src
 
-** `use_package` setup
+** =use_package= setup
 
 #+begin_src emacs-lisp
-  ;; Initialize package sources
-  (require 'package)
+    ;; Initialize package sources
+    (require 'package)
 
-  ;; using Github based mirros: https://github.com/d12frosted/elpa-mirror
-  (setq package-archives
-        '(("melpa" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/melpa/")
-          ("org"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/org/")
-          ("gnu"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/gnu/")))
+    ;; using Github based mirros: https://github.com/d12frosted/elpa-mirror
+    (setq package-archives
+          '(("melpa" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/melpa/")
+            ("org"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/org/")
+            ("gnu"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/gnu/")))
 
-  ;; (setq package-archives
-  ;;       '(("melpa" . "https://melpa.org/packages/")
-  ;;         ("org"   . "https://orgmode.org/elpa/")
-  ;;         ("elpa"  . "https://elpa.gnu.org/packages/")))
+    ;; (setq package-archives
+    ;;       '(("melpa" . "https://melpa.org/packages/")
+    ;;         ("org"   . "https://orgmode.org/elpa/")
+    ;;         ("elpa"  . "https://elpa.gnu.org/packages/")))
 
-;; Disable package signature
-(setq package-check-signature nil)
+  (setq package-check-signature nil) 
 
-  (package-initialize)
+    (package-initialize)
 
-  (unless package-archive-contents
-    (package-refresh-contents))
+    (unless package-archive-contents
+      (package-refresh-contents))
 
-  ;; Initialize use-package on non-Linux platforms
-  (unless (package-installed-p 'use-package)
-    (straight-use-package 'use-package))
+    ;; Initialize use-package on non-Linux platforms
+    (unless (package-installed-p 'use-package)
+      (straight-use-package 'use-package))
 
-  (require 'use-package)
-  (setq use-package-always-ensure t)
-  ;; (setq straight-use-package-by-default t) ;; this defaults to using straight.el to install files
+    (require 'use-package)
+    (setq use-package-always-ensure t)
+    ;; (setq straight-use-package-by-default t) ;; this defaults to using straight.el to install files
 
-  (use-package exec-path-from-shell
-    :ensure t
-    :if (memq window-system '(mac ns))
-    :config
-    ;;(setq exec-path-from-shell-arguments '("-l"))
-    (exec-path-from-shell-initialize)
-    (exec-path-from-shell-copy-env "PATH")
-    ;; (exec-path-from-shell-copy-envs
-    ;;  '("PATH" "GOPATH" "GO111MODULE" "GOPROXY"
-    ;;    "NPMBIN" "LC_ALL" "LANG" "LC_TYPE"
-    ;;    "SSH_AGENT_PID" "SSH_AUTH_SOCK" "SHELL"
-    ;;    "JAVA_HOME"))
-    )
+    (use-package exec-path-from-shell
+      :ensure t
+      :if (memq window-system '(mac ns))
+      :config
+      ;;(setq exec-path-from-shell-arguments '("-l"))
+      (exec-path-from-shell-initialize)
+      (exec-path-from-shell-copy-env "PATH")
+      ;; (exec-path-from-shell-copy-envs
+      ;;  '("PATH" "GOPATH" "GO111MODULE" "GOPROXY"
+      ;;    "NPMBIN" "LC_ALL" "LANG" "LC_TYPE"
+      ;;    "SSH_AGENT_PID" "SSH_AUTH_SOCK" "SHELL"
+      ;;    "JAVA_HOME"))
+      )
 #+end_src
 
 ** Automatic Package Updates
