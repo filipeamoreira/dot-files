@@ -37,12 +37,7 @@
   ;;         ("org"   . "https://orgmode.org/elpa/")
   ;;         ("elpa"  . "https://elpa.gnu.org/packages/")))
 
-<<<<<<< HEAD
-;; Disable package signature
-(setq package-check-signature nil)
-=======
 (setq package-check-signature nil) 
->>>>>>> 077d6d6 (fix(emacs): some updates)
 
   (package-initialize)
 
