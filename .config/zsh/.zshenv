@@ -26,11 +26,14 @@ export TEXMFHOME="$HOME/texmf/"
 export GPGKEY=C535A26E
 
 # React Native Java setup
-export CPPFLAGS="-I/usr/local/opt/openjdk@8/include"
+export JAVA_HOME=$(/usr/libexec/java_home -v 11)
+
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export ANDROID_SDK=$HOME/Library/Android/sdk
-export ANDROID_NDK=$HOME/Library/Android/sdk/ndk/22.1.7171670
-export JAVA_HOME=/Applications/Android\ Studio.app/Contents/jre/Contents/Home/
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # brew info openssl
 # export LDFLAGS="-L/usr/local/opt/openssl/lib"
