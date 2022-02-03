@@ -1,7 +1,7 @@
 {
   "workbench.sideBar.location": "right",
   "terminal.integrated.cursorStyle": "line",
-  "workbench.colorTheme": "Solarized Dark",
+  "workbench.colorTheme": "Dracula",
   "terminal.integrated.fontSize": 18,
   "terminal.integrated.fontFamily": "IBM Plex Mono",
   "editor.suggestSelection": "first",
