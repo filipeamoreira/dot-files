@@ -495,6 +495,8 @@
 
 (electric-pair-mode)
 
+(use-package paredit)
+
 ;; C-c C-n - jump between start/end tags
 ;; C-c C-f - fold code block
 ;; C-c C-s - code insertion

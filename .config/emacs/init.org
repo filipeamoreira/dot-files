@@ -1144,6 +1144,12 @@ This is a barebones configuration of LSP
   (electric-pair-mode)
 #+end_src
 
+** Paredit
+
+#+begin_src emacs-lisp
+  (use-package paredit)
+#+end_src
+
 ** Web mode
 
 #+begin_src emacs-lisp
