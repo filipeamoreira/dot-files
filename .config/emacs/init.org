@@ -1360,7 +1360,7 @@ Inf-ruby is disabled for the moment
         :config
         (progn
           ;; package does this by default ;; set racer rust source path environment variable
-          ;; (setq racer-rust-src-path (getenv "RUST_SRC_PATH"))
+          (setq racer-rust-src-path (getenv "RUST_SRC_PATH"))
           (defun guto/my-racer-mode-hook ()
             (set (make-local-variable 'company-backends)
                  '((company-capf company-files)))
