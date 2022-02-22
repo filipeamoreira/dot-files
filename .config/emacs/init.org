@@ -529,8 +529,8 @@ https://github.com/chuntaro/emacs-keypression
     ;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
     ;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
     :straight t
-    ;; :demand t
-
+    :ensure t
+    :demand
     :bind (
            ("C-c h" . helm-command-prefix)
            ("M-x" . helm-M-x)
@@ -566,20 +566,29 @@ https://github.com/chuntaro/emacs-keypression
           helm-move-to-line-cycle-in-source     t
           helm-ff-search-library-in-sexp        t
           helm-ff-file-name-history-use-recentf t)
-    (require 'helm-config)
-    (helm-mode 1))
+    :preface (require 'helm-config)
+    :config (helm-mode 1))
 #+end_src
 
 *** Helm packages
 
+Super useful commands:
+=C-c C-e= switch to edit mode (called within a helm popup)
+=C-c p s t= - =helm-ag-project-root= (searches whole project for pattern)
+
 #+begin_src emacs-lisp
-;; helm-ag
-(use-package helm-ag
-  :config
-  (setq helm-ag-base-command "rg --vimgrep --no-heading --smart-case")
-  (setq helm-move-to-line-cycle-in-source 'nil)
-  ;; (setq helm-ag-base-command "ag --nocolor --nogroup")
-  )
+  (use-package helm-ag
+    :requires helm
+    :after (helm)
+    :ensure t
+    :config
+    (setq helm-ag-base-command "rg --vimgrep --no-heading --smart-case")
+    (setq helm-move-to-line-cycle-in-source 'nil)
+    (setq helm-ag-success-exit-status '(0 2))
+    (global-set-key (kbd "C-c p s t") 'helm-ag-project-root)
+    :bind ( ("C-c p s t" . helm-ag-project-root)
+            :map helm-command-map
+            ("C-c p s t" . helm-ag-project-root)))
 #+end_src
 
 ** Helpful Help Commands
@@ -1471,6 +1480,22 @@ We also use [[https://github.com/sebastiencs/company-box][company-box]] to furth
 ** Projectile
 
 [[https://projectile.mx/][Projectile]] is a project management library for Emacs which makes it a lot easier to navigate around code projects for various languages.  Many packages integrate with Projectile so it's a good idea to have it installed even if you don't use its commands directly.
+
+Some useful commands:
+
+=C-c p p= - =helm-projectile-switch-project= (opens new project outside the project folder)
+
+| Key binding | Command                                       | Description                                                  |
+| =C-c p h=   | =helm-projectile=                             | Helm interface to projectile                                 |
+| =C-c p p=   | =helm-projectile-switch-project=              | Switches to another projectile project                       |
+| =C-c p f=   | =helm-projectile-find-file=                   | Lists all files in a project                                 |
+| =C-c p F=   | =helm-projectile-find-file-in-known-projects= | Find file in all known projects                              |
+| =C-c p g =  | =helm-projectile-find-file-dwim=              | Find file based on context at point                          |
+| =C-c p d=   | =helm-projectile-find-dir=                    | Lists available directories in current project               |
+| =C-c p e=   | =helm-projectile-recentf=                     | Lists recently opened files in current project               |
+| =C-c p a=   | =helm-projectile-find-other-file=             | Switch between files with same name but different extensions |
+| =C-c p b=   | =helm-projectile-switch-to-buffer=            | List all open buffers in current project                     |
+| =C-c p s s= | =helm-projectile-ag=                          | Searches for symbol starting from project root               |
 
 #+begin_src emacs-lisp
 
