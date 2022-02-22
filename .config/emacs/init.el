@@ -336,7 +336,7 @@
   (setq helm-ag-base-command "rg --vimgrep --no-heading --smart-case")
   (setq helm-move-to-line-cycle-in-source 'nil)
   (setq helm-ag-success-exit-status '(0 2))
-  (global-set-key (kbd "C-c p s t") 'helm-ag-project-root)
+  (global-set-key (kbd "C-c p s t") 'helm-ag-project-root) ;; FIXME: This is not working, neither the binding below
   :bind ( ("C-c p s t" . helm-ag-project-root)
           :map helm-command-map
           ("C-c p s t" . helm-ag-project-root)))
