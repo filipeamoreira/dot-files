@@ -121,7 +121,9 @@ Emacs has a built in package manager but it doesn't make it easy to automaticall
     (setq package-archives
           '(("melpa" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/melpa/")
             ("org"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/org/")
-            ("gnu"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/gnu/")))
+            ("gnu"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/gnu/")
+            ("melpa-stable"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/stable-melpa/")
+            ))
 
     ;; (setq package-archives
     ;;       '(("melpa" . "https://melpa.org/packages/")
@@ -1495,6 +1497,7 @@ We also use [[https://github.com/sebastiencs/company-box][company-box]] to furth
 
 #+begin_src emacs-lisp
   (use-package magit
+  :pin melpa-stable
     :commands magit-status
     :bind (("C-c g" . magit-status)
            ("C-x f" . magit-status)
