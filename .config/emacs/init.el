@@ -329,17 +329,13 @@
   :config (helm-mode 1))
 
 (use-package helm-ag
-  :requires helm
-  :after (helm)
+  :after (helm projectile)
   :ensure t
   :config
   (setq helm-ag-base-command "rg --vimgrep --no-heading --smart-case")
   (setq helm-move-to-line-cycle-in-source 'nil)
   (setq helm-ag-success-exit-status '(0 2))
-  (global-set-key (kbd "C-c p s t") 'helm-ag-project-root) ;; FIXME: This is not working, neither the binding below
-  :bind ( ("C-c p s t" . helm-ag-project-root)
-          :map helm-command-map
-          ("C-c p s t" . helm-ag-project-root)))
+  :bind (:map projectile-command-map ("s r" . helm-ag-project-root)))
 
 (use-package helpful
   :commands (helpful-callable helpful-variable helpful-command helpful-key)

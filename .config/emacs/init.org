@@ -574,21 +574,17 @@ https://github.com/chuntaro/emacs-keypression
 
 Super useful commands:
 =C-c C-e= switch to edit mode (called within a helm popup)
-=C-c p s t= - =helm-ag-project-root= (searches whole project for pattern)
+=C-c p s r= - =helm-ag-project-root= (searches whole project for pattern)
 
 #+begin_src emacs-lisp
-  (use-package helm-ag
-    :requires helm
-    :after (helm)
-    :ensure t
-    :config
-    (setq helm-ag-base-command "rg --vimgrep --no-heading --smart-case")
-    (setq helm-move-to-line-cycle-in-source 'nil)
-    (setq helm-ag-success-exit-status '(0 2))
-    (global-set-key (kbd "C-c p s t") 'helm-ag-project-root) ;; FIXME: This is not working, neither the binding below
-    :bind ( ("C-c p s t" . helm-ag-project-root)
-            :map helm-command-map
-            ("C-c p s t" . helm-ag-project-root)))
+    (use-package helm-ag
+      :after (helm projectile)
+      :ensure t
+      :config
+      (setq helm-ag-base-command "rg --vimgrep --no-heading --smart-case")
+      (setq helm-move-to-line-cycle-in-source 'nil)
+      (setq helm-ag-success-exit-status '(0 2))
+      :bind (:map projectile-command-map ("s r" . helm-ag-project-root)))
 #+end_src
 
 ** Helpful Help Commands
