@@ -30,7 +30,9 @@
   (setq package-archives
         '(("melpa" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/melpa/")
           ("org"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/org/")
-          ("gnu"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/gnu/")))
+          ("gnu"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/gnu/")
+          ("melpa-stable"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/stable-melpa/")
+          ))
 
   ;; (setq package-archives
   ;;       '(("melpa" . "https://melpa.org/packages/")
@@ -286,8 +288,8 @@
   ;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
   ;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
   :straight t
-  ;; :demand t
-
+  :ensure t
+  :demand
   :bind (
          ("C-c h" . helm-command-prefix)
          ("M-x" . helm-M-x)
@@ -323,16 +325,21 @@
         helm-move-to-line-cycle-in-source     t
         helm-ff-search-library-in-sexp        t
         helm-ff-file-name-history-use-recentf t)
-  (require 'helm-config)
-  (helm-mode 1))
+  :preface (require 'helm-config)
+  :config (helm-mode 1))
 
-;; helm-ag
 (use-package helm-ag
+  :requires helm
+  :after (helm)
+  :ensure t
   :config
   (setq helm-ag-base-command "rg --vimgrep --no-heading --smart-case")
   (setq helm-move-to-line-cycle-in-source 'nil)
-  ;; (setq helm-ag-base-command "ag --nocolor --nogroup")
-  )
+  (setq helm-ag-success-exit-status '(0 2))
+  (global-set-key (kbd "C-c p s t") 'helm-ag-project-root)
+  :bind ( ("C-c p s t" . helm-ag-project-root)
+          :map helm-command-map
+          ("C-c p s t" . helm-ag-project-root)))
 
 (use-package helpful
   :commands (helpful-callable helpful-variable helpful-command helpful-key)
@@ -655,7 +662,7 @@
       :config
       (progn
         ;; package does this by default ;; set racer rust source path environment variable
-        ;; (setq racer-rust-src-path (getenv "RUST_SRC_PATH"))
+        (setq racer-rust-src-path (getenv "RUST_SRC_PATH"))
         (defun guto/my-racer-mode-hook ()
           (set (make-local-variable 'company-backends)
                '((company-capf company-files)))
@@ -745,6 +752,7 @@
   :config (counsel-projectile-mode))
 
 (use-package magit
+:pin melpa-stable
   :commands magit-status
   :bind (("C-c g" . magit-status)
          ("C-x f" . magit-status)
