@@ -1,0 +1,9 @@
+* Source
+
+Title: ${title}
+Author: %^{Author}
+Year: %^{Year}
+
+* Summary
+
+%?
