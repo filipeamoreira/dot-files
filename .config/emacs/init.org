@@ -976,8 +976,14 @@ Some basic commands:
            ("C-c n c" . org-roam-capture)
            ("C-c n j" . org-roam-dailies-capture-today)
            :map org-mode-map
-           ("C-M-i"   . completion-at-point))
+           ("C-M-i"   . completion-at-point)
+           :map org-roam-dailies-map
+           ("Y" . org-roam-dailies-capture-yesterday)
+           ("T" . org-roam-dailies-capture-tomorrow))
+     :bind-keymap
+     ("C-c n d" . org-roam-dailies-map)
     :config
+    (require 'org-roam-dailies) ;; Ensure the keymap is available
     ;; If you're using a vertical completion framework, you might want a more informative completion interface
     (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
 
