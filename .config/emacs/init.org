@@ -961,6 +961,14 @@ Some basic commands:
        ("p" "project" plain "* Goals\n\n%?\n\n* Tasks\n\n** TODO Add initial tasks\n\n* Dates\n\n"
         :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: Project")
         :unnarrowed t)))
+    ;; org-roam-dailies
+    (org-roam-dailies-directory "~/sync/notes/journal/")
+    (org-roam-dailies-capture-templates
+     '(("d" "default" entry
+        "* %?"
+        :target (file+head "%<%Y%m%d>.org"
+                           "#+title: %<%Y%m%d>\n"))))
+
     :bind (("C-c n l" . org-roam-buffer-toggle)
            ("C-c n f" . org-roam-node-find)
            ("C-c n g" . org-roam-graph)
@@ -972,6 +980,7 @@ Some basic commands:
     :config
     ;; If you're using a vertical completion framework, you might want a more informative completion interface
     (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
+
     (org-roam-db-autosync-mode)
     ;; If using org-roam-protocol
     (require 'org-roam-protocol))
