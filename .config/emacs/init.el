@@ -482,6 +482,7 @@
          ("C-c n i" . org-roam-node-insert)
          ("C-c n c" . org-roam-capture)
          ("C-c n j" . org-roam-dailies-capture-today)
+         ("C-c n t" . org-roam-dailies-goto-today)
          :map org-mode-map
          ("C-M-i"   . completion-at-point)
          :map org-roam-dailies-map
