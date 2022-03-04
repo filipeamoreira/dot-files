@@ -106,8 +106,8 @@
 [user "main"]
 	name = Filipe Moreira
 	email = code@filipeamoreira.com
-[user "futurelearn"]
+[user "nationbuilder"]
 	name = filipemoreira
-	email = filipe.moreira@futurelearn.com
+	email = filipe.moreira@nationbuilder.com
 [init]
 	defaultBranch = main
