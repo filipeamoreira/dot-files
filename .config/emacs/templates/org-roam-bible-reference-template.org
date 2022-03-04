@@ -1,0 +1,7 @@
+* Bible Reference
+
+Reference: %^{book} %^{chapter}:%^{verse} 
+
+* Notes
+
+%?

@@ -443,15 +443,29 @@
       "%?"
       :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
       :unnarrowed t)
+
      ("l" "programming language" plain
       (file "~/.config/emacs/templates/org-roam-language-template.org")
       :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
       :unnarrowed t)
-     ("b" "book notes" plain
+
+     ("k" "book notes" plain
       (file "~/.config/emacs/templates/org-roam-book-template.org")
       :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
       :unnarrowed t)
-     ("p" "project" plain "* Goals\n\n%?\n\n* Tasks\n\n** TODO Add initial tasks\n\n* Dates\n\n"
+
+     ("p" "people" plain
+      (file "~/.config/emacs/templates/org-roam-people-template.org")
+      :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+      :unnarrowed t)
+
+     ("b" "bible" plain
+      (file "~/.config/emacs/templates/org-roam-bible-reference-template.org")
+      :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+      :unnarrowed t)
+
+     ("o" "project" plain
+      (file "~/.config/emacs/templates/org-roam-project-template.org")
       :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: Project")
       :unnarrowed t)))
   ;; org-roam-dailies
@@ -473,8 +487,8 @@
          :map org-roam-dailies-map
          ("Y" . org-roam-dailies-capture-yesterday)
          ("T" . org-roam-dailies-capture-tomorrow))
-   :bind-keymap
-   ("C-c n d" . org-roam-dailies-map)
+  :bind-keymap
+  ("C-c n d" . org-roam-dailies-map)
   :config
   (require 'org-roam-dailies) ;; Ensure the keymap is available
   ;; If you're using a vertical completion framework, you might want a more informative completion interface
@@ -615,6 +629,35 @@
 
 (use-package add-node-modules-path
   :ensure t)
+
+;; source from: https://www.draketo.de/software/emacs-javascript.html
+(use-package js2-mode :ensure t :defer 20
+  :mode
+  (("\\.js\\'" . js2-mode))
+  :custom
+  (js2-include-node-externs t)
+  (js2-global-externs '("customElements"))
+  (js2-highlight-level 3)
+  (js2r-prefer-let-over-var t)
+  (js2r-prefered-quote-type 2)
+  (js-indent-align-list-continuation t)
+  (global-auto-highlight-symbol-mode t)
+  :config
+  (setq js-indent-level 2)
+  ;; patch in basic private field support
+  (advice-add #'js2-identifier-start-p
+            :after-until
+            (lambda (c) (eq c ?#))))
+
+(use-package js2-refactor :ensure t :defer 30
+  :config
+  (add-hook 'js2-mode-hook #'js2-refactor-mode)
+  (js2r-add-keybindings-with-prefix "C-c C-m"))
+
+;; context menu for keybindings
+(use-package discover :ensure t :defer 30
+  :config
+  (global-discover-mode 1))
 
 (use-package robe
   :straight (robe :type git :host github :repo "dgutov/robe")

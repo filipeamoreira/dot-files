@@ -1,0 +1,11 @@
+* Personal details
+
+Name: ${title}
+Company/Project:
+Location: %?
+Nationality:
+Languages:
+
+* Personal
+* Work/Professional
+
