@@ -378,10 +378,9 @@
     (setq org-log-into-drawer t)
     ;; Using solarized theme and forcing fix-width fonts
     (setq solarized-use-variable-pitch nil
-	  solarized-scale-org-headlines nil)
+          solarized-scale-org-headlines nil)
     (setq org-todo-keywords
-      '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")
-        (sequence "BACKLOG(b)" "PLAN(p)" "READY(r)" "ACTIVE(a)" "REVIEW(v)" "WAIT(w@/!)" "HOLD(h)" "|" "COMPLETED(c)" "CANC(k@)")))
+            '((sequence "TODO(t)" "DOING(o)" "NEXT(n)" "WAITING(w)" "BLOCKED(b)" "REVIEW(r)" "|" "DONE(d!)"  "ARCHIVED(a!)")))
     (setq org-tag-alist
       '((:startgroup)
          ; Put mutually exclusive tags here
@@ -397,9 +396,7 @@
          ("idea" . ?i)))
     (define-key global-map (kbd "C-c j")
       (lambda () (interactive) (org-capture nil "jj")))
-
     ;;(guto/org-font-setup)
-
     )
 
 (use-package org-bullets
@@ -456,19 +453,19 @@
       :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
       :unnarrowed t)
 
-     ("p" "people" plain
-      (file "~/.config/emacs/templates/org-roam-people-template.org")
-      :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
-      :unnarrowed t)
-
      ("b" "bible" plain
       (file "~/.config/emacs/templates/org-roam-bible-reference-template.org")
       :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
       :unnarrowed t)
 
+     ("p" "people" plain
+      (file "~/.config/emacs/templates/org-roam-people-template.org")
+      :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: PEOPLE")
+      :unnarrowed t)
+
      ("o" "project" plain
       (file "~/.config/emacs/templates/org-roam-project-template.org")
-      :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: Project")
+      :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: PROJECT")
       :unnarrowed t)))
   ;; org-roam-dailies
   (org-roam-dailies-directory "~/sync/notes/journal/")

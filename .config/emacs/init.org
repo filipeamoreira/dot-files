@@ -640,6 +640,16 @@ This is an example of using [[https://github.com/abo-abo/hydra][Hydra]] to desig
 
 [[https://orgmode.org/][Org Mode]] is one of the hallmark features of Emacs.  It is a rich document editor, project planner, task and time tracker, blogging engine, and literate coding utility all wrapped up in one package.
 
+** Intro to org-mode
+
+Sources:
+- https://d12frosted.io/posts/2020-06-23-task-management-with-roam-vol1.html
+- https://d12frosted.io/posts/2020-06-24-task-management-with-roam-vol2.html
+- https://d12frosted.io/posts/2021-01-16-task-management-with-roam-vol5.html
+
+To makes a headline a project tag using =org-set-tags-command= (=C-c C-q=). For example by adding the tag =PROJECT=.
+
+
 ** Better Font Faces
 
 The =guto/org-font-setup= function configures various text faces to tweak the sizes of headings and use variable width fonts in most cases so that it looks more like we're editing a document in =org-mode=.  We switch back to fixed width (monospace) fonts for code blocks and tables so that they display correctly.
@@ -677,52 +687,48 @@ The =guto/org-font-setup= function configures various text faces to tweak the si
     (set-face-attribute 'line-number-current-line nil :inherit 'fixed-pitch))
 
 #+end_src
-
 ** TODO Basic Config
 
    - State "TODO"       from              [2021-02-25 Thu 08:42]
 This section contains the basic configuration for =org-mode= plus the configuration for Org agendas and capture templates.  There's a lot to unpack in here so I'd recommend watching the videos for [[https://youtu.be/VcgjTEa0kU4][Part 5]] and [[https://youtu.be/PNE-mgkZ6HM][Part 6]] for a full explanation.
 
 #+begin_src emacs-lisp
-(defun guto/org-mode-setup ()
-    (org-indent-mode)
-    (variable-pitch-mode 1)
-    (visual-line-mode 1))
+  (defun guto/org-mode-setup ()
+      (org-indent-mode)
+      (variable-pitch-mode 1)
+      (visual-line-mode 1))
 
-(use-package org
-  :pin org
-  :hook (org-mode . guto/org-mode-setup)
-  :config
-    (setq org-startup-folded t)
-    (setq org-ellipsis " ▾")
-    (setq org-agenda-start-with-log-mode t)
-    (setq org-log-done 'time)
-    (setq org-log-into-drawer t)
-    ;; Using solarized theme and forcing fix-width fonts
-    (setq solarized-use-variable-pitch nil
-	  solarized-scale-org-headlines nil)
-    (setq org-todo-keywords
-      '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")
-        (sequence "BACKLOG(b)" "PLAN(p)" "READY(r)" "ACTIVE(a)" "REVIEW(v)" "WAIT(w@/!)" "HOLD(h)" "|" "COMPLETED(c)" "CANC(k@)")))
-    (setq org-tag-alist
-      '((:startgroup)
-         ; Put mutually exclusive tags here
-         (:endgroup)
-         ("@errand" . ?E)
-         ("@home" . ?H)
-         ("@work" . ?W)
-         ("agenda" . ?a)
-         ("planning" . ?p)
-         ("publish" . ?P)
-         ("batch" . ?b)
-         ("note" . ?n)
-         ("idea" . ?i)))
-    (define-key global-map (kbd "C-c j")
-      (lambda () (interactive) (org-capture nil "jj")))
-
-    ;;(guto/org-font-setup)
-
-    )
+  (use-package org
+    :pin org
+    :hook (org-mode . guto/org-mode-setup)
+    :config
+      (setq org-startup-folded t)
+      (setq org-ellipsis " ▾")
+      (setq org-agenda-start-with-log-mode t)
+      (setq org-log-done 'time)
+      (setq org-log-into-drawer t)
+      ;; Using solarized theme and forcing fix-width fonts
+      (setq solarized-use-variable-pitch nil
+            solarized-scale-org-headlines nil)
+      (setq org-todo-keywords
+              '((sequence "TODO(t)" "DOING(o)" "NEXT(n)" "WAITING(w)" "BLOCKED(b)" "REVIEW(r)" "|" "DONE(d!)"  "ARCHIVED(a!)")))
+      (setq org-tag-alist
+        '((:startgroup)
+           ; Put mutually exclusive tags here
+           (:endgroup)
+           ("@errand" . ?E)
+           ("@home" . ?H)
+           ("@work" . ?W)
+           ("agenda" . ?a)
+           ("planning" . ?p)
+           ("publish" . ?P)
+           ("batch" . ?b)
+           ("note" . ?n)
+           ("idea" . ?i)))
+      (define-key global-map (kbd "C-c j")
+        (lambda () (interactive) (org-capture nil "jj")))
+      ;;(guto/org-font-setup)
+      )
 #+end_src
 
 #+begin_src emacs-lisp :tangle no
@@ -890,6 +896,37 @@ We use [[https://github.com/joostkremers/visual-fill-column][visual-fill-column]
     :hook (org-mode . guto/org-mode-visual-fill))
 
 #+end_src
+** From scratch config
+
+Starting this somewhat from scratch
+
+Resouces:
+- https://systemcrafters.net/build-a-second-brain-in-emacs/5-org-roam-hacks/
+- https://config.daviwil.com/workflow
+- https://lucidmanager.org/productivity/getting-things-done-with-emacs/
+- https://d12frosted.io/posts/2021-01-16-task-management-with-roam-vol5.html
+
+#+begin_src emacs-lisp :tangle no
+;; The buffer you put this code in must have lexical-binding set to t!
+;; See the final configuration at the end for more details.
+
+(defun guto/org-roam-filter-by-tag (tag-name)
+  (lambda (node)
+    (member tag-name (org-roam-node-tags node))))
+
+(defun guto/org-roam-list-notes-by-tag (tag-name)
+  (mapcar #'org-roam-node-file
+          (seq-filter
+           (guto/org-roam-filter-by-tag tag-name)
+           (org-roam-node-list))))
+
+(defun guto/org-roam-refresh-agenda-list ()
+  (interactive)
+  (setq org-agenda-files (guto/org-roam-list-notes-by-tag "project")))
+
+;; Build the agenda list the first time for the session
+(guto/org-roam-refresh-agenda-list)
+#+end_src
 
 ** Configure Babel Languages
 
@@ -963,19 +1000,19 @@ Some basic commands:
         :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
         :unnarrowed t)
 
-       ("p" "people" plain
-        (file "~/.config/emacs/templates/org-roam-people-template.org")
-        :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
-        :unnarrowed t)
-
        ("b" "bible" plain
         (file "~/.config/emacs/templates/org-roam-bible-reference-template.org")
         :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
         :unnarrowed t)
 
+       ("p" "people" plain
+        (file "~/.config/emacs/templates/org-roam-people-template.org")
+        :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: PEOPLE")
+        :unnarrowed t)
+
        ("o" "project" plain
         (file "~/.config/emacs/templates/org-roam-project-template.org")
-        :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: Project")
+        :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: PROJECT")
         :unnarrowed t)))
     ;; org-roam-dailies
     (org-roam-dailies-directory "~/sync/notes/journal/")
