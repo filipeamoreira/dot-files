@@ -1,9 +1,11 @@
-* Source
+* Resource
 
+Resource Type: %^{Type}
 Title: ${title}
 Author: %^{Author}
 Year: %^{Year}
+Link:
 
-* Summary
+* Notes
 
 %?

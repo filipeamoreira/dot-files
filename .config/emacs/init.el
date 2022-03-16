@@ -428,6 +428,8 @@
   (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
   (add-to-list 'org-structure-template-alist '("py" . "src python"))
   (add-to-list 'org-structure-template-alist '("rb" . "src ruby"))
+  (add-to-list 'org-structure-template-alist '("html" . "src html"))
+  (add-to-list 'org-structure-template-alist '("js" . "src javascript"))
   (add-to-list 'org-structure-template-alist '("hs" . "src haskell")))
 
 (use-package org-roam
@@ -436,6 +438,13 @@
   :custom
   (org-roam-directory (file-truename "~/sync/notes/org-roam/"))
   (org-roam-completion-everywhere t)
+  (org-roam-mode-sections
+   (list #'org-roam-backlinks-section
+         #'org-roam-reflinks-section
+         ;; Unlinked references are slow and not enabled by default
+         ;; https://www.orgroam.com/manual.html#Configuring-what-is-displayed-in-the-buffer
+         ;; #'org-roam-unlinked-references-section
+         ))
   (org-roam-capture-templates
    '(
      ("d" "default" plain
@@ -448,9 +457,9 @@
       :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
       :unnarrowed t)
 
-     ("k" "book notes" plain
-      (file "~/.config/emacs/templates/org-roam-book-template.org")
-      :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+     ("r" "resource notes" plain
+      (file "~/.config/emacs/templates/org-roam-resource-template.org")
+      :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: RESOURCE")
       :unnarrowed t)
 
      ("b" "bible" plain
@@ -473,7 +482,7 @@
    '(("d" "default" entry
       "* %?"
       :target (file+head "%<%Y%m%d>.org"
-                         "#+title: %<%Y%m%d>\n"))))
+                         "#+title: %<%Y%m%d>\n#+filetags: JOURNAL"))))
 
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
@@ -481,6 +490,7 @@
          ("C-c n i" . org-roam-node-insert)
          ("C-c n c" . org-roam-capture)
          ("C-c n j" . org-roam-dailies-capture-today)
+         ("C-c n y" . org-roam-dailies-goto-yesterday)
          ("C-c n t" . org-roam-dailies-goto-today)
          :map org-mode-map
          ("C-M-i"   . completion-at-point)
