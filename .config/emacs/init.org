@@ -649,7 +649,6 @@ Sources:
 
 To makes a headline a project tag using =org-set-tags-command= (=C-c C-q=). For example by adding the tag =PROJECT=.
 
-
 ** Better Font Faces
 
 The =guto/org-font-setup= function configures various text faces to tweak the sizes of headings and use variable width fonts in most cases so that it looks more like we're editing a document in =org-mode=.  We switch back to fixed width (monospace) fonts for code blocks and tables so that they display correctly.
@@ -966,6 +965,16 @@ Call =org-insert-structure-template= to insert structured templates.
     (add-to-list 'org-structure-template-alist '("js" . "src javascript"))
     (add-to-list 'org-structure-template-alist '("hs" . "src haskell")))
 
+#+end_src
+
+** Valign
+
+#+begin_src emacs-lisp :tangle no
+  (use-package valign
+    :straight
+    :hook (
+	   (org-mode . valign)
+	   (markdown-mode . valign)))
 #+end_src
 
 * Org roam
@@ -1647,17 +1656,26 @@ Some useful commands:
 
 #+begin_src emacs-lisp
   (use-package magit
-  :pin melpa-stable
+    :straight t
+    ;; :pin melpa-stable
     :commands magit-status
     :bind (("C-c g" . magit-status)
            ("C-x f" . magit-status)
            ("C-x C-g" . magit-status)
            ("C-x g" . magit-status))
     :custom
+    (magit-save-repository-buffers nil)
     (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1)
     (magit-refresh-status-buffer nil)
     (auto-revert-buffer-list-filter 'magit-auto-revert-repository-buffer-p)
-    (magit-git-executable "/usr/local/bin/git"))
+    (magit-git-executable "/usr/local/bin/git")
+    ;; Disabling certain features: https://jakemccrary.com/blog/2020/11/14/speeding-up-magit/
+    (remove-hook 'magit-status-sections-hook 'magit-insert-tags-header)
+    (remove-hook 'magit-status-sections-hook 'magit-insert-status-headers)
+    (remove-hook 'magit-status-sections-hook 'magit-insert-unpushed-to-pushremote)
+    (remove-hook 'magit-status-sections-hook 'magit-insert-unpulled-from-pushremote)
+    (remove-hook 'magit-status-sections-hook 'magit-insert-unpulled-from-upstream)
+    (remove-hook 'magit-status-sections-hook 'magit-insert-unpushed-to-upstream-or-recent))
 #+end_src
 
 *** Forge

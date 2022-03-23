@@ -832,17 +832,26 @@
   :config (counsel-projectile-mode))
 
 (use-package magit
-:pin melpa-stable
+  :straight t
+  ;; :pin melpa-stable
   :commands magit-status
   :bind (("C-c g" . magit-status)
          ("C-x f" . magit-status)
          ("C-x C-g" . magit-status)
          ("C-x g" . magit-status))
   :custom
+  (magit-save-repository-buffers nil)
   (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1)
   (magit-refresh-status-buffer nil)
   (auto-revert-buffer-list-filter 'magit-auto-revert-repository-buffer-p)
-  (magit-git-executable "/usr/local/bin/git"))
+  (magit-git-executable "/usr/local/bin/git")
+  ;; Disabling certain features: https://jakemccrary.com/blog/2020/11/14/speeding-up-magit/
+  (remove-hook 'magit-status-sections-hook 'magit-insert-tags-header)
+  (remove-hook 'magit-status-sections-hook 'magit-insert-status-headers)
+  (remove-hook 'magit-status-sections-hook 'magit-insert-unpushed-to-pushremote)
+  (remove-hook 'magit-status-sections-hook 'magit-insert-unpulled-from-pushremote)
+  (remove-hook 'magit-status-sections-hook 'magit-insert-unpulled-from-upstream)
+  (remove-hook 'magit-status-sections-hook 'magit-insert-unpushed-to-upstream-or-recent))
 
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
