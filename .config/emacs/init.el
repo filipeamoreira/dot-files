@@ -371,7 +371,9 @@
   :pin org
   :hook (org-mode . guto/org-mode-setup)
   :config
-    (setq org-startup-folded t)
+  (set-face-attribute 'org-table nil :inherit 'fixed-pitch)
+
+  (setq org-startup-folded t)
     (setq org-ellipsis " ▾")
     (setq org-agenda-start-with-log-mode t)
     (setq org-log-done 'time)
