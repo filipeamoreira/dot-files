@@ -2,7 +2,7 @@
 
 Resource Type: %^{Type}
 Title: ${title}
-Author: %^{Author}
+Author: 
 Year: %^{Year}
 Link:
 

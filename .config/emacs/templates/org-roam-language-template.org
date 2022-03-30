@@ -1,4 +1,8 @@
 * Characteristics
+
 - Family: %?
 - Inspired by:
-* Reference:
+- Pros:
+- Cons:
+
+* References
