@@ -12,6 +12,12 @@
 ;; Make frame transparency overridable
 (defvar guto/frame-transparency '(90 . 90))
 
+(defun is-mac-m1 ()
+  "Returns true if the current machine is a M1 Mac"
+    (if (cl-search "aarch64-apple" (version))
+        t
+      nil))
+
 (defvar bootstrap-version)
 (let ((bootstrap-file
        (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
@@ -846,7 +852,11 @@
   (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1)
   (magit-refresh-status-buffer nil)
   (auto-revert-buffer-list-filter 'magit-auto-revert-repository-buffer-p)
-  (magit-git-executable "/usr/local/bin/git")
+  (setq magit-git-executable
+        (if (is-mac-m1)
+            "/opt/homebrew/bin/git"
+          "/usr/local/bin/git"))
+  ;; (magit-git-executable "/usr/local/bin/git")
   ;; Disabling certain features: https://jakemccrary.com/blog/2020/11/14/speeding-up-magit/
   (remove-hook 'magit-status-sections-hook 'magit-insert-tags-header)
   (remove-hook 'magit-status-sections-hook 'magit-insert-status-headers)
