@@ -1,4 +1,7 @@
 secure_input_notification: false
+search_shortcut: off
+search_trigger: off
+show_notifications: false
 matches:
   - trigger: ";d"
     replace: "{{mydate}}"
