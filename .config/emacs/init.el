@@ -470,6 +470,11 @@
       :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: RESOURCE")
       :unnarrowed t)
 
+     ("e" "recipe" plain
+      (file "~/.config/emacs/templates/org-roam-recipe-template.org")
+      :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+      :unnarrowed t)
+
      ("b" "bible" plain
       (file "~/.config/emacs/templates/org-roam-bible-reference-template.org")
       :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")

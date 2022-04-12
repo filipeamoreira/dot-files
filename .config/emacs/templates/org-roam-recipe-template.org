@@ -1,0 +1,14 @@
+* Dish
+
+Dish Name: %^{Name}
+Origin: 
+
+* Ingredients
+
+- %?
+
+* Preparation
+
+* Notes
+
+* Resources

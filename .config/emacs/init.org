@@ -1004,81 +1004,86 @@ Some basic commands:
 - =C-c n l=: =org-roam-buffer-toggle= - opens up buffer with backlinks to current node
 
 #+begin_src emacs-lisp
-  (use-package org-roam
-    :straight t
-    :ensure t
-    :custom
-    (org-roam-directory (file-truename "~/sync/notes/org-roam/"))
-    (org-roam-completion-everywhere t)
-    (org-roam-mode-sections
-     (list #'org-roam-backlinks-section
-           #'org-roam-reflinks-section
-           ;; Unlinked references are slow and not enabled by default
-           ;; https://www.orgroam.com/manual.html#Configuring-what-is-displayed-in-the-buffer
-           ;; #'org-roam-unlinked-references-section
-           ))
-    (org-roam-capture-templates
-     '(
-       ("d" "default" plain
-        "%?"
-        :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
-        :unnarrowed t)
+    (use-package org-roam
+      :straight t
+      :ensure t
+      :custom
+      (org-roam-directory (file-truename "~/sync/notes/org-roam/"))
+      (org-roam-completion-everywhere t)
+      (org-roam-mode-sections
+       (list #'org-roam-backlinks-section
+             #'org-roam-reflinks-section
+             ;; Unlinked references are slow and not enabled by default
+             ;; https://www.orgroam.com/manual.html#Configuring-what-is-displayed-in-the-buffer
+             ;; #'org-roam-unlinked-references-section
+             ))
+      (org-roam-capture-templates
+       '(
+         ("d" "default" plain
+          "%?"
+          :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+          :unnarrowed t)
 
-       ("l" "programming language" plain
-        (file "~/.config/emacs/templates/org-roam-language-template.org")
-        :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
-        :unnarrowed t)
+         ("l" "programming language" plain
+          (file "~/.config/emacs/templates/org-roam-language-template.org")
+          :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+          :unnarrowed t)
 
-       ("r" "resource notes" plain
-        (file "~/.config/emacs/templates/org-roam-resource-template.org")
-        :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: RESOURCE")
-        :unnarrowed t)
+         ("r" "resource notes" plain
+          (file "~/.config/emacs/templates/org-roam-resource-template.org")
+          :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: RESOURCE")
+          :unnarrowed t)
 
-       ("b" "bible" plain
-        (file "~/.config/emacs/templates/org-roam-bible-reference-template.org")
-        :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
-        :unnarrowed t)
+         ("e" "recipe" plain
+          (file "~/.config/emacs/templates/org-roam-recipe-template.org")
+          :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+          :unnarrowed t)
 
-       ("p" "people" plain
-        (file "~/.config/emacs/templates/org-roam-people-template.org")
-        :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: PEOPLE")
-        :unnarrowed t)
+         ("b" "bible" plain
+          (file "~/.config/emacs/templates/org-roam-bible-reference-template.org")
+          :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+          :unnarrowed t)
 
-       ("o" "project" plain
-        (file "~/.config/emacs/templates/org-roam-project-template.org")
-        :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: PROJECT")
-        :unnarrowed t)))
-    ;; org-roam-dailies
-    (org-roam-dailies-directory "~/sync/notes/journal/")
-    (org-roam-dailies-capture-templates
-     '(("d" "default" entry
-        "* %?"
-        :target (file+head "%<%Y%m%d>.org"
-                           "#+title: %<%Y%m%d>\n#+filetags: JOURNAL"))))
+         ("p" "people" plain
+          (file "~/.config/emacs/templates/org-roam-people-template.org")
+          :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: PEOPLE")
+          :unnarrowed t)
 
-    :bind (("C-c n l" . org-roam-buffer-toggle)
-           ("C-c n f" . org-roam-node-find)
-           ("C-c n g" . org-roam-graph)
-           ("C-c n i" . org-roam-node-insert)
-           ("C-c n c" . org-roam-capture)
-           ("C-c n j" . org-roam-dailies-capture-today)
-           ("C-c n y" . org-roam-dailies-goto-yesterday)
-           ("C-c n t" . org-roam-dailies-goto-today)
-           :map org-mode-map
-           ("C-M-i"   . completion-at-point)
-           :map org-roam-dailies-map
-           ("Y" . org-roam-dailies-capture-yesterday)
-           ("T" . org-roam-dailies-capture-tomorrow))
-    :bind-keymap
-    ("C-c n d" . org-roam-dailies-map)
-    :config
-    (require 'org-roam-dailies) ;; Ensure the keymap is available
-    ;; If you're using a vertical completion framework, you might want a more informative completion interface
-    (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
+         ("o" "project" plain
+          (file "~/.config/emacs/templates/org-roam-project-template.org")
+          :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: PROJECT")
+          :unnarrowed t)))
+      ;; org-roam-dailies
+      (org-roam-dailies-directory "~/sync/notes/journal/")
+      (org-roam-dailies-capture-templates
+       '(("d" "default" entry
+          "* %?"
+          :target (file+head "%<%Y%m%d>.org"
+                             "#+title: %<%Y%m%d>\n#+filetags: JOURNAL"))))
 
-    (org-roam-db-autosync-mode)
-    ;; If using org-roam-protocol
-    (require 'org-roam-protocol))
+      :bind (("C-c n l" . org-roam-buffer-toggle)
+             ("C-c n f" . org-roam-node-find)
+             ("C-c n g" . org-roam-graph)
+             ("C-c n i" . org-roam-node-insert)
+             ("C-c n c" . org-roam-capture)
+             ("C-c n j" . org-roam-dailies-capture-today)
+             ("C-c n y" . org-roam-dailies-goto-yesterday)
+             ("C-c n t" . org-roam-dailies-goto-today)
+             :map org-mode-map
+             ("C-M-i"   . completion-at-point)
+             :map org-roam-dailies-map
+             ("Y" . org-roam-dailies-capture-yesterday)
+             ("T" . org-roam-dailies-capture-tomorrow))
+      :bind-keymap
+      ("C-c n d" . org-roam-dailies-map)
+      :config
+      (require 'org-roam-dailies) ;; Ensure the keymap is available
+      ;; If you're using a vertical completion framework, you might want a more informative completion interface
+      (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
+
+      (org-roam-db-autosync-mode)
+      ;; If using org-roam-protocol
+      (require 'org-roam-protocol))
 #+end_src
 * Languages
 ** LSP mode
@@ -1589,7 +1594,7 @@ Add a line starting with `-- >>>` and run `dante-eval-block` to evaluate code in
     )
 #+end_src
 
-* Development
+* Tools
 ** Company Mode
 
 [[http://company-mode.github.io/][Company Mode]] provides a nicer in-buffer completion interface than =completion-at-point= which is more reminiscent of what you would expect from an IDE.  We add a simple configuration to make the keybindings a little more useful (=TAB= now completes the selection and initiates completion at the current location if needed).
@@ -1911,6 +1916,14 @@ This is the setup using `prettier.js`
 #+begin_src emacs-lisp
 (use-package docker-compose-mode)
 #+end_src
+
+** Rest client
+
+source: https://github.com/pashky/restclient.el
+
+#+begin_src emacs-lisp
+(use-package restclient)
+#+end_src>
 
 * Terminals
 
