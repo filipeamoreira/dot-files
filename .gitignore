@@ -1,6 +1,5 @@
 .DS_Store
 .zeus.sock
-.bundle
 /emacs/persistence/
 /.config/karabiner/automatic_backups/
 /.config/configstore/update-notifier*
