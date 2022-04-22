@@ -29,7 +29,7 @@ toggle_key: OFF
 # --- Auto-restart
 
 # Enable/disable the config auto-reload after a file change is detected.
-auto_restart: false
+auto_restart: true
 
 # --- Clipboard threshold
 
@@ -38,3 +38,8 @@ auto_restart: false
 # clipboard_threshold: 100
 
 # For a list of all the available options, visit the official docs at: https://espanso.org/docs/
+
+secure_input_notification: false
+search_shortcut: off
+search_trigger: off
+show_notifications: false

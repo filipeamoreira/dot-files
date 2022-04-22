@@ -8,30 +8,24 @@
 # Matches are substitution rules: when you type the "trigger" string
 # it gets replaced by the "replace" string.
 matches:
-  # Simple text replacement
-  - trigger: ":espanso"
-    replace: "Hi there!"
-
   # NOTE: espanso uses YAML to define matches, so pay attention to the indentation!
 
   # But matches can also be dynamic:
 
   # Print the current date
-  - trigger: ":date"
+  - trigger: ";d"
     replace: "{{mydate}}"
     vars:
       - name: mydate
         type: date
         params:
-          format: "%m/%d/%Y"
-
-  # Print the output of a shell command
-  - trigger: ":shell"
-    replace: "{{output}}"
+          format: "%Y%m%d"
+  - trigger: ";t"
+    replace: "{{mydatetime}}"
     vars:
-      - name: output
-        type: shell
+      - name: mydatetime
+        type: date
         params:
-          cmd: "echo 'Hello from your shell'"
+          format: "%Y%m%d%H%M%S"
 
   # And much more! For more information, visit the docs: https://espanso.org/docs/
