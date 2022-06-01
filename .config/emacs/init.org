@@ -244,6 +244,13 @@ To install the fonts on mac use:
       ;; per mode with `ligature-mode'.
       (global-ligature-mode t))
 #+end_src
+* General configuration
+** Fix for garbled text on yank
+
+source: https://old.reddit.com/r/emacs/comments/93bh4y/new_to_emacs_why_does_my_text_get_rendered/
+#+begin_src emacs-lisp
+(modify-all-frames-parameters '((inhibit-double-buffering . t)))
+#+end_src
 * Color Theme
 Try out https://github.com/chriskempson/base16
 

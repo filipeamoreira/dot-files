@@ -118,6 +118,8 @@
   ;; per mode with `ligature-mode'.
   (global-ligature-mode t))
 
+(modify-all-frames-parameters '((inhibit-double-buffering . t)))
+
 ;; Call `emojify-apropos-emoji` or `emojify-insert-emoji`
 (use-package emojify
   :hook (after-init . global-emojify-mode))
