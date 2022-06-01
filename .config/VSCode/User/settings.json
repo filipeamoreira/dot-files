@@ -1,0 +1,82 @@
+{
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "workbench.editor.enablePreview": false,
+  "[rust]": {
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4
+  },
+  "git.autofetch": true,
+  "files.eol": "\n",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "git.confirmSync": false,
+  "terminal.integrated.scrollback": 100000,
+  "go.useLanguageServer": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.rulers": [80],
+  "git.enableSmartCommit": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.tabs.enabled": true,
+  "editor.renderWhitespace": "none",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "workbench.preferredDarkColorTheme": "GitHub Dark",
+  "workbench.preferredLightColorTheme": "GitHub Light",
+  "editor.tabSize": 2,
+  "editor.cursorStyle": "line",
+  "editor.insertSpaces": false,
+  "editor.lineNumbers": "on",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "off",
+  "window.restoreWindows": "none",
+  "editor.quickSuggestions": false,
+  "window.autoDetectColorScheme": true,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/.hg/store/**": true,
+    "/target/**": true
+  },
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": false,
+    "markdown": false
+  },
+  "editor.lineHeight": 0,
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.sideBar.location": "right",
+  "terminal.integrated.cursorStyle": "line",
+  "workbench.colorTheme": "Dracula",
+  "terminal.integrated.fontSize": 18,
+  "terminal.integrated.fontFamily": "IBM Plex Mono",
+  "editor.suggestSelection": "first",
+  "editor.fontSize": 20,
+  "editor.fontWeight": "400",
+  "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'onum'",
+  "editor.fontFamily": "Fira Code",
+  "editor.minimap.enabled": false,
+  "explorer.openEditors.visible": 0,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.bracketPairColorization.enabled": true
+}
