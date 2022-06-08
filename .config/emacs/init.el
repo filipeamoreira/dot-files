@@ -371,9 +371,9 @@
 ;;    "ts" '(hydra-text-scale/body :which-key "scale text"))
 
 (defun guto/org-mode-setup ()
-    (org-indent-mode)
-    (variable-pitch-mode 1)
-    (visual-line-mode 1))
+  (org-indent-mode)
+  (variable-pitch-mode 1)
+  (visual-line-mode 1))
 
 (use-package org
   :pin org
@@ -382,32 +382,33 @@
   (set-face-attribute 'org-table nil :inherit 'fixed-pitch)
 
   (setq org-startup-folded t)
-    (setq org-ellipsis " ▾")
-    (setq org-agenda-start-with-log-mode t)
-    (setq org-log-done 'time)
-    (setq org-log-into-drawer t)
-    ;; Using solarized theme and forcing fix-width fonts
-    (setq solarized-use-variable-pitch nil
-          solarized-scale-org-headlines nil)
-    (setq org-todo-keywords
-            '((sequence "TODO(t)" "DOING(o)" "NEXT(n)" "WAITING(w)" "BLOCKED(b)" "REVIEW(r)" "|" "DONE(d!)"  "ARCHIVED(a!)")))
-    (setq org-tag-alist
-      '((:startgroup)
-         ; Put mutually exclusive tags here
-         (:endgroup)
-         ("@errand" . ?E)
-         ("@home" . ?H)
-         ("@work" . ?W)
-         ("agenda" . ?a)
-         ("planning" . ?p)
-         ("publish" . ?P)
-         ("batch" . ?b)
-         ("note" . ?n)
-         ("idea" . ?i)))
-    (define-key global-map (kbd "C-c j")
-      (lambda () (interactive) (org-capture nil "jj")))
-    ;;(guto/org-font-setup)
-    )
+  (setq org-ellipsis " ▾")
+  (setq org-agenda-start-with-log-mode t)
+  (setq org-log-done 'time)
+  (setq org-log-into-drawer t)
+  (setq org-list-allow-alphabetical t)
+  ;; Using solarized theme and forcing fix-width fonts
+  (setq solarized-use-variable-pitch nil
+        solarized-scale-org-headlines nil)
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "DOING(o)" "NEXT(n)" "WAITING(w)" "BLOCKED(b)" "REVIEW(r)" "|" "DONE(d!)"  "ARCHIVED(a!)")))
+  (setq org-tag-alist
+        '((:startgroup)
+                                        ; Put mutually exclusive tags here
+          (:endgroup)
+          ("@errand" . ?E)
+          ("@home" . ?H)
+          ("@work" . ?W)
+          ("agenda" . ?a)
+          ("planning" . ?p)
+          ("publish" . ?P)
+          ("batch" . ?b)
+          ("note" . ?n)
+          ("idea" . ?i)))
+  (define-key global-map (kbd "C-c j")
+              (lambda () (interactive) (org-capture nil "jj")))
+  ;;(guto/org-font-setup)
+  )
 
 (use-package org-bullets
   :hook (org-mode . org-bullets-mode)
