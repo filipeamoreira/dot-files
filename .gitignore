@@ -31,3 +31,4 @@ emacs/eln-cache/
 .config/persistory/
 .config/stripe/config.toml
 .config/containers/**
+.bundle/cache/**
