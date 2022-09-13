@@ -1927,12 +1927,16 @@ This is the setup using `prettier.js`
 source: https://github.com/pashky/restclient.el
 
 #+begin_src emacs-lisp
+;; restclient
 (use-package restclient)
-#+end_src>
+#+end_src
 
 ** Whitespace
+
 Sourced from: https://randomgeekery.org/draft/managing-whitespace-in-emacs/
+
 #+begin_src emacs-lisp
+;; whitespace
 (defun guto/color-dim (steps)
   (apply 'color-rgb-to-hex
          (car (color-gradient
@@ -1950,7 +1954,7 @@ Sourced from: https://randomgeekery.org/draft/managing-whitespace-in-emacs/
                       :foreground (face-attribute 'font-lock-comment-face :foreground))
   (set-face-attribute 'whitespace-space nil
                       :background (face-attribute 'font-lock-comment-face :background)
-                      :foreground (bmw/color-dim 3)))
+                      :foreground (guto/color-dim 3)))
 
 (use-package whitespace
   :ensure t
@@ -1961,13 +1965,13 @@ Sourced from: https://randomgeekery.org/draft/managing-whitespace-in-emacs/
         (whitespace-mode)
         (guto/theme-whitespace))))
   :custom
-  (whitespace-action '(auto-cleanup))
+  ;; (whitespace-action '(auto-cleanup))
   (whitespace-line-column 120)
   (whitespace-style
    '(face lines trailing empty tabs spaces indentation space-mark tab-mark))
   :hook
   ((prog-mode text-mode) . guto/whitespace-mode))
-#+end_src>
+#+end_src
 
 * Terminals
 
