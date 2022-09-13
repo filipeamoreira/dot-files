@@ -957,16 +957,31 @@
   (define-key pdf-view-mode-map (kbd "t") 'pdf-annot-add-text-annotation)
   (define-key pdf-view-mode-map (kbd "D") 'pdf-annot-delete))
 
-(defun guto/copy-buffer-file-name ()
-    "Copy the full path to the current file in the minibuffer."
-    (interactive)
-    (let ((file-name (buffer-file-name)))
-      (if file-name
-          (progn
-            (kill-new file-name))
-        (error "Buffer not visiting a file"))))
+(defun guto/copy-buffer-full-file-name ()
+  "Copy the full path to the current file in the minibuffer."
+  (interactive)
+  (let ((file-name ((file-relative-name (buffer-file-name)))))
+    (if file-name
+        (progn
+          (kill-new file-name))
+      (error "Buffer not visiting a file"))
+    ))
 
-(global-set-key (kbd "C-c c") 'guto/copy-buffer-file-name)
+(defun guto/copy-file-buffer-file-name ()
+  "Put the current file name on the clipboard"
+  (interactive)
+  (let ((filename (if (equal major-mode 'dired-mode)
+                      default-directory
+                    (file-relative-name (buffer-file-name)))))
+    (when filename
+      (with-temp-buffer
+        (insert filename)
+        (clipboard-kill-region (point-min) (point-max)))
+      (message filename))))
+
+
+(global-set-key (kbd "C-c d") 'guto/copy-file-buffer-file-name)
+(global-set-key (kbd "C-c c") 'guto/copy-buffer-full-file-name)
 
 ;; `yas-describe-tables` show the available snippets for current mode
 ;; `yas-visit-snippet-file` shows definition for snippet
