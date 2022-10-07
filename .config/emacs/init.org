@@ -1937,6 +1937,10 @@ This is the setup using `prettier.js`
 (use-package docker-compose-mode)
 #+end_src
 
+#+begin_src emacs-lisp
+(use-package dockerfile-mode)
+#+end_src
+
 ** Rest client
 
 source: https://github.com/pashky/restclient.el
