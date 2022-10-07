@@ -84,3 +84,6 @@ function run_after_save {
     nodemon -x "$prefix $file:$line" -w "$file"
   fi
 }
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
