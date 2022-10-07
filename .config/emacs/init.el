@@ -376,6 +376,8 @@
   (visual-line-mode 1))
 
 (use-package org
+  :straight (:host github :repo "bzg/org-mode"
+           :branch "main")
   :pin org
   :hook (org-mode . guto/org-mode-setup)
   :config
