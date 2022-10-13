@@ -697,7 +697,8 @@
   ;;:after lsp-mode
   :mode
   (("\\(?:\\.rb\\|ru\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\|Fast\\|Match\\|App\\)file\\)\\'" . ruby-mode))
-  :interpreter "ruby")
+  :interpreter "ruby"
+  :init (add-hook 'ruby-mode-hook 'flycheck-mode))
 
 (use-package projectile-rails
 :config
