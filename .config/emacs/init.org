@@ -1467,6 +1467,12 @@ Inf-ruby is disabled for the moment
     :after ruby-mode
     :diminish ruby-test-mode)
 #+end_src
+
+#+begin_src emacs-lisp
+  (use-package ruby-tools
+   :after ruby-mode
+   :hook (ruby-mode . ruby-tools-mode))
+#+end_src
 ** YAML
 
 #+begin_src emacs-lisp

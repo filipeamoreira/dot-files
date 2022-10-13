@@ -712,6 +712,10 @@
   :after ruby-mode
   :diminish ruby-test-mode)
 
+(use-package ruby-tools
+ :after ruby-mode
+ :hook (ruby-mode . ruby-tools-mode))
+
 (use-package yaml-mode)
 
 ;; (use-package toml-mode)
