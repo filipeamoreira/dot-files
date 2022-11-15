@@ -1051,6 +1051,8 @@
   :hook
   ((prog-mode text-mode) . guto/whitespace-mode))
 
+(setq indent-tabs-mode nil)
+
 (use-package term
   :commands term
   :config

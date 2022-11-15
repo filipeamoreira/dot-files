@@ -2001,6 +2001,12 @@ Sourced from: https://randomgeekery.org/draft/managing-whitespace-in-emacs/
   ((prog-mode text-mode) . guto/whitespace-mode))
 #+end_src
 
+** Tabs
+
+#+begin_src emacs-lisp
+(setq indent-tabs-mode nil)
+#+end_src
+
 * Terminals
 
 ** term-mode
