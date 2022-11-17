@@ -2004,6 +2004,7 @@ Sourced from: https://randomgeekery.org/draft/managing-whitespace-in-emacs/
 ** Tabs
 
 #+begin_src emacs-lisp
+(setq-default indent-tabs-mode nil)
 (setq indent-tabs-mode nil)
 #+end_src
 
