@@ -1054,6 +1054,52 @@
 (setq-default indent-tabs-mode nil)
 (setq indent-tabs-mode nil)
 
+(defun guto/no-blink-matching-paren ()
+  (customize-set-variable 'blink-matching-paren nil))
+
+(defun guto/blink-matching-paren ()
+  (customize-set-variable 'blink-matching-paren t))
+
+(use-package multiple-cursors
+  :init
+  (defvar guto/mc-prefix-map (make-sparse-keymap)
+    "Prefix keymap for multiple-cursors")
+  (define-prefix-command 'guto/mc-prefix-map)
+  (define-key global-map (kbd "C-c m") 'guto/mc-prefix-map)
+  :hook
+  (multiple-cursors-mode-enabled . guto/no-blink-matching-paren)
+  (multiple-cursors-mode-disabled . guto/blink-matching-paren)
+  :bind
+  (:map guto/mc-prefix-map
+        ("t" . mc/mark-all-like-this)
+        ("m" . mc/mark-all-like-this-dwim)
+        ("l" . mc/edit-lines)
+        ("e" . mc/edit-ends-of-lines)
+        ("a" . mc/edit-beginnings-of-lines)
+        ("n" . mc/mark-next-like-this)
+        ("p" . mc/mark-previous-like-this)
+        ("s" . mc/mark-sgml-tag-pair)
+        ("d" . mc/mark-all-like-this-in-defun)
+        ("M-<mouse-1>" . mc/add-cursor-on-click)))
+
+(use-package phi-search)
+
+(use-package phi-search-mc
+  :config
+  (phi-search-mc/setup-keys))
+
+(use-package mc-extras
+  :demand
+  :bind
+  (:map mc/keymap
+   ("C-c m =" . mc/compare-chars)))
+
+(use-package ace-mc
+  :bind
+  (:map guto/mc-prefix-map
+   ("SPC" . ace-mc-add-multiple-cursors)
+   ("C-SPC" . ace-mc-add-single-cursor)))
+
 (use-package term
   :commands term
   :config
