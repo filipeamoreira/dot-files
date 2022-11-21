@@ -32,3 +32,5 @@ emacs/eln-cache/
 .config/stripe/config.toml
 .config/containers/**
 .bundle/cache/**
+
+.config/exercism/user.json
