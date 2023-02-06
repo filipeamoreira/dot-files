@@ -330,12 +330,12 @@
   :init
   (setq helm-input-idle-delay                 0.01
         helm-reuse-last-window-split-state    t
-        helm-split-window-inside-p           t
+        helm-split-window-inside-p            t
         helm-buffers-fuzzy-matching           t
         helm-move-to-line-cycle-in-source     t
         helm-ff-search-library-in-sexp        t
         helm-ff-file-name-history-use-recentf t)
-  :preface (require 'helm-config)
+  ;; :preface (require 'helm-config)
   :config (helm-mode 1))
 
 (use-package helm-ag
