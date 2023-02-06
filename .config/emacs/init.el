@@ -1139,6 +1139,13 @@
    ("SPC" . ace-mc-add-multiple-cursors)
    ("C-SPC" . ace-mc-add-single-cursor)))
 
+(use-package dumb-jump
+  :ensure t
+  :init
+  (setq xref-backend-functions (remq 'etags--xref-backend xref-backend-functions))
+  (add-to-list 'xref-backend-functions #'dumb-jump-xref-activate t)
+  (setq dumb-jump-selector 'helm))
+
 (use-package term
   :commands term
   :config

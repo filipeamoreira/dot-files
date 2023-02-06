@@ -2117,6 +2117,19 @@ Source: https://gitea.polonkai.eu/gergely/my-emacs-d/src/branch/master/configura
    ("C-SPC" . ace-mc-add-single-cursor)))
 #+end_src
 
+** Dumb jump
+
+source: https://github.com/jacktasia/dumb-jump
+
+#+begin_src emacs-lisp
+  (use-package dumb-jump
+    :ensure t
+    :init
+    (setq xref-backend-functions (remq 'etags--xref-backend xref-backend-functions))
+    (add-to-list 'xref-backend-functions #'dumb-jump-xref-activate t)
+    (setq dumb-jump-selector 'helm))
+#+end_src
+
 * Terminals
 
 ** term-mode
