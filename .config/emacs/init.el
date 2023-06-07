@@ -923,28 +923,34 @@
   :hook (prog-mode . rainbow-delimiters-mode))
 
 ;; (use-package editorconfig
-  ;;   :ensure t
-  ;;   :config
-  ;;   (setq editorconfig-trim-whitespaces-mode
-  ;;      'ws-butler-mode)
-  ;;   (editorconfig-mode 1))
+    ;;   :ensure t
+    ;;   :config
+    ;;   (setq editorconfig-trim-whitespaces-mode
+    ;;      'ws-butler-mode)
+    ;;   (editorconfig-mode 1))
 
-;; trims whitespace only on touched lines
+  ;; trims whitespace only on touched lines
 
-(use-package ws-butler
-  :straight (ws-butler :type git :host github :repo "lewang/ws-butler")
-  :ensure t)
+  (use-package ws-butler
+    :straight (ws-butler :type git :host github :repo "lewang/ws-butler")
+    :ensure t)
 
-(use-package editorconfig
-  :hook (prog-mode . editorconfig-mode)
-  :config
-  (defun guto/editorconfig-disable-ws-butler-maybe-h (props)
-    "Disable `ws-butler-mode' if trim_trailing_whitespace is true."
-    (when (and (equal (gethash 'trim_trailing_whitespace props) "true")
-               (bound-and-true-p ws-butler-mode))
-      (ws-butler-mode -1)))
-  (add-hook 'editorconfig-after-apply-functions #'guto/editorconfig-disable-ws-butler-maybe-h)
-  (editorconfig-mode +1))
+;; (use-package editorconfig
+;;   :ensure t
+;;   :config
+;;   (editorconfig-mode 1))
+
+  (use-package editorconfig
+    :hook (prog-mode . editorconfig-mode)
+    :ensure t
+    :config
+    (defun guto/editorconfig-disable-ws-butler-maybe-h (props)
+      "Disable `ws-butler-mode' if trim_trailing_whitespace is true."
+      (when (and (equal (gethash 'trim_trailing_whitespace props) "true")
+                 (bound-and-true-p ws-butler-mode))
+        (ws-butler-mode -1)))
+    (add-hook 'editorconfig-after-apply-functions #'guto/editorconfig-disable-ws-butler-maybe-h)
+    (editorconfig-mode 1))
 
 (use-package prettier
   :ensure t
