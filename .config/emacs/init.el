@@ -687,12 +687,6 @@
   :config
   (global-discover-mode 1))
 
-(use-package robe
-  :straight (robe :type git :host github :repo "dgutov/robe")
-  :hook (ruby-mode)
-  :config
-(global-robe-mode))
-
 (use-package ruby-mode
   ;;:after lsp-mode
   :mode
@@ -849,6 +843,8 @@
   ; So, every time we save an elixir file it will try to find a .formatter.exs and then run mix format from
   ; that file's directory
   (add-hook 'elixir-mode-hook #'+elixir-format-on-save-mode))
+
+(use-package terraform-mode)
 
 (use-package company
   :after lsp-mode
