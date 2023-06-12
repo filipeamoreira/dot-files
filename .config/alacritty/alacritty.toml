@@ -1,0 +1,566 @@
+live_config_reload = true
+# import = [ "./dracula.toml" ]
+
+[window]
+decorations = "full"
+startup_mode = "Maximized"
+
+[window.padding]
+x = 2
+y = 2
+
+[scrolling]
+history = 10_000
+multiplier = 3
+
+[font]
+size = 24.0
+# Source: https://github.com/alacritty/alacritty/blob/bd4906722a1a026b01f06c94c33b13ff63a7e044/CHANGELOG.md?plain=1#L178
+# Use: `defaults write -g AppleFontSmoothing -int 0`
+# use_thin_strokes = true
+
+[font.normal]
+family = "Fira Code"
+
+[cursor.style]
+shape = "Beam"
+blinking = "Off"
+
+[shell]
+program = "/usr/local/bin/zsh"
+args = [ "--login" ]
+
+# [[key.bindings]]
+# key = "Key0"
+# mods = "Command"
+# action = "ResetFontSize"
+
+# [[key.bindings]]
+# key = "Equals"
+# mods = "Command"
+# action = "IncreaseFontSize"
+
+# [[key.bindings]]
+# key = "Minus"
+# mods = "Command"
+# action = "DecreaseFontSize"
+
+# [[key.bindings]]
+# key = "K"
+# mods = "Command"
+# action = "ClearHistory"
+
+# [[key.bindings]]
+# key = "K"
+# mods = "Command"
+# chars = "\f"
+
+# [[key.bindings]]
+# key = "V"
+# mods = "Command"
+# action = "Paste"
+
+# [[key.bindings]]
+# key = "C"
+# mods = "Command"
+# action = "Copy"
+
+# [[key.bindings]]
+# key = "H"
+# mods = "Command"
+# action = "Hide"
+
+# [[key.bindings]]
+# key = "Q"
+# mods = "Command"
+# action = "Quit"
+
+# [[key.bindings]]
+# key = "W"
+# mods = "Command"
+# action = "Quit"
+
+# [[key.bindings]]
+# key = "Space"
+# mods = "Control"
+# chars = "\u0000"
+
+# [[key.bindings]]
+# key = "Paste"
+# action = "Paste"
+
+# [[key.bindings]]
+# key = "Copy"
+# action = "Copy"
+
+# [[key.bindings]]
+# key = "L"
+# mods = "Control"
+# action = "ClearLogNotice"
+
+# [[key.bindings]]
+# key = "L"
+# mods = "Control"
+# chars = "\f"
+
+# [[key.bindings]]
+# key = "Home"
+# chars = "\u001bOH"
+# mode = "AppCursor"
+
+# [[key.bindings]]
+# key = "Home"
+# chars = "\u001b[H"
+# mode = "~AppCursor"
+
+# [[key.bindings]]
+# key = "End"
+# chars = "\u001bOF"
+# mode = "AppCursor"
+
+# [[key.bindings]]
+# key = "End"
+# chars = "\u001b[F"
+# mode = "~AppCursor"
+
+# [[key.bindings]]
+# key = "PageUp"
+# mods = "Shift"
+# chars = "\u001b[5;2~"
+
+# [[key.bindings]]
+# key = "PageUp"
+# mods = "Control"
+# chars = "\u001b[5;5~"
+
+# [[key.bindings]]
+# key = "PageUp"
+# chars = "\u001b[5~"
+
+# [[key.bindings]]
+# key = "PageDown"
+# mods = "Shift"
+# chars = "\u001b[6;2~"
+
+# [[key.bindings]]
+# key = "PageDown"
+# mods = "Control"
+# chars = "\u001b[6;5~"
+
+# [[key.bindings]]
+# key = "PageDown"
+# chars = "\u001b[6~"
+
+# [[key.bindings]]
+# key = "Tab"
+# mods = "Shift"
+# chars = "\u001b[Z"
+
+# [[key.bindings]]
+# key = "Back"
+# chars = "\u007f"
+
+# [[key.bindings]]
+# key = "Back"
+# mods = "Alt"
+# chars = "\u001b"
+
+# [[key.bindings]]
+# key = "Insert"
+# chars = "\u001b[2~"
+
+# [[key.bindings]]
+# key = "Delete"
+# chars = "\u001b[3~"
+
+# [[key.bindings]]
+# key = "Left"
+# mods = "Shift"
+# chars = "\u001b[1;2D"
+
+# [[key.bindings]]
+# key = "Left"
+# mods = "Control"
+# chars = "\u001b[1;5D"
+
+# [[key.bindings]]
+# key = "Left"
+# mods = "Alt"
+# chars = "\u001b[1;3D"
+
+# [[key.bindings]]
+# key = "Left"
+# chars = "\u001b[D"
+# mode = "~AppCursor"
+
+# [[key.bindings]]
+# key = "Left"
+# chars = "\u001bOD"
+# mode = "AppCursor"
+
+# [[key.bindings]]
+# key = "Right"
+# mods = "Shift"
+# chars = "\u001b[1;2C"
+
+# [[key.bindings]]
+# key = "Right"
+# mods = "Control"
+# chars = "\u001b[1;5C"
+
+# [[key.bindings]]
+# key = "Right"
+# mods = "Alt"
+# chars = "\u001b[1;3C"
+
+# [[key.bindings]]
+# key = "Right"
+# chars = "\u001b[C"
+# mode = "~AppCursor"
+
+# [[key.bindings]]
+# key = "Right"
+# chars = "\u001bOC"
+# mode = "AppCursor"
+
+# [[key.bindings]]
+# key = "Up"
+# mods = "Shift"
+# chars = "\u001b[1;2A"
+
+# [[key.bindings]]
+# key = "Up"
+# mods = "Control"
+# chars = "\u001b[1;5A"
+
+# [[key.bindings]]
+# key = "Up"
+# mods = "Alt"
+# chars = "\u001b[1;3A"
+
+# [[key.bindings]]
+# key = "Up"
+# chars = "\u001b[A"
+# mode = "~AppCursor"
+
+# [[key.bindings]]
+# key = "Up"
+# chars = "\u001bOA"
+# mode = "AppCursor"
+
+# [[key.bindings]]
+# key = "Down"
+# mods = "Shift"
+# chars = "\u001b[1;2B"
+
+# [[key.bindings]]
+# key = "Down"
+# mods = "Control"
+# chars = "\u001b[1;5B"
+
+# [[key.bindings]]
+# key = "Down"
+# mods = "Alt"
+# chars = "\u001b[1;3B"
+
+# [[key.bindings]]
+# key = "Down"
+# chars = "\u001b[B"
+# mode = "~AppCursor"
+
+# [[key.bindings]]
+# key = "Down"
+# chars = "\u001bOB"
+# mode = "AppCursor"
+
+# [[key.bindings]]
+# key = "F1"
+# chars = "\u001bOP"
+
+# [[key.bindings]]
+# key = "F2"
+# chars = "\u001bOQ"
+
+# [[key.bindings]]
+# key = "F3"
+# chars = "\u001bOR"
+
+# [[key.bindings]]
+# key = "F4"
+# chars = "\u001bOS"
+
+# [[key.bindings]]
+# key = "F5"
+# chars = "\u001b[15~"
+
+# [[key.bindings]]
+# key = "F6"
+# chars = "\u001b[17~"
+
+# [[key.bindings]]
+# key = "F7"
+# chars = "\u001b[18~"
+
+# [[key.bindings]]
+# key = "F8"
+# chars = "\u001b[19~"
+
+# [[key.bindings]]
+# key = "F9"
+# chars = "\u001b[20~"
+
+# [[key.bindings]]
+# key = "F10"
+# chars = "\u001b[21~"
+
+# [[key.bindings]]
+# key = "F11"
+# chars = "\u001b[23~"
+
+# [[key.bindings]]
+# key = "F12"
+# chars = "\u001b[24~"
+
+# [[key.bindings]]
+# key = "F1"
+# mods = "Shift"
+# chars = "\u001b[1;2P"
+
+# [[key.bindings]]
+# key = "F2"
+# mods = "Shift"
+# chars = "\u001b[1;2Q"
+
+# [[key.bindings]]
+# key = "F3"
+# mods = "Shift"
+# chars = "\u001b[1;2R"
+
+# [[key.bindings]]
+# key = "F4"
+# mods = "Shift"
+# chars = "\u001b[1;2S"
+
+# [[key.bindings]]
+# key = "F5"
+# mods = "Shift"
+# chars = "\u001b[15;2~"
+
+# [[key.bindings]]
+# key = "F6"
+# mods = "Shift"
+# chars = "\u001b[17;2~"
+
+# [[key.bindings]]
+# key = "F7"
+# mods = "Shift"
+# chars = "\u001b[18;2~"
+
+# [[key.bindings]]
+# key = "F8"
+# mods = "Shift"
+# chars = "\u001b[19;2~"
+
+# [[key.bindings]]
+# key = "F9"
+# mods = "Shift"
+# chars = "\u001b[20;2~"
+
+# [[key.bindings]]
+# key = "F10"
+# mods = "Shift"
+# chars = "\u001b[21;2~"
+
+# [[key.bindings]]
+# key = "F11"
+# mods = "Shift"
+# chars = "\u001b[23;2~"
+
+# [[key.bindings]]
+# key = "F12"
+# mods = "Shift"
+# chars = "\u001b[24;2~"
+
+# [[key.bindings]]
+# key = "F1"
+# mods = "Control"
+# chars = "\u001b[1;5P"
+
+# [[key.bindings]]
+# key = "F2"
+# mods = "Control"
+# chars = "\u001b[1;5Q"
+
+# [[key.bindings]]
+# key = "F3"
+# mods = "Control"
+# chars = "\u001b[1;5R"
+
+# [[key.bindings]]
+# key = "F4"
+# mods = "Control"
+# chars = "\u001b[1;5S"
+
+# [[key.bindings]]
+# key = "F5"
+# mods = "Control"
+# chars = "\u001b[15;5~"
+
+# [[key.bindings]]
+# key = "F6"
+# mods = "Control"
+# chars = "\u001b[17;5~"
+
+# [[key.bindings]]
+# key = "F7"
+# mods = "Control"
+# chars = "\u001b[18;5~"
+
+# [[key.bindings]]
+# key = "F8"
+# mods = "Control"
+# chars = "\u001b[19;5~"
+
+# [[key.bindings]]
+# key = "F9"
+# mods = "Control"
+# chars = "\u001b[20;5~"
+
+# [[key.bindings]]
+# key = "F10"
+# mods = "Control"
+# chars = "\u001b[21;5~"
+
+# [[key.bindings]]
+# key = "F11"
+# mods = "Control"
+# chars = "\u001b[23;5~"
+
+# [[key.bindings]]
+# key = "F12"
+# mods = "Control"
+# chars = "\u001b[24;5~"
+
+# [[key.bindings]]
+# key = "F1"
+# mods = "Alt"
+# chars = "\u001b[1;6P"
+
+# [[key.bindings]]
+# key = "F2"
+# mods = "Alt"
+# chars = "\u001b[1;6Q"
+
+# [[key.bindings]]
+# key = "F3"
+# mods = "Alt"
+# chars = "\u001b[1;6R"
+
+# [[key.bindings]]
+# key = "F4"
+# mods = "Alt"
+# chars = "\u001b[1;6S"
+
+# [[key.bindings]]
+# key = "F5"
+# mods = "Alt"
+# chars = "\u001b[15;6~"
+
+# [[key.bindings]]
+# key = "F6"
+# mods = "Alt"
+# chars = "\u001b[17;6~"
+
+# [[key.bindings]]
+# key = "F7"
+# mods = "Alt"
+# chars = "\u001b[18;6~"
+
+# [[key.bindings]]
+# key = "F8"
+# mods = "Alt"
+# chars = "\u001b[19;6~"
+
+# [[key.bindings]]
+# key = "F9"
+# mods = "Alt"
+# chars = "\u001b[20;6~"
+
+# [[key.bindings]]
+# key = "F10"
+# mods = "Alt"
+# chars = "\u001b[21;6~"
+
+# [[key.bindings]]
+# key = "F11"
+# mods = "Alt"
+# chars = "\u001b[23;6~"
+
+# [[key.bindings]]
+# key = "F12"
+# mods = "Alt"
+# chars = "\u001b[24;6~"
+
+# [[key.bindings]]
+# key = "F1"
+# mods = "Super"
+# chars = "\u001b[1;3P"
+
+# [[key.bindings]]
+# key = "F2"
+# mods = "Super"
+# chars = "\u001b[1;3Q"
+
+# [[key.bindings]]
+# key = "F3"
+# mods = "Super"
+# chars = "\u001b[1;3R"
+
+# [[key.bindings]]
+# key = "F4"
+# mods = "Super"
+# chars = "\u001b[1;3S"
+
+# [[key.bindings]]
+# key = "F5"
+# mods = "Super"
+# chars = "\u001b[15;3~"
+
+# [[key.bindings]]
+# key = "F6"
+# mods = "Super"
+# chars = "\u001b[17;3~"
+
+# [[key.bindings]]
+# key = "F7"
+# mods = "Super"
+# chars = "\u001b[18;3~"
+
+# [[key.bindings]]
+# key = "F8"
+# mods = "Super"
+# chars = "\u001b[19;3~"
+
+# [[key.bindings]]
+# key = "F9"
+# mods = "Super"
+# chars = "\u001b[20;3~"
+
+# [[key.bindings]]
+# key = "F10"
+# mods = "Super"
+# chars = "\u001b[21;3~"
+
+# [[key.bindings]]
+# key = "F11"
+# mods = "Super"
+# chars = "\u001b[23;3~"
+
+# [[key.bindings]]
+# key = "F12"
+# mods = "Super"
+# chars = "\u001b[24;3~"
+
+# [[key.bindings]]
+# key = "NumpadEnter"
+# chars = ""
