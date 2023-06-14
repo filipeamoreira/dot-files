@@ -1,12 +1,10 @@
 {
   "workbench.editor.enablePreviewFromQuickOpen": false,
-  "rust-analyzer.checkOnSave.command": "clippy",
   "workbench.editor.enablePreview": false,
   "[rust]": {
     "editor.formatOnSave": true,
     "editor.tabSize": 4
   },
-  "git.autofetch": true,
   "files.eol": "\n",
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -37,8 +35,6 @@
   "terminal.integrated.tabs.enabled": true,
   "editor.renderWhitespace": "none",
   "terminal.integrated.defaultProfile.linux": "zsh",
-  "workbench.preferredDarkColorTheme": "GitHub Dark",
-  "workbench.preferredLightColorTheme": "GitHub Light",
   "editor.tabSize": 2,
   "editor.cursorStyle": "line",
   "editor.insertSpaces": false,
@@ -46,7 +42,6 @@
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.wordWrap": "off",
   "window.restoreWindows": "none",
-  "editor.quickSuggestions": false,
   "window.autoDetectColorScheme": true,
   "files.watcherExclude": {
     "**/.git/objects/**": true,
@@ -63,20 +58,29 @@
     "markdown": false
   },
   "editor.lineHeight": 0,
-  "security.workspace.trust.untrustedFiles": "open",
+  "telemetry.telemetryLevel": "off",
+  "workbench.enableExperiments": false,
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  "update.mode": "manual",
+  "extensions.autoUpdate": false,
+  "settingsSync.keybindingsPerPlatform": false,
   "workbench.sideBar.location": "right",
   "terminal.integrated.cursorStyle": "line",
-  "workbench.colorTheme": "Dracula",
   "terminal.integrated.fontSize": 18,
-  "terminal.integrated.fontFamily": "IBM Plex Mono",
+  "terminal.integrated.fontFamily": "Fira Code",
   "editor.suggestSelection": "first",
   "editor.fontSize": 20,
   "editor.fontWeight": "400",
   "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'onum'",
   "editor.fontFamily": "Fira Code",
   "editor.minimap.enabled": false,
-  "explorer.openEditors.visible": 0,
+  "explorer.openEditors.visible": 1,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.bracketPairColorization.enabled": true
+  "editor.bracketPairColorization.enabled": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "json.maxItemsComputed": 10000,
+  "editor.foldingMaximumRegions": 50000,
+  "workbench.experimental.cloudChanges.autoStore": "onShutdown",
+  "git.autofetch": true
 }
