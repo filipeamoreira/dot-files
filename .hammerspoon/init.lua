@@ -17,7 +17,7 @@ hs.hotkey.bind(hyper, 'A', function () hs.application.launchOrFocus("Arc") end)
 hs.hotkey.bind(hyper, 'D', function () hs.application.launchOrFocus("Discord") end)
 hs.hotkey.bind(hyper, 'O', function () hs.application.launchOrFocus("Google Chrome") end)
 hs.hotkey.bind(hyper, 'K', function () hs.application.launchOrFocus("Slack") end)
-hs.hotkey.bind(hyper, 'V', function () hs.application.launchOrFocus("VSCodium") end)
+hs.hotkey.bind(hyper, 'V', function () hs.application.launchOrFocus("Visual Studio Code - Insiders") end)
 
 -- Notify the config has been loaded
 hs.alert.show('Hammerspoon config loaded')
