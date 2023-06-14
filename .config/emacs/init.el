@@ -871,6 +871,8 @@
   ; that file's directory
   (add-hook 'elixir-mode-hook #'+elixir-format-on-save-mode))
 
+(use-package lua-mode)
+
 (use-package terraform-mode)
 
 (use-package company

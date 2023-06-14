@@ -1684,12 +1684,13 @@ source: https://medium.com/@victor.nascimento/elixir-development-on-emacs-9f6776
     ; that file's directory
     (add-hook 'elixir-mode-hook #'+elixir-format-on-save-mode))
 #+end_src
-<<<<<<< HEAD
+
 ** Lua
+Lua mode
 
 #+begin_src emacs-lisp
-(use-package lua-mode)
-#+end_src>
+  (use-package lua-mode)
+#+end_src
 ** Terraform
 
 https://github.com/emacsorphanage/terraform-mode
