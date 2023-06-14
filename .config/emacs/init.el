@@ -891,7 +891,7 @@
 
 (use-package magit
   :straight t
-  ;; :pin melpa-stable
+  :pin melpa-stable
   :commands magit-status
   :bind (("C-c g" . magit-status)
          ("C-x f" . magit-status)
