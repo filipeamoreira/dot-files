@@ -207,6 +207,7 @@
 
 ;; Make ESC quit prompts
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+(global-set-key (kbd "C-g") 'keyboard-escape-quit)
 
 (defun guto/eval-and-replace ()
   "Replace the preceding sexp with its value."
