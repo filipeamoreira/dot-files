@@ -272,7 +272,10 @@
 (use-package command-log-mode
   :commands command-log-mode)
 
-(use-package all-the-icons)
+;; Using beta version: https://old.reddit.com/r/emacs/
+(use-package all-the-icons
+  :straight (all-the-icons :type git :host github :repo "domtronn/all-the-icons.el" :branch "svg" :files (:defaults "svg"))
+  :if (display-graphic-p))
 
 (use-package doom-modeline
   :ensure t

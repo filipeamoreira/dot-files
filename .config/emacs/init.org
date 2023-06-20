@@ -508,7 +508,10 @@ https://github.com/chuntaro/emacs-keypression
 *NOTE:* The first time you load your configuration on a new machine, you'll need to run `M-x all-the-icons-install-fonts` so that mode line icons display correctly.
 
 #+begin_src emacs-lisp
-  (use-package all-the-icons)
+  ;; Using beta version: https://old.reddit.com/r/emacs/
+  (use-package all-the-icons
+    :straight (all-the-icons :type git :host github :repo "domtronn/all-the-icons.el" :branch "svg" :files (:defaults "svg"))
+    :if (display-graphic-p))
 
   (use-package doom-modeline
     :ensure t
