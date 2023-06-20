@@ -1620,7 +1620,9 @@ Add a line starting with `-- >>>` and run `dante-eval-block` to evaluate code in
 ** Nix
 
 #+begin_src emacs-lisp
-(use-package nix-mode)
+  (use-package nix-mode
+    :straight (nix-mode :type git :host github :repo "NixOS/nix-mode")
+    :mode "\\.nix\\'")
 #+end_src
 ** Java
 
@@ -1781,8 +1783,7 @@ Some useful commands:
 
 #+begin_src emacs-lisp
   (use-package magit
-    :straight t
-    :pin melpa-stable
+    :straight (magit :type git :host github :repo "magit/magit")
     :commands magit-status
     :bind (("C-c g" . magit-status)
            ("C-x f" . magit-status)

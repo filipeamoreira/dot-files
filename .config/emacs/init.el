@@ -826,7 +826,9 @@
   (add-hook 'haskell-mode-hook 'flycheck-mode)
   (add-hook 'haskell-mode-hook 'dante-mode))
 
-(use-package nix-mode)
+(use-package nix-mode
+  :straight (nix-mode :type git :host github :repo "NixOS/nix-mode")
+  :mode "\\.nix\\'")
 
 (use-package go-mode
   :config (setq tab-width 4)
@@ -919,8 +921,7 @@
   :config (counsel-projectile-mode))
 
 (use-package magit
-  :straight t
-  :pin melpa-stable
+  :straight (magit :type git :host github :repo "magit/magit")
   :commands magit-status
   :bind (("C-c g" . magit-status)
          ("C-x f" . magit-status)
