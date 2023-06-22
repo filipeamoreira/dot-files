@@ -1479,7 +1479,7 @@ Inf-ruby is disabled for the moment
 #+end_src
 *** Ruby-lsp
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle no
   (use-package lsp-mode
     :init
     ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
