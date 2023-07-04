@@ -82,5 +82,8 @@
   "json.maxItemsComputed": 10000,
   "editor.foldingMaximumRegions": 50000,
   "workbench.experimental.cloudChanges.autoStore": "onShutdown",
-  "git.autofetch": true
+  "git.autofetch": true,
+  "rubyLsp.rubyVersionManager": "none",
+  "rubyLsp.enableExperimentalFeatures": true,
+  "emmet.triggerExpansionOnTab": true
 }
