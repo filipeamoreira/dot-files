@@ -1,0 +1,4 @@
+* Issue number: ${title}
+* Notes
+%?
+* Tasks

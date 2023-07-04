@@ -497,6 +497,11 @@
      ("o" "project" plain
       (file "~/.config/emacs/templates/org-roam-project-template.org")
       :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: PROJECT")
+      :unnarrowed t)
+
+     ("i" "issue" plain
+      (file "~/.config/emacs/templates/org-roam-issue-template.org")
+      :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: ISSUE")
       :unnarrowed t)))
   ;; org-roam-dailies
   (org-roam-dailies-directory "~/sync/notes/journal/")
