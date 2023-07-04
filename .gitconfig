@@ -103,11 +103,16 @@
 	hideCampaign = true
 [user]
 	useConfigOnly = true
+	name = Filipe Moreira
+	email = filipe.moreira@nationbuilder.com
 [user "main"]
 	name = Filipe Moreira
 	email = code@filipeamoreira.com
 [user "nationbuilder"]
-	name = filipemoreira
+	name = Filipe Moreira
 	email = filipe.moreira@nationbuilder.com
 [init]
 	defaultBranch = main
+	templateDir = /Users/guto/.git-template
+[commit]
+	template = /Users/guto/.gitmessage
