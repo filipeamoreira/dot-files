@@ -9,14 +9,24 @@
 {
   "base_keymap": "Emacs",
   "buffer_font_family": "Fira Code",
-
-  "buffer_font_size": 16,
+  "buffer_font_size": 18,
   "theme": "Solarized Dark",
   "telemetry": {
       "diagnostics": false,
       "metrics": false
   },
   "format_on_save": "off",
+  "enable_language_server": true,
+  "git_gutter": "tracked_files",
+  "hour_format": "hour24",
+  "lsp": {
+    "solargraph": {
+      "initialization_options": {
+        "diagnostics": true,
+        "formatting": true
+      }
+   }
+  },
   "language_overrides": {
     "Elixir": {
       "format_on_save": {
