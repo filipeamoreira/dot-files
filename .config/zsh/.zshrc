@@ -141,21 +141,21 @@ vterm_cmd() {
 # Erlang docs on iex
 export KERL_BUILD_DOCS="yes"
 
-# asdf
-. $HOME/.asdf/asdf.sh
-
 # asdf java
 # FIXME: Broken and not being used at the moment
 # . ~/.asdf/plugins/java/set-java-home.zsh
 # export JAVA_HOME="$( cd -P "$(dirname  $(dirname $(asdf which java) ))" && pwd )"
+
+# Single export PATH call
+export PATH="/usr/local/opt/openjdk@8/bin:/usr/local/opt/coreutils/libexec/gnubin:$HOME/.cargo/bin:$HOME/.asdf/bin:$HOME/.asdf/shims:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$PATH:$ANDROID_HOME/platform-tools:/usr/local/opt/mysql-client/bin:$HOME/bin/context/tex/texmf-osx-64/bin"
+
+# asdf
+. "$HOME/.asdf/asdf.sh"
 
 # direnv
 eval "$(asdf exec direnv hook zsh)"
 
 # A shortcut for asdf managed direnv.
 direnv() { asdf exec direnv "$@"; }
-
-# Single export PATH call
-export PATH="/usr/local/opt/openjdk@8/bin:/usr/local/opt/coreutils/libexec/gnubin:$HOME/.cargo/bin:$HOME/.asdf/bin:$HOME/.asdf/shims:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$PATH:$ANDROID_HOME/platform-tools:/usr/local/opt/mysql-client/bin:$HOME/bin/context/tex/texmf-osx-64/bin"
 
 source ${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc
