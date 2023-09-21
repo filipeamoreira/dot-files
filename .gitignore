@@ -23,6 +23,7 @@ emacs/eln-cache/
 .config/emacs/elpa/**/**
 .config/emacs/init.elc
 .config/emacs/async-bytecomp.log
+.config/emacs/backups/
 
 .config/zsh/.zcompdump*
 .config/zsh/.zsh_history
