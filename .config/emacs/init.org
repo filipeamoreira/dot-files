@@ -253,13 +253,14 @@ source: https://old.reddit.com/r/emacs/comments/93bh4y/new_to_emacs_why_does_my_
 #+end_src
 ** Backup files
 #+begin_src emacs-lisp
-  (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
-  backup-by-copying t    ; Don't delink hardlinks
-  version-control t      ; Use version numbers on backups
-  delete-old-versions t  ; Automatically delete excess backups
-  kept-new-versions 20   ; how many of the newest versions to keep
-  kept-old-versions 5    ; and how many of the old
-  )
+  (setq
+    backup-directory-alist '(("." . "~/.config/emacs/backups"))
+    backup-by-copying t    ; Don't delink hardlinks
+    version-control t      ; Use version numbers on backups
+    delete-old-versions t  ; Automatically delete excess backups
+    kept-new-versions 20   ; how many of the newest versions to keep
+    kept-old-versions 5    ; and how many of the old
+    )
 #+end_src
 
 * Color Theme
@@ -359,7 +360,6 @@ https://protesilaos.com/emacs/modus-themes
 We use the [[https://github.com/emacscollective/no-littering/blob/master/no-littering.el][no-littering]] package to keep folders where we edit files and the Emacs configuration folder clean!  It knows about a wide variety of variables for built in Emacs features as well as those from community packages so it can be much easier than finding and setting these variables yourself.
 
 #+begin_src emacs-lisp
-
   ;; NOTE: If you want to move everything out of the ~/.emacs.d folder
   ;; reliably, set `user-emacs-directory` before loading no-littering!
   ;(setq user-emacs-directory "~/.cache/emacs")
