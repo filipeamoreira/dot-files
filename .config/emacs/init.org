@@ -608,6 +608,8 @@ https://github.com/chuntaro/emacs-keypression
 
 Super useful commands:
 =C-c C-e= switch to edit mode (called within a helm popup)
+Search and replace strings for example
+=C-c C-c= commits any changes
 =C-c p s r= - =helm-ag-project-root= (searches whole project for pattern)
 
 #+begin_src emacs-lisp
