@@ -85,5 +85,19 @@
   "git.autofetch": true,
   "rubyLsp.rubyVersionManager": "none",
   "rubyLsp.enableExperimentalFeatures": true,
-  "emmet.triggerExpansionOnTab": true
+  "emmet.triggerExpansionOnTab": true,
+  "[ruby]": {
+    "editor.defaultFormatter": "Shopify.ruby-lsp",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "editor.rulers": [120],
+    "editor.semanticHighlighting.enabled": true
+  },
+  "workbench.colorTheme": "Spinel",
+  "rubyLsp.bundleGemfile": "~/projects/nationbuilder/ruby-3-2-gemfile/Gemfile"
 }
