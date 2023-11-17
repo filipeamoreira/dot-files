@@ -1169,6 +1169,10 @@
   (add-to-list 'xref-backend-functions #'dumb-jump-xref-activate t)
   (setq dumb-jump-selector 'helm))
 
+(use-package neotree
+  :config
+  (setq neo-theme (if (display-graphic-p) 'icons 'arrow)))
+
 (use-package term
   :commands term
   :config
