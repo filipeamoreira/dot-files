@@ -65,6 +65,8 @@
   "extensions.autoUpdate": false,
   "settingsSync.keybindingsPerPlatform": false,
   "workbench.sideBar.location": "right",
+  "workbench.editor.showTabs": false,
+  "workbench.tree.indent": 20,
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.fontSize": 18,
   "terminal.integrated.fontFamily": "Fira Code",
