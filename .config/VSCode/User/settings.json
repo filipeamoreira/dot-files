@@ -65,7 +65,7 @@
   "extensions.autoUpdate": false,
   "settingsSync.keybindingsPerPlatform": false,
   "workbench.sideBar.location": "right",
-  "workbench.editor.showTabs": false,
+  "workbench.editor.showTabs": "single",
   "workbench.tree.indent": 20,
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.fontSize": 18,
