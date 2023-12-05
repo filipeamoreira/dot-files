@@ -97,7 +97,9 @@
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
-    "editor.rulers": [120],
+    "editor.rulers": [
+      120
+    ],
     "editor.semanticHighlighting.enabled": true
   },
   "workbench.colorTheme": "Spinel",
