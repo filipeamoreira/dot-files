@@ -105,6 +105,7 @@
 	useConfigOnly = true
 	name = Filipe Moreira
 	email = filipe.moreira@nationbuilder.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMzFArNZmqGvwO67WkQXSvHdS806astG0OZDQ3U6SQ5U
 [user "main"]
 	name = Filipe Moreira
 	email = code@filipeamoreira.com
@@ -113,6 +114,11 @@
 	email = filipe.moreira@nationbuilder.com
 [init]
 	defaultBranch = main
-	templateDir = /Users/guto/.git-template
+	templateDir = ~/.git-template
 [commit]
-	template = /Users/guto/.gitmessage
+	template = ~/.gitmessage
+	gpgsign = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
