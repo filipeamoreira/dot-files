@@ -39,13 +39,7 @@
         '(("melpa" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/melpa/")
           ("org"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/org/")
           ("gnu"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/gnu/")
-          ("melpa-stable"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/stable-melpa/")
-          ))
-
-  ;; (setq package-archives
-  ;;       '(("melpa" . "https://melpa.org/packages/")
-  ;;         ("org"   . "https://orgmode.org/elpa/")
-  ;;         ("elpa"  . "https://elpa.gnu.org/packages/")))
+          ("melpa-stable"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/stable-melpa/")))
 
 (setq package-check-signature nil) 
 
@@ -105,15 +99,15 @@
   (ligature-set-ligatures 't '("www"))
   ;; Enable ligatures in programming modes
   (ligature-set-ligatures 'prog-mode '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\" "{-" "::"
-				       ":::" ":=" "!!" "!=" "!==" "-}" "----" "-->" "->" "->>"
-				       "-<" "-<<" "-~" "#{" "#[" "##" "###" "####" "#(" "#?" "#_"
-				       "#_(" ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*" "/**"
-				       "/=" "/==" "/>" "//" "///" "&&" "||" "||=" "|=" "|>" "^=" "$>"
-				       "++" "+++" "+>" "=:=" "==" "===" "==>" "=>" "=>>" "<="
-				       "=<<" "=/=" ">-" ">=" ">=>" ">>" ">>-" ">>=" ">>>" "<*"
-				       "<*>" "<|" "<|>" "<$" "<$>" "<!--" "<-" "<--" "<->" "<+"
-				       "<+>" "<=" "<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<"
-				       "<~" "<~~" "</" "</>" "~@" "~-" "~>" "~~" "~~>" "%%"))
+    				   ":::" ":=" "!!" "!=" "!==" "-}" "----" "-->" "->" "->>"
+    				   "-<" "-<<" "-~" "#{" "#[" "##" "###" "####" "#(" "#?" "#_"
+    				   "#_(" ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*" "/**"
+    				   "/=" "/==" "/>" "//" "///" "&&" "||" "||=" "|=" "|>" "^=" "$>"
+    				   "++" "+++" "+>" "=:=" "==" "===" "==>" "=>" "=>>" "<="
+    				   "=<<" "=/=" ">-" ">=" ">=>" ">>" ">>-" ">>=" ">>>" "<*"
+    				   "<*>" "<|" "<|>" "<$" "<$>" "<!--" "<-" "<--" "<->" "<+"
+    				   "<+>" "<=" "<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<"
+    				   "<~" "<~~" "</" "</>" "~@" "~-" "~>" "~~" "~~>" "%%"))
   ;; Enables ligature checks globally in all buffers. You can also do it
   ;; per mode with `ligature-mode'.
   (global-ligature-mode t))
@@ -901,7 +895,18 @@
   :custom ((projectile-completion-system 'ivy))
   :bind-keymap
   ("C-c p" . projectile-command-map)
+
   :init
+
+  ;; Enable project caching
+  (setq projectile-enable-caching t)
+
+  ;; Set file for storing project history
+  (setq projectile-known-projects-file "~/.config/emacs/projectile-bookmarks.eld")
+
+  ;; Set the number of recent projects to remember
+  (setq projectile-history-length 20)
+
   ;; NOTE: Set this to the folder where you keep your Git repos!
   (when (file-directory-p "~/projects/")
     (setq projectile-project-search-path '("~/projects/")))
@@ -1209,9 +1214,9 @@
   ;;(evil-normalize-keymaps)
 
   (setq eshell-history-size         10000
-	eshell-buffer-maximum-lines 10000
-	eshell-hist-ignoredups t
-	eshell-scroll-to-bottom-on-input t))
+        eshell-buffer-maximum-lines 10000
+        eshell-hist-ignoredups t
+        eshell-scroll-to-bottom-on-input t))
 
 (use-package eshell-git-prompt
   :after eshell)
@@ -1227,24 +1232,24 @@
   (eshell-git-prompt-use-theme 'powerline))
 
 (use-package dired
-  :ensure nil
-  :commands (dired dired-jump)
-  :bind (("C-x C-j" . dired-jump))
-  :config )
+    :ensure nil
+    :commands (dired dired-jump)
+    :bind (("C-x C-j" . dired-jump))
+    :config )
 
-(use-package dired-single
-  :commands (dired dired-jump))
+;;  (use-package dired-single
+;;    :commands (dired dired-jump))
 
-(use-package all-the-icons-dired
-  :hook (dired-mode . all-the-icons-dired-mode))
+  (use-package all-the-icons-dired
+    :hook (dired-mode . all-the-icons-dired-mode))
 
-(use-package dired-open
-  :commands (dired dired-jump)
-  :config
-  ;; Doesn't work as expected!
-  ;;(add-to-list 'dired-open-functions #'dired-open-xdg t)
-  (setq dired-open-extensions '(("png" . "feh")
-                                ("mkv" . "mpv"))))
+  (use-package dired-open
+    :commands (dired dired-jump)
+    :config
+    ;; Doesn't work as expected!
+    ;;(add-to-list 'dired-open-functions #'dired-open-xdg t)
+    (setq dired-open-extensions '(("png" . "feh")
+                                  ("mkv" . "mpv"))))
 
 ;; (use-package elfeed
 ;;   :defer t

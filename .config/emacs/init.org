@@ -134,13 +134,7 @@ Emacs has a built in package manager but it doesn't make it easy to automaticall
           '(("melpa" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/melpa/")
             ("org"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/org/")
             ("gnu"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/gnu/")
-            ("melpa-stable"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/stable-melpa/")
-            ))
-
-    ;; (setq package-archives
-    ;;       '(("melpa" . "https://melpa.org/packages/")
-    ;;         ("org"   . "https://orgmode.org/elpa/")
-    ;;         ("elpa"  . "https://elpa.gnu.org/packages/")))
+            ("melpa-stable"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/stable-melpa/")))
 
   (setq package-check-signature nil) 
 
@@ -428,6 +422,12 @@ This section configures basic UI settings that remove unneeded elements to make 
 * Keybinding Configuration
 
 These are my changes to the default keybidings for emacs.
+
+Make this change on Mac to make =set-mark= work:
+
+https://emacs.stackexchange.com/questions/21285/macos-set-mark-command-c-spc-not-recognised-broken
+
+System Preferences > Keyboard > Shortcuts > Input Sources > Select the previous input source and uncheck
 
 #+begin_src emacs-lisp
 
@@ -1781,14 +1781,24 @@ Some useful commands:
 | =C-c p s s= | =helm-projectile-ag=                          | Searches for symbol starting from project root               |
 
 #+begin_src emacs-lisp
-
   (use-package projectile
     :diminish projectile-mode
     :config (projectile-mode)
     :custom ((projectile-completion-system 'ivy))
     :bind-keymap
     ("C-c p" . projectile-command-map)
+
     :init
+
+    ;; Enable project caching
+    (setq projectile-enable-caching t)
+
+    ;; Set file for storing project history
+    (setq projectile-known-projects-file "~/.config/emacs/projectile-bookmarks.eld")
+
+    ;; Set the number of recent projects to remember
+    (setq projectile-history-length 20)
+
     ;; NOTE: Set this to the folder where you keep your Git repos!
     (when (file-directory-p "~/projects/")
       (setq projectile-project-search-path '("~/projects/")))
@@ -2212,6 +2222,39 @@ source: https://github.com/jacktasia/dumb-jump
     (setq neo-theme (if (display-graphic-p) 'icons 'arrow)))
 #+end_src
 
+** Obsidian
+
+source: https://github.com/licht1stein/obsidian.el
+
+#+begin_src emacs-lisp :tangle no
+  (use-package obsidian
+    :ensure t
+    :demand t
+    :config
+    (obsidian-specify-path "~/sync/obsidian")
+    (global-obsidian-mode t)
+    :custom
+    ;; This directory will be used for `obsidian-capture' if set.
+    (obsidian-inbox-directory "Inbox")
+    ;; Create missing files in inbox? - when clicking on a wiki link
+    ;; t: in inbox, nil: next to the file with the link
+    ;; default: t
+    ;(obsidian-wiki-link-create-file-in-inbox nil)
+    ;; The directory for daily notes (file name is YYYY-MM-DD.md)
+    (obsidian-daily-notes-directory "Daily Notes")
+    ;; Directory of note templates, unset (nil) by default
+    ;(obsidian-templates-directory "Templates")
+    ;; Daily Note template name - requires a template directory. Default: Daily Note Template.md
+    ;(obsidian-daily-note-template "Daily Note Template.md")
+    :bind (:map obsidian-mode-map
+    ;; Replace C-c C-o with Obsidian.el's implementation. It's ok to use another key binding.
+    ("C-c C-o" . obsidian-follow-link-at-point)
+    ;; Jump to backlinks
+    ("C-c C-b" . obsidian-backlink-jump)
+    ;; If you prefer you can use `obsidian-insert-link'
+    ("C-c C-l" . obsidian-insert-wikilink)))
+#+end_src
+
 * Terminals
 
 ** term-mode
@@ -2421,8 +2464,8 @@ Dired is a built-in file manager for Emacs that does some pretty amazing things!
     :bind (("C-x C-j" . dired-jump))
     :config )
 
-  (use-package dired-single
-    :commands (dired dired-jump))
+;;  (use-package dired-single
+;;    :commands (dired dired-jump))
 
   (use-package all-the-icons-dired
     :hook (dired-mode . all-the-icons-dired-mode))
