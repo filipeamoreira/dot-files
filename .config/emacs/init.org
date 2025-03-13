@@ -542,7 +542,7 @@ https://github.com/chuntaro/emacs-keypression
 
 [[https://github.com/justbur/emacs-which-key][which-key]] is a useful UI panel that appears when you start pressing any key binding in Emacs to offer you all possible completions for the prefix.  For example, if you press =C-c= (hold control and press the letter =c=), a panel will appear at the bottom of the frame displaying all of the bindings under that prefix and which command they run.  This is very useful for learning the possible key bindings in the mode of your current buffer.
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle no
 
   (use-package which-key
     :defer 0
@@ -1124,7 +1124,7 @@ The =lsp-keymap-prefix= setting enables you to define a prefix for where =lsp-mo
 
 The =which-key= integration adds helpful descriptions of the various keys so you should be able to learn a lot just by pressing =C-c l= in a =lsp-mode= buffer and trying different things that you find there.
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle no
   (use-package lsp-mode
     :ensure t
     :hook (
@@ -1238,7 +1238,7 @@ This is a barebones configuration of LSP
 
 [[https://emacs-lsp.github.io/lsp-ui/][lsp-ui]] is a set of UI enhancements built on top of =lsp-mode= which make Emacs feel even more like an IDE.  Check out the screenshots on the =lsp-ui= homepage (linked at the beginning of this paragraph) to see examples of what it can do.
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle no
 
   (use-package lsp-ui
     :ensure t
@@ -1469,7 +1469,7 @@ Inf-ruby is disabled for the moment
     :hook (ruby-mode))
 #+end_src
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle no
   (use-package ruby-mode
     ;;:after lsp-mode
     :mode
@@ -1497,33 +1497,38 @@ Inf-ruby is disabled for the moment
 #+end_src
 *** Ruby-lsp
 
-#+begin_src emacs-lisp :tangle no
+#+begin_src emacs-lisp
+  ;; Ruby LSP configuration using use-package
+
+  ;; Prerequisites:
+  ;; 1. Make sure you have installed the Ruby language server:
+  ;;    gem install ruby-lsp
+  ;; 2. Ensure you have use-package installed
+
   (use-package lsp-mode
-    :init
-    ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
-    (setq lsp-keymap-prefix "C-c l")
-    :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
-           (ruby-mode . lsp)
-           ;; if you want which-key integration
-           (lsp-mode . lsp-enable-which-key-integration))
-    :commands lsp)
+    :ensure t
+    :commands lsp
+    :hook (ruby-mode . lsp)
+    :custom
+    (lsp-enable-which-key-integration t)
+    (lsp-log-io nil)
+    :config
+    (add-to-list 'lsp-language-id-configuration '(ruby-mode . "ruby"))
+    (lsp-register-client
+     (make-lsp-client :new-connection (lsp-stdio-connection '("ruby-lsp"))
+                      :activation-fn (lsp-activate-on "ruby")
+                      :priority -1
+                      :major-modes '(ruby-mode)
+                      :server-id 'ruby-ls)))
 
-  ;; optionally
-  (use-package lsp-ui :commands lsp-ui-mode)
-  ;; if you are helm user
-  (use-package helm-lsp :commands helm-lsp-workspace-symbol)
-  ;; if you are ivy user
-  (use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
-  (use-package lsp-treemacs :commands lsp-treemacs-errors-list)
+  (use-package lsp-ui
+    :ensure t
+    :after lsp-mode
+    :commands lsp-ui-mode)
 
-  ;; optionally if you want to use debugger
-  (use-package dap-mode)
-  ;; (use-package dap-LANGUAGE) to load the dap adapter for your language
-
-  ;; optional if you want which-key integration
-  (use-package which-key
-      :config
-      (which-key-mode))
+  (use-package company
+    :ensure t
+    :hook (ruby-mode . company-mode))
 #+end_src
 
 ** YAML
@@ -1730,7 +1735,7 @@ https://github.com/emacsorphanage/terraform-mode
 
 We also use [[https://github.com/sebastiencs/company-box][company-box]] to further enhance the look of the completions with icons and better overall presentation.
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle no
 
   (use-package company
     :after lsp-mode

@@ -291,13 +291,6 @@
            (doom-modeline-env-version t)
            (inhibit-compacting-font-caches t)))
 
-(use-package which-key
-  :defer 0
-  :diminish which-key-mode
-  :config
-  (which-key-mode)
-  (setq which-key-idle-delay 1))
-
 (global-unset-key (kbd "C-x c"))
 
 (use-package helm
@@ -538,36 +531,6 @@
   ;; If using org-roam-protocol
   (require 'org-roam-protocol))
 
-(use-package lsp-mode
-  :ensure t
-  :hook (
-         (lsp-mode . lsp-enable-which-key-integration)
-         (java-mode . lsp-deferred)
-         ;; (ruby-mode . lsp-deferred)
-         )
-  :init (setq 
-         lsp-keymap-prefix "C-c l"              ; this is for which-key integration documentation, need to use lsp-mode-map
-         lsp-enable-file-watchers nil
-         read-process-output-max (* 1024 1024)  ; 1 mb
-         lsp-completion-provider :capf
-         lsp-idle-delay 0.500
-         )
-  :config 
-  (setq lsp-intelephense-multi-root nil) ; don't scan unnecessary projects
-  (with-eval-after-load 'lsp-intelephense
-    (setf (lsp--client-multi-root (gethash 'iph lsp-clients)) nil))
-  (define-key lsp-mode-map (kbd "C-c l") lsp-command-map))
-
-(use-package lsp-ui
-  :ensure t
-  :after (lsp-mode)
-  :bind (:map lsp-ui-mode-map
-              ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
-              ([remap xref-find-references] . lsp-ui-peek-find-references))
-  :init (setq lsp-ui-doc-delay 1.5
-              lsp-ui-doc-position 'bottom
-              lsp-ui-doc-max-width 100))
-
 (use-package helm-lsp
   :ensure t
   :after (lsp-mode)
@@ -699,28 +662,41 @@
   :config
   (global-discover-mode 1))
 
-(use-package ruby-mode
-  ;;:after lsp-mode
-  :mode
-  (("\\(?:\\.rb\\|ru\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\|Fast\\|Match\\|App\\)file\\)\\'" . ruby-mode))
-  :interpreter "ruby"
-  :init (add-hook 'ruby-mode-hook 'flycheck-mode))
-
-(use-package projectile-rails
-:config
-(projectile-rails-global-mode))
-
-(use-package ruby-electric
-  :after ruby-mode
-  :hook (ruby-mode . ruby-electric-mode))
-
-(use-package ruby-test-mode
-  :after ruby-mode
-  :diminish ruby-test-mode)
-
 (use-package ruby-tools
  :after ruby-mode
  :hook (ruby-mode . ruby-tools-mode))
+
+;; Ruby LSP configuration using use-package
+
+;; Prerequisites:
+;; 1. Make sure you have installed the Ruby language server:
+;;    gem install ruby-lsp
+;; 2. Ensure you have use-package installed
+
+(use-package lsp-mode
+  :ensure t
+  :commands lsp
+  :hook (ruby-mode . lsp)
+  :custom
+  (lsp-enable-which-key-integration t)
+  (lsp-log-io nil)
+  :config
+  (add-to-list 'lsp-language-id-configuration '(ruby-mode . "ruby"))
+  (lsp-register-client
+   (make-lsp-client :new-connection (lsp-stdio-connection '("ruby-lsp"))
+                    :activation-fn (lsp-activate-on "ruby")
+                    :priority -1
+                    :major-modes '(ruby-mode)
+                    :server-id 'ruby-ls)))
+
+(use-package lsp-ui
+  :ensure t
+  :after lsp-mode
+  :commands lsp-ui-mode)
+
+(use-package company
+  :ensure t
+  :hook (ruby-mode . company-mode))
 
 (use-package yaml-mode)
 
@@ -861,33 +837,6 @@
 (use-package lua-mode)
 
 (use-package terraform-mode)
-
-(use-package company
-  :after lsp-mode
-  :hook (
-         (lsp-mode . company-mode)
-         (lsp-mode . ruby-mode)
-         (prog-mode . company-mode))
-  :bind (:map company-active-map
-         ("<tab>" . company-complete-selection))
-        (:map lsp-mode-map
-         ("<tab>" . company-indent-or-complete-common))
-  :custom
-  (company-minimum-prefix-length 2)
-  (company-idle-delay 0.5)
-  (company-show-numbers t)
-  (company-tooltip-align-annotations t)
-  (company-tooltip-flip-when-above t))
-
-(use-package company-box
-  :hook (company-mode . company-box-mode))
-
-(use-package company-quickhelp
-  :ensure t
-  :init
-  (company-quickhelp-mode 1)
-  (use-package pos-tip
-    :ensure t))
 
 (use-package projectile
   :diminish projectile-mode
